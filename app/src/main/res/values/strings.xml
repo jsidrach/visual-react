@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VisualReact</string>
+    <string name="play_button">Play Button</string>
+    <string name="settings_button">Settings Button</string>
 </resources>

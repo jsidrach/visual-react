@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorNeutralPrimary">#FFFFFF</color>
+    <color name="colorNeutralDark">#FFFFFF</color>
+    <color name="colorNeutralLight">#FFFFFF</color>
+
+    <color name="colorAlternative1">#00FF00</color>
+    <color name="colorAlternative2">#FF00FF</color>
+
+    <color name="colorPlayer1Primary">#FF4081</color>
+    <color name="colorPlayer1Dark">#FF4081</color>
+    <color name="colorPlayer1Light">#FF4081</color>
+    <color name="colorPlayer2Primary">#FF4081</color>
+    <color name="colorPlayer2Dark">#FF4081</color>
+    <color name="colorPlayer2Light">#FF4081</color>
+
+    <array name="colorPalette">
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FF0000FF</item>
+    </array>
 </resources>
