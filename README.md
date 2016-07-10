@@ -37,7 +37,7 @@
 ## Levels
 
 | Name       | Description (tap the screen when...)       |
-|:----------:|:------------------------------------------:|
+|:-----------|:-------------------------------------------|
 | Color      | The color changes                          |
 | Light      | There are more light cells than dark cells |
 | Countdown  | The countdown passes zero                  |
