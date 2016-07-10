@@ -36,7 +36,7 @@
 
 ## Levels
 
-| **Name**   | **Description (tap the screen when...) **  |
+| Name       | Description (tap the screen when...)       |
 |:----------:|:------------------------------------------:|
 | Color      | The color changes                          |
 | Light      | There are more light cells than dark cells |
@@ -64,9 +64,9 @@ List of assets used:
 
 ## Roadmap
 
-- [x] Rethink design, winner/loser should be more clear
-- [x] Write Design Goals
-- [x] Write Development Goals
+- [x] ~~Rethink design, winner/loser should be more clear~~
+- [x] ~~Write Design Goals~~
+- [x] ~~Write Development Goals~~
 - [ ] Think and document possible levels (up to 15)
 - [ ] Implement main screen
 - [ ] Implement settings screen
@@ -81,7 +81,7 @@ List of assets used:
 - [ ] Revisit settings screen to add games - make sure at least one is selected
 - [ ] Revisit all code to document it better
 - [ ] Add custom font for all texts
-- [x] Choose color palette
+- [x] ~~Choose color palette~~
 - [ ] Design app icon
 - [ ] Write app description
 - [ ] Make screenshots
