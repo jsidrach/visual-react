@@ -45,7 +45,8 @@
             android:layout_height="match_parent"
             android:background="@color/colorAlternative2"
             android:clickable="true"
-            android:enabled="true" />
+            android:enabled="true"
+            android:onClick="openPreferences" />
 
         <ImageView
             android:id="@+id/imageView"
