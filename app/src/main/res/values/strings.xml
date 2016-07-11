@@ -2,5 +2,5 @@
     <string name="app_name">VisualReact</string>
     <string name="preferences_name">Preferences</string>
     <string name="play_button">Play Button</string>
-    <string name="settings_button">Settings Button</string>
+    <string name="preferences_button">Settings Button</string>
 </resources>
