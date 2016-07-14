@@ -1,6 +1,15 @@
 <resources>
+    <!-- Main_Menu -->
     <string name="app_name">VisualReact</string>
     <string name="preferences_name">Preferences</string>
     <string name="play_button">Play Button</string>
     <string name="preferences_button">Settings Button</string>
+
+
+    <!-- Preferences -->
+    <string name="setting_title">Settings</string>
+    <string name="check_description">Show level descriptions</string>
+    <string name="level_seek_bar">Levels per match</string>
+    <string name="round_seek_bar">Rounds per match</string>
+    <string name="level_title">Levels</string>
 </resources>
