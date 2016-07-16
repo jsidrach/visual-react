@@ -1,9 +1,11 @@
-package sneakycoders.visualreact;
+package sneakycoders.visualreact.screens;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
+import sneakycoders.visualreact.R;
 
 public class Preferences extends Activity {
     @Override

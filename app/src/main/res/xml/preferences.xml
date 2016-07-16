@@ -1,8 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
-        android:key="pref_sync"
-        android:title="example1"
-        android:summary="example1"
-        android:defaultValue="true" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:slider="http://schemas.android.com/apk/lib/sneakycoders.visualreact.utils">
+    <PreferenceCategory
+        android:key="levels_selected"
+        android:title="@string/general_category">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="show_level_tips"
+            android:persistent="true"
+            android:summaryOff="@string/show_level_tips_off"
+            android:summaryOn="@string/show_level_tips_on"
+            android:title="@string/show_level_tips" />
+        <sneakycoders.visualreact.utils.SliderPreference
+            android:defaultValue="5"
+            android:dialogTitle="@string/levels_per_match"
+            android:key="levels_per_match"
+            android:persistent="true"
+            android:summary="@string/levels_per_match_summary"
+            android:title="@string/levels_per_match"
+            slider:maxValue="20"
+            slider:minValue="1" />
+        <sneakycoders.visualreact.utils.SliderPreference
+            android:defaultValue="5"
+            android:dialogTitle="@string/rounds_per_level"
+            android:key="rounds_per_level"
+            android:persistent="true"
+            android:summary="@string/rounds_per_level_summary"
+            android:title="@string/rounds_per_level"
+            slider:maxValue="20"
+            slider:minValue="1" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="levels_selected"
+        android:title="@string/levels_selected_category">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="level_color_selected"
+            android:persistent="true"
+            android:summary="@string/level_color_description"
+            android:title="@string/level_color_name" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="level_light_selected"
+            android:persistent="true"
+            android:summary="@string/level_light_description"
+            android:title="@string/level_light_name" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="level_countdown_selected"
+            android:persistent="true"
+            android:summary="@string/level_countdown_description"
+            android:title="@string/level_countdown_name" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="level_collision_selected"
+            android:persistent="true"
+            android:summary="@string/level_collision_description"
+            android:title="@string/level_collision_name" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="level_connection_selected"
+            android:persistent="true"
+            android:summary="@string/level_connection_description"
+            android:title="@string/level_connection_name" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="Ads"
+        android:title="@string/ads_category">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="show_ads_levels"
+            android:persistent="true"
+            android:summaryOff="@string/show_ads_levels_off"
+            android:summaryOn="@string/show_ads_levels_on"
+            android:title="@string/show_ads_levels" />
+    </PreferenceCategory>
 </PreferenceScreen>

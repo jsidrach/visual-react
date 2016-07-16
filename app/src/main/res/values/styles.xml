@@ -6,7 +6,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="colorPrimary">@color/colorNeutralPrimary</item>
         <item name="colorPrimaryDark">@color/colorNeutralDark</item>
-        <item name="colorAccent">@color/colorNeutralLight</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>

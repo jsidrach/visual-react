@@ -6,5 +6,31 @@
     <string name="preferences_button">Preferences Button</string>
 
     <!-- Preferences -->
-    <!-- TODO -->
+    <string name="general_category">General</string>
+    <string name="show_level_tips">Level tips</string>
+    <string name="show_level_tips_on">Show level descriptions at the start of each level</string>
+    <string name="show_level_tips_off">Skip level descriptions at the start of each level</string>
+    <string name="levels_per_match">Levels per match</string>
+    <string name="levels_per_match_summary">Current number of levels per match: %1$d</string>
+    <string name="rounds_per_level">Rounds per level</string>
+    <string name="rounds_per_level_summary">Current number of rounds per level: %1$d</string>
+    <string name="levels_selected_category">Levels</string>
+    <string name="level_selected_on">this level</string>
+    <string name="level_selected_off">Levels</string>
+    <string name="ads_category">Advertisements</string>
+    <string name="show_ads_levels">In-Game advertisements</string>
+    <string name="show_ads_levels_off">Do not show advertisements while playing</string>
+    <string name="show_ads_levels_on">Show advertisements while playing</string>
+
+    <!-- Levels -->
+    <string name="level_color_name">Color</string>
+    <string name="level_color_description">Tap when the color changes</string>
+    <string name="level_light_name">Light</string>
+    <string name="level_light_description">Tap when there are more light cells than dark cells</string>
+    <string name="level_countdown_name">Countdown</string>
+    <string name="level_countdown_description">Tap when the countdown passes zero</string>
+    <string name="level_collision_name">Collision</string>
+    <string name="level_collision_description">Tap when the shapes collide</string>
+    <string name="level_connection_name">Connection</string>
+    <string name="level_connection_description">Tap when the two extremes are connected</string>
 </resources>

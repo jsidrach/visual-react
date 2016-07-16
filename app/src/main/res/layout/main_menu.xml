@@ -10,13 +10,13 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:weightSum="1"
-    tools:context="sneakycoders.visualreact.MainMenu">
+    tools:context=".screens.MainMenu">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAlternative1"
         android:layout_weight="0.5"
+        android:background="@color/colorAlternative1"
         android:onClick="openPreferences">
 
         <ImageView
@@ -31,8 +31,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAlternative2"
         android:layout_weight="0.5"
+        android:background="@color/colorAlternative2"
         android:onClick="openPreferences">
 
         <ImageView
