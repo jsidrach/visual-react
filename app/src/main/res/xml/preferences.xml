@@ -2,7 +2,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:slider="http://schemas.android.com/apk/lib/sneakycoders.visualreact.utils">
     <PreferenceCategory
-        android:key="levels_selected"
+        android:key="general_preferences"
+        android:selectable="false"
         android:title="@string/general_category">
         <SwitchPreference
             android:defaultValue="true"
@@ -31,41 +32,47 @@
             slider:minValue="1" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="levels_selected"
+        android:key="levels_preferences"
+        android:selectable="false"
         android:title="@string/levels_selected_category">
         <CheckBoxPreference
             android:defaultValue="true"
+            android:dependency="levels_preferences"
             android:key="level_color_selected"
             android:persistent="true"
             android:summary="@string/level_color_description"
             android:title="@string/level_color_name" />
         <CheckBoxPreference
             android:defaultValue="true"
+            android:dependency="levels_preferences"
             android:key="level_light_selected"
             android:persistent="true"
             android:summary="@string/level_light_description"
             android:title="@string/level_light_name" />
         <CheckBoxPreference
             android:defaultValue="true"
+            android:dependency="levels_preferences"
             android:key="level_countdown_selected"
             android:persistent="true"
             android:summary="@string/level_countdown_description"
             android:title="@string/level_countdown_name" />
         <CheckBoxPreference
             android:defaultValue="true"
+            android:dependency="levels_preferences"
             android:key="level_collision_selected"
             android:persistent="true"
             android:summary="@string/level_collision_description"
             android:title="@string/level_collision_name" />
         <CheckBoxPreference
             android:defaultValue="true"
+            android:dependency="levels_preferences"
             android:key="level_connection_selected"
             android:persistent="true"
             android:summary="@string/level_connection_description"
             android:title="@string/level_connection_name" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="Ads"
+        android:key="ads_preferences"
         android:title="@string/ads_category">
         <SwitchPreference
             android:defaultValue="true"

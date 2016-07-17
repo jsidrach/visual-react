@@ -60,7 +60,7 @@ List of assets used:
 - [x] ~~Choose color palette~~
 - [x] ~~Implement main screen~~
 - [x] ~~Implement settings screen~~
-- [ ] Make sure at least one game is selected in the settings screen
+- [x] ~~Make sure at least one game is selected in the settings screen~~
 - [ ] Implement basic common class for games
 - [ ] Implement games
   - [ ] Color
