@@ -43,23 +43,13 @@
 | Countdown  | The countdown passes zero                  |
 | Collision  | The shapes collide                         |
 | Connection | The two extremes are connected             |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
-| TODO       | TODO                                       |
 
 ## Assets
 
 List of assets used:
 
-  * [Play Icon](http://www.flaticon.com): Freepik ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-  * [Settings Icon](http://www.flaticon.com/authors/egor-rumyantsev): Egor Rumyantsev ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Play Icon](http://www.flaticon.com): Freepik ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Settings Icon](http://www.flaticon.com/authors/egor-rumyantsev): Egor Rumyantsev ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 
 
 ## Roadmap
@@ -67,9 +57,10 @@ List of assets used:
 - [x] ~~Rethink design, winner/loser should be more clear~~
 - [x] ~~Write Design Goals~~
 - [x] ~~Write Development Goals~~
-- [ ] Think and document possible levels (up to 15)
-- [ ] Implement main screen
-- [ ] Implement settings screen
+- [x] ~~Choose color palette~~
+- [x] ~~Implement main screen~~
+- [x] ~~Implement settings screen~~
+- [ ] Make sure at least one game is selected in the settings screen
 - [ ] Implement basic common class for games
 - [ ] Implement games
   - [ ] Color
@@ -77,11 +68,10 @@ List of assets used:
   - [ ] Countdown
   - [ ] Collision
   - [ ] Connection
-  - [ ] ...
-- [ ] Revisit settings screen to add games - make sure at least one is selected
-- [ ] Revisit all code to document it better
 - [ ] Add custom font for all texts
-- [x] ~~Choose color palette~~
+- [ ] Revisit all code to document it better
+- [ ] Include ads in a non-intrusive way
+- [ ] Think and document more possible levels (up to 15) for future implementation
 - [ ] Design app icon
 - [ ] Write app description
 - [ ] Make screenshots
@@ -90,7 +80,6 @@ List of assets used:
 - [ ] Translate to Chinese and Spanish
 - [ ] Translate to additional languages if possible
 - [ ] Create SneakyCoders account on Play Store
-- [ ] Include ads in a non-intrusive way
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
 - [ ] ????
