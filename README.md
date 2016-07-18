@@ -61,6 +61,13 @@ List of assets used:
 - [x] ~~Implement main screen~~
 - [x] ~~Implement settings screen~~
 - [x] ~~Make sure at least one game is selected in the settings screen~~
+- [ ] Improve translation of numbers
+- [ ] Add support for bidirectional strings
+- [ ] Add language selector
+- [ ] Make the level selector autogenerate dynamically
+- [ ] Include ads in a non-intrusive way
+  - [ ] Menus
+  - [ ] Ingame (can be disabled)
 - [ ] Implement basic common class for games
 - [ ] Implement games
   - [ ] Color
@@ -68,17 +75,15 @@ List of assets used:
   - [ ] Countdown
   - [ ] Collision
   - [ ] Connection
-- [ ] Add custom font for all texts
+- [ ] [Maybe] Add custom font for all texts
 - [ ] Revisit all code to document it better
-- [ ] Include ads in a non-intrusive way
 - [ ] Think and document more possible levels (up to 15) for future implementation
 - [ ] Design app icon
 - [ ] Write app description
 - [ ] Make screenshots
-- [ ] Add support for bidirectional strings
-- [ ] Make sure all strings have comments to help translators
 - [ ] Translate to Chinese and Spanish
 - [ ] Translate to additional languages if possible
+- [ ] Run Lint, fix issues detected
 - [ ] Create SneakyCoders account on Play Store
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
@@ -89,3 +94,5 @@ List of assets used:
 ## References (remove as implemented)
 
 - [Disable ads on runtime](http://stackoverflow.com/questions/4549401/correctly-disable-admob-ads)
+- [Dynamic preferences](http://stackoverflow.com/questions/6129384/programatically-populating-preferences-with-checkboxes)
+- [Changing language on runtime](http://stackoverflow.com/questions/12908289/how-to-change-language-of-app-when-user-selects-language)
