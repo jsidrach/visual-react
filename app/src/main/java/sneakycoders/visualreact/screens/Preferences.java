@@ -74,12 +74,12 @@ public class Preferences extends Activity {
                 // Store selected levels
                 Preference entryPreference = findPreference(entry.getKey());
                 if (entryPreference != null && LEVELS_CATEGORY.equals(entryPreference.getDependency()) && entry.getValue().equals(true)) {
-                    selectedLevels.add(entryPreference);
-                }
+                    // Optimization: if we already have 3 selected levels (2 + new one), return
+                    if (selectedLevels.size() == 2) {
+                        return;
+                    }
 
-                // Optimization: if we already have 3 selected levels, return
-                if (selectedLevels.size() == 3) {
-                    return;
+                    selectedLevels.add(entryPreference);
                 }
             }
 
