@@ -68,9 +68,6 @@ public class Preferences extends Activity {
                 category.addPreference(levelSelected);
             }
 
-            // Set preference screen
-            setPreferenceScreen(screen);
-
             // Prevent no level being selected
             preventNoLevelsSelected();
         }
