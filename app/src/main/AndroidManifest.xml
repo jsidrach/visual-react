@@ -18,7 +18,7 @@
         <activity
             android:name=".screens.Preferences"
             android:label="@string/preferences_name"
-            android:parentActivityName=".screens.MainMenu"></activity>
+            android:parentActivityName=".screens.MainMenu" />
     </application>
 
 </manifest>

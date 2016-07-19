@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import java.text.NumberFormat;
 
 import sneakycoders.visualreact.R;
 
@@ -45,6 +46,9 @@ public class SliderPreference extends DialogPreference implements
     // Dialog setup
     @Override
     protected View onCreateDialogView() {
+        // Integer format instance
+        NumberFormat intFormat = NumberFormat.getIntegerInstance();
+
         // Get current value from settings
         currentValue = getPersistedInt(defaultValue);
 
@@ -54,8 +58,8 @@ public class SliderPreference extends DialogPreference implements
         View view = inflater.inflate(R.layout.dialog_slider, null);
 
         // Put minimum and maximum
-        ((TextView) view.findViewById(R.id.min_value)).setText(Integer.toString(minValue));
-        ((TextView) view.findViewById(R.id.max_value)).setText(Integer.toString(maxValue));
+        ((TextView) view.findViewById(R.id.min_value)).setText(intFormat.format(minValue));
+        ((TextView) view.findViewById(R.id.max_value)).setText(intFormat.format(maxValue));
 
         // Setup SeekBar
         seekBar = (SeekBar) view.findViewById(R.id.seek_bar);
@@ -65,7 +69,7 @@ public class SliderPreference extends DialogPreference implements
 
         // Put current value
         valueText = (TextView) view.findViewById(R.id.current_value);
-        valueText.setText(Integer.toString(currentValue));
+        valueText.setText(intFormat.format(currentValue));
 
         return view;
     }
@@ -93,7 +97,7 @@ public class SliderPreference extends DialogPreference implements
     @Override
     public void onProgressChanged(SeekBar seek, int value, boolean fromTouch) {
         currentValue = value + minValue;
-        valueText.setText(Integer.toString(currentValue));
+        valueText.setText(NumberFormat.getIntegerInstance().format(currentValue));
     }
 
     // Format summary string with current value
