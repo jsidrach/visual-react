@@ -61,13 +61,9 @@ List of assets used:
 - [x] ~~Implement main screen~~
 - [x] ~~Implement settings screen~~
 - [x] ~~Make sure at least one game is selected in the settings screen~~
-- [ ] Improve translation of numbers
-- [ ] Add support for bidirectional strings
-- [ ] Add language selector
-- [ ] Make the level selector autogenerate dynamically
-- [ ] Include ads in a non-intrusive way
-  - [ ] Menus
-  - [ ] Ingame (can be disabled)
+- [x] Improve translation of numbers
+- [x] Add support for bidirectional strings
+- [x] Make the level selector autogenerate dynamically
 - [ ] Implement basic common class for games
 - [ ] Implement games
   - [ ] Color
@@ -75,15 +71,19 @@ List of assets used:
   - [ ] Countdown
   - [ ] Collision
   - [ ] Connection
+- [ ] Include ads in a non-intrusive way
+  - [ ] Menus
+  - [ ] Ingame (can be disabled)
 - [ ] [Maybe] Add custom font for all texts
 - [ ] Revisit all code to document it better
 - [ ] Think and document more possible levels (up to 15) for future implementation
-- [ ] Design app icon
-- [ ] Write app description
-- [ ] Make screenshots
+- [ ] Review translation guidelines, RTL (left -> start, right -> end), format numbers, etc.
 - [ ] Translate to Chinese and Spanish
 - [ ] Translate to additional languages if possible
 - [ ] Run Lint, fix issues detected
+- [ ] Design app icon
+- [ ] Write app description
+- [ ] Make screenshots
 - [ ] Create SneakyCoders account on Play Store
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app

@@ -3,8 +3,11 @@ package sneakycoders.visualreact.screens;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +37,41 @@ public class Preferences extends Activity {
             super.onCreate(savedInstanceState);
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences);
+
+            // Get levels category
+            PreferenceCategory category = (PreferenceCategory) findPreference(LEVELS_CATEGORY);
+            // Get screen
+            PreferenceScreen screen = this.getPreferenceScreen();
+
+            // Add every level
+            String[] levels = getResources().getStringArray(R.array.levels);
+
+            // Package name
+            String packageName = getActivity().getApplicationContext().getPackageName();
+
+            // Selected levels
+            List<Preference> levelsSelected = new ArrayList<>();
+
+            // Add one checkbox for each level
+            for (String level : levels) {
+                CheckBoxPreference levelSelected = new CheckBoxPreference(screen.getContext());
+                levelSelected.setDefaultValue(true);
+                levelSelected.setKey("level_" + level + "_selected");
+                levelSelected.setPersistent(true);
+                levelSelected.setSummary(getString(getResources().getIdentifier("level_" + level + "_description", "string", packageName)));
+                levelSelected.setTitle(getString(getResources().getIdentifier("level_" + level + "_name", "string", packageName)));
+                category.addPreference(levelSelected);
+                levelsSelected.add(levelSelected);
+            }
+
+            // Set preference screen
+            setPreferenceScreen(screen);
+
+            // Add dependencies
+            for (Preference level : levelsSelected) {
+                level.setDependency(LEVELS_CATEGORY);
+            }
+
             // Prevent no level being selected
             preventNoLevelsSelected(getPreferenceScreen().getSharedPreferences());
         }

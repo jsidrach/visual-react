@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="levels">
+        <item>color</item>
+        <item>light</item>
+        <item>countdown</item>
+        <item>collision</item>
+        <item>connection</item>
+    </string-array>
+</resources>

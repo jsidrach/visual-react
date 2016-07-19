@@ -6,7 +6,7 @@
     <string name="preferences_button">Preferences Button</string>
 
     <!-- Preferences -->
-    <string name="general_category">General</string>
+    <string name="gameplay_category">Gameplay</string>
     <string name="show_level_tips">Level tips</string>
     <string name="show_level_tips_on">Show level descriptions at the start of each level</string>
     <string name="show_level_tips_off">Skip level descriptions at the start of each level</string>
@@ -23,6 +23,8 @@
     <string name="show_ads_levels_on">Show advertisements while playing</string>
 
     <!-- Levels -->
+    <!-- Must follow format _level_<id>_name and level_<id>_description -->
+    <!-- Each <id> must be included in values/arrays.xml/levels -->
     <string name="level_color_name">Color</string>
     <string name="level_color_description">Tap when the color changes</string>
     <string name="level_light_name">Light</string>
