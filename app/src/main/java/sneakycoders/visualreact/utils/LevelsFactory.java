@@ -41,14 +41,18 @@ public class LevelsFactory {
         while (roundsSequence.size() != totalRounds) {
             // Reset lists if needed
             if (selectedLevels.size() == 0) {
+                // Restore selected levels
                 selectedLevels = new ArrayList<>(usedLevels);
                 // Random order
                 Collections.shuffle(selectedLevels);
+
                 // Prevent same level being the last of one sequence and first of the next one
                 if (selectedLevels.get(0).equals(usedLevels.get(usedLevels.size() - 1))) {
                     String last = selectedLevels.remove(0);
                     selectedLevels.add(last);
                 }
+
+                // Empty used levels
                 usedLevels = new ArrayList<>();
             }
 
