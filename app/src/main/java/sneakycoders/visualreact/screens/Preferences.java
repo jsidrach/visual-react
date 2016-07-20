@@ -1,19 +1,16 @@
 package sneakycoders.visualreact.screens;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
-import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.List;
-
 import sneakycoders.visualreact.R;
+import sneakycoders.visualreact.utils.LevelsFactory;
 
 public class Preferences extends Activity {
 
@@ -31,10 +28,6 @@ public class Preferences extends Activity {
     public static class PreferencesFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
         // Key of the levels category
         private static final String LEVELS_CATEGORY = "levels_preferences";
-        // Resource identifier formats
-        private static final String LEVEL_ID_FORMAT = "level_{0}_selected";
-        private static final String LEVEL_NAME_FORMAT = "level_{0}_name";
-        private static final String LEVEL_DESCRIPTION_FORMAT = "level_{0}_description";
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -42,29 +35,23 @@ public class Preferences extends Activity {
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences);
-
+            // Get context
+            Context context = getActivity();
+            // Level ids
+            String[] levels = LevelsFactory.getLevelIds(context);
             // Get levels category
             PreferenceCategory category = (PreferenceCategory) findPreference(LEVELS_CATEGORY);
             // Get screen
             PreferenceScreen screen = this.getPreferenceScreen();
 
-            // Level ids
-            String[] levels = getResources().getStringArray(R.array.levels);
-
-            // Package name
-            String packageName = getActivity().getApplicationContext().getPackageName();
-
             // Add one checkbox for each level
             for (String level : levels) {
-                String levelId = MessageFormat.format(LEVEL_ID_FORMAT, level);
-                String levelName = MessageFormat.format(LEVEL_NAME_FORMAT, level);
-                String levelDescription = MessageFormat.format(LEVEL_DESCRIPTION_FORMAT, level);
                 CheckBoxPreference levelSelected = new CheckBoxPreference(screen.getContext());
+                levelSelected.setKey(LevelsFactory.getLevelKey(level));
+                levelSelected.setTitle(LevelsFactory.getLevelName(level, context));
+                levelSelected.setSummary(LevelsFactory.getLevelDescription(level, context));
                 levelSelected.setDefaultValue(true);
-                levelSelected.setKey(levelId);
                 levelSelected.setPersistent(true);
-                levelSelected.setSummary(getString(getResources().getIdentifier(levelDescription, "string", packageName)));
-                levelSelected.setTitle(getString(getResources().getIdentifier(levelName, "string", packageName)));
                 category.addPreference(levelSelected);
             }
 
@@ -92,37 +79,23 @@ public class Preferences extends Activity {
             preventNoLevelsSelected();
         }
 
-        // Prevent no level being selected
         private void preventNoLevelsSelected() {
-            // Selected levels
-            List<Preference> selectedLevels = new ArrayList<>();
+            // Context
+            Context context = getActivity();
+            // Selected level ids
+            String[] selectedLevelIds = LevelsFactory.getSelectedLevelIds(context);
 
-            // Level ids
-            String[] levels = getResources().getStringArray(R.array.levels);
-
-            // Loop through all preferences
-            for (String level : levels) {
-                // Store selected levels
-                String levelId = MessageFormat.format(LEVEL_ID_FORMAT, level);
-                CheckBoxPreference levelPreference = (CheckBoxPreference) findPreference(levelId);
-                if (levelPreference.isChecked()) {
-                    // Optimization: if we already have 3 selected levels (2 + new one), return
-                    if (selectedLevels.size() == 2) {
-                        return;
-                    }
-
-                    selectedLevels.add(levelPreference);
-                }
-            }
-
+            // Prevent the user from deselecting every level
             // If only one level is selected, disable it so that the user cannot deselect it
-            if (selectedLevels.size() == 1) {
-                selectedLevels.get(0).setEnabled(false);
+            if (selectedLevelIds.length == 1) {
+                String levelKey = LevelsFactory.getLevelKey(selectedLevelIds[0]);
+                findPreference(levelKey).setEnabled(false);
             }
             // If two levels are selected, enable both to make sure we don't leave one disabled
-            else if (selectedLevels.size() == 2) {
-                for (Preference selectedPreference : selectedLevels) {
-                    selectedPreference.setEnabled(true);
+            else if (selectedLevelIds.length == 2) {
+                for (String selectedLevelId : selectedLevelIds) {
+                    String levelKey = LevelsFactory.getLevelKey(selectedLevelId);
+                    findPreference(levelKey).setEnabled(true);
                 }
             }
         }

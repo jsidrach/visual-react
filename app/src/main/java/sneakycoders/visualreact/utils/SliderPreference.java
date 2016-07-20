@@ -3,10 +3,10 @@ package sneakycoders.visualreact.utils;
 import android.content.Context;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
 import java.text.NumberFormat;
 
 import sneakycoders.visualreact.R;
@@ -14,26 +14,25 @@ import sneakycoders.visualreact.R;
 public class SliderPreference extends DialogPreference implements
         SeekBar.OnSeekBarChangeListener {
     // Schemas and attributes
-    protected static final String PREFERENCE_NS = "http://schemas.android.com/apk/lib/sneakycoders.visualreact.utils";
-    protected static final String ANDROID_NS = "http://schemas.android.com/apk/res/android";
-    protected static final String ATTR_DEFAULT_VALUE = "defaultValue";
-    protected static final String ATTR_MIN_VALUE = "minValue";
-    protected static final String ATTR_MAX_VALUE = "maxValue";
+    private static final String PREFERENCE_NS = "http://schemas.android.com/apk/lib/sneakycoders.visualreact.utils";
+    private static final String ANDROID_NS = "http://schemas.android.com/apk/res/android";
+    private static final String ATTR_DEFAULT_VALUE = "defaultValue";
+    private static final String ATTR_MIN_VALUE = "minValue";
+    private static final String ATTR_MAX_VALUE = "maxValue";
 
     // Default values
-    protected static final int DEFAULT_MIN_VALUE = 0;
-    protected static final int DEFAULT_MAX_VALUE = 100;
-    protected static final int DEFAULT_VALUE = 50;
+    private static final int DEFAULT_MIN_VALUE = 0;
+    private static final int DEFAULT_MAX_VALUE = 100;
+    private static final int DEFAULT_VALUE = 50;
 
     // Values
-    protected int minValue;
-    protected int maxValue;
-    protected int defaultValue;
-    protected int currentValue;
+    final private int minValue;
+    final private int maxValue;
+    final private int defaultValue;
+    private int currentValue;
 
     // View
-    protected SeekBar seekBar;
-    protected TextView valueText;
+    private TextView valueText;
 
     // Constructor
     public SliderPreference(Context context, AttributeSet attrs) {
@@ -43,7 +42,6 @@ public class SliderPreference extends DialogPreference implements
         defaultValue = attrs.getAttributeIntValue(ANDROID_NS, ATTR_DEFAULT_VALUE, DEFAULT_VALUE);
     }
 
-    // Dialog setup
     @Override
     protected View onCreateDialogView() {
         // Integer format instance
@@ -53,16 +51,14 @@ public class SliderPreference extends DialogPreference implements
         currentValue = getPersistedInt(defaultValue);
 
         // Inflate layout
-        LayoutInflater inflater =
-                (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.dialog_slider, null);
+        View view = View.inflate(getContext(), R.layout.dialog_slider, null);
 
         // Put minimum and maximum
         ((TextView) view.findViewById(R.id.min_value)).setText(intFormat.format(minValue));
         ((TextView) view.findViewById(R.id.max_value)).setText(intFormat.format(maxValue));
 
         // Setup SeekBar
-        seekBar = (SeekBar) view.findViewById(R.id.seek_bar);
+        SeekBar seekBar = (SeekBar) view.findViewById(R.id.seek_bar);
         seekBar.setMax(maxValue - minValue);
         seekBar.setProgress(currentValue - minValue);
         seekBar.setOnSeekBarChangeListener(this);
@@ -74,7 +70,6 @@ public class SliderPreference extends DialogPreference implements
         return view;
     }
 
-    // Save when the dialog closes
     @Override
     protected void onDialogClosed(boolean ok) {
         super.onDialogClosed(ok);
@@ -84,7 +79,7 @@ public class SliderPreference extends DialogPreference implements
             return;
         }
 
-        // Persist current value if needed
+        // Save current value if needed
         if (shouldPersist()) {
             persistInt(currentValue);
         }
@@ -93,16 +88,16 @@ public class SliderPreference extends DialogPreference implements
         notifyChanged();
     }
 
-    // Change text when the SeekBar changes
     @Override
     public void onProgressChanged(SeekBar seek, int value, boolean fromTouch) {
+        // Change text when the SeekBar changes
         currentValue = value + minValue;
         valueText.setText(NumberFormat.getIntegerInstance().format(currentValue));
     }
 
-    // Format summary string with current value
     @Override
     public CharSequence getSummary() {
+        // Format summary string with current value
         String summary = super.getSummary().toString();
         int value = getPersistedInt(defaultValue);
         return String.format(summary, value);

@@ -12,10 +12,12 @@ public class MainMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Inflate layout
         setContentView(R.layout.main_menu);
     }
 
-    public void openPreferences(View view) {
+    public void openPreferences(@SuppressWarnings("UnusedParameters") View view) {
+        // Switch screen to Preferences
         Intent intent = new Intent(MainMenu.this, Preferences.class);
         startActivity(intent);
     }

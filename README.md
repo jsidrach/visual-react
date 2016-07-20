@@ -94,5 +94,3 @@ List of assets used:
 ## References (remove as implemented)
 
 - [Disable ads on runtime](http://stackoverflow.com/questions/4549401/correctly-disable-admob-ads)
-- [Dynamic preferences](http://stackoverflow.com/questions/6129384/programatically-populating-preferences-with-checkboxes)
-- [Changing language on runtime](http://stackoverflow.com/questions/12908289/how-to-change-language-of-app-when-user-selects-language)
