@@ -17,7 +17,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void openPreferences(@SuppressWarnings("UnusedParameters") View view) {
-        // Switch screen to Preferences
+        // Switch to Preferences screen
         Intent intent = new Intent(MainMenu.this, Preferences.class);
         startActivity(intent);
     }

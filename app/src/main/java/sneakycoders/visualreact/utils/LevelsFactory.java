@@ -6,6 +6,8 @@ import android.preference.PreferenceManager;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import sneakycoders.visualreact.R;
@@ -17,11 +19,57 @@ public class LevelsFactory {
     private static final String LEVEL_NAME_FORMAT = "level_{0}_name";
     private static final String LEVEL_DESCRIPTION_FORMAT = "level_{0}_description";
 
-    public static String[] getSelectedLevelIds(Context c) {
+    public static List<String> getLevelsSequence(Context c) {
+        // Preferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
+
+        // Selected levels
+        List<String> selectedLevels = getSelectedLevelIds(c);
+        // Random order
+        Collections.shuffle(selectedLevels);
+        // Prevent repeating sequences of levels if not every level has been used yet
+        List<String> usedLevels = new ArrayList<>();
+
+        // Calculate number of rounds
+        int levelsPerMatch = preferences.getInt("levels_per_match", 1);
+        int roundsPerLevel = preferences.getInt("rounds_per_level", 1);
+        int totalRounds = levelsPerMatch * roundsPerLevel;
+        List<String> roundsSequence = new ArrayList<>();
+
+
+        // Fill the levels sequence
+        while (roundsSequence.size() != totalRounds) {
+            // Reset lists if needed
+            if (selectedLevels.size() == 0) {
+                selectedLevels = new ArrayList<>(usedLevels);
+                // Random order
+                Collections.shuffle(selectedLevels);
+                // Prevent same level being the last of one sequence and first of the next one
+                if (selectedLevels.get(0).equals(usedLevels.get(usedLevels.size() - 1))) {
+                    String last = selectedLevels.remove(0);
+                    selectedLevels.add(last);
+                }
+                usedLevels = new ArrayList<>();
+            }
+
+            // Keep track of added levels
+            String level = selectedLevels.remove(0);
+            usedLevels.add(level);
+
+            // Add new rounds of selected level
+            for (int i = 0; i < roundsPerLevel; i++) {
+                roundsSequence.add(level);
+            }
+        }
+
+        return roundsSequence;
+    }
+
+    public static List<String> getSelectedLevelIds(Context c) {
         // Preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
         // Level ids
-        String[] levelIds = getLevelIds(c);
+        List<String> levelIds = getLevelIds(c);
         // Selected level ids
         List<String> selectedLevelIds = new ArrayList<>();
 
@@ -32,11 +80,12 @@ public class LevelsFactory {
                 selectedLevelIds.add(level);
             }
         }
-        return selectedLevelIds.toArray(new String[selectedLevelIds.size()]);
+
+        return selectedLevelIds;
     }
 
-    public static String[] getLevelIds(Context c) {
-        return c.getResources().getStringArray(R.array.levels);
+    public static List<String> getLevelIds(Context c) {
+        return new ArrayList<>(Arrays.asList(c.getResources().getStringArray(R.array.levels)));
     }
 
     // public static LevelFragment getLevelFragment(String id)

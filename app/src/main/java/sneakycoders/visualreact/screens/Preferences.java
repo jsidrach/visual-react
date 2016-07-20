@@ -9,6 +9,8 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 
+import java.util.List;
+
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.utils.LevelsFactory;
 
@@ -38,7 +40,7 @@ public class Preferences extends Activity {
             // Get context
             Context context = getActivity();
             // Level ids
-            String[] levels = LevelsFactory.getLevelIds(context);
+            List<String> levels = LevelsFactory.getLevelIds(context);
             // Get levels category
             PreferenceCategory category = (PreferenceCategory) findPreference(LEVELS_CATEGORY);
             // Get screen
@@ -83,16 +85,16 @@ public class Preferences extends Activity {
             // Context
             Context context = getActivity();
             // Selected level ids
-            String[] selectedLevelIds = LevelsFactory.getSelectedLevelIds(context);
+            List<String> selectedLevelIds = LevelsFactory.getSelectedLevelIds(context);
 
             // Prevent the user from deselecting every level
             // If only one level is selected, disable it so that the user cannot deselect it
-            if (selectedLevelIds.length == 1) {
-                String levelKey = LevelsFactory.getLevelKey(selectedLevelIds[0]);
+            if (selectedLevelIds.size() == 1) {
+                String levelKey = LevelsFactory.getLevelKey(selectedLevelIds.get(0));
                 findPreference(levelKey).setEnabled(false);
             }
             // If two levels are selected, enable both to make sure we don't leave one disabled
-            else if (selectedLevelIds.length == 2) {
+            else if (selectedLevelIds.size() == 2) {
                 for (String selectedLevelId : selectedLevelIds) {
                     String levelKey = LevelsFactory.getLevelKey(selectedLevelId);
                     findPreference(levelKey).setEnabled(true);
