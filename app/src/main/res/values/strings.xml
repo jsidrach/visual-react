@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Main_Menu -->
     <string name="app_name">VisualReact</string>
     <string name="preferences_name">Preferences</string>
@@ -15,24 +15,29 @@
     <string name="rounds_per_level">Rounds per level</string>
     <string name="rounds_per_level_summary">Current number of rounds per level: %1$d</string>
     <string name="levels_selected_category">Levels</string>
-    <string name="level_selected_on">this level</string>
-    <string name="level_selected_off">Levels</string>
     <string name="ads_category">Advertisements</string>
     <string name="show_ads_levels">In-Game advertisements</string>
     <string name="show_ads_levels_off">Do not show advertisements while playing</string>
     <string name="show_ads_levels_on">Show advertisements while playing</string>
 
+    <!-- In Game -->
+    <string name="start_level">Tap to start</string>
+    <string name="rematch_button">Rematch</string>
+    <string name="no_rematch_button">No rematch</string>
+    <string name="standing_winner">Winner!</string>
+    <string name="standing_loser">So sad…</string>
+
     <!-- Levels -->
     <!-- Must follow format _level_<id>_name and level_<id>_description -->
     <!-- Each <id> must be included in values/arrays.xml/levels -->
-    <string name="level_color_name">Color</string>
-    <string name="level_color_description">Tap when the color changes</string>
-    <string name="level_light_name">Light</string>
-    <string name="level_light_description">Tap when there are more light cells than dark cells</string>
-    <string name="level_countdown_name">Countdown</string>
-    <string name="level_countdown_description">Tap when the countdown passes zero</string>
-    <string name="level_collision_name">Collision</string>
-    <string name="level_collision_description">Tap when the shapes collide</string>
-    <string name="level_connection_name">Connection</string>
-    <string name="level_connection_description">Tap when the two extremes are connected</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">Tap when the color changes</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Tap when there are more light cells than dark cells</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Countdown</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tap when the countdown passes zero</string>
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">Collision</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes collide</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">Connection</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">Tap when the two extremes are connected</string>
 </resources>

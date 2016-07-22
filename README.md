@@ -50,6 +50,7 @@ List of assets used:
 
 * [Play Icon](http://www.flaticon.com): Freepik ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 * [Settings Icon](http://www.flaticon.com/authors/egor-rumyantsev): Egor Rumyantsev ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Rematch and Back Icons](http://www.flaticon.com/authors/vaadin): Vaadin ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 
 
 ## Roadmap
@@ -93,4 +94,5 @@ List of assets used:
 
 ## References (remove as implemented)
 
+- [Add blink to text (for winner/loser texts)](http://stackoverflow.com/questions/9294112/how-to-make-the-textview-blinking)
 - [Disable ads on runtime](http://stackoverflow.com/questions/4549401/correctly-disable-admob-ads)

@@ -92,7 +92,7 @@ public class LevelsFactory {
         return new ArrayList<>(Arrays.asList(c.getResources().getStringArray(R.array.levels)));
     }
 
-    // public static LevelFragment getLevelFragment(String id)
+    // TODO: public static LevelFragment getLevelFragment(String id)
 
     public static String getLevelKey(String id) {
         return MessageFormat.format(LEVEL_KEY_FORMAT, id);

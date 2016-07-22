@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="colorNeutralPrimary">#424242</color>
+    <color name="colorNeutralSecondary">#757575</color>
     <color name="colorNeutralDark">#212121</color>
     <color name="colorNeutralLight">#e0e0e0</color>
     <color name="colorAccent">#80cbc4</color>
@@ -8,15 +9,15 @@
     <color name="colorAlternative1">#4fc3f7</color>
     <color name="colorAlternative2">#ffb74d</color>
 
-    <color name="colorSuccessPrimary">#8bc34a</color>
-    <color name="colorSuccessDark">#33691e</color>
-    <color name="colorSuccessLight">#c5e1a5</color>
+    <color name="colorSuccessPrimary">#4caf50</color>
+    <color name="colorSuccessDark">#1b5e20</color>
+    <color name="colorSuccessLight">#a5d6a7</color>
 
     <color name="colorFailPrimary">#f44336</color>
     <color name="colorFailDark">#b71c1c</color>
     <color name="colorFailLight">#ef9a9a</color>
 
-    <array name="colorPalette">
+    <array name="colorPalette" tools:keep="@array/colorPalette">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#9575cd</item>
