@@ -7,11 +7,12 @@
     android:padding="0dp">
 
     <RelativeLayout
+        android:id="@+id/player2Area"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.20"
         android:background="@color/colorNeutralPrimary"
-        android:onClick="player2Tap"
+        android:onClick="playerTap"
         android:rotation="180">
 
         <TextView
@@ -27,7 +28,7 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/player2BottomText"
+            android:id="@+id/player2TapText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -47,7 +48,7 @@
         android:background="@color/colorNeutralDark">
 
         <LinearLayout
-            android:id="@+id/preLevel"
+            android:id="@+id/infoLevel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -123,13 +124,13 @@
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/level"
+            android:id="@+id/currentLevel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone" />
 
         <RelativeLayout
-            android:id="@+id/postMatch"
+            android:id="@+id/finalStandings"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -159,7 +160,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginStart="25dp"
                 android:contentDescription="@string/no_rematch_button"
-                android:onClick="back"
+                android:onClick="switchToMainMenu"
                 android:src="@drawable/no_rematch_button" />
 
             <ImageView
@@ -172,7 +173,7 @@
                 android:layout_marginEnd="25dp"
                 android:layout_marginRight="25dp"
                 android:contentDescription="@string/rematch_button"
-                android:onClick="rematch"
+                android:onClick="startMatch"
                 android:src="@drawable/rematch_button" />
 
 
@@ -191,11 +192,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/player1Area"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.20"
         android:background="@color/colorNeutralPrimary"
-        android:onClick="player1Tap">
+        android:onClick="playerTap">
 
         <TextView
             android:id="@+id/player1Score"
@@ -210,7 +212,7 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/player1BottomText"
+            android:id="@+id/player1TapText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

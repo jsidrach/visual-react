@@ -75,6 +75,7 @@ List of assets used:
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus
   - [ ] Ingame (can be disabled)
+- [ ] Dialog to confirm exit of match
 - [ ] [Maybe] Add custom font for all texts
 - [ ] Revisit all code to document it better
 - [ ] Think and document more possible levels (up to 15) for future implementation

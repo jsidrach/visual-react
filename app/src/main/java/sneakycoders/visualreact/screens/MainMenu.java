@@ -16,9 +16,15 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.main_menu);
     }
 
-    public void openPreferences(@SuppressWarnings("UnusedParameters") View view) {
+    public void switchToPreferences(@SuppressWarnings("UnusedParameters") View view) {
         // Switch to Preferences screen
         Intent intent = new Intent(MainMenu.this, Preferences.class);
+        startActivity(intent);
+    }
+
+    public void switchToMatch(@SuppressWarnings("UnusedParameters") View view) {
+        // Switch to Match screen
+        Intent intent = new Intent(MainMenu.this, Match.class);
         startActivity(intent);
     }
 }

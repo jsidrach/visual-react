@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/colorAlternative1"
-        android:onClick="openPreferences">
+        android:onClick="switchToMatch">
 
         <ImageView
             android:id="@+id/playIcon"
@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/colorAlternative2"
-        android:onClick="openPreferences">
+        android:onClick="switchToPreferences">
 
         <ImageView
             android:id="@+id/preferencesIcon"

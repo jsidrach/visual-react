@@ -20,5 +20,10 @@
             android:name=".screens.Preferences"
             android:label="@string/preferences_name"
             android:parentActivityName=".screens.MainMenu" />
+        <activity
+            android:name=".screens.Match"
+            android:label="@string/match_name"
+            android:parentActivityName=".screens.MainMenu" />
     </application>
+
 </manifest>
