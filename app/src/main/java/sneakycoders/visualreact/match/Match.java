@@ -128,7 +128,7 @@ public class Match extends AppCompatActivity {
                     state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
                     displayState();
                 }
-            }, R.integer.pause_between_levels);
+            }, getResources().getInteger(R.integer.pause_between_levels));
         }
         // Final standings
         else {

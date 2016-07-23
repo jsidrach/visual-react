@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+        Match
+    -->
     <!-- Milliseconds of pause between levels -->
-    <integer name="pause_between_levels">2000</integer>
+    <integer name="pause_between_levels">3000</integer>
 
     <!-- Blink animation -->
-    <integer name="blink_duration">2000</integer>
-    <item name="blink_max_alpha" format="float" type="fraction">1.0</item>
-    <item name="blink_min_alpha" format="float" type="fraction">0.7</item>
+    <integer name="blink_duration">1000</integer>
+    <fraction name="blink_max_alpha">100%</fraction>
+    <fraction name="blink_min_alpha">70%</fraction>
+
+    <!--
+        Levels
+    -->
 </resources>

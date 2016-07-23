@@ -27,7 +27,7 @@
     <string name="standing_winner">Winner!</string>
     <string name="standing_loser">So sad…</string>
     <string name="standing_tied">Draw</string>
-    <string name="cancel_match_confirmation">Are you sure you want to cancel the current match?</string>
+    <string name="cancel_match_confirmation">Are you sure you want to cancel the match?</string>
     <string name="cancel_match_yes">Cancel match</string>
     <string name="cancel_match_no">Continue playing</string>
 

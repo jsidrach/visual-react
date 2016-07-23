@@ -53,8 +53,10 @@ public class Player {
         score = 0;
 
         // Blink animation
-        blink = new AlphaAnimation(R.fraction.blink_min_alpha, R.fraction.blink_max_alpha);
-        blink.setDuration(R.integer.blink_duration);
+        blink = new AlphaAnimation(
+                activity.getResources().getFraction(R.fraction.blink_min_alpha, 1, 1),
+                activity.getResources().getFraction(R.fraction.blink_max_alpha, 1, 1));
+        blink.setDuration(activity.getResources().getInteger(R.integer.blink_duration));
         blink.setFillAfter(false);
         blink.setRepeatMode(Animation.REVERSE);
         blink.setRepeatCount(Animation.INFINITE);
@@ -142,6 +144,7 @@ public class Player {
         standingText.setTextColor(colorSuccessPrimary);
         standingText.setText(R.string.standing_winner);
         area.startAnimation(blink);
+        standingText.startAnimation(blink);
     }
 
     public void setStateTied() {
@@ -151,5 +154,6 @@ public class Player {
         standingText.setTextColor(colorTiePrimary);
         standingText.setText(R.string.standing_tied);
         area.startAnimation(blink);
+        standingText.startAnimation(blink);
     }
 }
