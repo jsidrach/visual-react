@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Array of available level ids -->
     <string-array name="levels">
         <item>color</item>
         <item>light</item>

@@ -1,4 +1,4 @@
-package sneakycoders.visualreact.screens;
+package sneakycoders.visualreact.launcher;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import sneakycoders.visualreact.R;
+import sneakycoders.visualreact.match.Match;
+import sneakycoders.visualreact.preferences.Preferences;
 
-public class MainMenu extends AppCompatActivity {
+public class Launcher extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +20,13 @@ public class MainMenu extends AppCompatActivity {
 
     public void switchToPreferences(@SuppressWarnings("UnusedParameters") View view) {
         // Switch to Preferences screen
-        Intent intent = new Intent(MainMenu.this, Preferences.class);
+        Intent intent = new Intent(Launcher.this, Preferences.class);
         startActivity(intent);
     }
 
     public void switchToMatch(@SuppressWarnings("UnusedParameters") View view) {
         // Switch to Match screen
-        Intent intent = new Intent(MainMenu.this, Match.class);
+        Intent intent = new Intent(Launcher.this, Match.class);
         startActivity(intent);
     }
 }

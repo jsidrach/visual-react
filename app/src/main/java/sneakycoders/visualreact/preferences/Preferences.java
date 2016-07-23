@@ -1,4 +1,4 @@
-package sneakycoders.visualreact.screens;
+package sneakycoders.visualreact.preferences;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.preference.PreferenceScreen;
 import java.util.List;
 
 import sneakycoders.visualreact.R;
-import sneakycoders.visualreact.utils.LevelsFactory;
+import sneakycoders.visualreact.levels.LevelsFactory;
 
 public class Preferences extends Activity {
 

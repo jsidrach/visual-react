@@ -1,6 +1,7 @@
-package sneakycoders.visualreact.utils;
+package sneakycoders.visualreact.preferences;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
@@ -89,6 +90,23 @@ public class SliderPreference extends DialogPreference implements
     }
 
     @Override
+    protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
+        if (restorePersistedValue) {
+            // Restore existing state
+            currentValue = this.getPersistedInt(this.defaultValue);
+        } else {
+            // Set default state from the XML attribute
+            currentValue = (Integer) defaultValue;
+            persistInt(currentValue);
+        }
+    }
+
+    @Override
+    protected Object onGetDefaultValue(TypedArray a, int index) {
+        return a.getInteger(index, defaultValue);
+    }
+
+    @Override
     public void onProgressChanged(SeekBar seek, int value, boolean fromTouch) {
         // Change text when the SeekBar changes
         currentValue = value + minValue;
@@ -103,13 +121,13 @@ public class SliderPreference extends DialogPreference implements
         return String.format(summary, value);
     }
 
-    // Not used
     @Override
     public void onStartTrackingTouch(SeekBar seek) {
+        // Not used
     }
 
-    // Not used
     @Override
     public void onStopTrackingTouch(SeekBar seek) {
+        // Not used
     }
 }

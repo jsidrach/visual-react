@@ -1,4 +1,4 @@
-package sneakycoders.visualreact.utils;
+package sneakycoders.visualreact.levels;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -35,7 +35,6 @@ public class LevelsFactory {
         int roundsPerLevel = preferences.getInt("rounds_per_level", 1);
         int totalRounds = levelsPerMatch * roundsPerLevel;
         List<String> roundsSequence = new ArrayList<>();
-
 
         // Fill the levels sequence
         while (roundsSequence.size() != totalRounds) {
@@ -92,7 +91,7 @@ public class LevelsFactory {
         return new ArrayList<>(Arrays.asList(c.getResources().getStringArray(R.array.levels)));
     }
 
-    // TODO: public static LevelFragment getLevelFragment(String id)
+    // TODO: public static Level getLevel(String id)
 
     public static String getLevelKey(String id) {
         return MessageFormat.format(LEVEL_KEY_FORMAT, id);

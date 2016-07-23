@@ -10,12 +10,13 @@
     <color name="colorAlternative2">#ffb74d</color>
 
     <color name="colorSuccessPrimary">#4caf50</color>
-    <color name="colorSuccessDark">#1b5e20</color>
     <color name="colorSuccessLight">#a5d6a7</color>
 
     <color name="colorFailPrimary">#f44336</color>
-    <color name="colorFailDark">#b71c1c</color>
     <color name="colorFailLight">#ef9a9a</color>
+
+    <color name="colorTiePrimary">#607d8b</color>
+    <color name="colorTieLight">#b0bec5</color>
 
     <array name="colorPalette" tools:keep="@array/colorPalette">
         <item>#f06292</item>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Milliseconds of pause between levels -->
+    <integer name="pause_between_levels">2000</integer>
+
+    <!-- Blink animation -->
+    <integer name="blink_duration">2000</integer>
+    <item name="blink_max_alpha" format="float" type="fraction">1.0</item>
+    <item name="blink_min_alpha" format="float" type="fraction">0.7</item>
+</resources>
