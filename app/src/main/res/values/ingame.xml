@@ -5,7 +5,6 @@
     -->
     <!-- Milliseconds of pause between levels -->
     <integer name="pause_between_levels">3000</integer>
-
     <!-- Blink animation -->
     <integer name="blink_duration">1000</integer>
     <fraction name="blink_max_alpha">100%</fraction>
@@ -14,4 +13,7 @@
     <!--
         Levels
     -->
+    <!-- LevelColor - min and max milliseconds delay before switching color -->
+    <integer name="level_color_min_delay">1000</integer>
+    <integer name="level_color_max_delay">10000</integer>
 </resources>

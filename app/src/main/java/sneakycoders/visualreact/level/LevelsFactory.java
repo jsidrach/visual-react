@@ -1,7 +1,8 @@
-package sneakycoders.visualreact.levels;
+package sneakycoders.visualreact.level;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 
 import java.text.MessageFormat;
@@ -9,8 +10,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import sneakycoders.visualreact.R;
+import sneakycoders.visualreact.level.levels.LevelColor;
 
 // Factory to deal with levels
 public class LevelsFactory {
@@ -91,7 +94,15 @@ public class LevelsFactory {
         return new ArrayList<>(Arrays.asList(c.getResources().getStringArray(R.array.levels)));
     }
 
-    // TODO: public static Level getLevel(String id)
+    public static Level getLevel(String id) {
+        if (id.equals("color")) {
+            return new LevelColor();
+        }
+        // Color
+        else {
+            return new LevelColor();
+        }
+    }
 
     public static String getLevelKey(String id) {
         return MessageFormat.format(LEVEL_KEY_FORMAT, id);
@@ -105,6 +116,11 @@ public class LevelsFactory {
     public static String getLevelDescription(String id, Context c) {
         String descriptionId = MessageFormat.format(LEVEL_DESCRIPTION_FORMAT, id);
         return getStringResource(descriptionId, c);
+    }
+
+    public static int getRandomColor(Context c) {
+        String[] colors = c.getResources().getStringArray(R.array.colorPalette);
+        return Color.parseColor(colors[new Random().nextInt(colors.length)]);
     }
 
     private static String getStringResource(String id, Context c) {

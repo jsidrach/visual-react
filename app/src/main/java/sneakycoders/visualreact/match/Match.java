@@ -11,7 +11,8 @@ import android.view.View;
 import java.util.List;
 
 import sneakycoders.visualreact.R;
-import sneakycoders.visualreact.levels.LevelsFactory;
+import sneakycoders.visualreact.level.Level;
+import sneakycoders.visualreact.level.LevelsFactory;
 
 public class Match extends AppCompatActivity {
 
@@ -31,11 +32,14 @@ public class Match extends AppCompatActivity {
     private boolean showTips;
     // Level information
     private View levelInfo;
+    // Level container
+    private View levelContainer;
     // Current level
-    // TODO: Change to base abstract class, with solve() method
-    private View currentLevel;
+    private Level currentLevel;
     // Final standings
     private View finalStandings;
+    // Handler for callbacks
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,7 @@ public class Match extends AppCompatActivity {
 
         // Set view bindings
         levelInfo = findViewById(R.id.infoLevel);
-        currentLevel = findViewById(R.id.currentLevel);
+        levelContainer = findViewById(R.id.levelContainer);
         finalStandings = findViewById(R.id.finalStandings);
 
         // Set players information bindings
@@ -55,6 +59,9 @@ public class Match extends AppCompatActivity {
 
         // Read show tips flag
         showTips = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("show_level_tips", false);
+
+        // Set handler
+        handler = new Handler();
 
         // Start match
         startMatch(null);
@@ -66,6 +73,7 @@ public class Match extends AppCompatActivity {
 
         // Reset current level
         currentLevelId = "";
+        currentLevel = null;
 
         // Reset players
         player1.reset();
@@ -102,33 +110,31 @@ public class Match extends AppCompatActivity {
             player2.setStateInfo(levelName, levelDescription);
 
             // Show/hide corresponding views
-            currentLevel.setVisibility(View.GONE);
+            levelContainer.setVisibility(View.GONE);
             levelInfo.setVisibility(View.VISIBLE);
         } else if (state == State.Level) {
-            // TODO: Replace level fragment
+            // Replace current level
+            currentLevel = LevelsFactory.getLevel(currentLevelId);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.levelContainer, currentLevel)
+                    .commit();
+
             // Set players states
             player1.setStatePlaying();
             player2.setStatePlaying();
 
             // Show/hide corresponding views
             levelInfo.setVisibility(View.GONE);
-            currentLevel.setVisibility(View.VISIBLE);
+            levelContainer.setVisibility(View.VISIBLE);
         } else if (state == State.LevelResult) {
-            // boolean result = currentLevel.solve();
-            boolean result = true;
-            if (result) {
+            if (currentLevel.result()) {
                 lastTap.setStateSuccess();
             } else {
                 lastTap.setStateFail();
             }
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
-                    displayState();
-                }
-            }, getResources().getInteger(R.integer.pause_between_levels));
+            // Switch to next state after a delay
+            delayNextState();
         }
         // Final standings
         else {
@@ -146,7 +152,7 @@ public class Match extends AppCompatActivity {
             }
 
             // Show/hide corresponding views
-            currentLevel.setVisibility(View.GONE);
+            levelContainer.setVisibility(View.GONE);
             finalStandings.setVisibility(View.VISIBLE);
         }
     }
@@ -161,6 +167,36 @@ public class Match extends AppCompatActivity {
             lastTap = (view.getId() == R.id.player1Area) ? player1 : player2;
             state = State.LevelResult;
             displayState();
+        }
+    }
+
+    private void delayNextState() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .remove(currentLevel)
+                        .commit();
+                currentLevel = null;
+                state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
+                displayState();
+            }
+        }, getResources().getInteger(R.integer.pause_between_levels));
+    }
+
+    @Override
+    public void onUserLeaveHint() {
+        // Remove all callbacks
+        handler.removeCallbacksAndMessages(null);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Continue where we left off
+        if (state == State.LevelResult) {
+            delayNextState();
         }
     }
 
@@ -181,6 +217,14 @@ public class Match extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        // Remove all callbacks
+        handler.removeCallbacksAndMessages(null);
     }
 
     // States of the match

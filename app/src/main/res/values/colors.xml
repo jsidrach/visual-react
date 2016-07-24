@@ -18,7 +18,7 @@
     <color name="colorTiePrimary">#607d8b</color>
     <color name="colorTieLight">#b0bec5</color>
 
-    <array name="colorPalette" tools:keep="@array/colorPalette">
+    <string-array name="colorPalette" tools:keep="@array/colorPalette">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#9575cd</item>
@@ -33,5 +33,5 @@
         <item>#ffb74d</item>
         <item>#ff8a65</item>
         <item>#a1887f</item>
-    </array>
+    </string-array>
 </resources>

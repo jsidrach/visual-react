@@ -12,7 +12,7 @@ import java.text.NumberFormat;
 import sneakycoders.visualreact.R;
 
 // Player information and data bindings
-public class Player {
+class Player {
     // Player area
     final private View area;
     // Score text

@@ -64,18 +64,18 @@ List of assets used:
 - [x] ~~Make sure at least one game is selected in the settings screen~~
 - [x] Improve translation of numbers
 - [x] Add support for bidirectional strings
+- [x] Dialog to confirm exit of match
 - [x] Make the level selector autogenerate dynamically
-- [ ] Implement basic common class for games
+- [x] Implement basic common class for games
 - [ ] Implement games
   - [ ] Color
-  - [ ] Light
   - [ ] Countdown
+  - [ ] Light
   - [ ] Collision
   - [ ] Connection
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus
   - [ ] Ingame (can be disabled)
-- [ ] Dialog to confirm exit of match
 - [ ] [Maybe] Add custom font for all texts
 - [ ] Revisit all code to document it better
 - [ ] Think and document more possible levels (up to 15) for future implementation
@@ -95,5 +95,4 @@ List of assets used:
 
 ## References (remove as implemented)
 
-- [Add blink to text (for winner/loser texts)](http://stackoverflow.com/questions/9294112/how-to-make-the-textview-blinking)
 - [Disable ads on runtime](http://stackoverflow.com/questions/4549401/correctly-disable-admob-ads)

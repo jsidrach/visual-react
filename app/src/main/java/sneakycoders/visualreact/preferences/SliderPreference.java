@@ -20,18 +20,15 @@ public class SliderPreference extends DialogPreference implements
     private static final String ATTR_DEFAULT_VALUE = "defaultValue";
     private static final String ATTR_MIN_VALUE = "minValue";
     private static final String ATTR_MAX_VALUE = "maxValue";
-
     // Default values
     private static final int DEFAULT_MIN_VALUE = 0;
     private static final int DEFAULT_MAX_VALUE = 100;
     private static final int DEFAULT_VALUE = 50;
-
     // Values
     final private int minValue;
     final private int maxValue;
     final private int defaultValue;
     private int currentValue;
-
     // View
     private TextView valueText;
 
