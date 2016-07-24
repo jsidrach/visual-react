@@ -15,5 +15,15 @@
     -->
     <!-- LevelColor - min and max milliseconds delay before switching color -->
     <integer name="level_color_min_delay">1000</integer>
-    <integer name="level_color_max_delay">10000</integer>
+    <integer name="level_color_max_delay">15000</integer>
+    <!-- LevelCountdown -->
+    <!-- Minimum and maximum starting numbers -->
+    <integer name="level_countdown_min_start">5</integer>
+    <integer name="level_countdown_max_start">15</integer>
+    <!-- Minimum and maximum step in milliseconds between numbers -->
+    <integer name="level_countdown_min_step">250</integer>
+    <integer name="level_countdown_max_step">2000</integer>
+    <!-- Minimum and maximum numbers starting which the countdown hides -->
+    <integer name="level_countdown_min_hide">3</integer>
+    <integer name="level_countdown_max_hide_offset">2</integer>
 </resources>

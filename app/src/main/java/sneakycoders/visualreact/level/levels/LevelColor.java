@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.Random;
-
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.Level;
 import sneakycoders.visualreact.level.LevelsFactory;
@@ -29,16 +27,19 @@ public class LevelColor extends Level {
         // Countdown in milliseconds before switching the color
         int minDelay = getResources().getInteger(R.integer.level_color_min_delay);
         int maxDelay = getResources().getInteger(R.integer.level_color_max_delay);
-        int countdown = (new Random()).nextInt(maxDelay - minDelay + 1) + minDelay;
+        int countdown = getRandomInt(minDelay, maxDelay);
 
         // Create view
         final View rootView = inflater.inflate(R.layout.level_color, container, false);
+
+        // Color
+        final int color = LevelsFactory.getRandomColor(getActivity());
 
         // Set timer to change screen color
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                rootView.setBackgroundColor(LevelsFactory.getRandomColor(getActivity()));
+                rootView.setBackgroundColor(color);
                 result = true;
             }
         }, countdown);

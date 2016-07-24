@@ -14,6 +14,7 @@ import java.util.Random;
 
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.levels.LevelColor;
+import sneakycoders.visualreact.level.levels.LevelCountdown;
 
 // Factory to deal with levels
 public class LevelsFactory {
@@ -95,8 +96,8 @@ public class LevelsFactory {
     }
 
     public static Level getLevel(String id) {
-        if (id.equals("color")) {
-            return new LevelColor();
+        if (id.equals("countdown")) {
+            return new LevelCountdown();
         }
         // Color
         else {
