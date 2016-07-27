@@ -31,6 +31,7 @@
 * Do not hardcode strings and constants
 * Avoid using external libraries as much as possible, to ease the future implementation of the game in other platforms
 * Auto format the code, and fix all warnings and errors before committing
+* Use ```camelCase``` for code and ```snake_case``` for resources
 * Keep the code simple
 
 
@@ -39,10 +40,15 @@
 | Name       | Description                                          |
 |:-----------|:-----------------------------------------------------|
 | Color      | Tap after the color changes                          |
-| Light      | Tap after there are more light cells than dark cells |
 | Countdown  | Tap after the countdown passes zero                  |
+| Light      | Tap after there are more light cells than dark cells |
 | Collision  | Tap when the shapes are colliding                    |
-| Connection | Tap when the two extremes are connected              |
+| TicTacToe  | Tap when three of the same type are in line          |
+| Pair       | Tap when there are two shapes equal                  |
+| Variety    | Tap when there are five different shapes             |
+| Fit        | Tap after one shape fits into the other one          |
+| Singular   | Tap when there is a different shape among all        |
+| Labyrinth  | Tap when the two extremes are connected              |
 
 ## Assets
 
@@ -62,29 +68,34 @@ List of assets used:
 - [x] ~~Implement main screen~~
 - [x] ~~Implement settings screen~~
 - [x] ~~Make sure at least one game is selected in the settings screen~~
-- [x] Improve translation of numbers
-- [x] Add support for bidirectional strings
-- [x] Dialog to confirm exit of match
-- [x] Make the level selector autogenerate dynamically
-- [x] Implement basic common class for games
+- [x] ~~Improve translation of numbers~~
+- [x] ~~Add support for bidirectional strings~~
+- [x] ~~Dialog to confirm exit of match~~
+- [x] ~~Make the level selector autogenerate dynamically~~
+- [x] ~~Implement basic common class for games~~
 - [ ] Implement games
-  - [ ] Color
-  - [ ] Countdown
-  - [ ] Light
-  - [ ] Collision
-  - [ ] Connection
+  - [x] [J] Color
+  - [x] [J] Countdown
+  - [ ] [J] Light
+  - [ ] [J] Collision
+  - [ ] [L] TicTacToe
+  - [ ] [L] Pair
+  - [ ] [L] Variety
+  - [ ] [J] Fit
+  - [ ] [L] Singular
+  - [ ] [J] Labyrinth
+- [ ] Revisit all code to document it better
+- [ ] Integrate Firebase
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus
   - [ ] Ingame (can be disabled)
-- [ ] [Maybe] Add custom font for all texts
-- [ ] Revisit all code to document it better
-- [ ] Think and document more possible levels (up to 15) for future implementation
-- [ ] Review translation guidelines, RTL (left -> start, right -> end), format numbers, etc.
-- [ ] Translate to Chinese and Spanish
-- [ ] Translate to additional languages if possible
 - [ ] Run Lint, fix issues detected
 - [ ] Design app icon
 - [ ] Write app description
+- [ ] Review translation guidelines, RTL (left -> start, right -> end), format numbers, etc.
+- [ ] Translate to Chinese and Spanish
+- [ ] Translate to additional languages, use paid service if needed
+- [ ] Think and document more possible levels for future versions
 - [ ] Make screenshots
 - [ ] Create SneakyCoders account on Play Store
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
