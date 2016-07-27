@@ -11,11 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/colorAlternative1"
+        android:background="@color/alternative_1"
         android:onClick="switchToMatch">
 
         <ImageView
-            android:id="@+id/playIcon"
+            android:id="@+id/play_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -27,11 +27,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/colorAlternative2"
+        android:background="@color/alternative_2"
         android:onClick="switchToPreferences">
 
         <ImageView
-            android:id="@+id/preferencesIcon"
+            android:id="@+id/preferences_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

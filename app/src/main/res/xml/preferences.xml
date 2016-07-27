@@ -32,13 +32,13 @@
             slider:minValue="1" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="levels_preferences"
+        android:key="levels_selected_category"
         android:selectable="false"
         android:title="@string/levels_selected_category">
         <!-- Stub for selected levels -->
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="ads_preferences"
+        android:key="ads_category"
         android:title="@string/ads_category">
         <SwitchPreference
             android:defaultValue="true"

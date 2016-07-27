@@ -54,22 +54,22 @@ class Player {
 
         // Blink animation
         blink = new AlphaAnimation(
-                activity.getResources().getFraction(R.fraction.blink_min_alpha, 1, 1),
-                activity.getResources().getFraction(R.fraction.blink_max_alpha, 1, 1));
-        blink.setDuration(activity.getResources().getInteger(R.integer.blink_duration));
+                activity.getResources().getFraction(R.fraction.match_blink_min_alpha, 1, 1),
+                activity.getResources().getFraction(R.fraction.match_blink_max_alpha, 1, 1));
+        blink.setDuration(activity.getResources().getInteger(R.integer.match_blink_duration));
         blink.setFillAfter(false);
         blink.setRepeatMode(Animation.REVERSE);
         blink.setRepeatCount(Animation.INFINITE);
 
         // Get colors
-        colorNeutralPrimary = ContextCompat.getColor(activity, R.color.colorNeutralPrimary);
-        colorNeutralSecondary = ContextCompat.getColor(activity, R.color.colorNeutralSecondary);
-        colorFailPrimary = ContextCompat.getColor(activity, R.color.colorFailPrimary);
-        colorFailLight = ContextCompat.getColor(activity, R.color.colorFailLight);
-        colorSuccessPrimary = ContextCompat.getColor(activity, R.color.colorSuccessPrimary);
-        colorSuccessLight = ContextCompat.getColor(activity, R.color.colorSuccessLight);
-        colorTiePrimary = ContextCompat.getColor(activity, R.color.colorTiePrimary);
-        colorTieLight = ContextCompat.getColor(activity, R.color.colorTieLight);
+        colorNeutralPrimary = ContextCompat.getColor(activity, R.color.neutral_primary);
+        colorNeutralSecondary = ContextCompat.getColor(activity, R.color.neutral_secondary);
+        colorFailPrimary = ContextCompat.getColor(activity, R.color.fail_primary);
+        colorFailLight = ContextCompat.getColor(activity, R.color.fail_light);
+        colorSuccessPrimary = ContextCompat.getColor(activity, R.color.success_primary);
+        colorSuccessLight = ContextCompat.getColor(activity, R.color.success_light);
+        colorTiePrimary = ContextCompat.getColor(activity, R.color.tie_primary);
+        colorTieLight = ContextCompat.getColor(activity, R.color.tie_light);
     }
 
     public int getScore() {

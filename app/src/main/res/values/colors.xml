@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="colorNeutralPrimary">#424242</color>
-    <color name="colorNeutralSecondary">#757575</color>
-    <color name="colorNeutralDark">#212121</color>
-    <color name="colorNeutralLight">#e0e0e0</color>
-    <color name="colorAccent">#80cbc4</color>
+    <color name="neutral_primary">#424242</color>
+    <color name="neutral_secondary">#757575</color>
+    <color name="neutral_dark">#212121</color>
+    <color name="neutral_light">#e0e0e0</color>
+    <color name="accent">#80cbc4</color>
 
-    <color name="colorAlternative1">#4fc3f7</color>
-    <color name="colorAlternative2">#ffb74d</color>
+    <color name="alternative_1">#4fc3f7</color>
+    <color name="alternative_2">#ffb74d</color>
 
-    <color name="colorSuccessPrimary">#4caf50</color>
-    <color name="colorSuccessLight">#a5d6a7</color>
+    <color name="success_primary">#4caf50</color>
+    <color name="success_light">#a5d6a7</color>
 
-    <color name="colorFailPrimary">#f44336</color>
-    <color name="colorFailLight">#ef9a9a</color>
+    <color name="fail_primary">#f44336</color>
+    <color name="fail_light">#ef9a9a</color>
 
-    <color name="colorTiePrimary">#607d8b</color>
-    <color name="colorTieLight">#b0bec5</color>
+    <color name="tie_primary">#607d8b</color>
+    <color name="tie_light">#b0bec5</color>
 
-    <string-array name="colorPalette" tools:keep="@array/colorPalette">
+    <string-array name="palette" tools:keep="@array/colorPalette">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#9575cd</item>

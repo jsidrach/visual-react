@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text -->
+    <dimen name="text_tiny">20sp</dimen>
+    <dimen name="text_TINY">25sp</dimen>
+    <dimen name="text_small">30sp</dimen>
+    <dimen name="text_SMALL">35sp</dimen>
+    <dimen name="text_medium">50sp</dimen>
+    <dimen name="text_MEDIUM">60sp</dimen>
+    <dimen name="text_large">75sp</dimen>
+    <dimen name="text_LARGE">90sp</dimen>
+    <dimen name="text_huge">100sp</dimen>
+    <dimen name="text_HUGE">115sp</dimen>
+</resources>

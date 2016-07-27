@@ -120,7 +120,7 @@ public class LevelsFactory {
     }
 
     public static int getRandomColor(Context c) {
-        String[] colors = c.getResources().getStringArray(R.array.colorPalette);
+        String[] colors = c.getResources().getStringArray(R.array.palette);
         return Color.parseColor(colors[new Random().nextInt(colors.length)]);
     }
 

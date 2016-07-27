@@ -29,7 +29,7 @@ public class Preferences extends Activity {
 
     public static class PreferencesFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
         // Key of the levels category
-        private static final String LEVELS_CATEGORY = "levels_preferences";
+        private static final String LEVELS_CATEGORY = "levels_selected_category";
 
         @Override
         public void onCreate(Bundle savedInstanceState) {

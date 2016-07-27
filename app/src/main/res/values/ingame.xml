@@ -4,11 +4,11 @@
         Match
     -->
     <!-- Milliseconds of pause between levels -->
-    <integer name="pause_between_levels">3000</integer>
+    <integer name="match_pause_between_levels">3000</integer>
     <!-- Blink animation -->
-    <integer name="blink_duration">1000</integer>
-    <fraction name="blink_max_alpha">100%</fraction>
-    <fraction name="blink_min_alpha">70%</fraction>
+    <integer name="match_blink_duration">1000</integer>
+    <fraction name="match_blink_max_alpha">100%</fraction>
+    <fraction name="match_blink_min_alpha">70%</fraction>
 
     <!--
         Levels
@@ -18,12 +18,12 @@
     <integer name="level_color_max_delay">15000</integer>
     <!-- LevelCountdown -->
     <!-- Minimum and maximum starting numbers -->
-    <integer name="level_countdown_min_start">5</integer>
+    <integer name="level_countdown_min_start">6</integer>
     <integer name="level_countdown_max_start">15</integer>
     <!-- Minimum and maximum step in milliseconds between numbers -->
-    <integer name="level_countdown_min_step">250</integer>
-    <integer name="level_countdown_max_step">2000</integer>
+    <integer name="level_countdown_min_delay">500</integer>
+    <integer name="level_countdown_max_delay">1500</integer>
     <!-- Minimum and maximum numbers starting which the countdown hides -->
     <integer name="level_countdown_min_hide">3</integer>
-    <integer name="level_countdown_max_hide_offset">2</integer>
+    <integer name="level_countdown_max_hide_offset">3</integer>
 </resources>

@@ -3,8 +3,8 @@ package sneakycoders.visualreact.level.levels;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
-import android.support.annotation.Dimension;
 import android.support.v4.content.ContextCompat;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,22 +46,22 @@ public class LevelCountdown extends Level {
         final View rootView = inflater.inflate(R.layout.level_countdown, container, false);
 
         // Get countdowns views and set the color
-        player1Countdown = (TextView) rootView.findViewById(R.id.levelCountdownPlayer1);
-        player2Countdown = (TextView) rootView.findViewById(R.id.levelCountdownPlayer2);
+        player1Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_1);
+        player2Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_2);
         int color = LevelsFactory.getRandomColor(getActivity());
         player1Countdown.setTextColor(color);
         player2Countdown.setTextColor(color);
 
         // Set colors
-        successColor = ContextCompat.getColor(getActivity(), R.color.colorSuccessPrimary);
-        failColor = ContextCompat.getColor(getActivity(), R.color.colorFailPrimary);
+        successColor = ContextCompat.getColor(getActivity(), R.color.success_primary);
+        failColor = ContextCompat.getColor(getActivity(), R.color.fail_primary);
 
         // Get parameters
         int minStart = getResources().getInteger(R.integer.level_countdown_min_start);
         int maxStart = getResources().getInteger(R.integer.level_countdown_max_start);
         final int start = getRandomInt(minStart, maxStart);
-        int minStep = getResources().getInteger(R.integer.level_countdown_min_step);
-        int maxStep = getResources().getInteger(R.integer.level_countdown_max_step);
+        int minStep = getResources().getInteger(R.integer.level_countdown_min_delay);
+        int maxStep = getResources().getInteger(R.integer.level_countdown_max_delay);
         final int step = getRandomInt(minStep, maxStep);
         int minHide = getResources().getInteger(R.integer.level_countdown_min_hide);
         int maxHideOffset = getResources().getInteger(R.integer.level_countdown_max_hide_offset);
@@ -106,9 +106,7 @@ public class LevelCountdown extends Level {
         countDownTimer.cancel();
 
         // Assign time offset
-        NumberFormat f = new DecimalFormat("+#;-#");
-        f.setMinimumFractionDigits(2);
-        f.setMaximumFractionDigits(2);
+        NumberFormat f = new DecimalFormat("+0.00;-0.00");
         String timeOffsetStr = f.format(timeOffset);
         player1Countdown.setText(timeOffsetStr);
         player2Countdown.setText(timeOffsetStr);
@@ -117,8 +115,8 @@ public class LevelCountdown extends Level {
         int color = result ? successColor : failColor;
         player1Countdown.setTextColor(color);
         player2Countdown.setTextColor(color);
-        player1Countdown.setTextSize(Dimension.SP, 60);
-        player2Countdown.setTextSize(Dimension.SP, 60);
+        player1Countdown.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.text_MEDIUM));
+        player2Countdown.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.text_MEDIUM));
 
         // Set visibility
         player1Countdown.setVisibility(View.VISIBLE);

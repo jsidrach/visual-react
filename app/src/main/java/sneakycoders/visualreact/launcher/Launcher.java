@@ -14,6 +14,7 @@ public class Launcher extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Inflate layout
         setContentView(R.layout.main_menu);
     }

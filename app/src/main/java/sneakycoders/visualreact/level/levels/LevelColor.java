@@ -51,6 +51,7 @@ public class LevelColor extends Level {
     public boolean result() {
         // Remove all callbacks
         handler.removeCallbacksAndMessages(null);
+
         // Return current result
         return result;
     }

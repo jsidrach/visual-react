@@ -37,13 +37,13 @@
             Each <id> must be included in values/arrays.xml/levels
     -->
     <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
-    <string name="level_color_description" tools:keep="@string/level_color_description">Tap when the color changes</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">Tap after the color changes</string>
     <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
-    <string name="level_light_description" tools:keep="@string/level_light_description">Tap when there are more light cells than dark cells</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Tap after there are more light cells than dark cells</string>
     <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Countdown</string>
-    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tap when the countdown passes zero</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tap after the countdown passes zero</string>
     <string name="level_collision_name" tools:keep="@string/level_collision_name">Collision</string>
-    <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes collide</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes are colliding</string>
     <string name="level_connection_name" tools:keep="@string/level_connection_name">Connection</string>
     <string name="level_connection_description" tools:keep="@string/level_connection_description">Tap when the two extremes are connected</string>
 </resources>

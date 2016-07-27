@@ -36,13 +36,13 @@
 
 ## Levels
 
-| Name       | Description (tap the screen when...)       |
-|:-----------|:-------------------------------------------|
-| Color      | The color changes                          |
-| Light      | There are more light cells than dark cells |
-| Countdown  | The countdown passes zero                  |
-| Collision  | The shapes collide                         |
-| Connection | The two extremes are connected             |
+| Name       | Description                                          |
+|:-----------|:-----------------------------------------------------|
+| Color      | Tap after the color changes                          |
+| Light      | Tap after there are more light cells than dark cells |
+| Countdown  | Tap after the countdown passes zero                  |
+| Collision  | Tap when the shapes are colliding                    |
+| Connection | Tap when the two extremes are connected              |
 
 ## Assets
 

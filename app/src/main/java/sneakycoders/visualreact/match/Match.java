@@ -49,13 +49,13 @@ public class Match extends AppCompatActivity {
         setContentView(R.layout.match);
 
         // Set view bindings
-        levelInfo = findViewById(R.id.infoLevel);
-        levelContainer = findViewById(R.id.levelContainer);
-        finalStandings = findViewById(R.id.finalStandings);
+        levelInfo = findViewById(R.id.level_info);
+        levelContainer = findViewById(R.id.level_container);
+        finalStandings = findViewById(R.id.final_standings);
 
         // Set players information bindings
-        player1 = new Player(this, R.id.player1Area, R.id.player1Score, R.id.player1TapText, R.id.player1LevelName, R.id.player1LevelDescription, R.id.player1Standing);
-        player2 = new Player(this, R.id.player2Area, R.id.player2Score, R.id.player2TapText, R.id.player2LevelName, R.id.player2LevelDescription, R.id.player2Standing);
+        player1 = new Player(this, R.id.area_player_1, R.id.score_player_1, R.id.tap_text_player_1, R.id.level_name_player_1, R.id.level_description_player_1, R.id.standing_player_1);
+        player2 = new Player(this, R.id.area_player_2, R.id.score_player_2, R.id.tap_text_player_2, R.id.level_name_player_2, R.id.level_description_player_2, R.id.standing_player_2);
 
         // Read show tips flag
         showTips = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("show_level_tips", false);
@@ -117,7 +117,7 @@ public class Match extends AppCompatActivity {
             currentLevel = LevelsFactory.getLevel(currentLevelId);
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.levelContainer, currentLevel)
+                    .replace(R.id.level_container, currentLevel)
                     .commit();
 
             // Set players states
@@ -164,7 +164,7 @@ public class Match extends AppCompatActivity {
             displayState();
         } else if (state == State.Level) {
             // Store the player who tapped, switch to level result
-            lastTap = (view.getId() == R.id.player1Area) ? player1 : player2;
+            lastTap = (view.getId() == R.id.area_player_1) ? player1 : player2;
             state = State.LevelResult;
             displayState();
         }
@@ -182,7 +182,7 @@ public class Match extends AppCompatActivity {
                 state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
                 displayState();
             }
-        }, getResources().getInteger(R.integer.pause_between_levels));
+        }, getResources().getInteger(R.integer.match_pause_between_levels));
     }
 
     @Override
