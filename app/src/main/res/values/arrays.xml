@@ -3,9 +3,14 @@
     <!-- Array of available level ids -->
     <string-array name="levels">
         <item>color</item>
-        <item>light</item>
         <item>countdown</item>
+        <item>light</item>
         <item>collision</item>
-        <item>connection</item>
+        <item>tictactoe</item>
+        <item>pair</item>
+        <item>variety</item>
+        <item>fit</item>
+        <item>singular</item>
+        <item>labyrinth</item>
     </string-array>
 </resources>
