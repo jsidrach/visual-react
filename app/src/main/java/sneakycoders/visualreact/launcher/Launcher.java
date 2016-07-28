@@ -16,7 +16,7 @@ public class Launcher extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Inflate layout
-        setContentView(R.layout.main_menu);
+        setContentView(R.layout.launcher);
     }
 
     public void switchToPreferences(@SuppressWarnings("UnusedParameters") View view) {
