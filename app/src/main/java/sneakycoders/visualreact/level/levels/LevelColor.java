@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.Level;
-import sneakycoders.visualreact.level.LevelsFactory;
 
 public class LevelColor extends Level {
     // Handler for the countdown
@@ -33,7 +32,7 @@ public class LevelColor extends Level {
         final View rootView = inflater.inflate(R.layout.level_color, container, false);
 
         // Color
-        final int color = LevelsFactory.getRandomColor(getActivity());
+        final int color = getRandomColor();
 
         // Set timer to change screen color
         handler.postDelayed(new Runnable() {

@@ -2,7 +2,6 @@ package sneakycoders.visualreact.level;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.preference.PreferenceManager;
 
 import java.text.MessageFormat;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.levels.LevelColor;
@@ -117,31 +115,6 @@ public class LevelsFactory {
     public static String getLevelDescription(String id, Context c) {
         String descriptionId = MessageFormat.format(LEVEL_DESCRIPTION_FORMAT, id);
         return getStringResource(descriptionId, c);
-    }
-
-    public static Integer getRandomColor(Context c) {
-        String[] palette = c.getResources().getStringArray(R.array.palette);
-        return Color.parseColor(palette[new Random().nextInt(palette.length)]);
-    }
-
-    public static Integer[] getRandomColors(Context c, int n) {
-        List<String> hexPalette = Arrays.asList(c.getResources().getStringArray(R.array.palette));
-        List<Integer> palette = new ArrayList<>();
-        List<Integer> colors = new ArrayList<>();
-
-        // Get colors
-        for (String hex : hexPalette) {
-            palette.add(Color.parseColor(hex));
-        }
-
-        // Fill colors
-        int i = 0;
-        while (i != n) {
-            Collections.shuffle(palette);
-            colors.addAll(palette.subList(0, Math.min(n - i, palette.size())));
-        }
-
-        return colors.toArray(new Integer[n]);
     }
 
     private static String getStringResource(String id, Context c) {

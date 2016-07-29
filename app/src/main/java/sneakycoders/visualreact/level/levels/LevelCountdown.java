@@ -15,7 +15,6 @@ import java.text.NumberFormat;
 
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.Level;
-import sneakycoders.visualreact.level.LevelsFactory;
 
 public class LevelCountdown extends Level {
     // Counter
@@ -48,7 +47,7 @@ public class LevelCountdown extends Level {
         // Get countdowns views and set the color
         player1Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_1);
         player2Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_2);
-        int color = LevelsFactory.getRandomColor(getActivity());
+        int color = getRandomColor();
         player1Countdown.setTextColor(color);
         player2Countdown.setTextColor(color);
 
