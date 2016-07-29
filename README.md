@@ -5,12 +5,12 @@
 
 ## Screenshots
 
-[TODO]
+See [here](docs/README.md)
 
 
 ## License
 
-[MIT](LICENSE) - Feel free to use and edit.
+[MIT](LICENSE) - Feel free to use and edit
 
 
 ## Guidelines

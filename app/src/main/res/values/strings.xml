@@ -38,12 +38,22 @@
     -->
     <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
     <string name="level_color_description" tools:keep="@string/level_color_description">Tap after the color changes</string>
-    <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
-    <string name="level_light_description" tools:keep="@string/level_light_description">Tap after there are more light cells than dark cells</string>
     <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Countdown</string>
     <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tap after the countdown passes zero</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Tap after there are more light cells than dark cells</string>
     <string name="level_collision_name" tools:keep="@string/level_collision_name">Collision</string>
     <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes are colliding</string>
-    <string name="level_connection_name" tools:keep="@string/level_connection_name">Connection</string>
-    <string name="level_connection_description" tools:keep="@string/level_connection_description">Tap when the two extremes are connected</string>
+    <string name="level_tictactoe_name" tools:keep="@string/level_tictactoe_name">TicTacToe</string>
+    <string name="level_tictactoe_description" tools:keep="@string/level_tictactoe_description">Tap when three of the same type are in line</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">Pair</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Tap when there are two shapes equal</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">Variety</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Tap when there are five different shapes</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">Fit</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">Tap after one shape fits into the other one</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">Singular</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Tap when there is a different shape among all</string>
+    <string name="level_labyrinth_name" tools:keep="@string/level_labyrinth_name">Labyrinth</string>
+    <string name="level_labyrinth_description" tools:keep="@string/level_labyrinth_description">Tap when the two extremes are connected</string>
 </resources>
