@@ -56,10 +56,10 @@ See [here](docs/screenshots/README.md)
 
 ### <a name="development-guidelines"></a> Development
 
+* Use [Android Studio](https://developer.android.com/studio/index.html)
 * Follow the [Android Core App Quality Guidelines](https://developer.android.com/distribute/essentials/quality/core.html)
-* TODO: colors
-* TODO: Android Studio
 * Do not hardcode strings and constants
+* Adhere to the existing color palette
 * Avoid using external libraries as much as possible, to ease the future implementation of the game in other platforms
 * Auto format the code, and fix all warnings and errors before committing
 * Use ```camelCase``` for code and ```snake_case``` for resources
@@ -81,9 +81,10 @@ See [here](docs/screenshots/README.md)
 
 List of assets used:
 
-* [Play Icon](http://www.flaticon.com): Freepik ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Settings Icon](http://www.flaticon.com/authors/egor-rumyantsev): Egor Rumyantsev ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Rematch Icon](http://www.flaticon.com/authors/vaadin): Vaadin ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Play Icon](docs/icons/play_icon.svg): [Freepik](http://www.flaticon.com) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Preferences Icon](docs/icons/preferences_icon.svg): [Egor Rumyantsev](http://www.flaticon.com/authors/egor-rumyantsev) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Rematch Icon](docs/icons/rematch_icon.svg): [Vaadin](http://www.flaticon.com/authors/vaadin) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+
 
 ## <a name="roadmap"></a> Roadmap
 
@@ -93,7 +94,7 @@ List of assets used:
 - [x] ~~Choose color palette~~
 - [x] ~~Implement main screen~~
 - [x] ~~Implement settings screen~~
-- [x] ~~Make sure at least one game is selected in the settings screen~~
+  - [x] ~~Make sure at least one game is selected in the settings screen~~
 - [x] ~~Improve translation of numbers~~
 - [x] ~~Add support for bidirectional strings~~
 - [x] ~~Dialog to confirm exit of match~~

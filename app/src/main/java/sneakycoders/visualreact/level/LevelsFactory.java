@@ -119,9 +119,29 @@ public class LevelsFactory {
         return getStringResource(descriptionId, c);
     }
 
-    public static int getRandomColor(Context c) {
-        String[] colors = c.getResources().getStringArray(R.array.palette);
-        return Color.parseColor(colors[new Random().nextInt(colors.length)]);
+    public static Integer getRandomColor(Context c) {
+        String[] palette = c.getResources().getStringArray(R.array.palette);
+        return Color.parseColor(palette[new Random().nextInt(palette.length)]);
+    }
+
+    public static Integer[] getRandomColors(Context c, int n) {
+        List<String> hexPalette = Arrays.asList(c.getResources().getStringArray(R.array.palette));
+        List<Integer> palette = new ArrayList<>();
+        List<Integer> colors = new ArrayList<>();
+
+        // Get colors
+        for (String hex : hexPalette) {
+            palette.add(Color.parseColor(hex));
+        }
+
+        // Fill colors
+        int i = 0;
+        while (i != n) {
+            Collections.shuffle(palette);
+            colors.addAll(palette.subList(0, Math.min(n - i, palette.size())));
+        }
+
+        return colors.toArray(new Integer[n]);
     }
 
     private static String getStringResource(String id, Context c) {

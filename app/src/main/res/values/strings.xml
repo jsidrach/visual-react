@@ -3,8 +3,8 @@
     <string name="app_name">VisualReact</string>
     <string name="preferences_name">Preferences</string>
     <string name="match_name">Match</string>
-    <string name="play_button">Play Button</string>
-    <string name="preferences_button">Preferences Button</string>
+    <string name="play_icon">Play Button</string>
+    <string name="preferences_icon">Preferences Button</string>
 
     <!-- Preferences -->
     <string name="gameplay_category">Gameplay</string>
@@ -23,7 +23,7 @@
 
     <!-- Match -->
     <string name="start_level">Tap to start</string>
-    <string name="rematch_button">Rematch</string>
+    <string name="rematch_icon">Rematch</string>
     <string name="standing_winner">Victory!</string>
     <string name="standing_loser">So sad…</string>
     <string name="standing_tied">Draw</string>

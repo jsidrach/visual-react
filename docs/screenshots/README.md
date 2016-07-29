@@ -1,5 +1,7 @@
 # Screenshots
 
+Taken with Android Studio Emulator, on a Nexus 5X API 24
+
 ## Launcher
 
 <img src="launcher.png" width="280">
