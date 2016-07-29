@@ -81,9 +81,9 @@ See [here](docs/screenshots/README.md)
 
 List of assets used:
 
-* [Play Icon](docs/icons/play_icon.svg): [Freepik](http://www.flaticon.com) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Preferences Icon](docs/icons/preferences_icon.svg): [Egor Rumyantsev](http://www.flaticon.com/authors/egor-rumyantsev) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Rematch Icon](docs/icons/rematch_icon.svg): [Vaadin](http://www.flaticon.com/authors/vaadin) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Play Icon](docs/assets/play_icon.svg): [Freepik](http://www.flaticon.com) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Preferences Icon](docs/assets/preferences_icon.svg): [Egor Rumyantsev](http://www.flaticon.com/authors/egor-rumyantsev) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Rematch Icon](docs/assets/rematch_icon.svg): [Vaadin](http://www.flaticon.com/authors/vaadin) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 
 
 ## <a name="roadmap"></a> Roadmap
