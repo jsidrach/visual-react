@@ -2,39 +2,39 @@
 
 ## Launcher
 
-![](launcher.png)
+![](launcher.png | width=640 | width=640)
 
 ## Preferences
 
-![](preferences.png)
+![](preferences.png | width=640)
 
-![](preferences_slider.png)
+![](preferences_slider.png | width=640)
 
 ## Match
 
-![](match_level_description.png)
+![](match_level_description.png | width=640)
 
-![](match_cancel.png)
+![](match_cancel.png | width=640)
 
-![](match_standings.png)
+![](match_standings.png | width=640)
 
 ### Levels
 
 #### Color
 
-![](level_color.png)
+![](level_color.png | width=640)
 
-![](level_color_fail.png)
+![](level_color_fail.png | width=640)
 
-![](level_color_success.png)
+![](level_color_success.png | width=640)
 
 #### Countdown
 
-![](level_countdown.png)
+![](level_countdown.png | width=640)
 
-![](level_countdown_fail.png)
+![](level_countdown_fail.png | width=640)
 
-![](level_countdown_success.png)
+![](level_countdown_success.png | width=640)
 
 #### Light
 
