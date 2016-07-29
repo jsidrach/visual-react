@@ -19,7 +19,7 @@
 
 ## <a name="screenshots"></a> Screenshots
 
-See [here](docs/README.md)
+See [here](docs/screenshots/README.md)
 
 
 ## <a name="levels"></a> Levels
