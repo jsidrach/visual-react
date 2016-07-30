@@ -90,8 +90,9 @@ See [here](docs/screenshots/README.md)
 9. Be sure the code follows the development guidelines mentioned before in the development parent section
 10. Edit the [README](README.md) to add your level to the [levels list](#levels) (if not present already)
 11. Make screenshots of your level (in progress, fail, success) and store them in [docs/screenshots](docs/screenshots), following the already existing format - edit the screenshots [README.md](docs/screenshots/README.md) to include them
-12. Add yourself to the [contributors list](#contributors) - you earned it!
-13. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
+12. Save all assets used to ```docs/assets``` (in addition to the resources folder), and list them in [assets](#assets)
+13. Add yourself to the [contributors list](#contributors) - you earned it!
+14. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
 
 ### <a name="fixing-a-bug"></a> Fixing a bug
 
