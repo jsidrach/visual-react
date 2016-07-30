@@ -82,7 +82,7 @@ See [here](docs/screenshots/README.md)
 1. Create a new branch, named using the level name in lowercase - only commit to this branch while developing the level
 2. If the level you are implementing not described in the [levels list](#levels), create an Issue first describing it (you don't want to code something that won't be incorporated into the game!), and ask for feedback
 3. Once the level has been approved, create a class with the level name in ```src/main/java/sneakycoders/visualreact/level/levels/``` that extends the ```Level``` class - all your code will reside in the newly created class
-4. Create a new layout for your level, and save it in ```src/main/res/layout/level_<name>.xml```
+4. If needed, create a new layout for your level, and save it in ```src/main/res/layout/level_<name>.xml```
 5. Add your level name to the levels array in ```src/main/res/values/arrays.xml```
 6. Add your level title and description to the ```src/main/res/values/strings.xml``` resource, following existing conventions
 7. Implement and test your level - use random ranges for all possible conditions in the level (timeouts, sizes, etc.), and store the ranges in ```src/main/res/values/ingame.xml```

@@ -3,7 +3,6 @@ package sneakycoders.visualreact.level.levels;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
-import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +15,8 @@ import java.text.NumberFormat;
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.Level;
 
+// Dynamically instantiated
+@SuppressWarnings("unused")
 public class LevelCountdown extends Level {
     // Counter
     private int counter;
@@ -30,9 +31,6 @@ public class LevelCountdown extends Level {
     // Player countdowns
     private TextView player1Countdown;
     private TextView player2Countdown;
-    // Colors
-    private int successColor;
-    private int failColor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,10 +48,6 @@ public class LevelCountdown extends Level {
         int color = getRandomColor();
         player1Countdown.setTextColor(color);
         player2Countdown.setTextColor(color);
-
-        // Set colors
-        successColor = ContextCompat.getColor(getActivity(), R.color.success_primary);
-        failColor = ContextCompat.getColor(getActivity(), R.color.fail_primary);
 
         // Get parameters
         int minStart = getResources().getInteger(R.integer.level_countdown_min_start);
@@ -97,7 +91,7 @@ public class LevelCountdown extends Level {
     }
 
     @Override
-    public boolean result() {
+    public boolean onPlayerTap() {
         // Calculate time offset
         double timeOffset = (totalTime - (SystemClock.elapsedRealtime() - elapsedTime)) / 1000.0f;
 
@@ -123,5 +117,13 @@ public class LevelCountdown extends Level {
 
         // Return current result
         return result;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        // Cancel countdown
+        countDownTimer.cancel();
     }
 }

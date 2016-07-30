@@ -12,10 +12,11 @@ import java.util.List;
 
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.levels.LevelColor;
-import sneakycoders.visualreact.level.levels.LevelCountdown;
 
 // Factory to deal with levels
 public class LevelsFactory {
+    // Level class format
+    private static final String LEVEL_CLASS_FORMAT = LevelColor.class.getPackage().getName() + ".Level{0}";
     // Resource identifier formats
     private static final String LEVEL_KEY_FORMAT = "level_{0}_selected";
     private static final String LEVEL_NAME_FORMAT = "level_{0}_name";
@@ -94,11 +95,9 @@ public class LevelsFactory {
     }
 
     public static Level getLevel(String id) {
-        if (id.equals("countdown")) {
-            return new LevelCountdown();
-        }
-        // Color
-        else {
+        try {
+            return (Level) Class.forName(MessageFormat.format(LEVEL_CLASS_FORMAT, capitalize(id))).newInstance();
+        } catch (Exception e) {
             return new LevelColor();
         }
     }
@@ -119,5 +118,14 @@ public class LevelsFactory {
 
     private static String getStringResource(String id, Context c) {
         return c.getString(c.getResources().getIdentifier(id, "string", c.getApplicationContext().getPackageName()));
+    }
+
+    private static String capitalize(String s) {
+        // Convert String to char array
+        char[] array = s.toCharArray();
+        // Modify first element in array to upper case
+        array[0] = Character.toUpperCase(array[0]);
+        // Return string
+        return new String(array);
     }
 }

@@ -128,7 +128,7 @@ public class Match extends AppCompatActivity {
             levelInfo.setVisibility(View.GONE);
             levelContainer.setVisibility(View.VISIBLE);
         } else if (state == State.LevelResult) {
-            if (currentLevel.result()) {
+            if (currentLevel.onPlayerTap()) {
                 lastTap.setStateSuccess();
             } else {
                 lastTap.setStateFail();

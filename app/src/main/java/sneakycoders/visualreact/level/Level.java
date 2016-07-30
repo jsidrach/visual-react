@@ -1,7 +1,12 @@
 package sneakycoders.visualreact.level;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +17,24 @@ import java.util.Random;
 import sneakycoders.visualreact.R;
 
 abstract public class Level extends Fragment {
-    abstract public boolean result();
+    // Basic colors
+    protected int successColor;
+    protected int failColor;
+
+    // Callback when then player taps its area
+    abstract public boolean onPlayerTap();
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+
+        // Set colors
+        successColor = ContextCompat.getColor(getActivity(), R.color.success_primary);
+        failColor = ContextCompat.getColor(getActivity(), R.color.fail_primary);
+
+        return null;
+    }
+
+    // Auxiliary functions
 
     protected Integer getRandomColor() {
         String[] palette = getResources().getStringArray(R.array.palette);
@@ -38,8 +60,12 @@ abstract public class Level extends Fragment {
 
         return colors.toArray(new Integer[n]);
     }
-    
+
     protected int getRandomInt(int min, int max) {
         return (new Random()).nextInt(max - min + 1) + min;
+    }
+
+    protected double getRandomDouble(double min, double max) {
+        return min + (max - min) * (new Random()).nextDouble();
     }
 }
