@@ -7,11 +7,13 @@
 * [Screenshots](#screenshots)
 * [Levels](#levels)
 * [License](#license)
+* [Contributors](#contributors)
 * [Guidelines](#guidelines)
   * [Design](#design-guidelines)
   * [Development](#development-guidelines)
 * [Contributing](#contributing)
   * [Adding a Level](#adding-a-level)
+  * [Fixing a bug](#fixing-a-bug)
 * [Assets](#assets)
 * [Roadmap](#roadmap)
 * [References](#references)
@@ -43,6 +45,12 @@ See [here](docs/screenshots/README.md)
 [MIT](LICENSE) - Feel free to use and edit
 
 
+## <a name="contributors"></a> Contributors
+
+* [J. Sid](https://github.com/jsidrach): design, game engine, levels
+* [Lu Yu](https://github.com/yulu1701): design, game engine, levels
+
+
 ## <a name="guidelines"></a> Guidelines
 
 ### <a name="design-guidelines"></a> Design
@@ -60,6 +68,7 @@ See [here](docs/screenshots/README.md)
 * Follow the [Android Core App Quality Guidelines](https://developer.android.com/distribute/essentials/quality/core.html)
 * Do not hardcode strings and constants
 * Adhere to the existing color palette
+* Use vector graphics (```.svg```) for images and icons
 * Avoid using external libraries as much as possible, to ease the future implementation of the game in other platforms
 * Auto format the code, and fix all warnings and errors before committing
 * Use ```camelCase``` for code and ```snake_case``` for resources
@@ -70,10 +79,27 @@ See [here](docs/screenshots/README.md)
 
 ### <a name="adding-a-level"></a> Adding a Level
 
-* Create a new branch, named using the level name in lowercase - only commit to this branch while developing the level
-* TODO: steps
+1. Create a new branch, named using the level name in lowercase - only commit to this branch while developing the level
+2. If the level you are implementing not described in the [levels list](#levels), create an Issue first describing it (you don't want to code something that won't be incorporated into the game!), and ask for feedback
+3. Once the level has been approved, create a class with the level name in ```src/main/java/sneakycoders/visualreact/level/levels/``` that extends the ```Level``` class - all your code will reside in the newly created class
+4. Create a new layout for your level, and save it in ```src/main/res/layout/level_<name>.xml```
+5. Add your level name to the levels array in ```src/main/res/values/arrays.xml```
+6. Add your level title and description to the ```src/main/res/values/strings.xml``` resource, following existing conventions
+7. Implement and test your level - use random ranges for all possible conditions in the level (timeouts, sizes, etc.), and store the ranges in ```src/main/res/values/ingame.xml```
+8. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
+9. Be sure the code follows the development guidelines mentioned before in the development parent section
+10. Edit the [README](README.md) to add your level to the [levels list](#levels) (if not present already)
+11. Make screenshots of your level (in progress, fail, success) and store them in [docs/screenshots](docs/screenshots), following the already existing format - edit the screenshots [README.md](docs/screenshots/README.md) to include them
+12. Add yourself to the [contributors list](#contributors) - you earned it!
+13. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
+
+### <a name="fixing-a-bug"></a> Fixing a bug
+
+* Create a new branch, named using ```bugfix/<bug>```, where ```<bug>``` is a short description of the bug - only commit to this branch
+* Implement the fix for the bug
 * Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
 * Be sure the code follows the development guidelines mentioned before in the development parent section
+* Rebase to squash all commits into a single one, and explain in the commit body what was the bug and how it has been fixed
 * Create a Pull Request to add the level to the main branch - the new code will be reviewed and eventually merged
 
 
