@@ -12,7 +12,7 @@
   * [Design](#design-guidelines)
   * [Development](#development-guidelines)
 * [Contributing](#contributing)
-  * [Adding a Level](#adding-a-level)
+  * [Adding a level](#adding-a-level)
   * [Fixing a bug](#fixing-a-bug)
 * [Assets](#assets)
 * [Roadmap](#roadmap)
@@ -77,7 +77,7 @@ See [here](docs/screenshots/README.md)
 
 ## <a name="contributing"></a> Contributing
 
-### <a name="adding-a-level"></a> Adding a Level
+### <a name="adding-a-level"></a> Adding a level
 
 1. Create a new branch, named using the level name in lowercase - only commit to this branch while developing the level
 2. If the level you are implementing not described in the [levels list](#levels), create an Issue first describing it (you don't want to code something that won't be incorporated into the game!), and ask for feedback
