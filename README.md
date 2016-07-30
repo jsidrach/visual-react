@@ -96,12 +96,12 @@ See [here](docs/screenshots/README.md)
 
 ### <a name="fixing-a-bug"></a> Fixing a bug
 
-* Create a new branch, named using ```bugfix/<bug>```, where ```<bug>``` is a short description of the bug - only commit to this branch
-* Implement the fix for the bug
-* Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
-* Be sure the code follows the development guidelines mentioned before in the development parent section
-* Rebase to squash all commits into a single one, and explain in the commit body what was the bug and how it has been fixed
-* Create a Pull Request to add the level to the main branch - the new code will be reviewed and eventually merged
+1. Create a new branch, named using ```bugfix/<bug>```, where ```<bug>``` is a short description of the bug - only commit to this branch
+2. Implement the fix for the bug
+3. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
+4. Be sure the code follows the development guidelines mentioned before in the development parent section
+5. Rebase interactively to squash all commits into a single one, and explain in the commit body what was the bug and how it has been fixed
+6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
 
 
 ## <a name="assets"></a> Assets
