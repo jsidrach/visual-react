@@ -17,18 +17,18 @@ import sneakycoders.visualreact.level.Level;
 // Dynamically instantiated
 @SuppressWarnings("unused")
 public class LevelLight extends Level {
-    // Cells
-    private Rect[][] cells;
-    // Light Cells
-    private boolean[][] lightCells;
-    // Middle line
-    private Rect middleLine;
     // Cells in the X axis
     private int cellsX;
     // Cells in the Y axis
     private int cellsY;
     // Light cells counter
     private int totalLightCells;
+    // Cells
+    private Rect[][] cells;
+    // Light Cells
+    private boolean[][] lightCells;
+    // Middle line
+    private Rect middleLine;
     // Colors
     private int backgroundColor;
     private Paint cellPaint;
@@ -36,13 +36,11 @@ public class LevelLight extends Level {
     private Paint failPaint;
     // Flag to see the state of the level
     private State state;
-    // Delay between updates
-    private int delay;
     // Probability of changing from dark to light on each update
     private double darkToLight;
     // Probability of changing from light to dark on each update
     private double lightToDark;
-    // Handler for the timer
+    // Timer handler
     private Handler handler;
     // Update function
     private Runnable updateCells;
@@ -69,15 +67,9 @@ public class LevelLight extends Level {
         // Get parameters
         cellsX = getResources().getInteger(R.integer.level_light_cells_x);
         cellsY = getResources().getInteger(R.integer.level_light_cells_y);
-        int minDelay = getResources().getInteger(R.integer.level_light_min_delay);
-        int maxDelay = getResources().getInteger(R.integer.level_light_max_delay);
-        delay = getRandomInt(minDelay, maxDelay);
-        double minDarkToLight = getResources().getFraction(R.fraction.level_light_min_dark_to_light, 1, 1);
-        double maxDarkToLight = getResources().getFraction(R.fraction.level_light_max_dark_to_light, 1, 1);
-        darkToLight = getRandomDouble(minDarkToLight, maxDarkToLight);
-        double minLightToDark = getResources().getFraction(R.fraction.level_light_min_light_to_dark, 1, 1);
-        double maxLightToDark = getResources().getFraction(R.fraction.level_light_max_light_to_dark, 1, 1);
-        lightToDark = getRandomDouble(minLightToDark, maxLightToDark);
+        darkToLight = randomDouble(R.fraction.level_light_min_dark_to_light, R.fraction.level_light_max_dark_to_light);
+        lightToDark = randomDouble(R.fraction.level_light_min_light_to_dark, R.fraction.level_light_max_light_to_dark);
+        final int delay = randomInt(R.integer.level_light_min_delay, R.integer.level_light_max_delay);
 
         // Create matrices
         cells = new Rect[cellsX][cellsY];
@@ -90,13 +82,14 @@ public class LevelLight extends Level {
         updateCells = new Runnable() {
             @Override
             public void run() {
-                int i = getRandomInt(0, cellsX - 1);
-                int j = getRandomInt(0, cellsY - 1);
+                int i = randomInInterval(0, cellsX - 1);
+                int j = randomInInterval(0, cellsY - 1);
                 double r = Math.random();
                 if (lightCells[i][j]) {
                     if (r <= lightToDark) {
                         lightCells[i][j] = false;
                         totalLightCells--;
+
                         // Redraw
                         rootView.invalidate();
                     }
@@ -104,6 +97,7 @@ public class LevelLight extends Level {
                     if (r <= darkToLight) {
                         lightCells[i][j] = true;
                         totalLightCells++;
+
                         // Redraw
                         rootView.invalidate();
                     }
@@ -130,7 +124,6 @@ public class LevelLight extends Level {
     @Override
     public boolean onPlayerTap() {
         // Cancel timers
-        rootView.removeCallbacks(null);
         handler.removeCallbacksAndMessages(null);
 
         // Set state
@@ -144,7 +137,7 @@ public class LevelLight extends Level {
     }
 
     private void initializeCells() {
-        // Sizes
+        // Screen and cell sizes
         int width = rootView.getMeasuredWidth();
         int height = rootView.getMeasuredHeight();
         int cellWidth = width / cellsX;
@@ -167,20 +160,26 @@ public class LevelLight extends Level {
                 // Calculate size
                 right = left + cellWidth + (diffPixelsX > 0 ? 1 : 0);
                 bottom = top + cellHeight + (diffPixelsY > 0 ? 1 : 0);
+
                 // Create rectangle
                 cells[i][j] = new Rect(left, top, right, bottom);
+
                 // Move top
                 top = bottom;
+
                 // Decrease Y remaining pixels
                 diffPixelsY--;
             }
 
             // Move left
             left += cellWidth + (diffPixelsX > 0 ? 1 : 0);
+
             // Decrease X remaining pixels
             diffPixelsX--;
+
             // Reset top
             top = 0;
+
             // Reset Y remaining pixels
             diffPixelsY = cellHeight * cellsY;
         }
@@ -201,7 +200,6 @@ public class LevelLight extends Level {
         super.onDestroy();
 
         // Cancel timers
-        rootView.removeCallbacks(null);
         handler.removeCallbacksAndMessages(null);
     }
 

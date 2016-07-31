@@ -55,17 +55,31 @@ abstract public class Level extends Fragment {
         int i = 0;
         while (i != n) {
             Collections.shuffle(palette);
-            colors.addAll(palette.subList(0, Math.min(n - i, palette.size())));
+            int addN = Math.min(n - i, palette.size());
+            colors.addAll(palette.subList(0, addN));
+            i += addN;
         }
 
         return colors.toArray(new Integer[n]);
     }
 
-    protected int getRandomInt(int min, int max) {
+    protected int randomInt(int idMin, int idMax) {
+        int min = getResources().getInteger(idMin);
+        int max = getResources().getInteger(idMax);
+        return randomInInterval(min, max);
+    }
+
+    protected double randomDouble(int idMin, int idMax) {
+        double min = getResources().getFraction(idMin, 1, 1);
+        double max = getResources().getFraction(idMax, 1, 1);
+        return randomInInterval(min, max);
+    }
+
+    protected int randomInInterval(int min, int max) {
         return (new Random()).nextInt(max - min + 1) + min;
     }
 
-    protected double getRandomDouble(double min, double max) {
+    protected double randomInInterval(double min, double max) {
         return min + (max - min) * (new Random()).nextDouble();
     }
 }

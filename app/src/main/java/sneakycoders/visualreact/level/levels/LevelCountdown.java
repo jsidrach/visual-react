@@ -24,9 +24,9 @@ public class LevelCountdown extends Level {
     private CountDownTimer countDownTimer;
     // Flag to see if the result is success or not
     private boolean result;
-    // Total time in milliseconds
+    // Total time in milliseconds of the countdown
     private long totalTime;
-    // Elapsed time
+    // Elapsed time since the countdown started
     private long elapsedTime;
     // Player countdowns
     private TextView player1Countdown;
@@ -50,15 +50,11 @@ public class LevelCountdown extends Level {
         player2Countdown.setTextColor(color);
 
         // Get parameters
-        int minStart = getResources().getInteger(R.integer.level_countdown_min_start);
-        int maxStart = getResources().getInteger(R.integer.level_countdown_max_start);
-        final int start = getRandomInt(minStart, maxStart);
-        int minStep = getResources().getInteger(R.integer.level_countdown_min_delay);
-        int maxStep = getResources().getInteger(R.integer.level_countdown_max_delay);
-        final int step = getRandomInt(minStep, maxStep);
+        final int start = randomInt(R.integer.level_countdown_min_start, R.integer.level_countdown_max_start);
+        final int step = randomInt(R.integer.level_countdown_min_delay, R.integer.level_countdown_min_delay);
         int minHide = getResources().getInteger(R.integer.level_countdown_min_hide);
         int maxHideOffset = getResources().getInteger(R.integer.level_countdown_max_hide_offset);
-        final int hide = getRandomInt(minHide, start - maxHideOffset);
+        final int hide = randomInInterval(minHide, start - maxHideOffset);
 
         // Set starting values
         counter = start;

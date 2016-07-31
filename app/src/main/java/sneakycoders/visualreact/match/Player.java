@@ -80,6 +80,7 @@ class Player {
     public void reset() {
         // Reset the score
         setScoreOffset(-score);
+
         // Cancel animation
         blink.cancel();
     }

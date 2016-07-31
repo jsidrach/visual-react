@@ -37,12 +37,16 @@ public class Preferences extends Activity {
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preferences);
+
             // Get context
             Context context = getActivity();
+
             // Level ids
             List<String> levels = LevelsFactory.getLevelIds(context);
+
             // Get levels category
             PreferenceCategory category = (PreferenceCategory) findPreference(LEVELS_CATEGORY);
+
             // Get screen
             PreferenceScreen screen = this.getPreferenceScreen();
 
@@ -84,6 +88,7 @@ public class Preferences extends Activity {
         private void preventNoLevelsSelected() {
             // Context
             Context context = getActivity();
+
             // Selected level ids
             List<String> selectedLevelIds = LevelsFactory.getSelectedLevelIds(context);
 

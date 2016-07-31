@@ -89,6 +89,7 @@ public class Match extends AppCompatActivity {
         if (state == State.LevelSelection) {
             // Select next level
             String nextLevelId = remainingLevels.remove(0);
+
             // Choose whether show tips or not
             state = (showTips && !nextLevelId.equals(currentLevelId)) ? State.LevelInfo : State.Level;
             currentLevelId = nextLevelId;
@@ -194,6 +195,7 @@ public class Match extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+
         // Continue where we left off
         if (state == State.LevelResult) {
             delayNextState();

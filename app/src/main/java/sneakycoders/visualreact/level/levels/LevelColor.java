@@ -1,6 +1,7 @@
 package sneakycoders.visualreact.level.levels;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,8 @@ import sneakycoders.visualreact.level.Level;
 public class LevelColor extends Level {
     // Flag to see if the result is success or not
     private boolean result;
-    // View
-    private View rootView;
+    // Timer handler
+    private Handler handler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,18 +25,17 @@ public class LevelColor extends Level {
         result = false;
 
         // Countdown in milliseconds before switching the color
-        int minDelay = getResources().getInteger(R.integer.level_color_min_delay);
-        int maxDelay = getResources().getInteger(R.integer.level_color_max_delay);
-        int countdown = getRandomInt(minDelay, maxDelay);
+        int countdown = randomInt(R.integer.level_color_min_delay, R.integer.level_color_max_delay);
 
         // Create view
-        rootView = inflater.inflate(R.layout.level_color, container, false);
+        final View rootView = inflater.inflate(R.layout.level_color, container, false);
 
         // Color
         final int color = getRandomColor();
 
         // Set timer to change screen color
-        rootView.postDelayed(new Runnable() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 result = true;
@@ -48,8 +48,8 @@ public class LevelColor extends Level {
 
     @Override
     public boolean onPlayerTap() {
-        // Remove all callbacks
-        rootView.removeCallbacks(null);
+        // Cancel callback
+        handler.removeCallbacksAndMessages(null);
 
         // Return current result
         return result;
@@ -60,7 +60,7 @@ public class LevelColor extends Level {
     public void onDestroy() {
         super.onDestroy();
 
-        // Cancel countdown
-        rootView.removeCallbacks(null);
+        // Cancel callback
+        handler.removeCallbacksAndMessages(null);
     }
 }

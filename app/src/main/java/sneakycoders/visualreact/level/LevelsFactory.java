@@ -28,8 +28,10 @@ public class LevelsFactory {
 
         // Selected levels
         List<String> selectedLevels = getSelectedLevelIds(c);
+        
         // Random order
         Collections.shuffle(selectedLevels);
+
         // Prevent repeating sequences of levels if not every level has been used yet
         List<String> usedLevels = new ArrayList<>();
 
@@ -45,6 +47,7 @@ public class LevelsFactory {
             if (selectedLevels.size() == 0) {
                 // Restore selected levels
                 selectedLevels = new ArrayList<>(usedLevels);
+
                 // Random order
                 Collections.shuffle(selectedLevels);
 
@@ -74,8 +77,10 @@ public class LevelsFactory {
     public static List<String> getSelectedLevelIds(Context c) {
         // Preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
+
         // Level ids
         List<String> levelIds = getLevelIds(c);
+
         // Selected level ids
         List<String> selectedLevelIds = new ArrayList<>();
 
@@ -123,8 +128,10 @@ public class LevelsFactory {
     private static String capitalize(String s) {
         // Convert String to char array
         char[] array = s.toCharArray();
+
         // Modify first element in array to upper case
         array[0] = Character.toUpperCase(array[0]);
+
         // Return string
         return new String(array);
     }
