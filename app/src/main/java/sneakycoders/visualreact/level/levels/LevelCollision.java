@@ -85,15 +85,15 @@ public class LevelCollision extends Level {
         // Two circles
         if ((leftShapeCircle != null) && (rightShapeCircle != null)) {
             // Calculate centers and radius
-            double centerLeftX = leftShapeCircle.left + (leftShapeCircle.right / 2);
-            double centerLeftY = leftShapeCircle.top + (leftShapeCircle.bottom / 2);
-            double centerRightX = rightShapeCircle.left + (rightShapeCircle.right / 2);
-            double centerRightY = rightShapeCircle.top + (rightShapeCircle.bottom / 2);
+            double centerLeftX = leftShapeCircle.left + (leftShapeCircle.width() / 2.0);
+            double centerLeftY = leftShapeCircle.top + (leftShapeCircle.height() / 2.0);
+            double centerRightX = rightShapeCircle.left + (rightShapeCircle.width() / 2.0);
+            double centerRightY = rightShapeCircle.top + (rightShapeCircle.height() / 2.0);
             double distCentersX = centerLeftX - centerRightX;
             double distCentersY = centerLeftY - centerRightY;
             double distCentersSq = distCentersX * distCentersX + distCentersY * distCentersY;
-            double radiusLeft = (leftShapeCircle.right - leftShapeCircle.left) / 2;
-            double radiusRight = (rightShapeCircle.right - rightShapeCircle.left) / 2;
+            double radiusLeft = leftShapeCircle.width() / 2.0;
+            double radiusRight = rightShapeCircle.width() / 2.0;
 
             // Collide if sum of radius is less than the distance between centers
             double sumRadius = radiusLeft + radiusRight;
@@ -101,24 +101,25 @@ public class LevelCollision extends Level {
         }
         // Two rectangles
         else if ((leftShapeRect != null) && (rightShapeRect != null)) {
-            return leftShapeRect.intersect(rightShapeRect);
+            return Rect.intersects(leftShapeRect, rightShapeRect);
         }
         // Circle and rectangle
         else {
             // Calculate center and radius
             RectF circle = (leftShapeCircle == null) ? rightShapeCircle : leftShapeCircle;
-            double centerX = circle.left + (circle.right / 2);
-            double centerY = circle.top + (circle.bottom / 2);
-            double radius = (circle.right - circle.left) / 2;
+            double centerX = circle.left + (circle.width() / 2.0);
+            double centerY = circle.top + (circle.height() / 2.0);
+            double radius = circle.width() / 2.0;
 
-            // Find the closest point to the circle within the rectangle
+            // Select rectangle
             Rect rect = (leftShapeRect == null) ? rightShapeRect : leftShapeRect;
 
+            // Find the closest point to the circle within the rectangle
             // Limit closestX to be in [rect.left, rect.right]
             double closestX = ((centerX >= rect.left) && (centerX <= rect.right)) ? centerX : (centerX < rect.left ? rect.left : rect.right);
 
             // Limit closestY to be in [rect.top, rect.bottom]
-            double closestY = ((centerY >= rect.top) && (centerY <= rect.bottom)) ? centerX : (centerY < rect.top ? rect.top : rect.bottom);
+            double closestY = ((centerY >= rect.top) && (centerY <= rect.bottom)) ? centerY : (centerY < rect.top ? rect.top : rect.bottom);
 
             // Calculate the distance between the circle's center and this closest point
             double distX = centerX - closestX;
@@ -190,12 +191,25 @@ public class LevelCollision extends Level {
             rightDim = Math.min(sideX, sideY);
         }
 
-        // TODO: Adjust size of middle band (more range)
-        // TODO: Adjust timers (slower some times)
-        // TODO: Fix all collisions
-        // TODO: Fix collision circle+rectangle
-        // TODO: Fix drawing of two rectangles after tap
-        // TODO: Small variations of Y axis
+        // Small variations on Y axis, while ensuring collision
+        double minDimYLeft = (leftShapeRect == null) ? leftShapeCircle.height() : leftShapeRect.height();
+        double minDimYRight = (rightShapeRect == null) ? rightShapeCircle.height() : rightShapeRect.height();
+        double minDimY = Math.min(minDimYLeft, minDimYRight);
+        double maxDiffY = minDimY * (1.0 - getResources().getFraction(R.fraction.level_collision_min_shape_collision_height, 1, 1));
+        int variationY = (int) (randomInInterval(0, maxDiffY) / 2.0);
+
+        // Random Y axis direction
+        variationY = (randomInInterval(0.0, 1.0) < 0.5) ? variationY : -variationY;
+        if (leftShapeRect != null) {
+            leftShapeRect.offset(0, variationY);
+        } else {
+            leftShapeCircle.offset(0, variationY);
+        }
+        if (rightShapeRect != null) {
+            rightShapeRect.offset(0, -variationY);
+        } else {
+            rightShapeCircle.offset(0, -variationY);
+        }
 
         // Set the movement
         final int delay = 1000 / getResources().getInteger(R.integer.level_collision_frames_per_second);
@@ -240,7 +254,7 @@ public class LevelCollision extends Level {
 
         // Create middle block
         double blockWidth = width * randomDouble(R.fraction.level_collision_min_block_width, R.fraction.level_collision_max_block_width);
-        middleBlock = new Rect((int) ((width - blockWidth) / 2), 0, (int) ((width + blockWidth) / 2), height);
+        middleBlock = new Rect((int) ((width - blockWidth) / 2.0), 0, (int) ((width + blockWidth) / 2.0), height);
 
         // Force redraw
         rootView.invalidate();

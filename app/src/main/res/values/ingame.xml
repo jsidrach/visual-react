@@ -49,18 +49,20 @@
     <!-- LevelCollision -->
     <!-- Margin from the extremes (as a percentage of the screen width) -->
     <fraction name="level_collision_margin_extremes">5%</fraction>
+    <!-- Minimum shape collision height (as a percentage of the screen height) -->
+    <fraction name="level_collision_min_shape_collision_height">5%</fraction>
     <!-- Minimum and maximum percentage of the screen blocked (relative to the screen width) -->
     <fraction name="level_collision_min_block_width">10%</fraction>
     <fraction name="level_collision_max_block_width">40%</fraction>
     <!-- Minimum and maximum radius (as percentage of the screen height) -->
-    <fraction name="level_collision_min_radius">2.5%</fraction>
+    <fraction name="level_collision_min_radius">5%</fraction>
     <fraction name="level_collision_max_radius">15%</fraction>
     <!-- Minimum and maximum side length (as percentage of the screen height) -->
-    <fraction name="level_collision_min_side">5%</fraction>
+    <fraction name="level_collision_min_side">10%</fraction>
     <fraction name="level_collision_max_side">25%</fraction>
     <!-- Minimum and maximum time in milliseconds it takes a shape to go extreme to extreme horizontally -->
     <integer name="level_collision_min_moving_time">1000</integer>
-    <integer name="level_collision_max_moving_time">10000</integer>
+    <integer name="level_collision_max_moving_time">15000</integer>
     <!-- Frames per second -->
     <integer name="level_collision_frames_per_second">30</integer>
 </resources>

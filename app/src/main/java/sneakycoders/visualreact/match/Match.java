@@ -67,7 +67,7 @@ public class Match extends AppCompatActivity {
         startMatch(null);
     }
 
-    public void startMatch(@SuppressWarnings("UnusedParameters") View view) {
+    public void startMatch(@SuppressWarnings({"UnusedParameters"}) View view) {
         // Levels sequence
         remainingLevels = LevelsFactory.getLevelsSequence(this);
 
