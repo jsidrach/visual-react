@@ -132,8 +132,8 @@ List of assets used:
 - [ ] Implement games
   - [x] ~~[J] Color~~
   - [x] ~~[J] Countdown~~
-  - [ ] [J] Light
-  - [ ] [J] Collision
+  - [x] ~~[J] Light~~
+  - [x] ~~[J] Collision~~
   - [ ] [L] TicTacToe
   - [ ] [L] Pair
   - [ ] [L] Variety
@@ -145,6 +145,7 @@ List of assets used:
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus
   - [ ] Ingame (can be disabled)
+- [ ] Distribute app to the rest of sneaky coders, test & QA
 - [ ] Run Lint, fix issues detected
 - [ ] Design app icon
 - [ ] Write app description
