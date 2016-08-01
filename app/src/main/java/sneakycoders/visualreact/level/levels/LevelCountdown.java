@@ -51,7 +51,7 @@ public class LevelCountdown extends Level {
 
         // Get parameters
         final int start = randomInt(R.integer.level_countdown_min_start, R.integer.level_countdown_max_start);
-        final int step = randomInt(R.integer.level_countdown_min_delay, R.integer.level_countdown_min_delay);
+        final int step = randomInt(R.integer.level_countdown_min_delay, R.integer.level_countdown_max_delay);
         int minHide = getResources().getInteger(R.integer.level_countdown_min_hide);
         int maxHideOffset = getResources().getInteger(R.integer.level_countdown_max_hide_offset);
         final int hide = randomInInterval(minHide, start - maxHideOffset);

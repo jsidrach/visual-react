@@ -42,7 +42,7 @@ public class LevelLight extends Level {
     private double lightToDark;
     // Timer handler
     private Handler handler;
-    // Update function
+    // Update function (to update the cells)
     private Runnable updateCells;
     // View
     private LevelLightView rootView;
@@ -60,9 +60,9 @@ public class LevelLight extends Level {
         cellPaint = new Paint();
         cellPaint.setColor(getRandomColor());
         successPaint = new Paint();
-        successPaint.setColor(successColor);
+        successPaint.setColor(successColorLight);
         failPaint = new Paint();
-        failPaint.setColor(failColor);
+        failPaint.setColor(failColorLight);
 
         // Get parameters
         cellsX = getResources().getInteger(R.integer.level_light_cells_x);
@@ -186,7 +186,8 @@ public class LevelLight extends Level {
 
         // Create middle line
         Rect middleCell = cells[(cellsX / 2) - 1][0];
-        middleLine = new Rect(middleCell.right - 5, 0, middleCell.right + 5, height);
+        int lineSemiWidth = (int) (0.5 * width * getResources().getFraction(R.fraction.level_light_middle_line_width, 1, 1));
+        middleLine = new Rect(middleCell.right - lineSemiWidth, 0, middleCell.right + lineSemiWidth, height);
 
         // Set the state
         state = State.Playing;

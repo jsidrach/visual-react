@@ -18,7 +18,7 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 #### Color
 
-<img src="level_color_description.png" width="215"> <img src="level_countdown_playing.png" width="215"> <img src="level_color_fail.png" width="215"> <img src="level_color_success.png" width="215">
+<img src="level_color_description.png" width="215"> <img src="level_color_playing.png" width="215"> <img src="level_color_fail.png" width="215"> <img src="level_color_success.png" width="215">
 
 #### Countdown
 

@@ -28,7 +28,7 @@ public class LevelsFactory {
 
         // Selected levels
         List<String> selectedLevels = getSelectedLevelIds(c);
-        
+
         // Random order
         Collections.shuffle(selectedLevels);
 

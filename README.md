@@ -68,7 +68,7 @@ See [here](docs/screenshots/README.md)
 
 * Use [Android Studio](https://developer.android.com/studio/index.html)
 * Follow the [Android Core App Quality Guidelines](https://developer.android.com/distribute/essentials/quality/core.html)
-* Do not hardcode strings and constants
+* Do not hardcode strings and constants, include them as resources
 * Adhere to the existing color palette
 * Use vector graphics (```.svg```) for images and icons
 * Avoid using external libraries as much as possible, to ease the future implementation of the game in other platforms
