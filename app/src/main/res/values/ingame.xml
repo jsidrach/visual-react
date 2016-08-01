@@ -56,10 +56,10 @@
     <fraction name="level_collision_max_block_width">40%</fraction>
     <!-- Minimum and maximum radius (as percentage of the screen height) -->
     <fraction name="level_collision_min_radius">5%</fraction>
-    <fraction name="level_collision_max_radius">15%</fraction>
+    <fraction name="level_collision_max_radius">20%</fraction>
     <!-- Minimum and maximum side length (as percentage of the screen height) -->
     <fraction name="level_collision_min_side">10%</fraction>
-    <fraction name="level_collision_max_side">25%</fraction>
+    <fraction name="level_collision_max_side">40%</fraction>
     <!-- Minimum and maximum time in milliseconds it takes a shape to go extreme to extreme horizontally -->
     <integer name="level_collision_min_moving_time">1000</integer>
     <integer name="level_collision_max_moving_time">15000</integer>

@@ -192,14 +192,13 @@ public class LevelCollision extends Level {
         }
 
         // Small variations on Y axis, while ensuring collision
-        double minDimYLeft = (leftShapeRect == null) ? leftShapeCircle.height() : leftShapeRect.height();
-        double minDimYRight = (rightShapeRect == null) ? rightShapeCircle.height() : rightShapeRect.height();
-        double minDimY = Math.min(minDimYLeft, minDimYRight);
-        double maxDiffY = minDimY * (1.0 - getResources().getFraction(R.fraction.level_collision_min_shape_collision_height, 1, 1));
-        int variationY = (int) (randomInInterval(0, maxDiffY) / 2.0);
+        double dimYLeft = (leftShapeRect == null) ? leftShapeCircle.height() : leftShapeRect.height();
+        double dimYRight = (rightShapeRect == null) ? rightShapeCircle.height() : rightShapeRect.height();
+        double dimY = (dimYLeft + dimYRight) / 2;
+        double maxDiffY = dimY * (1.0 - getResources().getFraction(R.fraction.level_collision_min_shape_collision_height, 1, 1));
 
-        // Random Y axis direction
-        variationY = (randomInInterval(0.0, 1.0) < 0.5) ? variationY : -variationY;
+        // Calculate variation, with random Y axis direction
+        int variationY = (int) (randomInInterval(-maxDiffY, maxDiffY) / 2.0);
         if (leftShapeRect != null) {
             leftShapeRect.offset(0, variationY);
         } else {
