@@ -12,7 +12,7 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 ## Match
 
-<img src="match_level_description.png" width="215"> <img src="match_cancel.png" width="215"> <img src="match_standings.png" width="215"> <img src="match_standings_draw.png" width="215">
+<img src="match_level_description.png" width="215"> <img src="match_cancel.png" width="215"> <img src="match_standings_draw.png" width="215"> <img src="match_standings.png" width="215">
 
 ### Levels
 
@@ -42,6 +42,7 @@ TODO
 
 #### Variety
 
+TODO
 
 #### Fit
 
