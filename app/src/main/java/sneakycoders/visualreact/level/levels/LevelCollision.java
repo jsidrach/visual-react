@@ -18,11 +18,12 @@ import sneakycoders.visualreact.level.Level;
 // Dynamically instantiated
 @SuppressWarnings("unused")
 public class LevelCollision extends Level {
-    // (Possible) Shapes
-    private Rect leftShapeRect;
-    private RectF leftShapeCircle;
-    private Rect rightShapeRect;
-    private RectF rightShapeCircle;
+    // Shapes
+    private RectF leftShape;
+    private RectF rightShape;
+    // Shape Types
+    private ShapeType leftShapeType;
+    private ShapeType rightShapeType;
     // Flag to see which shape should be drawn first
     private boolean drawLeftFirst;
     // Middle block
@@ -45,10 +46,12 @@ public class LevelCollision extends Level {
 
         // Set initial state
         handler = new Handler();
-        leftShapeRect = null;
-        leftShapeCircle = null;
-        rightShapeRect = null;
-        rightShapeCircle = null;
+        leftShape = null;
+        rightShape = null;
+
+        // Choose shape combination
+        leftShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
+        rightShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
 
         // Set colors
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
@@ -83,36 +86,41 @@ public class LevelCollision extends Level {
 
     private boolean checkCollision() {
         // Two circles
-        if ((leftShapeCircle != null) && (rightShapeCircle != null)) {
+        if ((leftShapeType == ShapeType.Circle) && (rightShapeType == ShapeType.Circle)) {
             // Calculate centers and radius
-            double centerLeftX = leftShapeCircle.left + (leftShapeCircle.width() / 2.0);
-            double centerLeftY = leftShapeCircle.top + (leftShapeCircle.height() / 2.0);
-            double centerRightX = rightShapeCircle.left + (rightShapeCircle.width() / 2.0);
-            double centerRightY = rightShapeCircle.top + (rightShapeCircle.height() / 2.0);
+            double centerLeftX = leftShape.left + (leftShape.width() / 2.0);
+            double centerLeftY = leftShape.top + (leftShape.height() / 2.0);
+            double centerRightX = rightShape.left + (rightShape.width() / 2.0);
+            double centerRightY = rightShape.top + (rightShape.height() / 2.0);
             double distCentersX = centerLeftX - centerRightX;
             double distCentersY = centerLeftY - centerRightY;
             double distCentersSq = distCentersX * distCentersX + distCentersY * distCentersY;
-            double radiusLeft = leftShapeCircle.width() / 2.0;
-            double radiusRight = rightShapeCircle.width() / 2.0;
+            double radiusLeft = leftShape.width() / 2.0;
+            double radiusRight = rightShape.width() / 2.0;
 
             // Collide if sum of radius is less than the distance between centers
             double sumRadius = radiusLeft + radiusRight;
             return (distCentersSq <= (sumRadius * sumRadius));
         }
         // Two rectangles
-        else if ((leftShapeRect != null) && (rightShapeRect != null)) {
-            return Rect.intersects(leftShapeRect, rightShapeRect);
+        else if ((leftShapeType == ShapeType.Rectangle) && (rightShapeType == ShapeType.Rectangle)) {
+            Rect leftShapeRounded = new Rect();
+            Rect rightShapeRounded = new Rect();
+            leftShape.roundOut(leftShapeRounded);
+            rightShape.roundOut(rightShapeRounded);
+            return Rect.intersects(leftShapeRounded, rightShapeRounded);
         }
         // Circle and rectangle
         else {
             // Calculate center and radius
-            RectF circle = (leftShapeCircle == null) ? rightShapeCircle : leftShapeCircle;
+            boolean leftIsCircle = (leftShapeType == ShapeType.Circle);
+            RectF circle = leftIsCircle ? leftShape : rightShape;
             double centerX = circle.left + (circle.width() / 2.0);
             double centerY = circle.top + (circle.height() / 2.0);
             double radius = circle.width() / 2.0;
 
             // Select rectangle
-            Rect rect = (leftShapeRect == null) ? rightShapeRect : leftShapeRect;
+            RectF rect = leftIsCircle ? rightShape : rightShape;
 
             // Find the closest point to the circle within the rectangle
             // Limit closestX to be in [rect.left, rect.right]
@@ -139,76 +147,64 @@ public class LevelCollision extends Level {
         // Margin from extremes
         int margin = (int) (width * getResources().getFraction(R.fraction.level_collision_margin_extremes, 1, 1));
 
-        // Save the original starting points
-        final int leftShapeStart;
-        final int rightShapeStart;
+        // Dimension variables (reused for both shapes)
+        int sideX;
+        int sideY;
+        int top;
 
-        // Save the distances each shape can travel (in the X axis)
-        final int leftTotalDistance;
-        final int rightTotalDistance;
-
-        // Create left shape
-        int leftDim;
-        if (randomInInterval(0.0, 1.0) <= 0.5) {
+        // Choose dimensions of the left shape
+        if (leftShapeType == ShapeType.Circle) {
             // Circle
             int radius = (int) (height * randomDouble(R.fraction.level_collision_min_radius, R.fraction.level_collision_max_radius));
-            int top = (height / 2) - radius;
-            int side = 2 * radius;
-            leftShapeStart = margin;
-            leftTotalDistance = width - (2 * margin) - side;
-            leftShapeCircle = new RectF(leftShapeStart, top, margin + side, top + side);
-            leftDim = side;
+            sideX = 2 * radius;
+            sideY = sideX;
+            top = (height / 2) - radius;
         } else {
             // Rectangle
-            int sideX = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            int sideY = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            int top = (height - sideY) / 2;
-            leftShapeStart = margin;
-            leftTotalDistance = width - (2 * margin) - sideX;
-            leftShapeRect = new Rect(leftShapeStart, top, margin + sideX, top + sideY);
-            leftDim = Math.min(sideX, sideY);
+            sideX = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
+            sideY = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
+            top = (height - sideY) / 2;
         }
 
-        // Create right shape
-        int rightDim;
-        if (randomInInterval(0.0, 1.0) <= 0.5) {
+        // Save the starting point and distance the left shape can travel (in the X axis)
+        final int leftShapeStart = margin;
+        final int leftTotalDistance = width - (2 * margin) - sideX;
+
+        // Create the left shape
+        leftShape = new RectF(margin, top, margin + sideX, top + sideY);
+
+        // Choose dimensions of the right shape
+        if (rightShapeType == ShapeType.Circle) {
             // Circle
             int radius = (int) (height * randomDouble(R.fraction.level_collision_min_radius, R.fraction.level_collision_max_radius));
-            int top = (height / 2) - radius;
-            int side = 2 * radius;
-            rightShapeStart = width - margin - side;
-            rightTotalDistance = width - (2 * margin) - side;
-            rightShapeCircle = new RectF(rightShapeStart, top, width - margin, top + side);
-            rightDim = side;
+            sideX = 2 * radius;
+            sideY = sideX;
+            top = (height / 2) - radius;
         } else {
             // Rectangle
-            int sideX = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            int sideY = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            int top = (height - sideY) / 2;
-            rightShapeStart = width - margin - sideX;
-            rightTotalDistance = width - (2 * margin) - sideX;
-            rightShapeRect = new Rect(rightShapeStart, top, width - margin, top + sideY);
-            rightDim = Math.min(sideX, sideY);
+            sideX = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
+            sideY = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
+            top = (height - sideY) / 2;
         }
+
+        // Save the starting point and distance the left shape can travel (in the X axis)
+        final int rightShapeStart = width - margin - sideX;
+        final int rightTotalDistance = width - (2 * margin) - sideX;
+
+        // Create the right shape
+        rightShape = new RectF(rightShapeStart, top, width - margin, top + sideY);
+
+        // Choose preference so that the small shape is always visible
+        drawLeftFirst = (Math.min(leftShape.width(), leftShape.height()) >= Math.min(rightShape.width(), rightShape.height()));
 
         // Small variations on Y axis, while ensuring collision
-        double dimYLeft = (leftShapeRect == null) ? leftShapeCircle.height() : leftShapeRect.height();
-        double dimYRight = (rightShapeRect == null) ? rightShapeCircle.height() : rightShapeRect.height();
-        double dimY = (dimYLeft + dimYRight) / 2;
+        double dimY = (leftShape.height() + rightShape.height()) / 2;
         double maxDiffY = dimY * (1.0 - getResources().getFraction(R.fraction.level_collision_min_shape_collision_height, 1, 1));
 
         // Calculate variation, with random Y axis direction
         int variationY = (int) (randomInInterval(-maxDiffY, maxDiffY) / 2.0);
-        if (leftShapeRect != null) {
-            leftShapeRect.offset(0, variationY);
-        } else {
-            leftShapeCircle.offset(0, variationY);
-        }
-        if (rightShapeRect != null) {
-            rightShapeRect.offset(0, -variationY);
-        } else {
-            rightShapeCircle.offset(0, -variationY);
-        }
+        leftShape.offset(0, variationY);
+        rightShape.offset(0, -variationY);
 
         // Set the movement
         final int delay = 1000 / getResources().getInteger(R.integer.level_collision_frames_per_second);
@@ -225,17 +221,9 @@ public class LevelCollision extends Level {
                 // Calculate offset in percentage (from -100% to 100%)
                 double offset = ((elapsedTime < movingTime) ? elapsedTime : (roundTripTime - elapsedTime)) / (double) movingTime;
                 int leftNewTop = (int) (leftShapeStart + offset * leftTotalDistance);
-                if (leftShapeCircle != null) {
-                    leftShapeCircle.offsetTo(leftNewTop, leftShapeCircle.top);
-                } else {
-                    leftShapeRect.offsetTo(leftNewTop, leftShapeRect.top);
-                }
+                leftShape.offsetTo(leftNewTop, leftShape.top);
                 int rightNewTop = (int) (rightShapeStart - offset * rightTotalDistance);
-                if (rightShapeCircle != null) {
-                    rightShapeCircle.offsetTo(rightNewTop, rightShapeCircle.top);
-                } else {
-                    rightShapeRect.offsetTo(rightNewTop, rightShapeRect.top);
-                }
+                rightShape.offsetTo(rightNewTop, rightShape.top);
 
                 // Update view
                 rootView.invalidate();
@@ -247,9 +235,6 @@ public class LevelCollision extends Level {
 
         // Set timer to call the movement function
         handler.postDelayed(updateShapes, delay);
-
-        // Choose preference so that the small shape is always visible
-        drawLeftFirst = (leftDim >= rightDim);
 
         // Create middle block
         double blockWidth = width * randomDouble(R.fraction.level_collision_min_block_width, R.fraction.level_collision_max_block_width);
@@ -267,6 +252,11 @@ public class LevelCollision extends Level {
         handler.removeCallbacksAndMessages(null);
     }
 
+    // Shape combinations
+    private enum ShapeType {
+        Circle, Rectangle
+    }
+
     public class LevelCollisionView extends View {
         public LevelCollisionView(Context c) {
             super(c);
@@ -275,7 +265,7 @@ public class LevelCollision extends Level {
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if ((leftShapeRect == null) && (leftShapeCircle == null)) {
+            if ((leftShape == null) || (rightShape == null)) {
                 initializeShapes();
             }
             // Playing
@@ -284,19 +274,19 @@ public class LevelCollision extends Level {
                 canvas.drawColor(backgroundColor);
 
                 // Draw shapes in order
-                Rect firstRect = drawLeftFirst ? leftShapeRect : rightShapeRect;
-                RectF firstCircle = drawLeftFirst ? leftShapeCircle : rightShapeCircle;
-                Rect secondRect = drawLeftFirst ? rightShapeRect : leftShapeRect;
-                RectF secondCircle = drawLeftFirst ? rightShapeCircle : leftShapeCircle;
-                if (firstRect != null) {
-                    canvas.drawRect(firstRect, firstShapePaint);
+                RectF firstShape = drawLeftFirst ? leftShape : rightShape;
+                ShapeType firstShapeType = drawLeftFirst ? leftShapeType : rightShapeType;
+                RectF secondShape = drawLeftFirst ? rightShape : leftShape;
+                ShapeType secondShapeType = drawLeftFirst ? rightShapeType : leftShapeType;
+                if (firstShapeType == ShapeType.Circle) {
+                    canvas.drawOval(firstShape, firstShapePaint);
                 } else {
-                    canvas.drawOval(firstCircle, firstShapePaint);
+                    canvas.drawRect(firstShape, firstShapePaint);
                 }
-                if (secondRect != null) {
-                    canvas.drawRect(secondRect, secondShapePaint);
+                if (secondShapeType == ShapeType.Circle) {
+                    canvas.drawOval(secondShape, secondShapePaint);
                 } else {
-                    canvas.drawOval(secondCircle, secondShapePaint);
+                    canvas.drawRect(secondShape, secondShapePaint);
                 }
 
                 // Draw middle block if necessary
