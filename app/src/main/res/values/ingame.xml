@@ -61,14 +61,17 @@
     <fraction name="level_collision_min_side">10%</fraction>
     <fraction name="level_collision_max_side">40%</fraction>
     <!-- Minimum and maximum time in milliseconds it takes a shape to go extreme to extreme horizontally -->
-    <integer name="level_collision_min_moving_time">1000</integer>
-    <integer name="level_collision_max_moving_time">15000</integer>
+    <integer name="level_collision_min_move_time">1000</integer>
+    <integer name="level_collision_max_move_time">15000</integer>
     <!-- Frames per second -->
     <integer name="level_collision_frames_per_second">30</integer>
 
     <!-- LevelFit -->
     <!-- Stroke width (as a percentage of the screen height -->
     <fraction name="level_fit_stroke_width">2%</fraction>
+    <!-- Minimum and maximum time in milliseconds it takes a shape to resize (from small to big or from big to small) -->
+    <integer name="level_fit_min_resize_time">1000</integer>
+    <integer name="level_fit_max_resize_time">15000</integer>
     <!-- Frames per second -->
     <integer name="level_fit_frames_per_second">30</integer>
 </resources>

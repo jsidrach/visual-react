@@ -117,7 +117,7 @@ public class LevelLight extends Level {
         return rootView;
     }
 
-    private boolean playerWins() {
+    private boolean moreCellsLightThanDark() {
         return (totalLightCells > ((cellsX * cellsY) / 2));
     }
 
@@ -133,7 +133,7 @@ public class LevelLight extends Level {
         rootView.invalidate();
 
         // Success if more than half of the cells are light
-        return playerWins();
+        return moreCellsLightThanDark();
     }
 
     private void initializeCells() {
@@ -249,7 +249,7 @@ public class LevelLight extends Level {
                 }
 
                 // Draw middle line
-                Paint paint = playerWins() ? successPaint : failPaint;
+                Paint paint = moreCellsLightThanDark() ? successPaint : failPaint;
                 canvas.drawRect(middleLine, paint);
             }
         }

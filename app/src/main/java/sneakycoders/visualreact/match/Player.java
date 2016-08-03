@@ -63,7 +63,7 @@ class Player {
 
         // Get colors
         colorNeutralPrimary = ContextCompat.getColor(activity, R.color.neutral_primary);
-        colorNeutralSecondary = ContextCompat.getColor(activity, R.color.neutral_secondary);
+        colorNeutralSecondary = ContextCompat.getColor(activity, R.color.neutral_light);
         colorFailPrimary = ContextCompat.getColor(activity, R.color.fail_primary);
         colorFailLight = ContextCompat.getColor(activity, R.color.fail_light);
         colorSuccessPrimary = ContextCompat.getColor(activity, R.color.success_primary);

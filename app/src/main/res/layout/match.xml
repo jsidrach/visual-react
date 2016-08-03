@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="0"
-            android:textColor="@color/neutral_secondary"
+            android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_huge"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
@@ -35,7 +35,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:text="@string/start_level"
-            android:textColor="@color/neutral_secondary"
+            android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_small"
             android:textStyle="bold" />
 
@@ -69,7 +69,7 @@
                     android:layout_marginBottom="-10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/level_color_name"
-                    android:textColor="@color/neutral_secondary"
+                    android:textColor="@color/neutral_light"
                     android:textSize="@dimen/text_SMALL"
                     android:textStyle="bold" />
 
@@ -98,7 +98,7 @@
                     android:layout_marginBottom="-10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/level_color_name"
-                    android:textColor="@color/neutral_secondary"
+                    android:textColor="@color/neutral_light"
                     android:textSize="@dimen/text_SMALL"
                     android:textStyle="bold" />
 
@@ -182,7 +182,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="0"
-            android:textColor="@color/neutral_secondary"
+            android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_huge"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
@@ -195,7 +195,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
             android:text="@string/start_level"
-            android:textColor="@color/neutral_secondary"
+            android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_small"
             android:textStyle="bold" />
     </RelativeLayout>

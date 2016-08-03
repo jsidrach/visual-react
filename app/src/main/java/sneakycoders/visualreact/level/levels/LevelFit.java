@@ -31,8 +31,8 @@ public class LevelFit extends Level {
     private int strokeWidth;
     // Colors
     private int backgroundColor;
-    private Paint firstShapePaint;
-    private Paint secondShapePaint;
+    private Paint leftShapePaint;
+    private Paint rightShapePaint;
     // View
     private LevelFitView rootView;
 
@@ -52,12 +52,12 @@ public class LevelFit extends Level {
         // Set colors
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
         Integer[] shapeColors = getRandomColors(2);
-        firstShapePaint = new Paint();
-        firstShapePaint.setStyle(Paint.Style.STROKE);
-        firstShapePaint.setColor(shapeColors[0]);
-        secondShapePaint = new Paint();
-        secondShapePaint.setStyle(Paint.Style.STROKE);
-        secondShapePaint.setColor(shapeColors[1]);
+        leftShapePaint = new Paint();
+        leftShapePaint.setStyle(Paint.Style.STROKE);
+        leftShapePaint.setColor(shapeColors[0]);
+        rightShapePaint = new Paint();
+        rightShapePaint.setStyle(Paint.Style.STROKE);
+        rightShapePaint.setColor(shapeColors[1]);
 
         // Create view
         rootView = new LevelFitView(getActivity());
@@ -108,8 +108,8 @@ public class LevelFit extends Level {
 
         // Set stroke width
         strokeWidth = (int) (height * getResources().getFraction(R.fraction.level_fit_stroke_width, 1, 1));
-        firstShapePaint.setStrokeWidth(strokeWidth);
-        secondShapePaint.setStrokeWidth(strokeWidth);
+        leftShapePaint.setStrokeWidth(strokeWidth);
+        rightShapePaint.setStrokeWidth(strokeWidth);
 
         // TODO: Make dimensions that do fit but have room to change
         // Margin from extremes
@@ -163,19 +163,19 @@ public class LevelFit extends Level {
         rightShape = new RectF(rightShapeStart, top, width - margin, top + sideY);
 
         // Set the movement
-        final int delay = 1000 / getResources().getInteger(R.integer.level_collision_frames_per_second);
-        final long movingTime = randomInt(R.integer.level_collision_min_moving_time, R.integer.level_collision_max_moving_time);
+        final int delay = 1000 / getResources().getInteger(R.integer.level_fit_frames_per_second);
+        final long resizeTime = randomInt(R.integer.level_fit_min_resize_time, R.integer.level_fit_max_resize_time);
         final long startTime = System.currentTimeMillis();
         updateShapes = new Runnable() {
             @Override
             public void run() {
-                // Time since we started the animation, modulo two times movingTime
-                // First we go straight, then backwards
-                long roundTripTime = 2 * movingTime;
-                long elapsedTime = (System.currentTimeMillis() - startTime) % roundTripTime;
+                // Time since we started the animation, modulo two times resizeTime
+                // First we increase then decrease
+                long totalResizeTime = 2 * resizeTime;
+                long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
 
                 // Calculate offset in percentage (from -100% to 100%)
-                double offset = ((elapsedTime < movingTime) ? elapsedTime : (roundTripTime - elapsedTime)) / (double) movingTime;
+                double offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (double) resizeTime;
                 int leftNewTop = (int) (leftShapeStart + offset * leftTotalDistance);
                 leftShape.offsetTo(leftNewTop, leftShape.top);
                 int rightNewTop = (int) (rightShapeStart - offset * rightTotalDistance);
@@ -227,14 +227,14 @@ public class LevelFit extends Level {
 
                 // Draw shapes
                 if (leftShapeType == ShapeType.Circle) {
-                    canvas.drawOval(leftShape, firstShapePaint);
+                    canvas.drawOval(leftShape, leftShapePaint);
                 } else {
-                    canvas.drawRect(leftShape, firstShapePaint);
+                    canvas.drawRect(leftShape, leftShapePaint);
                 }
                 if (rightShapeType == ShapeType.Circle) {
-                    canvas.drawOval(rightShape, secondShapePaint);
+                    canvas.drawOval(rightShape, rightShapePaint);
                 } else {
-                    canvas.drawRect(rightShape, secondShapePaint);
+                    canvas.drawRect(rightShape, rightShapePaint);
                 }
             }
         }
