@@ -104,11 +104,7 @@ public class LevelCollision extends Level {
         }
         // Two rectangles
         else if ((leftShapeType == ShapeType.Rectangle) && (rightShapeType == ShapeType.Rectangle)) {
-            Rect leftShapeRounded = new Rect();
-            Rect rightShapeRounded = new Rect();
-            leftShape.roundOut(leftShapeRounded);
-            rightShape.roundOut(rightShapeRounded);
-            return Rect.intersects(leftShapeRounded, rightShapeRounded);
+            return RectF.intersects(leftShape, rightShape);
         }
         // Circle and rectangle
         else {
