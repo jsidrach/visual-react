@@ -65,4 +65,10 @@
     <integer name="level_collision_max_moving_time">15000</integer>
     <!-- Frames per second -->
     <integer name="level_collision_frames_per_second">30</integer>
+
+    <!-- LevelFit -->
+    <!-- Stroke width (as a percentage of the screen height -->
+    <fraction name="level_fit_stroke_width">2%</fraction>
+    <!-- Frames per second -->
+    <integer name="level_fit_frames_per_second">30</integer>
 </resources>
