@@ -23,6 +23,9 @@ public class LevelFit extends Level {
     // Shape Types
     private ShapeType leftShapeType;
     private ShapeType rightShapeType;
+    // Screen size
+    private float halfWidth;
+    private float halfHeight;
     // Timer handler
     private Handler handler;
     // Update function (to resize the shapes)
@@ -49,6 +52,15 @@ public class LevelFit extends Level {
         leftShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
         rightShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
 
+        // Do not allow two circles
+        if ((leftShapeType == ShapeType.Circle) && (rightShapeType == ShapeType.Circle)) {
+            if (randomInInterval(0.0, 1.0) < 0.5) {
+                leftShapeType = ShapeType.Rectangle;
+            } else {
+                rightShapeType = ShapeType.Rectangle;
+            }
+        }
+
         // Set colors
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
         Integer[] shapeColors = getRandomColors(2);
@@ -71,8 +83,6 @@ public class LevelFit extends Level {
         handler.removeCallbacksAndMessages(null);
 
         // Regroup shapes in the middle
-        float halfWidth = rootView.getMeasuredWidth() / 2.0f;
-        float halfHeight = rootView.getMeasuredHeight() / 2.0f;
         leftShape.offsetTo(halfWidth - (leftShape.width() / 2.0f), halfHeight - (leftShape.height() / 2.0f));
         rightShape.offsetTo(halfWidth - (rightShape.width() / 2.0f), halfHeight - (rightShape.height() / 2.0f));
 
@@ -80,87 +90,95 @@ public class LevelFit extends Level {
         rootView.invalidate();
 
         // Check if one shape fits into the other one
-        return checkFit();
+        return shapesFit();
     }
 
-    private boolean checkFit() {
+    private boolean shapesFit() {
         // Take into account the stroke width (half of it is inside, half outside)
-        RectF leftShapeIn = new RectF();
-        RectF leftShapeOut = new RectF();
-        RectF rightShapeIn = new RectF();
-        RectF rightShapeOut = new RectF();
+        int diff = strokeWidth / 2;
 
         // Adjust sizes
-        int diff = strokeWidth / 2;
-        leftShapeIn.set(leftShape.left - diff, leftShape.top - diff, leftShape.right + diff, leftShape.bottom + diff);
-        leftShapeOut.set(leftShape.left + diff, leftShape.top + diff, leftShape.right - diff, leftShape.bottom - diff);
-        rightShapeIn.set(rightShape.left - diff, rightShape.top - diff, rightShape.right + diff, rightShape.bottom + diff);
-        rightShapeOut.set(rightShape.left + diff, rightShape.top + diff, rightShape.right - diff, rightShape.bottom - diff);
+        RectF leftShapeIn = new RectF(leftShape.left - diff, leftShape.top - diff, leftShape.right + diff, leftShape.bottom + diff);
+        RectF leftShapeOut = new RectF(leftShape.left + diff, leftShape.top + diff, leftShape.right - diff, leftShape.bottom - diff);
+        RectF rightShapeIn = new RectF(rightShape.left - diff, rightShape.top - diff, rightShape.right + diff, rightShape.bottom + diff);
+        RectF rightShapeOut = new RectF(rightShape.left + diff, rightShape.top + diff, rightShape.right - diff, rightShape.bottom - diff);
 
         // Check if one shape fits into the other one
-        return (leftShapeOut.contains(rightShapeIn) || rightShapeOut.contains(leftShapeIn));
+        if ((leftShapeType == ShapeType.Rectangle) && (rightShapeType == ShapeType.Rectangle)) {
+            return (leftShapeOut.contains(rightShapeIn) || rightShapeOut.contains(leftShapeIn));
+        } else {
+            boolean leftShapeIsCircle = (leftShapeType == ShapeType.Circle);
+            RectF circleIn = leftShapeIsCircle ? leftShapeIn : rightShapeIn;
+            RectF circleOut = leftShapeIsCircle ? leftShapeOut : rightShapeOut;
+            RectF rectangleIn = leftShapeIsCircle ? rightShapeIn : leftShapeIn;
+            RectF rectangleOut = leftShapeIsCircle ? rightShapeOut : leftShapeOut;
+
+            // Calculate distance between center of circle and the farthest corner of the rectangle
+            float circleOutRadius = circleOut.width() / 2;
+            float distX = Math.max(circleOut.centerX() - rectangleIn.left, rectangleIn.right - circleOut.centerX());
+            float distY = Math.max(circleOut.centerY() - rectangleIn.top, rectangleIn.bottom - circleOut.centerY());
+            boolean rectangleInCircle = ((circleOutRadius * circleOutRadius) >= ((distX * distX) + (distY * distY)));
+
+            return (rectangleInCircle || rectangleOut.contains(circleIn));
+        }
     }
 
     private void initializeShapes() {
         // Screen size
-        int width = rootView.getMeasuredWidth();
-        int height = rootView.getMeasuredHeight();
+        float width = rootView.getMeasuredWidth();
+        float height = rootView.getMeasuredHeight();
+        halfWidth = width / 2.0f;
+        halfHeight = height / 2.0f;
 
         // Set stroke width
         strokeWidth = (int) (height * getResources().getFraction(R.fraction.level_fit_stroke_width, 1, 1));
         leftShapePaint.setStrokeWidth(strokeWidth);
         rightShapePaint.setStrokeWidth(strokeWidth);
 
-        // TODO: Make dimensions that do fit but have room to change
-        // Margin from extremes
-        int margin = (int) (width * getResources().getFraction(R.fraction.level_collision_margin_extremes, 1, 1));
-
-        // Dimension variables (reused for both shapes)
-        int sideX;
-        int sideY;
-        int top;
+        // Original and resized shapes
+        final float originalLeftShapeWidth;
+        final float originalLeftShapeHeight;
+        final float resizedLeftShapeWidth;
+        final float resizedLeftShapeHeight;
+        final float originalRightShapeWidth;
+        final float originalRightShapeHeight;
+        final float resizedRightShapeWidth;
+        final float resizedRightShapeHeight;
 
         // Choose dimensions of the left shape
+        // TODO: Make dimensions that do fit but have room to change
         if (leftShapeType == ShapeType.Circle) {
             // Circle
-            int radius = (int) (height * randomDouble(R.fraction.level_collision_min_radius, R.fraction.level_collision_max_radius));
-            sideX = 2 * radius;
-            sideY = sideX;
-            top = (height / 2) - radius;
         } else {
             // Rectangle
-            sideX = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            sideY = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            top = (height - sideY) / 2;
         }
-
-        // Save the starting point and distance the left shape can travel (in the X axis)
-        final int leftShapeStart = margin;
-        final int leftTotalDistance = width - (2 * margin) - sideX;
-
-        // Create the left shape
-        leftShape = new RectF(margin, top, margin + sideX, top + sideY);
 
         // Choose dimensions of the right shape
         if (rightShapeType == ShapeType.Circle) {
             // Circle
-            int radius = (int) (height * randomDouble(R.fraction.level_collision_min_radius, R.fraction.level_collision_max_radius));
-            sideX = 2 * radius;
-            sideY = sideX;
-            top = (height / 2) - radius;
         } else {
             // Rectangle
-            sideX = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            sideY = (int) (height * randomDouble(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side));
-            top = (height - sideY) / 2;
         }
+        originalLeftShapeWidth = 200;
+        originalLeftShapeHeight = 200;
+        resizedLeftShapeWidth = 400;
+        resizedLeftShapeHeight = 400;
+        originalRightShapeWidth = 250;
+        originalRightShapeHeight = 250;
+        resizedRightShapeWidth = 100;
+        resizedRightShapeHeight = 100;
 
-        // Save the starting point and distance the left shape can travel (in the X axis)
-        final int rightShapeStart = width - margin - sideX;
-        final int rightTotalDistance = width - (2 * margin) - sideX;
-
-        // Create the right shape
-        rightShape = new RectF(rightShapeStart, top, width - margin, top + sideY);
+        // Create the left and right shapes
+        leftShape = new RectF(
+                (halfWidth - originalLeftShapeWidth) / 2.0f,
+                halfHeight - (originalLeftShapeHeight / 2.0f),
+                (halfWidth + originalLeftShapeWidth) / 2.0f,
+                halfHeight + (originalLeftShapeHeight / 2.0f));
+        rightShape = new RectF(
+                ((3.0f * halfWidth) - originalRightShapeWidth) / 2.0f,
+                halfHeight - (originalRightShapeHeight / 2.0f),
+                ((3.0f * halfWidth) + originalRightShapeWidth) / 2.0f,
+                halfHeight + (originalRightShapeHeight / 2.0f));
 
         // Set the movement
         final int delay = 1000 / getResources().getInteger(R.integer.level_fit_frames_per_second);
@@ -170,16 +188,28 @@ public class LevelFit extends Level {
             @Override
             public void run() {
                 // Time since we started the animation, modulo two times resizeTime
-                // First we increase then decrease
+                // First we scale up then down
                 long totalResizeTime = 2 * resizeTime;
                 long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
 
-                // Calculate offset in percentage (from -100% to 100%)
-                double offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (double) resizeTime;
-                int leftNewTop = (int) (leftShapeStart + offset * leftTotalDistance);
-                leftShape.offsetTo(leftNewTop, leftShape.top);
-                int rightNewTop = (int) (rightShapeStart - offset * rightTotalDistance);
-                rightShape.offsetTo(rightNewTop, rightShape.top);
+                // Calculate offset in percentage (from 0% to 100%)
+                float offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (float) resizeTime;
+                float leftShapeWidth = (1.0f - offset) * originalLeftShapeWidth + offset * resizedLeftShapeWidth;
+                float leftShapeHeight = (1.0f - offset) * originalLeftShapeHeight + offset * resizedLeftShapeHeight;
+                float rightShapeWidth = (1.0f - offset) * originalRightShapeWidth + offset * resizedRightShapeWidth;
+                float rightShapeHeight = (1.0f - offset) * originalRightShapeHeight + offset * resizedRightShapeHeight;
+
+                // Resize and center shapes
+                leftShape.set(
+                        (halfWidth - leftShapeWidth) / 2.0f,
+                        halfHeight - (leftShapeHeight / 2.0f),
+                        (halfWidth + leftShapeWidth) / 2.0f,
+                        halfHeight + (leftShapeHeight / 2.0f));
+                rightShape.set(
+                        ((3.0f * halfWidth) - rightShapeWidth) / 2.0f,
+                        halfHeight - (rightShapeHeight / 2.0f),
+                        ((3.0f * halfWidth) + rightShapeWidth) / 2.0f,
+                        halfHeight + (rightShapeHeight / 2.0f));
 
                 // Update view
                 rootView.invalidate();

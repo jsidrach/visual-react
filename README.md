@@ -34,10 +34,10 @@ See [here](docs/screenshots/README.md)
 | Collision  | Tap when the shapes are colliding                    |
 | TicTacToe  | Tap when three of the same type are in line          |
 | Pair       | Tap when there are two shapes equal                  |
-| Variety    | Tap when there are five different shapes             |
-| Fit        | Tap after one shape fits into the other one          |
+| Variety    | Tap when there are five or more different colors     |
+| Fit        | Tap when one shape fits into the other one           |
 | Singular   | Tap when there is a different shape among all        |
-| Labyrinth  | Tap when the two extremes are connected              |
+| Labyrinth  | Tap after the two extremes are connected             |
 
 
 ## <a name="license"></a> License

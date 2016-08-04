@@ -75,10 +75,10 @@ public class LevelCollision extends Level {
         rootView.invalidate();
 
         // Check collision
-        return checkCollision();
+        return shapesCollide();
     }
 
-    private boolean checkCollision() {
+    private boolean shapesCollide() {
         // Two circles
         if ((firstShapeType == ShapeType.Circle) && (secondShapeType == ShapeType.Circle)) {
             // Calculate centers and radius
@@ -209,7 +209,7 @@ public class LevelCollision extends Level {
                 long roundTripTime = 2 * moveTime;
                 long elapsedTime = (System.currentTimeMillis() - startTime) % roundTripTime;
 
-                // Calculate offset in percentage (from -100% to 100%)
+                // Calculate offset in percentage (from 0% to 100%)
                 double offset = ((elapsedTime < moveTime) ? elapsedTime : (roundTripTime - elapsedTime)) / (double) moveTime;
                 int leftNewTop = (int) (leftShapeStart + offset * leftTotalDistance);
                 leftShape.offsetTo(leftNewTop, leftShape.top);

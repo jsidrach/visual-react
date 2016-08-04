@@ -71,7 +71,7 @@
     <fraction name="level_fit_stroke_width">2%</fraction>
     <!-- Minimum and maximum time in milliseconds it takes a shape to resize (from small to big or from big to small) -->
     <integer name="level_fit_min_resize_time">1000</integer>
-    <integer name="level_fit_max_resize_time">15000</integer>
+    <integer name="level_fit_max_resize_time">10000</integer>
     <!-- Frames per second -->
     <integer name="level_fit_frames_per_second">30</integer>
 </resources>

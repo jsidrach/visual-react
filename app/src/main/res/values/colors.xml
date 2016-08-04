@@ -20,8 +20,17 @@
     <string-array name="palette" tools:keep="@array/colorPalette">
         <item>#f06292</item>
         <item>#ba68c8</item>
+        <item>#9575cd</item>
+        <item>#7986cb</item>
         <item>#64b5f6</item>
+        <item>#4fc3f7</item>
+        <item>#4dd0e1</item>
+        <item>#4db6ac</item>
+        <item>#dce775</item>
         <item>#fff176</item>
+        <item>#ffd54f</item>
         <item>#ffb74d</item>
+        <item>#ff8a65</item>
+        <item>#a1887f</item>
     </string-array>
 </resources>
