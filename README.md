@@ -1,22 +1,15 @@
 # Visual React
+[Screenshots](#screenshots) |
+[Levels](#levels) |
+[License](#license) |
+[Contributors](#contributors) |
+[Guidelines](#guidelines) |
+[Contributing](#contributing) |
+[Assets](#assets) |
+[Roadmap](#roadmap) |
+[References](#references)
 
 [TODO: Description]
-
-## Table of Contents
-
-* [Screenshots](#screenshots)
-* [Levels](#levels)
-* [License](#license)
-* [Contributors](#contributors)
-* [Guidelines](#guidelines)
-  * [Design](#design-guidelines)
-  * [Development](#development-guidelines)
-* [Contributing](#contributing)
-  * [Adding a level](#adding-a-level)
-  * [Fixing a bug](#fixing-a-bug)
-* [Assets](#assets)
-* [Roadmap](#roadmap)
-* [References](#references)
 
 
 ## <a name="screenshots"></a> Screenshots
