@@ -1,5 +1,5 @@
 # Visual React
-[Screenshots](#screenshots) |
+[Screenshots](docs/screenshots/README.md) |
 [Levels](#levels) |
 [License](#license) |
 [Contributors](#contributors) |
@@ -10,11 +10,6 @@
 [References](#references)
 
 [TODO: Description]
-
-
-## <a name="screenshots"></a> Screenshots
-
-See [here](docs/screenshots/README.md)
 
 
 ## <a name="levels"></a> Levels
