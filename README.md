@@ -47,10 +47,10 @@ See [here](docs/screenshots/README.md)
 
 ## <a name="contributors"></a> Contributors
 
-* [Lu Yu](https://github.com/yulu1701): design, game engine, levels
-* [J. Sid](https://github.com/jsidrach): design, game engine, levels
-* [Chen Lai](https://github.com/claigit): testing
-* [Zhongrong Jian](https://github.com/miaolegewang): testing
+* :rooster: [Lu Yu](https://github.com/yulu1701): design, game engine, levels
+* :monkey: [J. Sid](https://github.com/jsidrach): design, game engine, levels
+* :monkey_face: [Chen Lai](https://github.com/claigit): testing
+* :goat: [Zhongrong Jian](https://github.com/miaolegewang): testing
 
 
 ## <a name="guidelines"></a> Guidelines
