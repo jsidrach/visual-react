@@ -17,7 +17,7 @@
     <color name="tie_primary">#607d8b</color>
     <color name="tie_light">#b0bec5</color>
 
-    <string-array name="palette" tools:keep="@array/colorPalette">
+    <string-array name="palette" tools:keep="@array/palette">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#9575cd</item>
@@ -32,5 +32,13 @@
         <item>#ffb74d</item>
         <item>#ff8a65</item>
         <item>#a1887f</item>
+    </string-array>
+
+    <string-array name="reducedPalette" tools:keep="@array/reducedPalette">
+        <item>#f06292</item>
+        <item>#ba68c8</item>
+        <item>#4fc3f7</item>
+        <item>#fff176</item>
+        <item>#ff8a65</item>
     </string-array>
 </resources>

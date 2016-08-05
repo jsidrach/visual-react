@@ -2,15 +2,15 @@
 <resources>
     <!-- Array of available level ids -->
     <string-array name="levels">
+        <item>collision</item>
         <item>color</item>
         <item>countdown</item>
-        <item>light</item>
-        <item>collision</item>
-        <item>tictactoe</item>
-        <item>pair</item>
-        <item>variety</item>
         <item>fit</item>
-        <item>singular</item>
         <item>labyrinth</item>
+        <item>light</item>
+        <item>pair</item>
+        <item>singular</item>
+        <item>tictactoe</item>
+        <item>variety</item>
     </string-array>
 </resources>

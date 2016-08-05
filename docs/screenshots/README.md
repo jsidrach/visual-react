@@ -16,6 +16,10 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 ### Levels
 
+#### Collision
+
+<img src="level_collision_description.png" width="215"> <img src="level_collision_playing.png" width="215"> <img src="level_collision_fail.png" width="215"> <img src="level_collision_success.png" width="215">
+
 #### Color
 
 <img src="level_color_description.png" width="215"> <img src="level_color_playing.png" width="215"> <img src="level_color_fail.png" width="215"> <img src="level_color_success.png" width="215">
@@ -24,15 +28,11 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 <img src="level_countdown_description.png" width="215"> <img src="level_countdown_playing.png" width="215"> <img src="level_countdown_fail.png" width="215"> <img src="level_countdown_success.png" width="215">
 
-#### Light
+#### Fit
 
-<img src="level_light_description.png" width="215"> <img src="level_light_playing.png" width="215"> <img src="level_light_fail.png" width="215"> <img src="level_light_success.png" width="215">
+TODO
 
-#### Collision
-
-<img src="level_collision_description.png" width="215"> <img src="level_collision_playing.png" width="215"> <img src="level_collision_fail.png" width="215"> <img src="level_collision_success.png" width="215">
-
-#### TicTacToe
+#### Labyrinth
 
 TODO
 
@@ -40,18 +40,18 @@ TODO
 
 TODO
 
-#### Variety
+#### Light
 
-TODO
-
-#### Fit
-
-TODO
+<img src="level_light_description.png" width="215"> <img src="level_light_playing.png" width="215"> <img src="level_light_fail.png" width="215"> <img src="level_light_success.png" width="215">
 
 #### Singular
 
 TODO
 
-#### Labyrinth
+#### TicTacToe
+
+TODO
+
+#### Variety
 
 TODO

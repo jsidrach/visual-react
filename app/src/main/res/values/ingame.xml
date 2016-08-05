@@ -10,41 +10,10 @@
     <fraction name="match_blink_min_alpha">70%</fraction>
     <fraction name="match_blink_max_alpha">100%</fraction>
 
+
     <!--
         Levels
     -->
-
-    <!-- LevelColor -->
-    <!-- Minimum and maximum milliseconds delay before switching color -->
-    <integer name="level_color_min_delay">1000</integer>
-    <integer name="level_color_max_delay">15000</integer>
-
-    <!-- LevelCountdown -->
-    <!-- Minimum and maximum starting numbers -->
-    <integer name="level_countdown_min_start">6</integer>
-    <integer name="level_countdown_max_start">15</integer>
-    <!-- Minimum and maximum step in milliseconds between numbers -->
-    <integer name="level_countdown_min_delay">500</integer>
-    <integer name="level_countdown_max_delay">1500</integer>
-    <!-- Minimum and maximum numbers starting which the countdown hides -->
-    <integer name="level_countdown_min_hide">3</integer>
-    <integer name="level_countdown_max_hide_offset">3</integer>
-
-    <!-- LevelLight -->
-    <!-- Cells grid -->
-    <integer name="level_light_cells_x">30</integer>
-    <integer name="level_light_cells_y">20</integer>
-    <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_light_min_delay">5</integer>
-    <integer name="level_light_max_delay">10</integer>
-    <!-- Minimum and maximum probability of changing from dark to light -->
-    <fraction name="level_light_min_dark_to_light">70%</fraction>
-    <fraction name="level_light_max_dark_to_light">100%</fraction>
-    <!-- Minimum and maximum probability of changing from light to dark -->
-    <fraction name="level_light_min_light_to_dark">20%</fraction>
-    <fraction name="level_light_max_light_to_dark">35%</fraction>
-    <!-- Middle line width (as a percentage of the screen width -->
-    <fraction name="level_light_middle_line_width">1%</fraction>
 
     <!-- LevelCollision -->
     <!-- Margin from the extremes (as a percentage of the screen width) -->
@@ -66,6 +35,22 @@
     <!-- Frames per second -->
     <integer name="level_collision_frames_per_second">30</integer>
 
+    <!-- LevelColor -->
+    <!-- Minimum and maximum milliseconds delay before switching color -->
+    <integer name="level_color_min_delay">1000</integer>
+    <integer name="level_color_max_delay">15000</integer>
+
+    <!-- LevelCountdown -->
+    <!-- Minimum and maximum starting numbers -->
+    <integer name="level_countdown_min_start">6</integer>
+    <integer name="level_countdown_max_start">15</integer>
+    <!-- Minimum and maximum step in milliseconds between numbers -->
+    <integer name="level_countdown_min_delay">500</integer>
+    <integer name="level_countdown_max_delay">1500</integer>
+    <!-- Minimum and maximum numbers starting which the countdown hides -->
+    <integer name="level_countdown_min_hide">3</integer>
+    <integer name="level_countdown_max_hide_offset">3</integer>
+
     <!-- LevelFit -->
     <!-- Stroke width (as a percentage of the screen height -->
     <fraction name="level_fit_stroke_width">2%</fraction>
@@ -74,4 +59,35 @@
     <integer name="level_fit_max_resize_time">10000</integer>
     <!-- Frames per second -->
     <integer name="level_fit_frames_per_second">30</integer>
+
+    <!-- LevelLabyrinth -->
+    <!-- TODO -->
+
+    <!-- LevelLight -->
+    <!-- Cells grid -->
+    <integer name="level_light_cells_x">30</integer>
+    <integer name="level_light_cells_y">20</integer>
+    <!-- Minimum and maximum step in milliseconds between updates -->
+    <integer name="level_light_min_delay">5</integer>
+    <integer name="level_light_max_delay">10</integer>
+    <!-- Minimum and maximum probability of changing from dark to light -->
+    <fraction name="level_light_min_dark_to_light">70%</fraction>
+    <fraction name="level_light_max_dark_to_light">100%</fraction>
+    <!-- Minimum and maximum probability of changing from light to dark -->
+    <fraction name="level_light_min_light_to_dark">20%</fraction>
+    <fraction name="level_light_max_light_to_dark">35%</fraction>
+    <!-- Middle line width (as a percentage of the screen width -->
+    <fraction name="level_light_middle_line_width">1%</fraction>
+
+    <!-- LevelPair -->
+    <!-- TODO -->
+
+    <!-- LevelSingular -->
+    <!-- TODO -->
+
+    <!-- LevelTictactoe -->
+    <!-- TODO -->
+
+    <!-- LevelVariety -->
+    <!-- TODO -->
 </resources>

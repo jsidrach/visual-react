@@ -16,16 +16,16 @@
 
 | Name       | Description                                          |
 |:-----------|:-----------------------------------------------------|
+| Collision  | Tap when the shapes are colliding                    |
 | Color      | Tap after the color changes                          |
 | Countdown  | Tap after the countdown passes zero                  |
-| Light      | Tap after there are more light cells than dark cells |
-| Collision  | Tap when the shapes are colliding                    |
-| TicTacToe  | Tap when three of the same type are in line          |
-| Pair       | Tap when there are two shapes equal                  |
-| Variety    | Tap when there are five or more different colors     |
 | Fit        | Tap when one shape fits into the other one           |
-| Singular   | Tap when there is a different shape among all        |
 | Labyrinth  | Tap after the two extremes are connected             |
+| Light      | Tap after there are more light cells than dark cells |
+| Pair       | Tap when there are two shapes equal                  |
+| Singular   | Tap when there is a different shape among all        |
+| TicTacToe  | Tap when three of the same type are in line          |
+| Variety    | Tap when there are five or more different colors     |
 
 
 ## <a name="license"></a> License
@@ -93,6 +93,15 @@
 5. Rebase interactively to squash all commits into a single one, and explain in the commit body what was the bug and how it has been fixed
 6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
 
+### <a name="refactoring"></a> Refactoring / Improving code quality
+
+1. Create a new branch, named using ```refactor/<description>```, where ```<description>``` is a short description of the improvements going to be made
+2. Implement the improvements, making sure the functionality does not change
+3. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
+4. Be sure the code follows the development guidelines mentioned before in the development parent section
+5. Rebase interactively to squash all commits into a single one, and explain in the commit body what were the improvements made
+6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
+
 
 ## <a name="assets"></a> Assets
 
@@ -122,12 +131,12 @@ List of assets used:
   - [x] ~~[J] Countdown~~
   - [x] ~~[J] Light~~
   - [x] ~~[J] Collision~~
-  - [ ] [L] TicTacToe
-  - [ ] [L] Pair
-  - [ ] [L] Variety
   - [ ] [J] Fit
-  - [ ] [L] Singular
   - [ ] [J] Labyrinth
+  - [ ] [L] TicTacToe
+  - [ ] [L] Variety
+  - [ ] [L] Pair
+  - [ ] [L] Singular
 - [ ] Revisit all code to document it better
 - [ ] Integrate Firebase
 - [ ] Include ads in a non-intrusive way
