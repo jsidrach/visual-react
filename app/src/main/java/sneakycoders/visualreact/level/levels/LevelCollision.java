@@ -31,10 +31,10 @@ public class LevelCollision extends Level {
     // Update function (to move the shapes)
     private Runnable updateShapes;
     // Colors
-    private int backgroundColor;
-    private Paint middleBlockPaint;
     private Paint firstShapePaint;
     private Paint secondShapePaint;
+    private Paint middleBlockPaint;
+    private int backgroundColor;
     // View
     private LevelCollisionView rootView;
 
@@ -48,14 +48,14 @@ public class LevelCollision extends Level {
         secondShape = null;
 
         // Set colors
-        backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
-        middleBlockPaint = new Paint();
-        middleBlockPaint.setColor(ContextCompat.getColor(getActivity(), R.color.neutral_light));
         Integer[] shapeColors = getRandomColors(2);
         firstShapePaint = new Paint();
         firstShapePaint.setColor(shapeColors[0]);
         secondShapePaint = new Paint();
         secondShapePaint.setColor(shapeColors[1]);
+        middleBlockPaint = new Paint();
+        middleBlockPaint.setColor(ContextCompat.getColor(getActivity(), R.color.neutral_light));
+        backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Create view
         rootView = new LevelCollisionView(getActivity());
@@ -109,10 +109,10 @@ public class LevelCollision extends Level {
             RectF rect = firstIsCircle ? secondShape : firstShape;
 
             // Find the closest point to the circle within the rectangle
-            // Limit closestX to be in [rect.left, rect.right]
+            // Closest to centerX in [rect.left, rect.right]
             double closestX = ((centerX >= rect.left) && (centerX <= rect.right)) ? centerX : (centerX < rect.left ? rect.left : rect.right);
 
-            // Limit closestY to be in [rect.top, rect.bottom]
+            // Closest to centerY in [rect.top, rect.bottom]
             double closestY = ((centerY >= rect.top) && (centerY <= rect.bottom)) ? centerY : (centerY < rect.top ? rect.top : rect.bottom);
 
             // Calculate the distance between the circle's center and this closest point

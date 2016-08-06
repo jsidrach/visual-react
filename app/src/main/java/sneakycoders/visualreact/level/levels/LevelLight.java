@@ -30,10 +30,10 @@ public class LevelLight extends Level {
     // Middle line
     private Rect middleLine;
     // Colors
-    private int backgroundColor;
     private Paint cellPaint;
     private Paint successPaint;
     private Paint failPaint;
+    private int backgroundColor;
     // Flag to see the state of the level
     private State state;
     // Probability of changing from dark to light on each update
@@ -56,13 +56,13 @@ public class LevelLight extends Level {
         totalLightCells = 0;
 
         // Set colors
-        backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
         cellPaint = new Paint();
         cellPaint.setColor(getRandomColor());
         successPaint = new Paint();
         successPaint.setColor(successColor);
         failPaint = new Paint();
         failPaint.setColor(failColor);
+        backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Get parameters
         cellsX = getResources().getInteger(R.integer.level_light_cells_x);

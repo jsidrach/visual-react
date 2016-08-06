@@ -20,11 +20,12 @@
 | Color      | Tap after the color changes                          |
 | Countdown  | Tap after the countdown passes zero                  |
 | Fit        | Tap when one shape fits into the other one           |
+| Hole       | Tap when the circles are smaller than the hole       |
 | Labyrinth  | Tap after the two extremes are connected             |
 | Light      | Tap after there are more light cells than dark cells |
+| Lined      | Tap when three cells of the same color form a line   |
 | Pair       | Tap when there are two shapes equal                  |
 | Singular   | Tap when there is a different shape among all        |
-| Lined      | Tap when three cells of the same color form a line   |
 | Variety    | Tap when there are five or more different colors     |
 
 
@@ -132,6 +133,7 @@ List of assets used:
   - [x] ~~[J] Light~~
   - [x] ~~[J] Collision~~
   - [x] ~~[J] Fit~~
+  - [x] ~~[J] Hole~~
   - [ ] [J] Labyrinth
   - [ ] [L] Lined
   - [ ] [L] Variety

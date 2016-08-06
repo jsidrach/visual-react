@@ -33,9 +33,9 @@ public class LevelFit extends Level {
     // Stroke width
     private int strokeWidth;
     // Colors
-    private int backgroundColor;
     private Paint leftShapePaint;
     private Paint rightShapePaint;
+    private int backgroundColor;
     // View
     private LevelFitView rootView;
 
@@ -59,7 +59,6 @@ public class LevelFit extends Level {
         }
 
         // Set colors
-        backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
         Integer[] shapeColors = getRandomColors(2);
         leftShapePaint = new Paint();
         leftShapePaint.setStyle(Paint.Style.STROKE);
@@ -67,6 +66,7 @@ public class LevelFit extends Level {
         rightShapePaint = new Paint();
         rightShapePaint.setStyle(Paint.Style.STROKE);
         rightShapePaint.setColor(shapeColors[1]);
+        backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Create view
         rootView = new LevelFitView(getActivity());
@@ -192,7 +192,7 @@ public class LevelFit extends Level {
             float originalOuterRectangleHeight = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
             float originalInnerRectangleWidth;
             float originalInnerRectangleHeight;
-            float minDiff = margin * height / 2.0f;
+            float minDiff = height * getResources().getFraction(R.fraction.level_fit_min_diff, 1, 1);
             if (randomInInterval(0.0, 1.0) < 0.5) {
                 originalInnerRectangleWidth = (float) randomInInterval(originalOuterRectangleWidth + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
                 originalInnerRectangleHeight = (float) randomInInterval(minDiff, originalOuterRectangleHeight - (minDiff / 2.0f));
@@ -253,7 +253,6 @@ public class LevelFit extends Level {
             @Override
             public void run() {
                 // Time since we started the animation, modulo two times resizeTime
-                // First we scale up then down
                 long totalResizeTime = 2 * resizeTime;
                 long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
 

@@ -52,16 +52,18 @@
     <integer name="level_countdown_max_hide_offset">3</integer>
 
     <!-- LevelFit -->
-    <!-- Stroke width (as a percentage of the screen height -->
-    <fraction name="level_fit_stroke_width">2%</fraction>
     <!-- Minimum and maximum time in milliseconds it takes a shape to resize (from small to big or from big to small) -->
     <integer name="level_fit_min_resize_time">1000</integer>
     <integer name="level_fit_max_resize_time">10000</integer>
     <!-- Minimum and maximum side length (as percentage of the screen height) -->
     <fraction name="level_fit_min_side">12.5%</fraction>
     <fraction name="level_fit_max_side">37.5%</fraction>
+    <!-- Percentage of minimum size difference between rectangular shapes (as percentage of the screen height) -->
+    <fraction name="level_fit_min_diff">5%</fraction>
     <!-- Percentage of margin in the fit itself (as percentage of the screen height) -->
     <fraction name="level_fit_margin">10%</fraction>
+    <!-- Stroke width (as a percentage of the screen height -->
+    <fraction name="level_fit_stroke_width">2%</fraction>
     <!-- Frames per second -->
     <integer name="level_fit_frames_per_second">30</integer>
 
@@ -86,6 +88,23 @@
 
     <!-- LevelLined -->
     <!-- TODO -->
+
+    <!-- LevelHole -->
+    <!-- Minimum and maximum time in milliseconds it takes the circle to resize (from small to big or from big to small) -->
+    <integer name="level_hole_min_resize_time">5000</integer>
+    <integer name="level_hole_max_resize_time">15000</integer>
+    <!-- Minimum and maximum hole radius (as percentage of the screen height) -->
+    <fraction name="level_hole_min_hole_radius">5%</fraction>
+    <fraction name="level_hole_max_hole_radius">12.5%</fraction>
+    <!-- Minimum and maximum block width (as percentage of the hole radius) -->
+    <fraction name="level_hole_block_width">70%</fraction>
+    <!-- Minimum and maximum circle radius (as percentage of the screen height) -->
+    <fraction name="level_hole_min_circle_radius">15%</fraction>
+    <fraction name="level_hole_max_circle_radius">30%</fraction>
+    <!-- Percentage of margin between the hole and the smallest circle (as percentage of the hole radius) -->
+    <fraction name="level_hole_margin">50%</fraction>
+    <!-- Frames per second -->
+    <integer name="level_hole_frames_per_second">30</integer>
 
     <!-- LevelPair -->
     <!-- TODO -->
