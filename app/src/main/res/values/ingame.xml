@@ -84,13 +84,13 @@
     <!-- Middle line width (as a percentage of the screen width -->
     <fraction name="level_light_middle_line_width">1%</fraction>
 
+    <!-- LevelLined -->
+    <!-- TODO -->
+
     <!-- LevelPair -->
     <!-- TODO -->
 
     <!-- LevelSingular -->
-    <!-- TODO -->
-
-    <!-- LevelTictactoe -->
     <!-- TODO -->
 
     <!-- LevelVariety -->

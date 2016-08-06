@@ -8,9 +8,9 @@
         <item>fit</item>
         <item>labyrinth</item>
         <item>light</item>
+        <item>lined</item>
         <item>pair</item>
         <item>singular</item>
-        <item>tictactoe</item>
         <item>variety</item>
     </string-array>
 </resources>

@@ -24,7 +24,7 @@
 | Light      | Tap after there are more light cells than dark cells |
 | Pair       | Tap when there are two shapes equal                  |
 | Singular   | Tap when there is a different shape among all        |
-| TicTacToe  | Tap when three of the same type are in line          |
+| Lined      | Tap when three cells of the same color form a line   |
 | Variety    | Tap when there are five or more different colors     |
 
 
@@ -133,7 +133,7 @@ List of assets used:
   - [x] ~~[J] Collision~~
   - [x] ~~[J] Fit~~
   - [ ] [J] Labyrinth
-  - [ ] [L] TicTacToe
+  - [ ] [L] Lined
   - [ ] [L] Variety
   - [ ] [L] Pair
   - [ ] [L] Singular

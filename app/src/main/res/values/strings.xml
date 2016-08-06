@@ -42,10 +42,10 @@
     <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tap after the countdown passes zero</string>
     <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
     <string name="level_light_description" tools:keep="@string/level_light_description">Tap after there are more light cells than dark cells</string>
+    <string name="level_lined_name" tools:keep="@string/level_lined_name">Lined</string>
+    <string name="level_lined_description" tools:keep="@string/level_lined_description">Tap when three cells of the same color form a line</string>
     <string name="level_collision_name" tools:keep="@string/level_collision_name">Collision</string>
     <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes are colliding</string>
-    <string name="level_tictactoe_name" tools:keep="@string/level_tictactoe_name">TicTacToe</string>
-    <string name="level_tictactoe_description" tools:keep="@string/level_tictactoe_description">Tap when three of the same type are in line</string>
     <string name="level_pair_name" tools:keep="@string/level_pair_name">Pair</string>
     <string name="level_pair_description" tools:keep="@string/level_pair_description">Tap when there are two shapes equal</string>
     <string name="level_variety_name" tools:keep="@string/level_variety_name">Variety</string>

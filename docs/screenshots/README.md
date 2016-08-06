@@ -36,19 +36,19 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 TODO
 
-#### Pair
-
-TODO
-
 #### Light
 
 <img src="level_light_description.png" width="215"> <img src="level_light_playing.png" width="215"> <img src="level_light_fail.png" width="215"> <img src="level_light_success.png" width="215">
 
-#### Singular
+#### Lined
 
 TODO
 
-#### TicTacToe
+#### Pair
+
+TODO
+
+#### Singular
 
 TODO
 
