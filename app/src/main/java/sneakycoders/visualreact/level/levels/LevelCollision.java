@@ -227,7 +227,9 @@ public class LevelCollision extends Level {
         // Choose which one is drawn first so that the small shape is always visible
         boolean drawLeftFirst = (Math.min(leftShape.width(), leftShape.height()) >= Math.min(rightShape.width(), rightShape.height()));
         firstShape = drawLeftFirst ? leftShape : rightShape;
+        firstShapeType = drawLeftFirst ? leftShapeType : rightShapeType;
         secondShape = drawLeftFirst ? rightShape : leftShape;
+        secondShapeType = drawLeftFirst ? rightShapeType : leftShapeType;
 
         // Set timer to call the movement function
         handler.postDelayed(updateShapes, delay);
