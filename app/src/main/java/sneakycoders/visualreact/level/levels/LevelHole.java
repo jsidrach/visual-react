@@ -44,6 +44,7 @@ public class LevelHole extends Level {
         super.onCreateView(inflater, container, savedInstanceState);
 
         // Set initial state
+        result = false;
         handler = new Handler();
         leftCircle = null;
         rightCircle = null;
