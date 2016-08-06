@@ -30,7 +30,7 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 #### Fit
 
-TODO
+<img src="level_fit_description.png" width="215"> <img src="level_fit_playing.png" width="215"> <img src="level_fit_fail.png" width="215"> <img src="level_fit_success.png" width="215">
 
 #### Labyrinth
 

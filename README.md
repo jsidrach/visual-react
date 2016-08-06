@@ -131,7 +131,7 @@ List of assets used:
   - [x] ~~[J] Countdown~~
   - [x] ~~[J] Light~~
   - [x] ~~[J] Collision~~
-  - [ ] [J] Fit
+  - [x] ~~[J] Fit~~
   - [ ] [J] Labyrinth
   - [ ] [L] TicTacToe
   - [ ] [L] Variety

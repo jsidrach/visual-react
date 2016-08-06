@@ -52,13 +52,10 @@ public class LevelFit extends Level {
         leftShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
         rightShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
 
-        // Do not allow two circles
+        // Do not allow two circles, make it two rectangles
         if ((leftShapeType == ShapeType.Circle) && (rightShapeType == ShapeType.Circle)) {
-            if (randomInInterval(0.0, 1.0) < 0.5) {
-                leftShapeType = ShapeType.Rectangle;
-            } else {
-                rightShapeType = ShapeType.Rectangle;
-            }
+            leftShapeType = ShapeType.Rectangle;
+            rightShapeType = ShapeType.Rectangle;
         }
 
         // Set colors
@@ -145,28 +142,96 @@ public class LevelFit extends Level {
         final float resizedRightShapeWidth;
         final float resizedRightShapeHeight;
 
-        // Choose dimensions of the left shape
-        // TODO: Make dimensions that do fit but have room to change
-        if (leftShapeType == ShapeType.Circle) {
-            // Circle
-        } else {
-            // Rectangle
-        }
+        // Choose dimensions
+        float margin = getResources().getFraction(R.fraction.level_fit_margin, 1, 1);
+        if (((leftShapeType == ShapeType.Circle) && (rightShapeType == ShapeType.Rectangle))
+                || ((leftShapeType == ShapeType.Rectangle) && (rightShapeType == ShapeType.Circle))) {
+            // Random original rectangle
+            float originalRectangleWidth = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float originalRectangleHeight = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
 
-        // Choose dimensions of the right shape
-        if (rightShapeType == ShapeType.Circle) {
-            // Circle
+            // Circle radius between rectangle sides
+            float originalDiameter = (float) randomInInterval(originalRectangleWidth, originalRectangleHeight);
+
+            // Random resized square
+            float resizedSquareSide = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+
+            // Fit circle inside square
+            float resizedDiameter;
+            if (randomInInterval(0.0, 1.0) < 0.5) {
+                resizedDiameter = resizedSquareSide - height * margin;
+            }
+            // Fit square inside circle
+            else {
+                resizedDiameter = (float) (Math.sqrt(2.0) * resizedSquareSide) + height * margin;
+            }
+
+            // Assign dimensions
+            if (leftShapeType == ShapeType.Circle) {
+                originalLeftShapeWidth = originalDiameter;
+                originalLeftShapeHeight = originalDiameter;
+                resizedLeftShapeWidth = resizedDiameter;
+                resizedLeftShapeHeight = resizedDiameter;
+                originalRightShapeWidth = originalRectangleWidth;
+                originalRightShapeHeight = originalRectangleHeight;
+                resizedRightShapeWidth = resizedSquareSide;
+                resizedRightShapeHeight = resizedSquareSide;
+            } else {
+                originalLeftShapeWidth = originalRectangleWidth;
+                originalLeftShapeHeight = originalRectangleHeight;
+                resizedLeftShapeWidth = resizedSquareSide;
+                resizedLeftShapeHeight = resizedSquareSide;
+                originalRightShapeWidth = originalDiameter;
+                originalRightShapeHeight = originalDiameter;
+                resizedRightShapeWidth = resizedDiameter;
+                resizedRightShapeHeight = resizedDiameter;
+            }
         } else {
-            // Rectangle
+            // Random original rectangles
+            float originalOuterRectangleWidth = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float originalOuterRectangleHeight = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float originalInnerRectangleWidth;
+            float originalInnerRectangleHeight;
+            float minDiff = margin * height / 2.0f;
+            if (randomInInterval(0.0, 1.0) < 0.5) {
+                originalInnerRectangleWidth = (float) randomInInterval(originalOuterRectangleWidth + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
+                originalInnerRectangleHeight = (float) randomInInterval(minDiff, originalOuterRectangleHeight - (minDiff / 2.0f));
+            } else {
+                originalInnerRectangleWidth = (float) randomInInterval(minDiff, originalOuterRectangleWidth - minDiff);
+                originalInnerRectangleHeight = (float) randomInInterval(originalOuterRectangleHeight + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
+
+            }
+
+            // Random outer resized square
+            float resizedOuterSquareSide = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+
+            // Inner resized square
+            float resizedInnerSquareSide = resizedOuterSquareSide - height * margin;
+
+            // Assign dimensions
+            if (randomInInterval(0.0, 1.0) < 0.5) {
+                originalLeftShapeWidth = originalOuterRectangleWidth;
+                originalLeftShapeHeight = originalOuterRectangleHeight;
+                originalRightShapeWidth = originalInnerRectangleWidth;
+                originalRightShapeHeight = originalInnerRectangleHeight;
+            } else {
+                originalLeftShapeWidth = originalInnerRectangleWidth;
+                originalLeftShapeHeight = originalInnerRectangleHeight;
+                originalRightShapeWidth = originalOuterRectangleWidth;
+                originalRightShapeHeight = originalOuterRectangleHeight;
+            }
+            if (randomInInterval(0.0, 1.0) < 0.5) {
+                resizedLeftShapeWidth = resizedOuterSquareSide;
+                resizedLeftShapeHeight = resizedOuterSquareSide;
+                resizedRightShapeWidth = resizedInnerSquareSide;
+                resizedRightShapeHeight = resizedInnerSquareSide;
+            } else {
+                resizedLeftShapeWidth = resizedInnerSquareSide;
+                resizedLeftShapeHeight = resizedInnerSquareSide;
+                resizedRightShapeWidth = resizedOuterSquareSide;
+                resizedRightShapeHeight = resizedOuterSquareSide;
+            }
         }
-        originalLeftShapeWidth = 200;
-        originalLeftShapeHeight = 200;
-        resizedLeftShapeWidth = 400;
-        resizedLeftShapeHeight = 400;
-        originalRightShapeWidth = 250;
-        originalRightShapeHeight = 250;
-        resizedRightShapeWidth = 100;
-        resizedRightShapeHeight = 100;
 
         // Create the left and right shapes
         leftShape = new RectF(
