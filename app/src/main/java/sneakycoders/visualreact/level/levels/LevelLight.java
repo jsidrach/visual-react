@@ -59,9 +59,9 @@ public class LevelLight extends Level {
         cellPaint = new Paint();
         cellPaint.setColor(getRandomColor());
         successPaint = new Paint();
-        successPaint.setColor(successColor);
+        successPaint.setColor(successLightColor);
         failPaint = new Paint();
-        failPaint.setColor(failColor);
+        failPaint.setColor(failLightColor);
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Get parameters

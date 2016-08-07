@@ -17,6 +17,8 @@ import sneakycoders.visualreact.level.Level;
 // Dynamically instantiated
 @SuppressWarnings("unused")
 public class LevelHole extends Level {
+    // Result
+    boolean result;
     // Shapes
     private RectF leftCircle;
     private RectF rightCircle;
@@ -34,8 +36,6 @@ public class LevelHole extends Level {
     private Paint holePaint;
     private Paint middleBlockPaint;
     private int backgroundColor;
-    // Result
-    boolean result;
     // View
     private LevelHoleView rootView;
 

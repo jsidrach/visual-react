@@ -109,6 +109,25 @@
     <!-- LevelPair -->
     <!-- TODO -->
 
+    <!-- LevelPassage -->
+    <!-- Minimum and maximum milliseconds delay before the common passage is available -->
+    <integer name="level_passage_min_delay">3000</integer>
+    <integer name="level_passage_max_delay">12500</integer>
+    <!-- Number of passages -->
+    <integer name="level_passage_num_passages">5</integer>
+    <!-- Minimum and maximum trips each passage does before the common passage is available -->
+    <integer name="level_passage_min_trips">1</integer>
+    <integer name="level_passage_max_trips">3</integer>
+    <!-- Height of the liens (as a percentage of the screen height) -->
+    <fraction name="level_passage_line_height">5%</fraction>
+    <!-- Minimum and maximum passage widths (as a percentage of the screen height) -->
+    <fraction name="level_passage_min_passage_width">15%</fraction>
+    <fraction name="level_passage_max_passage_width">40%</fraction>
+    <!-- Margin for the passages from the extremes (as a percentage of the screen height) -->
+    <fraction name="level_passage_margin">7.5%</fraction>
+    <!-- Frames per second -->
+    <integer name="level_passage_frames_per_second">30</integer>
+
     <!-- LevelSingular -->
     <!-- TODO -->
 

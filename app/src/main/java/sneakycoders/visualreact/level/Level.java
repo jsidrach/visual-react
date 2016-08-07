@@ -20,6 +20,8 @@ abstract public class Level extends Fragment {
     // Basic colors
     protected int successColor;
     protected int failColor;
+    protected int successLightColor;
+    protected int failLightColor;
 
     // Callback when then player taps its area
     abstract public boolean onPlayerTap();
@@ -30,6 +32,8 @@ abstract public class Level extends Fragment {
         // Set colors
         successColor = ContextCompat.getColor(getActivity(), R.color.success_primary);
         failColor = ContextCompat.getColor(getActivity(), R.color.fail_primary);
+        successLightColor = ContextCompat.getColor(getActivity(), R.color.success_light);
+        failLightColor = ContextCompat.getColor(getActivity(), R.color.fail_light);
 
         return null;
     }

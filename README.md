@@ -25,6 +25,7 @@
 | Light      | Tap after there are more light cells than dark cells |
 | Lined      | Tap when three cells of the same color form a line   |
 | Pair       | Tap when there are two shapes equal                  |
+| Passage    | Tap when there is a straight passage                 |
 | Singular   | Tap when there is a different shape among all        |
 | Variety    | Tap when there are five or more different colors     |
 
@@ -134,6 +135,7 @@ List of assets used:
   - [x] ~~[J] Collision~~
   - [x] ~~[J] Fit~~
   - [x] ~~[J] Hole~~
+  - [x] ~~[J] Passage~~
   - [ ] [J] Labyrinth
   - [ ] [L] Lined
   - [ ] [L] Variety
