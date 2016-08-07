@@ -89,7 +89,7 @@ public class LevelCountdown extends Level {
     @Override
     public boolean onPlayerTap() {
         // Calculate time offset
-        double timeOffset = (totalTime - (SystemClock.elapsedRealtime() - elapsedTime)) / 1000.0f;
+        float timeOffset = (totalTime - (SystemClock.elapsedRealtime() - elapsedTime)) / 1000.0f;
 
         // Cancel countdown
         countDownTimer.cancel();

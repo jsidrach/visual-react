@@ -22,12 +22,17 @@ abstract public class Level extends Fragment {
     protected int failColor;
     protected int successLightColor;
     protected int failLightColor;
+    // Random number generator
+    private Random random;
 
     // Callback when then player taps its area
     abstract public boolean onPlayerTap();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+
+        // Initialize the random number generator
+        random = new Random();
 
         // Set colors
         successColor = ContextCompat.getColor(getActivity(), R.color.success_primary);
@@ -42,7 +47,12 @@ abstract public class Level extends Fragment {
 
     protected Integer getRandomColor() {
         String[] palette = getResources().getStringArray(R.array.palette);
-        return Color.parseColor(palette[new Random().nextInt(palette.length)]);
+        return Color.parseColor(palette[random.nextInt(palette.length)]);
+    }
+
+    protected Integer getRandomDistinctiveColor() {
+        String[] palette = getResources().getStringArray(R.array.distinctivePalette);
+        return Color.parseColor(palette[random.nextInt(palette.length)]);
     }
 
     protected Integer[] getRandomColors(int n) {
@@ -73,17 +83,21 @@ abstract public class Level extends Fragment {
         return randomInInterval(min, max);
     }
 
-    protected double randomDouble(int idMin, int idMax) {
-        double min = getResources().getFraction(idMin, 1, 1);
-        double max = getResources().getFraction(idMax, 1, 1);
+    protected float randomFloat(int idMin, int idMax) {
+        float min = getResources().getFraction(idMin, 1, 1);
+        float max = getResources().getFraction(idMax, 1, 1);
         return randomInInterval(min, max);
     }
 
-    protected int randomInInterval(int min, int max) {
-        return (new Random()).nextInt(max - min + 1) + min;
+    protected boolean randomBoolean() {
+        return random.nextBoolean();
     }
 
-    protected double randomInInterval(double min, double max) {
-        return min + (max - min) * (new Random()).nextDouble();
+    protected int randomInInterval(int min, int max) {
+        return random.nextInt(max - min + 1) + min;
+    }
+
+    protected float randomInInterval(float min, float max) {
+        return (float) (min + (max - min) * random.nextDouble());
     }
 }

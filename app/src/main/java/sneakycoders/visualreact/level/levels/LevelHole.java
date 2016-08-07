@@ -90,13 +90,13 @@ public class LevelHole extends Level {
 
     private void initializeShapes() {
         // Screen size
-        float width = rootView.getMeasuredWidth();
-        float height = rootView.getMeasuredHeight();
+        int width = rootView.getMeasuredWidth();
+        int height = rootView.getMeasuredHeight();
         halfWidth = width / 2.0f;
         halfHeight = height / 2.0f;
 
         // Set hole dimensions
-        float holeRadius = (float) (height * randomDouble(R.fraction.level_hole_min_hole_radius, R.fraction.level_hole_max_hole_radius));
+        float holeRadius = height * randomFloat(R.fraction.level_hole_min_hole_radius, R.fraction.level_hole_max_hole_radius);
         float middleBlockHalfWidth = holeRadius * getResources().getFraction(R.fraction.level_hole_block_width, 1, 1);
 
         // Create hole and middle block
@@ -104,7 +104,7 @@ public class LevelHole extends Level {
         middleBlock = new RectF(halfWidth - middleBlockHalfWidth, 0, halfWidth + middleBlockHalfWidth, height);
 
         // Set circles diameters
-        final float originalCircleDiameter = (float) (2.0f * height * randomDouble(R.fraction.level_hole_min_circle_radius, R.fraction.level_hole_max_circle_radius));
+        final float originalCircleDiameter = 2.0f * height * randomFloat(R.fraction.level_hole_min_circle_radius, R.fraction.level_hole_max_circle_radius);
         final float resizedCircleDiameter = 2.0f * holeRadius * (1.0f - getResources().getFraction(R.fraction.level_hole_margin, 1, 1));
 
         // Create circles

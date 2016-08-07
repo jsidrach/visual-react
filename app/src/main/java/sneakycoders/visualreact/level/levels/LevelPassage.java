@@ -97,12 +97,12 @@ public class LevelPassage extends Level {
 
     private void initializeShapes() {
         // Screen size
-        float width = rootView.getMeasuredWidth();
-        float height = rootView.getMeasuredHeight();
+        int width = rootView.getMeasuredWidth();
+        int height = rootView.getMeasuredHeight();
 
         // Lines
         float lineHeight = height * getResources().getFraction(R.fraction.level_passage_line_height, 1, 1);
-        float lineSeparation = height / (numPassages);
+        float lineSeparation = height / (float) numPassages;
         float linesStartingPoint = (lineSeparation - lineHeight) / 2.0f;
         for (int i = 0; i < numPassages; ++i) {
             float top = linesStartingPoint + (i * lineSeparation);
@@ -118,7 +118,7 @@ public class LevelPassage extends Level {
         // Constants for the passages
         float minCommonPoint = height * getResources().getFraction(R.fraction.level_passage_max_passage_width, 1, 1);
         float maxCommonPoint = height - minCommonPoint;
-        float commonPoint = (float) randomInInterval(minCommonPoint, maxCommonPoint);
+        float commonPoint = randomInInterval(minCommonPoint, maxCommonPoint);
         final float marginLeft = height * getResources().getFraction(R.fraction.level_passage_margin, 1, 1);
         final float marginRight = width - marginLeft;
 
@@ -126,14 +126,14 @@ public class LevelPassage extends Level {
         final float[] passagesDistEachUpdate = new float[numPassages];
         for (int i = 0; i < numPassages; ++i) {
             // Initialize passage
-            float passageWidth = (float) (height * randomDouble(R.fraction.level_passage_min_passage_width, R.fraction.level_passage_max_passage_width));
+            float passageWidth = height * randomFloat(R.fraction.level_passage_min_passage_width, R.fraction.level_passage_max_passage_width);
             float startingPoint = ((i % 2) == 0) ? marginLeft : marginRight - passageWidth;
             passages[i] = new RectF(startingPoint, lines[i].top, startingPoint + passageWidth, lines[i].bottom);
 
             // Randomize path
             float shortestDistanceBeforeCommonPoint = commonPoint - (startingPoint + (passageWidth / 2.0f));
             int trips = randomInt(R.integer.level_passage_min_trips, R.integer.level_passage_max_trips);
-            float direction = (randomInInterval(0.0, 1.0) < 1.0) ? 1.0f : -1.0f;
+            float direction = randomBoolean() ? 1.0f : -1.0f;
             float distanceBeforeCommonPoint = shortestDistanceBeforeCommonPoint + direction * trips * (marginRight - marginLeft - passageWidth);
             passagesDistEachUpdate[i] = updateDelay * distanceBeforeCommonPoint / delay;
         }

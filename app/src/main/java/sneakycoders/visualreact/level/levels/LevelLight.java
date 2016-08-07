@@ -3,7 +3,7 @@ package sneakycoders.visualreact.level.levels;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
@@ -24,11 +24,11 @@ public class LevelLight extends Level {
     // Light cells counter
     private int totalLightCells;
     // Cells
-    private Rect[][] cells;
+    private RectF[][] cells;
     // Light Cells
     private boolean[][] lightCells;
     // Middle line
-    private Rect middleLine;
+    private RectF middleLine;
     // Colors
     private Paint cellPaint;
     private Paint successPaint;
@@ -37,9 +37,9 @@ public class LevelLight extends Level {
     // Flag to see the state of the level
     private State state;
     // Probability of changing from dark to light on each update
-    private double darkToLight;
+    private float darkToLight;
     // Probability of changing from light to dark on each update
-    private double lightToDark;
+    private float lightToDark;
     // Timer handler
     private Handler handler;
     // Update function (to update the cells)
@@ -67,12 +67,12 @@ public class LevelLight extends Level {
         // Get parameters
         cellsX = getResources().getInteger(R.integer.level_light_cells_x);
         cellsY = getResources().getInteger(R.integer.level_light_cells_y);
-        darkToLight = randomDouble(R.fraction.level_light_min_dark_to_light, R.fraction.level_light_max_dark_to_light);
-        lightToDark = randomDouble(R.fraction.level_light_min_light_to_dark, R.fraction.level_light_max_light_to_dark);
+        darkToLight = randomFloat(R.fraction.level_light_min_dark_to_light, R.fraction.level_light_max_dark_to_light);
+        lightToDark = randomFloat(R.fraction.level_light_min_light_to_dark, R.fraction.level_light_max_light_to_dark);
         final int delay = randomInt(R.integer.level_light_min_delay, R.integer.level_light_max_delay);
 
         // Create matrices
-        cells = new Rect[cellsX][cellsY];
+        cells = new RectF[cellsX][cellsY];
         lightCells = new boolean[cellsX][cellsY];
 
         // Set the handler
@@ -140,54 +140,21 @@ public class LevelLight extends Level {
         // Screen and cell sizes
         int width = rootView.getMeasuredWidth();
         int height = rootView.getMeasuredHeight();
-        int cellWidth = width / cellsX;
-        int cellHeight = height / cellsY;
-
-        // Remaining pixels (remainder from previous divisions)
-        // Used so that the screen is always completely filled
-        int diffPixelsX = width - cellWidth * cellsX;
-        int diffPixelsY = height - cellHeight * cellsY;
-
-        // Rectangle coordinates
-        int left = 0;
-        int top = 0;
-        int right;
-        int bottom;
+        float cellWidth = width / (float) cellsX;
+        float cellHeight = height / (float) cellsY;
 
         // Create rectangles
         for (int i = 0; i < cellsX; i++) {
             for (int j = 0; j < cellsY; j++) {
-                // Calculate size
-                right = left + cellWidth + (diffPixelsX > 0 ? 1 : 0);
-                bottom = top + cellHeight + (diffPixelsY > 0 ? 1 : 0);
-
                 // Create rectangle
-                cells[i][j] = new Rect(left, top, right, bottom);
-
-                // Move top
-                top = bottom;
-
-                // Decrease Y remaining pixels
-                diffPixelsY--;
+                cells[i][j] = new RectF(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight);
             }
-
-            // Move left
-            left += cellWidth + (diffPixelsX > 0 ? 1 : 0);
-
-            // Decrease X remaining pixels
-            diffPixelsX--;
-
-            // Reset top
-            top = 0;
-
-            // Reset Y remaining pixels
-            diffPixelsY = cellHeight * cellsY;
         }
 
         // Create middle line
-        Rect middleCell = cells[(cellsX / 2) - 1][0];
-        int lineSemiWidth = (int) (0.5 * width * getResources().getFraction(R.fraction.level_light_middle_line_width, 1, 1));
-        middleLine = new Rect(middleCell.right - lineSemiWidth, 0, middleCell.right + lineSemiWidth, height);
+        RectF middleCell = cells[(cellsX / 2) - 1][0];
+        float lineSemiWidth = 0.5f * width * getResources().getFraction(R.fraction.level_light_middle_line_width, 1, 1);
+        middleLine = new RectF(middleCell.right - lineSemiWidth, 0, middleCell.right + lineSemiWidth, height);
 
         // Set the state
         state = State.Playing;

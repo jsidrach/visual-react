@@ -31,7 +31,7 @@ public class LevelFit extends Level {
     // Update function (to resize the shapes)
     private Runnable updateShapes;
     // Stroke width
-    private int strokeWidth;
+    private float strokeWidth;
     // Colors
     private Paint leftShapePaint;
     private Paint rightShapePaint;
@@ -49,8 +49,8 @@ public class LevelFit extends Level {
         rightShape = null;
 
         // Choose shape combination
-        leftShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
-        rightShapeType = (randomInInterval(0.0, 1.0) < 0.5) ? ShapeType.Circle : ShapeType.Rectangle;
+        leftShapeType = randomBoolean() ? ShapeType.Circle : ShapeType.Rectangle;
+        rightShapeType = randomBoolean() ? ShapeType.Circle : ShapeType.Rectangle;
 
         // Do not allow two circles, make it two rectangles
         if ((leftShapeType == ShapeType.Circle) && (rightShapeType == ShapeType.Circle)) {
@@ -92,7 +92,7 @@ public class LevelFit extends Level {
 
     private boolean shapesFit() {
         // Take into account the stroke width (half of it is inside, half outside)
-        int diff = strokeWidth / 2;
+        float diff = strokeWidth / 2.0f;
 
         // Adjust sizes
         RectF leftShapeIn = new RectF(leftShape.left - diff, leftShape.top - diff, leftShape.right + diff, leftShape.bottom + diff);
@@ -122,13 +122,13 @@ public class LevelFit extends Level {
 
     private void initializeShapes() {
         // Screen size
-        float width = rootView.getMeasuredWidth();
-        float height = rootView.getMeasuredHeight();
+        int width = rootView.getMeasuredWidth();
+        int height = rootView.getMeasuredHeight();
         halfWidth = width / 2.0f;
         halfHeight = height / 2.0f;
 
         // Set stroke width
-        strokeWidth = (int) (height * getResources().getFraction(R.fraction.level_fit_stroke_width, 1, 1));
+        strokeWidth = height * getResources().getFraction(R.fraction.level_fit_stroke_width, 1, 1);
         leftShapePaint.setStrokeWidth(strokeWidth);
         rightShapePaint.setStrokeWidth(strokeWidth);
 
@@ -147,23 +147,23 @@ public class LevelFit extends Level {
         if (((leftShapeType == ShapeType.Circle) && (rightShapeType == ShapeType.Rectangle))
                 || ((leftShapeType == ShapeType.Rectangle) && (rightShapeType == ShapeType.Circle))) {
             // Random original rectangle
-            float originalRectangleWidth = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
-            float originalRectangleHeight = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float originalRectangleWidth = height * randomFloat(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side);
+            float originalRectangleHeight = height * randomFloat(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side);
 
             // Circle radius between rectangle sides
-            float originalDiameter = (float) randomInInterval(originalRectangleWidth, originalRectangleHeight);
+            float originalDiameter = randomInInterval(originalRectangleWidth, originalRectangleHeight);
 
             // Random resized square
-            float resizedSquareSide = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float resizedSquareSide = height * randomFloat(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side);
 
             // Fit circle inside square
             float resizedDiameter;
-            if (randomInInterval(0.0, 1.0) < 0.5) {
+            if (randomBoolean()) {
                 resizedDiameter = resizedSquareSide - height * margin;
             }
             // Fit square inside circle
             else {
-                resizedDiameter = (float) (Math.sqrt(2.0) * resizedSquareSide) + height * margin;
+                resizedDiameter = (float) ((Math.sqrt(2.0) * resizedSquareSide) + height * margin);
             }
 
             // Assign dimensions
@@ -188,28 +188,28 @@ public class LevelFit extends Level {
             }
         } else {
             // Random original rectangles
-            float originalOuterRectangleWidth = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
-            float originalOuterRectangleHeight = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float originalOuterRectangleWidth = height * randomFloat(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side);
+            float originalOuterRectangleHeight = height * randomFloat(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side);
             float originalInnerRectangleWidth;
             float originalInnerRectangleHeight;
             float minDiff = height * getResources().getFraction(R.fraction.level_fit_min_diff, 1, 1);
-            if (randomInInterval(0.0, 1.0) < 0.5) {
-                originalInnerRectangleWidth = (float) randomInInterval(originalOuterRectangleWidth + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
-                originalInnerRectangleHeight = (float) randomInInterval(minDiff, originalOuterRectangleHeight - (minDiff / 2.0f));
+            if (randomBoolean()) {
+                originalInnerRectangleWidth = randomInInterval(originalOuterRectangleWidth + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
+                originalInnerRectangleHeight = randomInInterval(minDiff, originalOuterRectangleHeight - (minDiff / 2.0f));
             } else {
-                originalInnerRectangleWidth = (float) randomInInterval(minDiff, originalOuterRectangleWidth - minDiff);
-                originalInnerRectangleHeight = (float) randomInInterval(originalOuterRectangleHeight + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
+                originalInnerRectangleWidth = randomInInterval(minDiff, originalOuterRectangleWidth - minDiff);
+                originalInnerRectangleHeight = randomInInterval(originalOuterRectangleHeight + (minDiff / 2.0f), height * getResources().getFraction(R.fraction.level_fit_max_side, 1, 1));
 
             }
 
             // Random outer resized square
-            float resizedOuterSquareSide = (float) (height * randomDouble(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side));
+            float resizedOuterSquareSide = height * randomFloat(R.fraction.level_fit_min_side, R.fraction.level_fit_max_side);
 
             // Inner resized square
             float resizedInnerSquareSide = resizedOuterSquareSide - height * margin;
 
             // Assign dimensions
-            if (randomInInterval(0.0, 1.0) < 0.5) {
+            if (randomBoolean()) {
                 originalLeftShapeWidth = originalOuterRectangleWidth;
                 originalLeftShapeHeight = originalOuterRectangleHeight;
                 originalRightShapeWidth = originalInnerRectangleWidth;
@@ -220,7 +220,7 @@ public class LevelFit extends Level {
                 originalRightShapeWidth = originalOuterRectangleWidth;
                 originalRightShapeHeight = originalOuterRectangleHeight;
             }
-            if (randomInInterval(0.0, 1.0) < 0.5) {
+            if (randomBoolean()) {
                 resizedLeftShapeWidth = resizedOuterSquareSide;
                 resizedLeftShapeHeight = resizedOuterSquareSide;
                 resizedRightShapeWidth = resizedInnerSquareSide;
