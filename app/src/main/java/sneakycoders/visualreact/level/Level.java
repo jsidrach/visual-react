@@ -46,17 +46,28 @@ abstract public class Level extends Fragment {
     // Auxiliary functions
 
     protected Integer getRandomColor() {
-        String[] palette = getResources().getStringArray(R.array.palette);
-        return Color.parseColor(palette[random.nextInt(palette.length)]);
+        return randomColorIn(R.array.palette);
     }
 
     protected Integer getRandomDistinctiveColor() {
-        String[] palette = getResources().getStringArray(R.array.distinctivePalette);
+        return randomColorIn(R.array.distinctivePalette);
+    }
+
+    private Integer randomColorIn(int id) {
+        String[] palette = getResources().getStringArray(id);
         return Color.parseColor(palette[random.nextInt(palette.length)]);
     }
 
     protected Integer[] getRandomColors(int n) {
-        List<String> hexPalette = Arrays.asList(getResources().getStringArray(R.array.palette));
+        return randomColorsIn(R.array.palette, n);
+    }
+
+    protected Integer[] getRandomDistinctiveColors(int n) {
+        return randomColorsIn(R.array.distinctivePalette, n);
+    }
+
+    private Integer[] randomColorsIn(int id, int n) {
+        List<String> hexPalette = Arrays.asList(getResources().getStringArray(id));
         List<Integer> palette = new ArrayList<>();
         List<Integer> colors = new ArrayList<>();
 
