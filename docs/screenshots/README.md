@@ -62,4 +62,4 @@ TODO
 
 #### Variety
 
-TODO
+<img src="level_variety_description.png" width="215"> <img src="level_variety_playing.png" width="215"> <img src="level_variety_fail.png" width="215"> <img src="level_variety_success.png" width="215">

@@ -136,6 +136,6 @@
     <integer name="level_variety_cells_x">3</integer>
     <integer name="level_variety_cells_y">2</integer>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_variety_min_delay">600</integer>
-    <integer name="level_variety_max_delay">800</integer>
+    <integer name="level_variety_min_delay">500</integer>
+    <integer name="level_variety_max_delay">1000</integer>
 </resources>

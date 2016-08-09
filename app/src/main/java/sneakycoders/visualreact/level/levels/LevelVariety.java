@@ -24,14 +24,14 @@ public class LevelVariety extends Level {
     // Number of Cells in the Y axis
     private int cellsY;
     // Cells
-    private RectF[][] cells;
+    private RectF[][] cellsPaints;
     // Colors of different cell
     private Paint[][] paints;
     //Colors
     private int backgroundColor;
     // Timer handler
     private Handler handler;
-    // Update function (to update the cells)
+    // Update function (to update the cellsPaints)
     private Runnable updateCells;
     // View
     private LevelVarietyView rootView;
@@ -40,18 +40,18 @@ public class LevelVariety extends Level {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        // Set colors
+        // Set background color
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Get parameters
         cellsX = getResources().getInteger(R.integer.level_variety_cells_x);
         cellsY = getResources().getInteger(R.integer.level_variety_cells_y);
 
-        // Initialize cells
-        cells = new RectF[cellsX][cellsY];
+        // Create matrices
+        cellsPaints = new RectF[cellsX][cellsY];
+        paints = new Paint[cellsX][cellsY];
 
         // Initialize cell's colors
-        paints = new Paint[cellsX][cellsY];
         for (int i = 0; i < cellsX; i++) {
             for (int j = 0; j < cellsY; j++) {
                 paints[i][j] = new Paint();
@@ -67,15 +67,12 @@ public class LevelVariety extends Level {
         updateCells = new Runnable() {
             @Override
             public void run() {
-                // Cell to be changed
+                // Cell to be updated
                 int changeX = randomInInterval(0, cellsX - 1);
                 int changeY = randomInInterval(0, cellsY - 1);
-                // Original color
-                Paint originalColor = paints[changeX][changeY];
-                // Color to be filled
-                int changeColor = getRandomDistinctiveColor();
+
                 // Update color
-                paints[changeX][changeY].setColor(changeColor);
+                paints[changeX][changeY].setColor(getRandomDistinctiveColor());
 
                 // Redraw
                 rootView.invalidate();
@@ -85,8 +82,7 @@ public class LevelVariety extends Level {
             }
         };
 
-
-        // Set Timer to call the update function
+        // Set timer to call the update function
         handler.postDelayed(updateCells, delay);
 
         // Create View
@@ -110,27 +106,35 @@ public class LevelVariety extends Level {
             }
         }
 
-        // Return result
+        // Success if there are at least 5 different colors
         return (colorSet.size() >= 5);
     }
 
     private void initializeCells() {
         // Screen Size
-        float screenWidth = rootView.getWidth();
-        float screenHeight = rootView.getHeight();
+        int screenWidth = rootView.getWidth();
+        int screenHeight = rootView.getHeight();
 
         // Cell size
-        float cellWidth = screenWidth / cellsX;
-        float cellHeight = screenHeight / cellsY;
+        float cellWidth = screenWidth / (float) cellsX;
+        float cellHeight = screenHeight / (float) cellsY;
 
         for (int i = 0; i < cellsX; i++) {
             for (int j = 0; j < cellsY; j++) {
-                cells[i][j] = new RectF(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight);
+                cellsPaints[i][j] = new RectF(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight);
             }
         }
 
         // Redraw
         rootView.invalidate();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        // Cancel timers
+        handler.removeCallbacksAndMessages(null);
     }
 
     public class LevelVarietyView extends View {
@@ -141,15 +145,15 @@ public class LevelVariety extends Level {
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if (cells[0][0] == null) {
+            if (cellsPaints[0][0] == null) {
                 initializeCells();
             }
             // Playing
             else {
-                // Fill the cells with lighter color first
+                // Fill the cellsPaints with lighter color first
                 for (int i = 0; i < cellsX; i++) {
                     for (int j = 0; j < cellsY; j++) {
-                        canvas.drawRect(cells[i][j], paints[i][j]);
+                        canvas.drawRect(cellsPaints[i][j], paints[i][j]);
                     }
                 }
             }
