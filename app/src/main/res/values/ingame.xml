@@ -87,7 +87,23 @@
     <fraction name="level_light_middle_line_width">1%</fraction>
 
     <!-- LevelLined -->
-    <!-- TODO -->
+    <!-- Cells grid -->
+    <integer name="level_lined_cells">3</integer>
+    <!-- Minimum and maximum step in milliseconds between updates -->
+    <integer name="level_lined_min_delay">1000</integer>
+    <integer name="level_lined_max_delay">1500</integer>
+    <!-- Percentage of width of grid to the width of screen ( as percentage of screen width) -->
+    <fraction name="level_lined_grid_width">5%</fraction>
+    <!-- Percentage of width of separator to the size of cell (as percentage of the cell size) -->
+    <fraction name="level_lined_separator_width">2.5%</fraction>
+    <!-- Percentage of stroke width to size of cell (as percentage of the cell size) -->
+    <fraction name="level_lined_stroke_width">4%</fraction>
+    <!-- Percentage of margin of the cell to the border of the grid (as percentage of the grid size) -->
+    <fraction name="level_lined_cell_width">8%</fraction>
+    <!-- Percentage of width of rectangles that formed cross to its length -->
+    <fraction name="level_lined_rect_width">1.75%</fraction>
+    <!-- Percentage of length of cross rectangles to the length of diagonal of cell-->
+    <fraction name="level_lined_cross_length">80%</fraction>
 
     <!-- LevelHole -->
     <!-- Minimum and maximum time in milliseconds it takes the circle to resize (from small to big or from big to small) -->
