@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Basic colors for static elements -->
     <color name="neutral_primary">#424242</color>
     <color name="neutral_light">#757575</color>
@@ -19,7 +19,7 @@
     <color name="tie_light">#b0bec5</color>
 
     <!-- Color palette -->
-    <string-array name="palette" tools:keep="@array/palette">
+    <string-array name="palette">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#9575cd</item>
@@ -38,7 +38,7 @@
 
     <!-- Distinctive color palette -->
     <!-- Note: LevelVariety needs this array to be of length 5 -->
-    <string-array name="distinctivePalette" tools:keep="@array/distinctivePalette">
+    <string-array name="distinctivePalette">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#4fc3f7</item>
