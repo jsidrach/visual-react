@@ -45,9 +45,11 @@ public class LevelHole extends Level {
 
         // Set initial state
         result = false;
-        handler = new Handler();
         leftCircle = null;
         rightCircle = null;
+
+        // Set handler
+        handler = new Handler();
 
         // Set colors
         circlePaint = new Paint();

@@ -102,7 +102,8 @@ public class Match extends AppCompatActivity {
             finalStandings.setVisibility(View.GONE);
         }
 
-        // New group of conditions so that level selection ends in one of these
+        // New group of conditions so that level selection completes and falls in one of these first two
+        // Level information
         if (state == State.LevelInfo) {
             // Set players states
             String levelName = LevelsFactory.getLevelName(currentLevelId, this);
@@ -113,7 +114,9 @@ public class Match extends AppCompatActivity {
             // Show/hide corresponding views
             levelContainer.setVisibility(View.GONE);
             levelInfo.setVisibility(View.VISIBLE);
-        } else if (state == State.Level) {
+        }
+        // Playing a level
+        else if (state == State.Level) {
             // Replace current level
             currentLevel = LevelsFactory.getLevel(currentLevelId);
             getSupportFragmentManager()
@@ -128,7 +131,9 @@ public class Match extends AppCompatActivity {
             // Show/hide corresponding views
             levelInfo.setVisibility(View.GONE);
             levelContainer.setVisibility(View.VISIBLE);
-        } else if (state == State.LevelResult) {
+        }
+        // Level result
+        else if (state == State.LevelResult) {
             if (currentLevel.onPlayerTap()) {
                 lastTap.setStateSuccess();
             } else {
@@ -139,15 +144,16 @@ public class Match extends AppCompatActivity {
         }
         // Final standings
         else {
+            // Winner/loser
             if (player1.getScore() != player2.getScore()) {
-                // Choose winner/loser
                 boolean player1Wins = player1.getScore() > player2.getScore();
                 Player winner = player1Wins ? player1 : player2;
                 Player loser = player1Wins ? player2 : player1;
                 winner.setStateWinner();
                 loser.setStateLoser();
-            } else {
-                // Tie
+            }
+            // Tie
+            else {
                 player1.setStateTied();
                 player2.setStateTied();
             }
@@ -159,16 +165,18 @@ public class Match extends AppCompatActivity {
     }
 
     public void playerTap(View view) {
+        // Switch to level
         if (state == State.LevelInfo) {
-            // Switch to level
             state = State.Level;
             displayState();
-        } else if (state == State.Level) {
-            // Store the player who tapped, switch to level result
+        }
+        // Store the player who tapped, switch to level result
+        else if (state == State.Level) {
             lastTap = (view.getId() == R.id.area_player_1) ? player1 : player2;
             state = State.LevelResult;
             displayState();
         }
+        // Do nothing in the rest of the cases
     }
 
     private void delayNextState() {

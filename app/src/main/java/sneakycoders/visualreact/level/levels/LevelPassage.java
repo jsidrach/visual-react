@@ -39,11 +39,17 @@ public class LevelPassage extends Level {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        // Set initial state
+        // Set the handler
         handler = new Handler();
+
+        // Number of passages
         numPassages = getResources().getInteger(R.integer.level_passage_num_passages);
+
+        // Create shapes arrays
         lines = new RectF[numPassages];
         passages = new RectF[numPassages];
+
+        // Initialize vertical passage to null, will be filled when a player taps
         verticalPassage = null;
 
         // Set colors
@@ -53,11 +59,11 @@ public class LevelPassage extends Level {
             linesColors[i] = new Paint();
             linesColors[i].setColor(randomColors[i]);
         }
-        verticalPassageColor = new Paint();
-        verticalPassageColor.setColor(successLightColor);
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
         passageColor = new Paint();
         passageColor.setColor(backgroundColor);
+        verticalPassageColor = new Paint();
+        verticalPassageColor.setColor(successLightColor);
 
         // Create view
         rootView = new LevelPassageView(getActivity());

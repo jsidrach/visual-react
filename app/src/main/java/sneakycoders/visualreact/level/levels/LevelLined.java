@@ -52,10 +52,10 @@ public class LevelLined extends Level {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        // Initialize
+        // Set the handler
         handler = new Handler();
 
-        // Get parameters
+        // Number of cells in each axis
         nCells = getResources().getInteger(R.integer.level_lined_cells);
 
         // Colors
@@ -138,7 +138,6 @@ public class LevelLined extends Level {
                 nFilledCells++;
                 types.add(cellTypes[j][i]);
             }
-
             if ((nFilledCells == nCells) && (types.size() == 1)) {
                 nLines++;
                 for (int j = 0; j < nCells; j++) {
@@ -154,7 +153,6 @@ public class LevelLined extends Level {
             nFilledCells++;
             typesLtoR.add(cellTypes[i][i]);
         }
-
         if ((nFilledCells == nCells) && (typesLtoR.size() == 1)) {
             nLines++;
             for (int i = 0; i < nCells; i++) {
@@ -169,7 +167,6 @@ public class LevelLined extends Level {
             nFilledCells++;
             typesRtoL.add(cellTypes[i][nCells - 1 - i]);
         }
-
         if ((nFilledCells == nCells) && (typesRtoL.size() == 1)) {
             nLines++;
             for (int i = 0; i < nCells; i++) {

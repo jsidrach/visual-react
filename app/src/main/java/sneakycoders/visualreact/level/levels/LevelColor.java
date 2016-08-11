@@ -21,20 +21,22 @@ public class LevelColor extends Level {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        // Assign variables
+        // Set initial state
         result = false;
 
-        // Countdown in milliseconds before switching the color
-        int countdown = randomInt(R.integer.level_color_min_delay, R.integer.level_color_max_delay);
+        // Set handler
+        handler = new Handler();
+
+        // Countdown color
+        final int color = getRandomColor();
 
         // Create view
         final View rootView = inflater.inflate(R.layout.level_color, container, false);
 
-        // Color
-        final int color = getRandomColor();
+        // Countdown in milliseconds before switching the color
+        int countdown = randomInt(R.integer.level_color_min_delay, R.integer.level_color_max_delay);
 
         // Set timer to change screen color
-        handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -26,10 +26,8 @@ public class LevelsFactory {
         // Preferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
 
-        // Selected levels
+        // Selected levels in random order
         List<String> selectedLevels = getSelectedLevelIds(c);
-
-        // Random order
         Collections.shuffle(selectedLevels);
 
         // Prevent repeating sequences of levels if not every level has been used yet
@@ -100,6 +98,7 @@ public class LevelsFactory {
     }
 
     public static Level getLevel(String id) {
+        // Use reflection to dynamically create the level object, returning a new LevelColor as the default
         try {
             return (Level) Class.forName(MessageFormat.format(LEVEL_CLASS_FORMAT, capitalize(id))).newInstance();
         } catch (Exception e) {
@@ -126,10 +125,8 @@ public class LevelsFactory {
     }
 
     private static String capitalize(String s) {
-        // Convert String to char array
-        char[] array = s.toCharArray();
-
         // Modify first element in array to upper case
+        char[] array = s.toCharArray();
         array[0] = Character.toUpperCase(array[0]);
 
         // Return string

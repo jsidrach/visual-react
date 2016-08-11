@@ -146,14 +146,15 @@ public class LevelCollision extends Level {
         ShapeType rightShapeType = randomBoolean() ? ShapeType.Circle : ShapeType.Rectangle;
 
         // Choose dimensions of the left shape
+        // Circle
         if (leftShapeType == ShapeType.Circle) {
-            // Circle
             float diameter = 2.0f * height * randomFloat(R.fraction.level_collision_min_radius, R.fraction.level_collision_max_radius);
             shapeWidth = diameter;
             shapeHeight = diameter;
             top = (height - diameter) / 2.0f;
-        } else {
-            // Rectangle
+        }
+        // Rectangle
+        else {
             shapeWidth = height * randomFloat(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side);
             shapeHeight = height * randomFloat(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side);
             top = (height - shapeHeight) / 2.0f;
@@ -167,14 +168,15 @@ public class LevelCollision extends Level {
         leftShape = new RectF(margin, top, margin + shapeWidth, top + shapeHeight);
 
         // Choose dimensions of the right shape
+        // Circle
         if (rightShapeType == ShapeType.Circle) {
-            // Circle
             float diameter = 2.0f * height * randomFloat(R.fraction.level_collision_min_radius, R.fraction.level_collision_max_radius);
             shapeWidth = diameter;
             shapeHeight = diameter;
             top = (height - diameter) / 2.0f;
-        } else {
-            // Rectangle
+        }
+        // Rectangle
+        else {
             shapeWidth = height * randomFloat(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side);
             shapeHeight = height * randomFloat(R.fraction.level_collision_min_side, R.fraction.level_collision_max_side);
             top = (height - shapeHeight) / 2.0f;

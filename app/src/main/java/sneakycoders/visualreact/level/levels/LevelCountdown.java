@@ -36,7 +36,7 @@ public class LevelCountdown extends Level {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        // Assign variables
+        // Set initial state
         result = false;
 
         // Create view

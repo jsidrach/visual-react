@@ -44,9 +44,11 @@ public class LevelFit extends Level {
         super.onCreateView(inflater, container, savedInstanceState);
 
         // Set initial state
-        handler = new Handler();
         leftShape = null;
         rightShape = null;
+
+        // Set handler
+        handler = new Handler();
 
         // Choose shape combination
         leftShapeType = randomBoolean() ? ShapeType.Circle : ShapeType.Rectangle;
@@ -101,9 +103,13 @@ public class LevelFit extends Level {
         RectF rightShapeOut = new RectF(rightShape.left + diff, rightShape.top + diff, rightShape.right - diff, rightShape.bottom - diff);
 
         // Check if one shape fits into the other one
+        // Two rectangles
         if ((leftShapeType == ShapeType.Rectangle) && (rightShapeType == ShapeType.Rectangle)) {
             return (leftShapeOut.contains(rightShapeIn) || rightShapeOut.contains(leftShapeIn));
-        } else {
+        }
+        // Circle and rectangle
+        else {
+            // Assign circle/rectangle to their corresponding shape
             boolean leftShapeIsCircle = (leftShapeType == ShapeType.Circle);
             RectF circleIn = leftShapeIsCircle ? leftShapeIn : rightShapeIn;
             RectF circleOut = leftShapeIsCircle ? leftShapeOut : rightShapeOut;
@@ -114,8 +120,9 @@ public class LevelFit extends Level {
             float circleOutRadius = circleOut.width() / 2;
             float distX = Math.max(circleOut.centerX() - rectangleIn.left, rectangleIn.right - circleOut.centerX());
             float distY = Math.max(circleOut.centerY() - rectangleIn.top, rectangleIn.bottom - circleOut.centerY());
-            boolean rectangleInCircle = ((circleOutRadius * circleOutRadius) >= ((distX * distX) + (distY * distY)));
 
+            // Check collision
+            boolean rectangleInCircle = ((circleOutRadius * circleOutRadius) >= ((distX * distX) + (distY * distY)));
             return (rectangleInCircle || rectangleOut.contains(circleIn));
         }
     }

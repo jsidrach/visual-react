@@ -43,8 +43,6 @@ abstract public class Level extends Fragment {
         return null;
     }
 
-    // Auxiliary functions
-
     protected Integer getRandomColor() {
         return randomColorIn(R.array.palette);
     }
@@ -67,6 +65,7 @@ abstract public class Level extends Fragment {
     }
 
     private Integer[] randomColorsIn(int id, int n) {
+        // Initialize lists
         List<String> hexPalette = Arrays.asList(getResources().getStringArray(id));
         List<Integer> palette = new ArrayList<>();
         List<Integer> colors = new ArrayList<>();

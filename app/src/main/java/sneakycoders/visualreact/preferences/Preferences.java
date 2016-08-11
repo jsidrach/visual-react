@@ -41,7 +41,7 @@ public class Preferences extends Activity {
             // Get context
             Context context = getActivity();
 
-            // Level ids
+            // Get level ids
             List<String> levels = LevelsFactory.getLevelIds(context);
 
             // Get levels category
@@ -68,6 +68,7 @@ public class Preferences extends Activity {
         @Override
         public void onResume() {
             super.onResume();
+
             // Set up a listener whenever a key changes
             getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
         }
@@ -75,6 +76,7 @@ public class Preferences extends Activity {
         @Override
         public void onPause() {
             super.onPause();
+
             // Set up a listener whenever a key changes
             getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
         }
@@ -86,11 +88,8 @@ public class Preferences extends Activity {
         }
 
         private void preventNoLevelsSelected() {
-            // Context
-            Context context = getActivity();
-
             // Selected level ids
-            List<String> selectedLevelIds = LevelsFactory.getSelectedLevelIds(context);
+            List<String> selectedLevelIds = LevelsFactory.getSelectedLevelIds(getActivity());
 
             // Prevent the user from deselecting every level
             // If only one level is selected, disable it so that the user cannot deselect it

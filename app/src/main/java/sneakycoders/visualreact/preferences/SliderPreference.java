@@ -24,7 +24,7 @@ public class SliderPreference extends DialogPreference implements
     private static final int DEFAULT_MIN_VALUE = 0;
     private static final int DEFAULT_MAX_VALUE = 100;
     private static final int DEFAULT_VALUE = 50;
-    // Values
+    // Actual values
     final private int minValue;
     final private int maxValue;
     final private int defaultValue;
@@ -35,6 +35,8 @@ public class SliderPreference extends DialogPreference implements
     // Constructor
     public SliderPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        // Get actual values
         minValue = attrs.getAttributeIntValue(PREFERENCE_NS, ATTR_MIN_VALUE, DEFAULT_MIN_VALUE);
         maxValue = attrs.getAttributeIntValue(PREFERENCE_NS, ATTR_MAX_VALUE, DEFAULT_MAX_VALUE);
         defaultValue = attrs.getAttributeIntValue(ANDROID_NS, ATTR_DEFAULT_VALUE, DEFAULT_VALUE);
@@ -88,11 +90,12 @@ public class SliderPreference extends DialogPreference implements
 
     @Override
     protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
+        // Restore existing state
         if (restorePersistedValue) {
-            // Restore existing state
             currentValue = this.getPersistedInt(this.defaultValue);
-        } else {
-            // Set default state from the XML attribute
+        }
+        // Set default state from the XML attribute
+        else {
             currentValue = (Integer) defaultValue;
             persistInt(currentValue);
         }

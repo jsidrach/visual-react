@@ -15,6 +15,8 @@ import sneakycoders.visualreact.R;
 class Player {
     // Player area
     final private View area;
+    // Score
+    private int score;
     // Score text
     final private TextView scoreText;
     // Tap to continue text
@@ -36,9 +38,6 @@ class Player {
     final private int colorSuccessLight;
     final private int colorTiePrimary;
     final private int colorTieLight;
-
-    // Score
-    private int score;
 
     public Player(Activity activity, int area, int scoreText, int tapText, int levelNameText, int levelDescriptionText, int standingText) {
         // Views
@@ -95,7 +94,6 @@ class Player {
         // Set colors
         area.setBackgroundColor(colorNeutralPrimary);
         scoreText.setTextColor(colorNeutralSecondary);
-
     }
 
     public void setStateInfo(String levelName, String levelDescription) {
@@ -131,7 +129,7 @@ class Player {
     }
 
     public void setStateLoser() {
-        // Set colors and text
+        // Set colors and text (loser of the match)
         area.setBackgroundColor(colorFailPrimary);
         scoreText.setTextColor(colorFailLight);
         standingText.setTextColor(colorFailPrimary);
@@ -139,7 +137,7 @@ class Player {
     }
 
     public void setStateWinner() {
-        // Set colors and text
+        // Set colors and text (winner of the match)
         area.setBackgroundColor(colorSuccessPrimary);
         scoreText.setTextColor(colorSuccessLight);
         standingText.setTextColor(colorSuccessPrimary);
@@ -149,7 +147,7 @@ class Player {
     }
 
     public void setStateTied() {
-        // Set colors and text
+        // Set colors and text (match resulted in a tie)
         area.setBackgroundColor(colorTiePrimary);
         scoreText.setTextColor(colorTieLight);
         standingText.setTextColor(colorTiePrimary);

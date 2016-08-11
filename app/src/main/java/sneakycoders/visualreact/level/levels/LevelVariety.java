@@ -19,9 +19,9 @@ import sneakycoders.visualreact.level.Level;
 
 @SuppressWarnings("unused")
 public class LevelVariety extends Level {
-    // Number of Cells in the X axis
+    // Number of cells in the X axis
     private int cellsX;
-    // Number of Cells in the Y axis
+    // Number of cells in the Y axis
     private int cellsY;
     // Cells
     private RectF[][] cellsPaints;
@@ -43,7 +43,7 @@ public class LevelVariety extends Level {
         // Set background color
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
-        // Get parameters
+        // Get number of cells in each axis
         cellsX = getResources().getInteger(R.integer.level_variety_cells_x);
         cellsY = getResources().getInteger(R.integer.level_variety_cells_y);
 
@@ -62,8 +62,8 @@ public class LevelVariety extends Level {
         // Set the handler
         handler = new Handler();
 
-        final int delay = randomInt(R.integer.level_variety_min_delay, R.integer.level_variety_max_delay);
         // Set the update function
+        final int delay = randomInt(R.integer.level_variety_min_delay, R.integer.level_variety_max_delay);
         updateCells = new Runnable() {
             @Override
             public void run() {
@@ -96,7 +96,7 @@ public class LevelVariety extends Level {
         // Cancel timers
         handler.removeCallbacksAndMessages(null);
 
-        // Create a set to store colors
+        // Store colors in a set to know the number of different colors
         Set<Integer> colorSet = new HashSet<>();
         for (int i = 0; i < cellsX; i++) {
             for (int j = 0; j < cellsY; j++) {
@@ -111,7 +111,7 @@ public class LevelVariety extends Level {
     }
 
     private void initializeCells() {
-        // Screen Size
+        // Screen size
         int screenWidth = rootView.getWidth();
         int screenHeight = rootView.getHeight();
 
@@ -119,6 +119,7 @@ public class LevelVariety extends Level {
         float cellWidth = screenWidth / (float) cellsX;
         float cellHeight = screenHeight / (float) cellsY;
 
+        // Create cells
         for (int i = 0; i < cellsX; i++) {
             for (int j = 0; j < cellsY; j++) {
                 cellsPaints[i][j] = new RectF(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight);
@@ -150,7 +151,7 @@ public class LevelVariety extends Level {
             }
             // Playing
             else {
-                // Fill the cellsPaints with lighter color first
+                // Draw the cells
                 for (int i = 0; i < cellsX; i++) {
                     for (int j = 0; j < cellsY; j++) {
                         canvas.drawRect(cellsPaints[i][j], paints[i][j]);

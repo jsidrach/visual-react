@@ -64,12 +64,13 @@ public class LevelLight extends Level {
         failPaint.setColor(failLightColor);
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
-        // Get parameters
+        // Number of cells in each axis
         cellsX = getResources().getInteger(R.integer.level_light_cells_x);
         cellsY = getResources().getInteger(R.integer.level_light_cells_y);
+
+        // Transition probabilities
         darkToLight = randomFloat(R.fraction.level_light_min_dark_to_light, R.fraction.level_light_max_dark_to_light);
         lightToDark = randomFloat(R.fraction.level_light_min_light_to_dark, R.fraction.level_light_max_light_to_dark);
-        final int delay = randomInt(R.integer.level_light_min_delay, R.integer.level_light_max_delay);
 
         // Create matrices
         cells = new RectF[cellsX][cellsY];
@@ -79,12 +80,14 @@ public class LevelLight extends Level {
         handler = new Handler();
 
         // Set the update function
+        final int delay = randomInt(R.integer.level_light_min_delay, R.integer.level_light_max_delay);
         updateCells = new Runnable() {
             @Override
             public void run() {
                 int i = randomInInterval(0, cellsX - 1);
                 int j = randomInInterval(0, cellsY - 1);
                 double r = Math.random();
+                // Light cell
                 if (lightCells[i][j]) {
                     if (r <= lightToDark) {
                         lightCells[i][j] = false;
@@ -93,7 +96,9 @@ public class LevelLight extends Level {
                         // Redraw
                         rootView.invalidate();
                     }
-                } else {
+                }
+                // Dark cell
+                else {
                     if (r <= darkToLight) {
                         lightCells[i][j] = true;
                         totalLightCells++;
