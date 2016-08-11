@@ -20,7 +20,7 @@
     <fraction name="level_collision_margin_extremes">5%</fraction>
     <!-- Minimum shape collision height (as a percentage of the screen height) -->
     <fraction name="level_collision_min_shape_collision_height">5%</fraction>
-    <!-- Minimum and maximum percentage of the screen blocked (relative to the screen width) -->
+    <!-- Minimum and maximum percentage of the screen blocked (as a percentage of the screen width) -->
     <fraction name="level_collision_min_block_width">10%</fraction>
     <fraction name="level_collision_max_block_width">40%</fraction>
     <!-- Minimum and maximum radius (as percentage of the screen height) -->
@@ -90,20 +90,20 @@
     <!-- Cells grid -->
     <integer name="level_lined_cells">3</integer>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_lined_min_delay">1000</integer>
+    <integer name="level_lined_min_delay">750</integer>
     <integer name="level_lined_max_delay">1500</integer>
-    <!-- Percentage of width of grid to the width of screen ( as percentage of screen width) -->
-    <fraction name="level_lined_grid_width">5%</fraction>
-    <!-- Percentage of width of separator to the size of cell (as percentage of the cell size) -->
-    <fraction name="level_lined_separator_width">2.5%</fraction>
-    <!-- Percentage of stroke width to size of cell (as percentage of the cell size) -->
+    <!-- Width/height of the grid (as percentage of the minimum between screen width and screen height) -->
+    <fraction name="level_lined_grid_size">95%</fraction>
+    <!-- Width of the separator between cells (as percentage of the grid size) -->
+    <fraction name="level_lined_separator_width">5%</fraction>
+    <!-- Stroke width of the shapes (as percentage of the grid size) -->
     <fraction name="level_lined_stroke_width">4%</fraction>
-    <!-- Percentage of margin of the cell to the border of the grid (as percentage of the grid size) -->
-    <fraction name="level_lined_cell_width">8%</fraction>
-    <!-- Percentage of width of rectangles that formed cross to its length -->
-    <fraction name="level_lined_rect_width">1.75%</fraction>
-    <!-- Percentage of length of cross rectangles to the length of diagonal of cell-->
+    <!-- Margin of the cell to the border of the grid (as percentage of the grid size) -->
+    <fraction name="level_lined_cell_margin">8%</fraction>
+    <!-- Length of the cross (as a percentage of the length of the diagonal of the cell) -->
     <fraction name="level_lined_cross_length">80%</fraction>
+    <!-- Cross width (as a percentage of the cross length) -->
+    <fraction name="level_lined_cross_width">1.75%</fraction>
 
     <!-- LevelHole -->
     <!-- Minimum and maximum time in milliseconds it takes the circle to resize (from small to big or from big to small) -->

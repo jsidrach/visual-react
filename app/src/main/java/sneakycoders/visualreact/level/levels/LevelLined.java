@@ -20,26 +20,25 @@ import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.Level;
 
 @SuppressWarnings("unused")
-public class LevelLined extends Level{
+public class LevelLined extends Level {
     // Cells in the X axis and Y axis
     private int nCells;
     // Cells
-    private RectF[][] cells;
+    private RectF[][] circles;
+    private RectF[][][] crosses;
     private Paint[][] cellPaints;
-    // Shape types in cells
-    private shapeType[][] cellTypes;
-    // Rectangles to draw cross
-    private RectF[][][] crossRect;
-    // Cells that's been filled
+    // Cells types
+    private ShapeType[][] cellTypes;
+    // Filled cells
     private List<Integer> filled;
-    //Cells that's not been filled
+    // Not filled cells
     private List<Integer> notFilled;
     // Colors
     private int backgroundColor;
     private Paint successPaint;
     private Paint circlePaint;
     private Paint crossPaint;
-    // Separator parameter
+    // Separator lines
     private RectF[] lines;
     private Paint linePaint;
     // Handler
@@ -76,16 +75,16 @@ public class LevelLined extends Level{
         linePaint = new Paint();
         linePaint.setColor(ContextCompat.getColor(getActivity(), R.color.neutral_light));
 
-        // Initialize cells
-        cells = new RectF[nCells][nCells];
+        // Initialize cells matrices
+        circles = new RectF[nCells][nCells];
+        crosses = new RectF[nCells][nCells][2];
+        cellTypes = new ShapeType[nCells][nCells];
         cellPaints = new Paint[nCells][nCells];
-        crossRect = new RectF[nCells][nCells][2];
-        cellTypes = new shapeType[nCells][nCells];
 
-        // Initialize Lists to store fill information
+        // Initialize lists with fill information
         filled = new ArrayList<>();
         notFilled = new ArrayList<>();
-        for (int i = 0; i < nCells * nCells; i++) {
+        for (int i = 0; i < (nCells * nCells); i++) {
             notFilled.add(i);
         }
 
@@ -101,8 +100,6 @@ public class LevelLined extends Level{
         // Stop animation
         handler.removeCallbacksAndMessages(null);
 
-        // Determine whether there are three same colors in a line
-
         // Number of qualified lines
         int nLines = 0;
 
@@ -112,11 +109,11 @@ public class LevelLined extends Level{
         // Check horizontally from the first line to the last line
         for (int i = 0; i < nCells; i++) {
             // Create a set to store the types in the row
-            Set<shapeType> types = new HashSet<>();
+            Set<ShapeType> types = new HashSet<>();
             nFilledCells = 0;
 
             // Get the number of filled cells and types of cells in the row
-            for (int j = 0; (j < nCells) && (filled.contains(nCells * i + j)); j++) {
+            for (int j = 0; ((j < nCells) && (filled.contains(nCells * i + j))); j++) {
                 nFilledCells++;
                 types.add(cellTypes[i][j]);
             }
@@ -124,6 +121,7 @@ public class LevelLined extends Level{
             // Check if all types are the same when the row is filled
             if ((nFilledCells == nCells) && (types.size() == 1)) {
                 nLines++;
+
                 // Set the paint color to success paint
                 for (int j = 0; j < nCells; j++) {
                     cellPaints[i][j] = successPaint;
@@ -133,7 +131,7 @@ public class LevelLined extends Level{
 
         // Check vertically from first column to last column
         for (int i = 0; i < nCells; i++) {
-            Set<shapeType> types = new HashSet<>();
+            Set<ShapeType> types = new HashSet<>();
             nFilledCells = 0;
 
             for (int j = 0; (j < nCells) && (filled.contains(nCells * j + i)); j++) {
@@ -150,9 +148,8 @@ public class LevelLined extends Level{
         }
 
         // Check diagonal from left to right
-        Set<shapeType> typesLtoR = new HashSet<>();
+        Set<ShapeType> typesLtoR = new HashSet<>();
         nFilledCells = 0;
-
         for (int i = 0; (i < nCells) && (filled.contains(nCells * i + i)); i++) {
             nFilledCells++;
             typesLtoR.add(cellTypes[i][i]);
@@ -166,9 +163,8 @@ public class LevelLined extends Level{
         }
 
         // Check diagonal from right to left
-        Set<shapeType> typesRtoL = new HashSet<>();
+        Set<ShapeType> typesRtoL = new HashSet<>();
         nFilledCells = 0;
-
         for (int i = 0; (i < nCells) && (filled.contains(i * nCells + nCells - 1 - i)); i++) {
             nFilledCells++;
             typesRtoL.add(cellTypes[i][nCells - 1 - i]);
@@ -181,7 +177,7 @@ public class LevelLined extends Level{
             }
         }
 
-        // Check if there are connected lines of same shape types
+        // Check if there is at least one connected line
         boolean result = (nLines > 0);
 
         // Redraw if there are such lines
@@ -200,10 +196,6 @@ public class LevelLined extends Level{
         handler.removeCallbacksAndMessages(null);
     }
 
-    private enum shapeType {
-        Circle, Cross
-    }
-
     private void initializeCells() {
         // Screen size
         int width = rootView.getMeasuredWidth();
@@ -211,17 +203,17 @@ public class LevelLined extends Level{
 
         // Size of the grid
         float squareWidth = Math.min(width, height);
-        float resizedSquareWidth = squareWidth * (1.0f - getResources().getFraction(R.fraction.level_lined_grid_width, 1, 1));
+        float resizedSquareWidth = squareWidth * getResources().getFraction(R.fraction.level_lined_grid_size, 1, 1);
         float gridSize = resizedSquareWidth / nCells;
 
         // Width of separator
-        float halfSeparatorWidth = gridSize * getResources().getFraction(R.fraction.level_lined_separator_width, 1, 1);
+        float halfSeparatorWidth = 0.5f * gridSize * getResources().getFraction(R.fraction.level_lined_separator_width, 1, 1);
 
         // Set stroke width of the circles
-        float strokeMargin = gridSize * getResources().getFraction(R.fraction.level_lined_stroke_width, 1, 1);
-        circlePaint.setStrokeWidth(strokeMargin);
-        crossPaint.setStrokeWidth(strokeMargin);
-        successPaint.setStrokeWidth(2.0f * strokeMargin);
+        float strokeWidth = gridSize * getResources().getFraction(R.fraction.level_lined_stroke_width, 1, 1);
+        circlePaint.setStrokeWidth(strokeWidth);
+        crossPaint.setStrokeWidth(strokeWidth);
+        successPaint.setStrokeWidth(2.0f * strokeWidth);
 
         // Bounds of the grid
         float startLeft = (width - resizedSquareWidth) / 2.0f;
@@ -248,32 +240,34 @@ public class LevelLined extends Level{
         }
 
         // Margin of the cell to the grid
-        float cellMargin = gridSize * getResources().getFraction(R.fraction.level_lined_cell_width, 1, 1);
+        float cellMargin = gridSize * getResources().getFraction(R.fraction.level_lined_cell_margin, 1, 1);
 
         // Size of actual cells
         float cellSize = gridSize - 2.0f * cellMargin;
 
-        // Length and width of rectangles of cross
+        // Length and width of the rectangles that form the crosses
         float crossLength = (float) Math.sqrt(2.0) * cellSize * getResources().getFraction(R.fraction.level_lined_cross_length, 1, 1);
-        float crossWidth = crossLength * getResources().getFraction(R.fraction.level_lined_rect_width, 1, 1);
+        float crossWidth = crossLength * getResources().getFraction(R.fraction.level_lined_cross_width, 1, 1);
 
-        // Distances of the edges of rectangle to edges of cell
+        // Distances of the edges of the cross to the edges of the cell
         float distHorizontal = (crossLength - cellSize) / 2.0f;
         float distVertical = (cellSize - crossWidth) / 2.0f;
 
-        // Initialize cells and crosses
+        // Initialize circles and crosses
         for (int i = 0; i < nCells; i++) {
             for (int j = 0; j < nCells; j++) {
-                // Cells
+                // Cells parameters
                 float cellLeft = startLeft + cellMargin + i * gridSize;
                 float cellTop = startTop + cellMargin + j * gridSize;
                 float cellRight = startLeft + (i + 1) * gridSize - cellMargin;
                 float cellBottom = startTop + (j + 1) * gridSize - cellMargin;
-                cells[i][j] = new RectF(cellLeft, cellTop, cellRight, cellBottom);
 
-                // Crosses
-                crossRect[i][j][0] = new RectF(cellLeft - distHorizontal, cellTop + distVertical, cellRight + distHorizontal, cellBottom - distVertical);
-                crossRect[i][j][1] = new RectF(cellLeft + distVertical, cellTop - distHorizontal, cellRight - distVertical, cellBottom + distHorizontal);
+                // Circle
+                circles[i][j] = new RectF(cellLeft, cellTop, cellRight, cellBottom);
+
+                // Cross
+                crosses[i][j][0] = new RectF(cellLeft - distHorizontal, cellTop + distVertical, cellRight + distHorizontal, cellBottom - distVertical);
+                crosses[i][j][1] = new RectF(cellLeft + distVertical, cellTop - distHorizontal, cellRight - distVertical, cellBottom + distHorizontal);
             }
         }
 
@@ -288,22 +282,22 @@ public class LevelLined extends Level{
                     notFilled = filled;
                     filled = new ArrayList<>();
                 }
-                // More cells to be filled
+                // More cells need to be filled
                 else {
                     // Cell to be filled
                     int cellInd = randomInInterval(0, notFilled.size() - 1);
                     int cellPos = notFilled.get(cellInd);
+                    filled.add(cellPos);
+                    notFilled.remove(cellInd);
 
-                    // Which type to fill into the cell
+                    // Type of the cell
                     boolean isCircle = randomBoolean();
 
                     // Update the grid
-                    filled.add(cellPos);
-                    notFilled.remove(cellInd);
                     int row = cellPos / nCells;
                     int col = cellPos % nCells;
                     cellPaints[row][col] = isCircle ? circlePaint : crossPaint;
-                    cellTypes[row][col] = isCircle ? shapeType.Circle : shapeType.Cross;
+                    cellTypes[row][col] = isCircle ? ShapeType.Circle : ShapeType.Cross;
                 }
 
                 // Update view
@@ -314,7 +308,6 @@ public class LevelLined extends Level{
             }
         };
 
-
         // Set timer to call the update function
         handler.postDelayed(updateCells, delay);
 
@@ -322,7 +315,10 @@ public class LevelLined extends Level{
         rootView.invalidate();
     }
 
-
+    // Types of shape
+    private enum ShapeType {
+        Circle, Cross
+    }
 
     public class LevelLinedView extends View {
         public LevelLinedView(Context c) {
@@ -332,7 +328,7 @@ public class LevelLined extends Level{
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if (cells[0][0] == null) {
+            if (circles[0][0] == null) {
                 initializeCells();
             }
             // Playing
@@ -351,14 +347,14 @@ public class LevelLined extends Level{
                     int col = index % nCells;
 
                     // Draw circle
-                    if (cellTypes[row][col] == shapeType.Circle) {
-                        canvas.drawOval(cells[row][col], cellPaints[row][col]);
+                    if (cellTypes[row][col] == ShapeType.Circle) {
+                        canvas.drawOval(circles[row][col], cellPaints[row][col]);
                     }
                     // Draw cross
                     else {
                         // Get the two rectangles to draw
-                        RectF rectHorizontal = crossRect[row][col][0];
-                        RectF rectVertical = crossRect[row][col][1];
+                        RectF rectHorizontal = crosses[row][col][0];
+                        RectF rectVertical = crosses[row][col][1];
 
                         // Rotate the canvas around the center of rectangles
                         canvas.save();
