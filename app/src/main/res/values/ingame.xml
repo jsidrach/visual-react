@@ -93,15 +93,15 @@
     <integer name="level_lined_min_delay">750</integer>
     <integer name="level_lined_max_delay">1500</integer>
     <!-- Width/height of the grid (as percentage of the minimum between screen width and screen height) -->
-    <fraction name="level_lined_grid_size">95%</fraction>
+    <fraction name="level_lined_grid_size">90%</fraction>
     <!-- Width of the separator between cells (as percentage of the grid size) -->
     <fraction name="level_lined_separator_width">5%</fraction>
     <!-- Stroke width of the shapes (as percentage of the grid size) -->
-    <fraction name="level_lined_stroke_width">4%</fraction>
+    <fraction name="level_lined_stroke_width">5%</fraction>
     <!-- Margin of the cell to the border of the grid (as percentage of the grid size) -->
-    <fraction name="level_lined_cell_margin">8%</fraction>
+    <fraction name="level_lined_cell_margin">12.5%</fraction>
     <!-- Length of the cross (as a percentage of the length of the diagonal of the cell) -->
-    <fraction name="level_lined_cross_length">80%</fraction>
+    <fraction name="level_lined_cross_length">90%</fraction>
     <!-- Cross width (as a percentage of the cross length) -->
     <fraction name="level_lined_cross_width">1.75%</fraction>
 

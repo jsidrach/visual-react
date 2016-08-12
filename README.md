@@ -136,25 +136,24 @@ List of assets used:
   - [x] ~~[J] Fit~~
   - [x] ~~[J] Hole~~
   - [x] ~~[J] Passage~~
-  - [ ] [J] Labyrinth
-  - [ ] [L] Lined
-  - [ ] [L] Variety
+  - [x] ~~[L] Lined~~
+  - [x] ~~[L] Variety~~
   - [ ] [L] Pair
   - [ ] [L] Singular
-- [ ] Revisit all code to document it better
+  - [ ] [J] Labyrinth
 - [ ] Integrate Firebase
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus
   - [ ] Ingame (can be disabled)
-- [ ] Distribute app to the rest of sneaky coders, test & QA
+- [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
+- [ ] Distribute app to the rest of sneaky coders, test & QA
 - [ ] Design app icon
 - [ ] Write app description
 - [ ] Review translation guidelines, RTL (left -> start, right -> end), format numbers, etc.
 - [ ] Translate to Chinese and Spanish
 - [ ] Translate to additional languages, use paid service if needed
 - [ ] Think and document more possible levels for future versions
-- [ ] Make screenshots
 - [ ] Create SneakyCoders account on Play Store
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app

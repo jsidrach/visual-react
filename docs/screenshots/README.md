@@ -46,7 +46,7 @@ TODO
 
 #### Lined
 
-TODO
+<img src="level_lined_description.png" width="215"> <img src="level_lined_playing.png" width="215"> <img src="level_lined_fail.png" width="215"> <img src="level_lined_success.png" width="215">
 
 #### Pair
 

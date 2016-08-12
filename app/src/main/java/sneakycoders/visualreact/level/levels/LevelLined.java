@@ -210,7 +210,7 @@ public class LevelLined extends Level {
         float strokeWidth = gridSize * getResources().getFraction(R.fraction.level_lined_stroke_width, 1, 1);
         circlePaint.setStrokeWidth(strokeWidth);
         crossPaint.setStrokeWidth(strokeWidth);
-        successPaint.setStrokeWidth(2.0f * strokeWidth);
+        successPaint.setStrokeWidth(1.5f * strokeWidth);
 
         // Bounds of the grid
         float startLeft = (width - resizedSquareWidth) / 2.0f;
