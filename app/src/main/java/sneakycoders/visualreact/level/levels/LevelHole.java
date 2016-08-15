@@ -83,7 +83,7 @@ public class LevelHole extends Level {
             holePaint = circlePaint;
         }
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
 
         // Check if the circle is smaller than the hole
@@ -151,7 +151,7 @@ public class LevelHole extends Level {
                         centerRightCircleX + (circleDiameter / 2.0f),
                         halfHeight + (circleDiameter / 2.0f));
 
-                // Update view
+                // Redraw
                 rootView.invalidate();
 
                 // Update again after the delay
@@ -162,7 +162,7 @@ public class LevelHole extends Level {
         // Set timer to call the movement function
         handler.postDelayed(updateShapes, delay);
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
     }
 

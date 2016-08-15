@@ -95,7 +95,7 @@ public class LevelPassage extends Level {
             result = false;
         }
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
 
         return result;
@@ -165,7 +165,7 @@ public class LevelPassage extends Level {
                     }
                 }
 
-                // Update view
+                // Redraw
                 rootView.invalidate();
 
                 // Update again after the delay
@@ -176,7 +176,7 @@ public class LevelPassage extends Level {
         // Set timer to call the movement function
         handler.postDelayed(updateShapes, updateDelay);
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
     }
 

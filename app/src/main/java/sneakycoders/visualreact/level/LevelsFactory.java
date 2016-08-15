@@ -90,6 +90,14 @@ public class LevelsFactory {
             }
         }
 
+        // If no level is selected, add all
+        // This occurs if the preferences screen has never been visited
+        if (selectedLevelIds.size() == 0) {
+            for (String level : levelIds) {
+                selectedLevelIds.add(level);
+            }
+        }
+
         return selectedLevelIds;
     }
 

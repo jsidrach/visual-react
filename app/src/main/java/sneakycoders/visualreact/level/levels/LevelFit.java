@@ -85,7 +85,7 @@ public class LevelFit extends Level {
         leftShape.offsetTo(halfWidth - (leftShape.width() / 2.0f), halfHeight - (leftShape.height() / 2.0f));
         rightShape.offsetTo(halfWidth - (rightShape.width() / 2.0f), halfHeight - (rightShape.height() / 2.0f));
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
 
         // Check if one shape fits into the other one
@@ -282,7 +282,7 @@ public class LevelFit extends Level {
                         ((3.0f * halfWidth) + rightShapeWidth) / 2.0f,
                         halfHeight + (rightShapeHeight / 2.0f));
 
-                // Update view
+                // Redraw
                 rootView.invalidate();
 
                 // Update again after the delay
@@ -293,7 +293,7 @@ public class LevelFit extends Level {
         // Set timer to call the movement function
         handler.postDelayed(updateShapes, delay);
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
     }
 

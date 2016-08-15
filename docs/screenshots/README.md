@@ -38,7 +38,7 @@ Taken with Android Studio Emulator, on a Nexus 5X API 24
 
 #### Labyrinth
 
-TODO
+<img src="level_labyrinth_description.png" width="215"> <img src="level_labyrinth_playing.png" width="215"> <img src="level_labyrinth_fail.png" width="215"> <img src="level_labyrinth_success.png" width="215">
 
 #### Light
 

@@ -138,9 +138,9 @@ List of assets used:
   - [x] ~~[J] Passage~~
   - [x] ~~[L] Lined~~
   - [x] ~~[L] Variety~~
+  - [x] ~~[J] Labyrinth~~
   - [ ] [L] Pair
   - [ ] [L] Singular
-  - [ ] [J] Labyrinth
 - [ ] Integrate Firebase
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus

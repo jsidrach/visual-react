@@ -15,8 +15,6 @@ import sneakycoders.visualreact.R;
 class Player {
     // Player area
     final private View area;
-    // Score
-    private int score;
     // Score text
     final private TextView scoreText;
     // Tap to continue text
@@ -38,6 +36,8 @@ class Player {
     final private int colorSuccessLight;
     final private int colorTiePrimary;
     final private int colorTieLight;
+    // Score
+    private int score;
 
     public Player(Activity activity, int area, int scoreText, int tapText, int levelNameText, int levelDescriptionText, int standingText) {
         // Views

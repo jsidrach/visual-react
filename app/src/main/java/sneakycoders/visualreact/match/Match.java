@@ -45,6 +45,9 @@ public class Match extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Set default preferences
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+
         // Inflate layout
         setContentView(R.layout.match);
 

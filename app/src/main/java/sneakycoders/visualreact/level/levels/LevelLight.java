@@ -79,6 +79,51 @@ public class LevelLight extends Level {
         // Set the handler
         handler = new Handler();
 
+        // Create view
+        rootView = new LevelLightView(getActivity());
+
+        return rootView;
+    }
+
+    private boolean moreCellsLightThanDark() {
+        return (totalLightCells > ((cellsX * cellsY) / 2));
+    }
+
+    @Override
+    public boolean onPlayerTap() {
+        // Cancel timers
+        handler.removeCallbacksAndMessages(null);
+
+        // Set state
+        state = State.Result;
+
+        // Redraw
+        rootView.invalidate();
+
+        // Success if more than half of the cells are light
+        return moreCellsLightThanDark();
+    }
+
+    private void initializeCells() {
+        // Screen and cell sizes
+        int width = rootView.getMeasuredWidth();
+        int height = rootView.getMeasuredHeight();
+        float cellWidth = width / (float) cellsX;
+        float cellHeight = height / (float) cellsY;
+
+        // Create rectangles
+        for (int i = 0; i < cellsX; i++) {
+            for (int j = 0; j < cellsY; j++) {
+                // Create rectangle
+                cells[i][j] = new RectF(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight);
+            }
+        }
+
+        // Create middle line
+        RectF middleCell = cells[(cellsX / 2) - 1][0];
+        float lineSemiWidth = 0.5f * width * getResources().getFraction(R.fraction.level_light_middle_line_width, 1, 1);
+        middleLine = new RectF(middleCell.right - lineSemiWidth, 0, middleCell.right + lineSemiWidth, height);
+
         // Set the update function
         final int delay = randomInt(R.integer.level_light_min_delay, R.integer.level_light_max_delay);
         updateCells = new Runnable() {
@@ -116,55 +161,10 @@ public class LevelLight extends Level {
         // Set timer to call the update function
         handler.postDelayed(updateCells, delay);
 
-        // Create view
-        rootView = new LevelLightView(getActivity());
-
-        return rootView;
-    }
-
-    private boolean moreCellsLightThanDark() {
-        return (totalLightCells > ((cellsX * cellsY) / 2));
-    }
-
-    @Override
-    public boolean onPlayerTap() {
-        // Cancel timers
-        handler.removeCallbacksAndMessages(null);
-
-        // Set state
-        state = State.Result;
-
-        // Force redraw
-        rootView.invalidate();
-
-        // Success if more than half of the cells are light
-        return moreCellsLightThanDark();
-    }
-
-    private void initializeCells() {
-        // Screen and cell sizes
-        int width = rootView.getMeasuredWidth();
-        int height = rootView.getMeasuredHeight();
-        float cellWidth = width / (float) cellsX;
-        float cellHeight = height / (float) cellsY;
-
-        // Create rectangles
-        for (int i = 0; i < cellsX; i++) {
-            for (int j = 0; j < cellsY; j++) {
-                // Create rectangle
-                cells[i][j] = new RectF(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight);
-            }
-        }
-
-        // Create middle line
-        RectF middleCell = cells[(cellsX / 2) - 1][0];
-        float lineSemiWidth = 0.5f * width * getResources().getFraction(R.fraction.level_light_middle_line_width, 1, 1);
-        middleLine = new RectF(middleCell.right - lineSemiWidth, 0, middleCell.right + lineSemiWidth, height);
-
         // Set the state
         state = State.Playing;
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
     }
 

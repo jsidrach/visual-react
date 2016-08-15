@@ -68,7 +68,17 @@
     <integer name="level_fit_frames_per_second">30</integer>
 
     <!-- LevelLabyrinth -->
-    <!-- TODO -->
+    <!-- Cells grid -->
+    <integer name="level_labyrinth_cells_x">15</integer>
+    <integer name="level_labyrinth_cells_y">10</integer>
+    <!-- Minimum and maximum step in milliseconds between updates -->
+    <integer name="level_labyrinth_min_delay">50</integer>
+    <integer name="level_labyrinth_max_delay">100</integer>
+    <!-- Minimum and maximum probability of changing random cells instead of path cells -->
+    <fraction name="level_labyrinth_min_update_random">80%</fraction>
+    <fraction name="level_labyrinth_max_update_random">90%</fraction>
+    <!-- Path width (as a percentage of the cell width) -->
+    <fraction name="level_labyrinth_path_width">25%</fraction>
 
     <!-- LevelLight -->
     <!-- Cells grid -->
@@ -83,7 +93,7 @@
     <!-- Minimum and maximum probability of changing from light to dark -->
     <fraction name="level_light_min_light_to_dark">20%</fraction>
     <fraction name="level_light_max_light_to_dark">35%</fraction>
-    <!-- Middle line width (as a percentage of the screen width -->
+    <!-- Middle line width (as a percentage of the screen width) -->
     <fraction name="level_light_middle_line_width">1%</fraction>
 
     <!-- LevelLined -->

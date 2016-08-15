@@ -70,7 +70,7 @@ public class LevelCollision extends Level {
         // Remove middle block
         middleBlock = null;
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
 
         // Check collision
@@ -217,7 +217,7 @@ public class LevelCollision extends Level {
                 float rightNewTop = rightShapeStart - offset * rightTotalDistance;
                 rightShape.offsetTo(rightNewTop, rightShape.top);
 
-                // Update view
+                // Redraw
                 rootView.invalidate();
 
                 // Update again after the delay
@@ -239,7 +239,7 @@ public class LevelCollision extends Level {
         float blockWidth = width * randomFloat(R.fraction.level_collision_min_block_width, R.fraction.level_collision_max_block_width);
         middleBlock = new RectF((width - blockWidth) / 2.0f, 0, (width + blockWidth) / 2.0f, height);
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
     }
 

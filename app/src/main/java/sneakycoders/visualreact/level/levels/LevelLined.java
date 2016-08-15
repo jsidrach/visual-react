@@ -91,7 +91,9 @@ public class LevelLined extends Level {
         // Initialize separators
         lines = new RectF[2 * (nCells - 1)];
 
+        // Create view
         rootView = new LevelLinedView(getActivity());
+
         return rootView;
     }
 
@@ -177,7 +179,7 @@ public class LevelLined extends Level {
         // Check if there is at least one connected line
         boolean result = (nLines > 0);
 
-        // Redraw if there are such lines
+        // Redraw if needed
         if (result) {
             rootView.invalidate();
         }
@@ -297,7 +299,7 @@ public class LevelLined extends Level {
                     cellTypes[row][col] = isCircle ? ShapeType.Circle : ShapeType.Cross;
                 }
 
-                // Update view
+                // Redraw
                 rootView.invalidate();
 
                 // Update again after the delay
@@ -308,7 +310,7 @@ public class LevelLined extends Level {
         // Set timer to call the update function
         handler.postDelayed(updateCells, delay);
 
-        // Force redraw
+        // Redraw
         rootView.invalidate();
     }
 

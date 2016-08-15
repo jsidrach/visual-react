@@ -2,6 +2,7 @@ package sneakycoders.visualreact.launcher;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -14,6 +15,9 @@ public class Launcher extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set default preferences
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         // Inflate layout
         setContentView(R.layout.launcher);
