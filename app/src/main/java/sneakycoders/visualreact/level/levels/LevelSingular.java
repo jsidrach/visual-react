@@ -286,7 +286,7 @@ public class LevelSingular extends Level {
             canvas.drawRect(rightEye, facePaint);
 
             // Draw smiley mouth
-            canvas.drawArc(mouth, 15.0f, 150.0f, false, mouthPaint);
+            canvas.drawArc(mouth, 10.0f, 170.0f, false, mouthPaint);
 
             // Restore canvas
             canvas.restore();

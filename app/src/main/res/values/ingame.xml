@@ -158,24 +158,24 @@
     <!-- Cells grid -->
     <integer name="level_singular_cells_x">12</integer>
     <integer name="level_singular_cells_y">8</integer>
-    <!-- Margin of eye rectangles to center of the cell (as percentage of cell size) -->
-    <fraction name="level_singular_margin_eye_x">8%</fraction>
-    <fraction name="level_singular_margin_eye_y">15%</fraction>
-    <!-- Length and width of eye rectangle as a percentage of cell length and width -->
-    <fraction name="level_singular_eye_length">20%</fraction>
-    <fraction name="level_singular_eye_width">6.5%</fraction>
-    <!-- Length and width of mouth rectangle as a percentage of cell length and width -->
+    <!-- Margin of eye rectangles to center of the cell (as percentage of the cell size) -->
+    <fraction name="level_singular_margin_eye_x">7.5%</fraction>
+    <fraction name="level_singular_margin_eye_y">7.5%</fraction>
+    <!-- Length and width of the eye (as a percentage of the cell length and width, respectively) -->
+    <fraction name="level_singular_eye_length">7.5%</fraction>
+    <fraction name="level_singular_eye_width">20%</fraction>
+    <!-- Length and width of the mouth (as a percentage of the cell length and width, respectively) -->
     <fraction name="level_singular_mouth_length">50%</fraction>
-    <!-- Width of the separator as a percentage of cell size -->
-    <fraction name="level_singular_line_width">4%</fraction>
-    <!-- Width of stroke of the mouth paint as a percentage of cell size -->
-    <fraction name="level_singular_stroke_width">8%</fraction>
+    <!-- Width of the separator between cells (as a percentage of the cell size) -->
+    <fraction name="level_singular_line_width">2.5%</fraction>
+    <!-- Width of the stroke of the mouth's paint (as a percentage of the cell size) -->
+    <fraction name="level_singular_stroke_width">7.5%</fraction>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_singular_min_delay">50</integer>
-    <integer name="level_singular_max_delay">100</integer>
+    <integer name="level_singular_min_delay">250</integer>
+    <integer name="level_singular_max_delay">750</integer>
     <!-- Minimum and maximum step in milliseconds to change to smiley face -->
     <integer name="level_singular_min_timer_delay">3500</integer>
-    <integer name="level_singular_max_timer_delay">8000</integer>
+    <integer name="level_singular_max_timer_delay">12500</integer>
 
     <!-- LevelVariety -->
     <!-- Cells grid -->
