@@ -155,7 +155,27 @@
     <integer name="level_passage_frames_per_second">30</integer>
 
     <!-- LevelSingular -->
-    <!-- TODO -->
+    <!-- Cells grid -->
+    <integer name="level_singular_cells_x">12</integer>
+    <integer name="level_singular_cells_y">8</integer>
+    <!-- Margin of eye rectangles to center of the cell (as percentage of cell size) -->
+    <fraction name="level_singular_margin_eye_x">8%</fraction>
+    <fraction name="level_singular_margin_eye_y">15%</fraction>
+    <!-- Length and width of eye rectangle as a percentage of cell length and width -->
+    <fraction name="level_singular_eye_length">20%</fraction>
+    <fraction name="level_singular_eye_width">6.5%</fraction>
+    <!-- Length and width of mouth rectangle as a percentage of cell length and width -->
+    <fraction name="level_singular_mouth_length">50%</fraction>
+    <!-- Width of the separator as a percentage of cell size -->
+    <fraction name="level_singular_line_width">4%</fraction>
+    <!-- Width of stroke of the mouth paint as a percentage of cell size -->
+    <fraction name="level_singular_stroke_width">8%</fraction>
+    <!-- Minimum and maximum step in milliseconds between updates -->
+    <integer name="level_singular_min_delay">50</integer>
+    <integer name="level_singular_max_delay">100</integer>
+    <!-- Minimum and maximum step in milliseconds to change to smiley face -->
+    <integer name="level_singular_min_timer_delay">3500</integer>
+    <integer name="level_singular_max_timer_delay">8000</integer>
 
     <!-- LevelVariety -->
     <!-- Cells grid -->
