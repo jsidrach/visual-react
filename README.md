@@ -26,7 +26,7 @@
 | Lined      | Tap when three cells of the same color form a line   |
 | Pair       | Tap when there are two shapes equal                  |
 | Passage    | Tap when there is a straight passage                 |
-| Singular   | Tap when there is a different shape among all        |
+| Singular   | Tap when there is a sad face among all               |
 | Variety    | Tap when there are five or more different colors     |
 
 
@@ -139,8 +139,8 @@ List of assets used:
   - [x] ~~[L] Lined~~
   - [x] ~~[L] Variety~~
   - [x] ~~[J] Labyrinth~~
+  - [x] ~~[L] Singular~~
   - [ ] [L] Pair
-  - [ ] [L] Singular
 - [ ] Integrate Firebase
 - [ ] Include ads in a non-intrusive way
   - [ ] Menus

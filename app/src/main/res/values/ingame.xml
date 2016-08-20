@@ -173,9 +173,9 @@
     <!-- Minimum and maximum step in milliseconds between updates -->
     <integer name="level_singular_min_delay">250</integer>
     <integer name="level_singular_max_delay">750</integer>
-    <!-- Minimum and maximum step in milliseconds to change to smiley face -->
-    <integer name="level_singular_min_timer_delay">3500</integer>
-    <integer name="level_singular_max_timer_delay">12500</integer>
+    <!-- Minimum and maximum probability of changing to sad face -->
+    <fraction name="level_singular_min_change_face">5%</fraction>
+    <fraction name="level_singular_max_change_face">10%</fraction>
 
     <!-- LevelVariety -->
     <!-- Cells grid -->

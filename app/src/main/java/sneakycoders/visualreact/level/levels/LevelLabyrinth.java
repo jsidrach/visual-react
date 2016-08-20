@@ -241,17 +241,17 @@ public class LevelLabyrinth extends Level {
         Direction direction = Direction.Right;
         while (x < xConnection) {
             PathType pathType;
-            float p = randomInInterval(0.0f, 1.0f);
+            double p = Math.random();
 
             // To the right
             if (direction == Direction.Right) {
                 // Switch to the top
-                if ((p < 0.33f) && (y > 1)) {
+                if ((p < 0.33) && (y > 1)) {
                     pathType = PathType.TopLeft;
                     direction = Direction.Top;
                 }
                 // Switch to the bottom
-                else if ((p < 0.66f) && (y < (cellsY - 2))) {
+                else if ((p < 0.66) && (y < (cellsY - 2))) {
                     pathType = PathType.BottomLeft;
                     direction = Direction.Bottom;
                 }
@@ -266,7 +266,7 @@ public class LevelLabyrinth extends Level {
             // To the top
             else if (direction == Direction.Top) {
                 // Continue to the top
-                if ((p < 0.33f) && (y > 1)) {
+                if ((p < 0.33) && (y > 1)) {
                     pathType = PathType.Vertical;
                 }
                 // Switch to the right
@@ -281,7 +281,7 @@ public class LevelLabyrinth extends Level {
             // To the bottom
             else {
                 // Continue to the bottom
-                if ((p < 0.33f) && (y < (cellsY - 2))) {
+                if ((p < 0.33) && (y < (cellsY - 2))) {
                     pathType = PathType.Vertical;
                 }
                 // Switch to the right
@@ -308,17 +308,17 @@ public class LevelLabyrinth extends Level {
         direction = Direction.Left;
         while (x > xConnection) {
             PathType pathType;
-            float p = randomInInterval(0.0f, 1.0f);
+            double p = Math.random();
 
             // To the left
             if (direction == Direction.Left) {
                 // Switch to the top
-                if ((p < 0.33f) && (y > 1)) {
+                if ((p < 0.33) && (y > 1)) {
                     pathType = PathType.TopRight;
                     direction = Direction.Top;
                 }
                 // Switch to the bottom
-                else if ((p < 0.66f) && (y < (cellsY - 2))) {
+                else if ((p < 0.66) && (y < (cellsY - 2))) {
                     pathType = PathType.BottomRight;
                     direction = Direction.Bottom;
                 }
@@ -333,7 +333,7 @@ public class LevelLabyrinth extends Level {
             // To the top
             else if (direction == Direction.Top) {
                 // Continue to the top
-                if ((p < 0.33f) && (y > 1)) {
+                if ((p < 0.33) && (y > 1)) {
                     pathType = PathType.Vertical;
                 }
                 // Switch to the left
@@ -348,7 +348,7 @@ public class LevelLabyrinth extends Level {
             // To the bottom
             else {
                 // Continue to the bottom
-                if ((p < 0.33f) && (y < (cellsY - 2))) {
+                if ((p < 0.33) && (y < (cellsY - 2))) {
                     pathType = PathType.Vertical;
                 }
                 // Switch to the left
@@ -422,7 +422,7 @@ public class LevelLabyrinth extends Level {
                 PathCell cell;
 
                 // Select a random cell
-                if ((randomInInterval(0.0f, 1.0f) < pRandomCell) || (pathCells.size() == 0)) {
+                if ((Math.random() < pRandomCell) || (pathCells.size() == 0)) {
                     cell = randomCells.get(randomInInterval(0, randomCells.size() - 1));
                 }
                 // Select and remove one of the remaining path cells

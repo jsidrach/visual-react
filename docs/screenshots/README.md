@@ -58,7 +58,7 @@ TODO
 
 #### Singular
 
-TODO
+<img src="level_singular_description.png" width="215"> <img src="level_singular_playing.png" width="215"> <img src="level_singular_fail.png" width="215"> <img src="level_singular_success.png" width="215">
 
 #### Variety
 

@@ -57,7 +57,7 @@
     <string name="level_passage_name" tools:keep="@string/level_passage_name">Passage</string>
     <string name="level_passage_description" tools:keep="@string/level_passage_description">Tap when there is a straight passage</string>
     <string name="level_singular_name" tools:keep="@string/level_singular_name">Singular</string>
-    <string name="level_singular_description" tools:keep="@string/level_singular_description">Tap when there is a different shape among all</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Tap when there is a sad face among all</string>
     <string name="level_variety_name" tools:keep="@string/level_variety_name">Variety</string>
     <string name="level_variety_description" tools:keep="@string/level_variety_description">Tap when there are five or more different colors</string>
 </resources>

@@ -190,36 +190,34 @@ public class LevelSingular extends Level {
             }
         }
 
-        // Timer schedule time
-        long timerChangeFace = randomInInterval(getResources().getInteger(R.integer.level_singular_min_timer_delay), getResources().getInteger(R.integer.level_singular_max_timer_delay));
-
-        // Change one cell to sad face
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Change the cell to sad face
-                cells[sadFaceX][sadFaceY] = sadFace;
-                sadFace.changeOrientation();
-
-                // Change result to true
-                result = true;
-
-                // Redraw
-                rootView.invalidate();
-            }
-        }, timerChangeFace);
+        // Probability to change one cell to sad face
+        final float prob = randomFloat(R.fraction.level_singular_min_change_face, R.fraction.level_singular_max_change_face);
 
         // Update cells
         final int delay = randomInInterval(getResources().getInteger(R.integer.level_singular_min_delay), getResources().getInteger(R.integer.level_singular_max_delay));
         updateCells = new Runnable() {
             @Override
             public void run() {
-                // Select one cell
-                int randomX = randomInInterval(0, cellsX - 1);
-                int randomY = randomInInterval(0, cellsY - 1);
+                // Determine whether to change one cell to sad face
+                if ((!result) && (Math.random() <= prob)) {
+                    // Substitute cell by a sad face
+                    cells[sadFaceX][sadFaceY] = sadFace;
 
-                // Rotate
-                cells[randomX][randomY].changeOrientation();
+                    // Rotate the cell
+                    sadFace.setRandomOrientation();
+
+                    // Set result to success
+                    result = true;
+                }
+                // Choose a random cell and rotate it
+                else {
+                    // Select the cell
+                    int randomX = randomInInterval(0, cellsX - 1);
+                    int randomY = randomInInterval(0, cellsY - 1);
+
+                    // Rotate the cell
+                    cells[randomX][randomY].setRandomOrientation();
+                }
 
                 // Redraw
                 rootView.invalidate();
@@ -272,7 +270,7 @@ public class LevelSingular extends Level {
         }
 
         // Change to a random orientation
-        public void changeOrientation() {
+        public void setRandomOrientation() {
             this.orientation = 90 * randomInInterval(0, 3);
         }
 
@@ -286,7 +284,7 @@ public class LevelSingular extends Level {
             canvas.drawRect(rightEye, facePaint);
 
             // Draw smiley mouth
-            canvas.drawArc(mouth, 10.0f, 170.0f, false, mouthPaint);
+            canvas.drawArc(mouth, 15.0f, 150.0f, false, mouthPaint);
 
             // Restore canvas
             canvas.restore();
