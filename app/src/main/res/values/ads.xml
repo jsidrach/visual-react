@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ad_app_id">ca-app-pub-8591136532354132~3598525407</string>
+    <string name="ad_ingame_unit_id">ca-app-pub-8591136532354132/1608271406</string>
+    <string name="ad_launcher_unit_id">ca-app-pub-8591136532354132/9131538203</string>
+    <string name="ad_postlevel_unit_id">ca-app-pub-8591136532354132/7654805003</string>
+</resources>

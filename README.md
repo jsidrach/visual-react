@@ -2,12 +2,12 @@
 [Screenshots](docs/screenshots/README.md) |
 [Levels](#levels) |
 [License](#license) |
+[Metadata](docs/metadata/README.md) |
 [Contributors](#contributors) |
 [Guidelines](#guidelines) |
 [Contributing](#contributing) |
 [Assets](#assets) |
-[Roadmap](#roadmap) |
-[References](#references)
+[Roadmap](#roadmap)
 
 [TODO: Description]
 
@@ -141,10 +141,11 @@ List of assets used:
   - [x] ~~[J] Labyrinth~~
   - [x] ~~[L] Singular~~
   - [ ] [L] Pair
-- [ ] Integrate Firebase
-- [ ] Include ads in a non-intrusive way
-  - [ ] Menus
-  - [ ] Ingame (can be disabled)
+- [x] ~~Integrate Firebase~~
+- [x] ~~Include ads in a non-intrusive way~~
+  - [x] ~~Menus~~
+  - [x] ~~Ingame (can be disabled)~~
+  - [x] ~~Popup (rematch/leave)~~
 - [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
 - [ ] Distribute app to the rest of sneaky coders, test & QA
@@ -153,15 +154,7 @@ List of assets used:
 - [ ] Review translation guidelines, RTL (left -> start, right -> end), format numbers, etc.
 - [ ] Translate to Chinese and Spanish
 - [ ] Translate to additional languages, use paid service if needed
-- [ ] Think and document more possible levels for future versions
 - [ ] Create SneakyCoders account on Play Store
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
-- [ ] ????
-- [ ] Profit
-
-
-## <a name="references"></a> References
-Remove as implemented / no longer needed
-
-- [Disable ads on runtime](http://stackoverflow.com/questions/4549401/correctly-disable-admob-ads)
+- [ ] Think and document more possible levels for future versions

@@ -1,21 +1,29 @@
 package sneakycoders.visualreact.match;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.List;
 
 import sneakycoders.visualreact.R;
+import sneakycoders.visualreact.launcher.Launcher;
 import sneakycoders.visualreact.level.Level;
 import sneakycoders.visualreact.level.LevelsFactory;
 
 public class Match extends AppCompatActivity {
-
     // Current state of the match
     private State state;
     // Player 1
@@ -40,6 +48,11 @@ public class Match extends AppCompatActivity {
     private View finalStandings;
     // Handler for callbacks
     private Handler handler;
+    // Ad popup
+    private InterstitialAd adPopup;
+    // Ad listeners
+    private AdListener exitListener;
+    private AdListener rematchListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +63,44 @@ public class Match extends AppCompatActivity {
 
         // Inflate layout
         setContentView(R.layout.match);
+
+        // Add banner ad if active
+        AdView adView = (AdView) findViewById(R.id.adIngame);
+        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("show_ads_levels", true)) {
+            MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.ad_app_id));
+            AdRequest adRequest = new AdRequest
+                    .Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .build();
+            adView.loadAd(adRequest);
+        }
+        // Remove ad from layout otherwise
+        else {
+            ViewGroup rootView = (ViewGroup) findViewById(android.R.id.content);
+            rootView.removeView(adView);
+            adView.setVisibility(View.GONE);
+        }
+
+        // Add popup ad
+        adPopup = new InterstitialAd(this);
+        adPopup.setAdUnitId(getResources().getString(R.string.ad_postlevel_unit_id));
+        loadPopup();
+
+        // Set listeners for the popup
+        rematchListener = new AdListener() {
+            @Override
+            public void onAdClosed() {
+                state = State.LevelSelection;
+                displayState();
+                loadPopup();
+            }
+        };
+        exitListener = new AdListener() {
+            @Override
+            public void onAdClosed() {
+                switchToLauncher();
+            }
+        };
 
         // Set view bindings
         levelInfo = findViewById(R.id.level_info);
@@ -70,7 +121,7 @@ public class Match extends AppCompatActivity {
         startMatch(null);
     }
 
-    public void startMatch(@SuppressWarnings({"UnusedParameters"}) View view) {
+    public void startMatch(View view) {
         // Levels sequence
         remainingLevels = LevelsFactory.getLevelsSequence(this);
 
@@ -82,9 +133,18 @@ public class Match extends AppCompatActivity {
         player1.reset();
         player2.reset();
 
-        // Set initial state
-        state = State.LevelSelection;
-        displayState();
+        // Rematch
+        if ((view != null) && (adPopup.isLoaded())) {
+            // Show add before continuing
+            adPopup.setAdListener(rematchListener);
+            adPopup.show();
+        }
+        // First match
+        else {
+            // Set initial state
+            state = State.LevelSelection;
+            displayState();
+        }
     }
 
     private void displayState() {
@@ -142,6 +202,7 @@ public class Match extends AppCompatActivity {
             } else {
                 lastTap.setStateFail();
             }
+
             // Switch to next state after a delay
             delayNextState();
         }
@@ -222,13 +283,15 @@ public class Match extends AppCompatActivity {
                     .setCancelable(false)
                     .setPositiveButton(R.string.cancel_match_yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            Match.super.onBackPressed();
+                            leaveMatch();
                         }
                     })
                     .setNegativeButton(R.string.cancel_match_no, null)
                     .show();
-        } else {
-            super.onBackPressed();
+        }
+        // No confirmation dialog
+        else {
+            leaveMatch();
         }
     }
 
@@ -243,5 +306,32 @@ public class Match extends AppCompatActivity {
     // States of the match
     private enum State {
         LevelSelection, LevelInfo, Level, LevelResult, Standings
+    }
+
+    private void leaveMatch() {
+        // Show ad before exiting
+        if (adPopup.isLoaded()) {
+            adPopup.setAdListener(exitListener);
+            adPopup.show();
+        }
+        // Exit directly
+        else {
+            switchToLauncher();
+        }
+    }
+
+    private void switchToLauncher() {
+        // Switch to Launcher screen
+        Intent intent = new Intent(Match.this, Launcher.class);
+        startActivity(intent);
+    }
+
+    private void loadPopup() {
+        // Load a new ad for the popup
+        AdRequest adRequest = new AdRequest
+                .Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adPopup.loadAd(adRequest);
     }
 }

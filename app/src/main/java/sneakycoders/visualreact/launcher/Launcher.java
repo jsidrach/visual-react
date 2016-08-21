@@ -6,6 +6,10 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.match.Match;
 import sneakycoders.visualreact.preferences.Preferences;
@@ -21,6 +25,15 @@ public class Launcher extends AppCompatActivity {
 
         // Inflate layout
         setContentView(R.layout.launcher);
+
+        // Add banner ad
+        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.ad_app_id));
+        AdView adView = (AdView) findViewById(R.id.adLauncher);
+        AdRequest adRequest = new AdRequest
+                .Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.loadAd(adRequest);
     }
 
     public void switchToPreferences(@SuppressWarnings("UnusedParameters") View view) {
