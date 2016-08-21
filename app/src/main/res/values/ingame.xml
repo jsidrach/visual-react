@@ -174,8 +174,8 @@
     <integer name="level_singular_min_delay">250</integer>
     <integer name="level_singular_max_delay">750</integer>
     <!-- Minimum and maximum probability of changing to sad face -->
-    <fraction name="level_singular_min_change_face">5%</fraction>
-    <fraction name="level_singular_max_change_face">10%</fraction>
+    <fraction name="level_singular_min_change_face">2.5%</fraction>
+    <fraction name="level_singular_max_change_face">5%</fraction>
 
     <!-- LevelVariety -->
     <!-- Cells grid -->
