@@ -161,8 +161,8 @@ public class LevelSingular extends Level {
                 float top = topY + cellSize * j;
 
                 // Center of the cell
-                float centerX = left + cellWidth / 2.0f;
-                float centerY = top + cellHeight / 2.0f;
+                float centerX = left + cellSize / 2.0f;
+                float centerY = top + cellSize / 2.0f;
 
                 // Eyes
                 float eyeTop = centerY - eyeMarginToY - eyeWidth;
