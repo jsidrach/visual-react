@@ -109,12 +109,14 @@
 
 List of assets used:
 
-* [Play Icon](docs/assets/play_icon.svg): [Freepik](http://www.flaticon.com) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Play Icon](docs/assets/play_icon.svg): [Freepik](http://www.flaticon.com/authors/freepik) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 * [Preferences Icon](docs/assets/preferences_icon.svg): [Egor Rumyantsev](http://www.flaticon.com/authors/egor-rumyantsev) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 * [Rematch Icon](docs/assets/rematch_icon.svg): [Vaadin](http://www.flaticon.com/authors/vaadin) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
+* [Bolt Icon](docs/assets/bolt_icon.svg): [Freepik](http://www.flaticon.com/authors/freepik) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
 
 
 ## <a name="roadmap"></a> Roadmap
+
 
 - [x] ~~Rethink design, winner/loser should be more clear~~
 - [x] ~~Write Design Goals~~
@@ -141,20 +143,21 @@ List of assets used:
   - [x] ~~[J] Labyrinth~~
   - [x] ~~[L] Singular~~
   - [ ] [L] Pair
+- [x] Create SneakyCoders account on Play Store
 - [x] ~~Integrate Firebase~~
 - [x] ~~Include ads in a non-intrusive way~~
   - [x] ~~Menus~~
   - [x] ~~Ingame (can be disabled)~~
   - [x] ~~Popup (rematch/leave)~~
+- [ ] Design app icon
+- [ ] Write app description
+- [ ] Create app promotional graphics
+- [ ] Translate to Chinese and Spanish
+- [ ] Upgrade target API to 24
 - [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
 - [ ] Distribute app to the rest of sneaky coders, test & QA
-- [ ] Design app icon
-- [ ] Write app description
-- [ ] Review translation guidelines, RTL (left -> start, right -> end), format numbers, etc.
-- [ ] Translate to Chinese and Spanish
 - [ ] Translate to additional languages, use paid service if needed
-- [ ] Create SneakyCoders account on Play Store
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
 - [ ] Think and document more possible levels for future versions
