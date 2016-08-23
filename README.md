@@ -149,11 +149,11 @@ List of assets used:
   - [x] ~~Menus~~
   - [x] ~~Ingame (can be disabled)~~
   - [x] ~~Popup (rematch/leave)~~
-- [ ] Design app icon
+- [x] Design app icon
 - [ ] Write app description
 - [ ] Create app promotional graphics
-- [ ] Translate to Chinese and Spanish
-- [ ] Upgrade target API to 24
+- [ ] Translate to Spanish
+- [ ] Translate to Chinese
 - [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
 - [ ] Distribute app to the rest of sneaky coders, test & QA

@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Launcher -->
-    <string name="app_name">Visual React - 2 Player</string>
+    <string name="app_name" translatable="false">Visual React</string>
     <string name="preferences_name">Preferences</string>
     <string name="match_name">Match</string>
-    <string name="play_icon">Play Button</string>
-    <string name="preferences_icon">Preferences Button</string>
+    <string name="play_icon">Play</string>
+    <string name="preferences_icon">Preferences</string>
 
     <!-- Preferences -->
     <string name="gameplay_category">Gameplay</string>
