@@ -9,12 +9,12 @@
     <!-- Preferences -->
     <string name="gameplay_category">Gameplay</string>
     <string name="show_level_tips">Level tips</string>
-    <string name="show_level_tips_on">Show level descriptions at the start of each level</string>
-    <string name="show_level_tips_off">Skip level descriptions at the start of each level</string>
+    <string name="show_level_tips_on">Show level descriptions at the start of each one</string>
+    <string name="show_level_tips_off">Skip level descriptions at the start of each one</string>
     <string name="levels_per_match">Levels per match</string>
-    <string name="levels_per_match_summary">Current number of levels per match: %1$d</string>
+    <string name="levels_per_match_summary">Number of levels per match: %1$d</string>
     <string name="rounds_per_level">Rounds per level</string>
-    <string name="rounds_per_level_summary">Current number of rounds per level: %1$d</string>
+    <string name="rounds_per_level_summary">Number of rounds per level: %1$d</string>
     <string name="levels_selected_category">Levels</string>
     <string name="ads_category">Advertisements</string>
     <string name="show_ads_levels">In-Game advertisements</string>
@@ -35,9 +35,10 @@
         Levels
             Must follow format _level_<id>_name and level_<id>_description
             Each <id> must be included in values/arrays.xml/levels
+            Tag tools:keep needed since the strings are accessed dynamically at runtime
     -->
     <string name="level_collision_name" tools:keep="@string/level_collision_name">Collision</string>
-    <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes are colliding</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes collide</string>
     <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
     <string name="level_color_description" tools:keep="@string/level_color_description">Tap after the color changes</string>
     <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Countdown</string>
@@ -47,17 +48,17 @@
     <string name="level_hole_name" tools:keep="@string/level_hole_name">Hole</string>
     <string name="level_hole_description" tools:keep="@string/level_hole_description">Tap when the circles are smaller than the hole</string>
     <string name="level_labyrinth_name" tools:keep="@string/level_labyrinth_name">Labyrinth</string>
-    <string name="level_labyrinth_description" tools:keep="@string/level_labyrinth_description">Tap after the two extremes are connected</string>
+    <string name="level_labyrinth_description" tools:keep="@string/level_labyrinth_description">Tap when the two extremes are connected</string>
     <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
-    <string name="level_light_description" tools:keep="@string/level_light_description">Tap after there are more light cells than dark cells</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Tap when there are more colored cells than dark cells</string>
     <string name="level_lined_name" tools:keep="@string/level_lined_name">Lined</string>
-    <string name="level_lined_description" tools:keep="@string/level_lined_description">Tap when three cells of the same color form a line</string>
+    <string name="level_lined_description" tools:keep="@string/level_lined_description">Tap when three cells of the same type form a line</string>
     <string name="level_pair_name" tools:keep="@string/level_pair_name">Pair</string>
-    <string name="level_pair_description" tools:keep="@string/level_pair_description">Tap when there are two shapes equal</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Tap when there are two equal shapes</string>
     <string name="level_passage_name" tools:keep="@string/level_passage_name">Passage</string>
-    <string name="level_passage_description" tools:keep="@string/level_passage_description">Tap when there is a straight passage</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">Tap when there is a straight passage from top to bottom</string>
     <string name="level_singular_name" tools:keep="@string/level_singular_name">Singular</string>
-    <string name="level_singular_description" tools:keep="@string/level_singular_description">Tap when there is a sad face among all</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Tap when there is a sad face</string>
     <string name="level_variety_name" tools:keep="@string/level_variety_name">Variety</string>
-    <string name="level_variety_description" tools:keep="@string/level_variety_description">Tap when there are five or more different colors</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Tap when there are five different colors</string>
 </resources>

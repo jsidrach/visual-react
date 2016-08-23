@@ -14,20 +14,20 @@
 
 ## <a name="levels"></a> Levels
 
-| Name       | Description                                          |
-|:-----------|:-----------------------------------------------------|
-| Collision  | Tap when the shapes are colliding                    |
-| Color      | Tap after the color changes                          |
-| Countdown  | Tap after the countdown passes zero                  |
-| Fit        | Tap when one shape fits into the other one           |
-| Hole       | Tap when the circles are smaller than the hole       |
-| Labyrinth  | Tap after the two extremes are connected             |
-| Light      | Tap after there are more light cells than dark cells |
-| Lined      | Tap when three cells of the same color form a line   |
-| Pair       | Tap when there are two shapes equal                  |
-| Passage    | Tap when there is a straight passage                 |
-| Singular   | Tap when there is a sad face among all               |
-| Variety    | Tap when there are five or more different colors     |
+| Name       | Description                                             |
+|:-----------|:--------------------------------------------------------|
+| Collision  | Tap when the shapes collide                             |
+| Color      | Tap after the color changes                             |
+| Countdown  | Tap after the countdown passes zero                     |
+| Fit        | Tap when one shape fits into the other one              |
+| Hole       | Tap when the circles are smaller than the hole          |
+| Labyrinth  | Tap when the two extremes are connected                 |
+| Light      | Tap after there are more colored cells than dark cells  |
+| Lined      | Tap when three cells of the same type form a line       |
+| Pair       | Tap when there are two equal shapes                     |
+| Passage    | Tap when there is a straight passage from top to bottom |
+| Singular   | Tap when there is a sad face                            |
+| Variety    | Tap when there are five different colors                |
 
 
 ## <a name="license"></a> License
@@ -37,10 +37,11 @@
 
 ## <a name="contributors"></a> Contributors
 
-* :rooster: [Lu Yu](https://github.com/yulu1701): design, game engine, levels
-* :monkey: [J. Sid](https://github.com/jsidrach): design, game engine, levels
-* :monkey_face: [Chen Lai](https://github.com/claigit): testing
-* :goat: [Zhongrong Jian](https://github.com/miaolegewang): testing
+* :rooster: [Lu Yu](https://github.com/yulu1701): design, game engine, levels, localization
+* :see_no_evil: [J. Sid](https://github.com/jsidrach): design, game engine, levels, localization
+* :hear_no_evil: [Chen Lai](https://github.com/claigit): testing, localization
+* :speak_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon): testing, localization
+* :goat: [Zhongrong Jian](https://github.com/miaolegewang): testing, localization
 
 
 ## <a name="guidelines"></a> Guidelines
@@ -150,14 +151,23 @@ List of assets used:
   - [x] ~~Ingame (can be disabled)~~
   - [x] ~~Popup (rematch/leave)~~
 - [x] Design app icon
-- [ ] Write app description
 - [ ] Create app promotional graphics
-- [ ] Translate to Spanish
-- [ ] Translate to Chinese
+- [x] Translate strings to Spanish
+- [ ] Translate strings to French
+- [ ] Translate strings to Chinese (simplified)
+- [ ] Write app description/metadata
+- [ ] Translate strings and app metadata to additional languages, use paid service if needed:
+  - [ ] Spanish
+  - [ ] French
+  - [ ] Chinese (simplified)
+  - [ ] German
+  - [ ] Japanese
+  - [ ] Portuguese
+  - [ ] Russian
+  - [ ] Korean
+  - [ ] Arabic
 - [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
 - [ ] Distribute app to the rest of sneaky coders, test & QA
-- [ ] Translate to additional languages, use paid service if needed
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
-- [ ] Think and document more possible levels for future versions

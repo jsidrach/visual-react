@@ -19,7 +19,7 @@
     <color name="tie_light">#b0bec5</color>
 
     <!-- Color palette -->
-    <string-array name="palette">
+    <string-array name="palette" translatable="false">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#9575cd</item>
@@ -38,7 +38,7 @@
 
     <!-- Distinctive color palette -->
     <!-- Note: LevelVariety needs this array to be of length 5 -->
-    <string-array name="distinctivePalette">
+    <string-array name="distinctivePalette" translatable="false">
         <item>#f06292</item>
         <item>#ba68c8</item>
         <item>#4fc3f7</item>

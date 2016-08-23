@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">Preferencias</string>
+    <string name="match_name">Partida</string>
+    <string name="play_icon">Jugar</string>
+    <string name="preferences_icon">Preferencias</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">Jugabilidad</string>
+    <string name="show_level_tips">Descripción de los niveles</string>
+    <string name="show_level_tips_on">Mostrar las descripciones de los niveles al inicio de cada uno</string>
+    <string name="show_level_tips_off">Omitir las descripciones de los niveles al inicio de cada uno</string>
+    <string name="levels_per_match">Niveles por partida</string>
+    <string name="levels_per_match_summary">Número de niveles por partida: %1$d</string>
+    <string name="rounds_per_level">Rondas por nivel</string>
+    <string name="rounds_per_level_summary">Número de rondas por nivel: %1$d</string>
+    <string name="levels_selected_category">Niveles</string>
+    <string name="ads_category">Anuncios</string>
+    <string name="show_ads_levels">Anuncios durante las partidas</string>
+    <string name="show_ads_levels_off">No mostrar anuncios durante las partidas</string>
+    <string name="show_ads_levels_on">Mostrar anuncios durante las partidas</string>
+
+    <!-- Match -->
+    <string name="start_level">Pulsa para empezar</string>
+    <string name="rematch_icon">Volver a jugar</string>
+    <string name="standing_winner">¡Victoria!</string>
+    <string name="standing_loser">Derrota…</string>
+    <string name="standing_tied">Empate</string>
+    <string name="cancel_match_confirmation">¿Estás seguro de que quieres cancelar la partida?</string>
+    <string name="cancel_match_yes">Cancelar partida</string>
+    <string name="cancel_match_no">Continuar jugando</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">Colisión</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Pulsa cuando las figuras colisionen</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">Pulsa después de que el color cambie</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Cuenta atrás</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Pulsa después de que la cuenta atrás pase cero</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">Encaje</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">Pulsa cuando una figura encaje dentro de la otra</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">Hueco</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">Pulsa cuando los cículos quepan en el hueco</string>
+    <string name="level_labyrinth_name" tools:keep="@string/level_labyrinth_name">Laberinto</string>
+    <string name="level_labyrinth_description" tools:keep="@string/level_labyrinth_description">Pulsa cuando los dos extremos estén conectados</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">Luz</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Pulsa cuando hayan más celdas coloreadas que oscuras</string>
+    <string name="level_lined_name" tools:keep="@string/level_lined_name">En línea</string>
+    <string name="level_lined_description" tools:keep="@string/level_lined_description">Pulsa cuando tres celdas del mismo tipo estén en línea</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">Par</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Pulsa cuando hayan dos figuras iguales</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">Pasadizo</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">Pulsa cuando exista un pasadizo recto de arriba a abajo</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">Singular</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Pulsa cuando haya una cara triste</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">Variedad</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Pulsa cuando hayan cinco colores diferentes</string>
+</resources>
