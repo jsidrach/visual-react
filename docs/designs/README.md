@@ -12,12 +12,12 @@ Created with [Draw.io](https://draw.io)
 
 * Version 1
 
-![](mockups_v1.svg)
+![](mockups_v1.png)
 
 * Version 2
 
-![](mockups_v2.svg)
+![](mockups_v2.png)
 
 * Version 3
 
-![](mockups_v3.svg)
+![](mockups_v3.png)

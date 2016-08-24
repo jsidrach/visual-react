@@ -92,8 +92,8 @@
 * [External Assets](docs/external-assets/README.md)
 * [Metadata](docs/metadata/README.md)
 * Screenshots
-  * [Phone](docs/phone/README.md) (Nexus 5X API 23)
-  * [Tablet](docs/tablet/README.md) (Nexus 9 API 23)
+  * [Phone](docs/screenshots/phone/README.md) (Nexus 5X API 23)
+  * [Tablet](docs/screenshots/tablet/README.md) (Nexus 9 API 23)
 
 ## <a name="roadmap"></a> Roadmap
 - [x] ~~Rethink design, winner/loser should be more clear~~
