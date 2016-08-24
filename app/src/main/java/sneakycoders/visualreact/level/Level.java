@@ -29,8 +29,6 @@ abstract public class Level extends Fragment {
     abstract public boolean onPlayerTap();
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-
         // Initialize the random number generator
         random = new Random();
 
@@ -40,7 +38,7 @@ abstract public class Level extends Fragment {
         successLightColor = ContextCompat.getColor(getActivity(), R.color.success_light);
         failLightColor = ContextCompat.getColor(getActivity(), R.color.fail_light);
 
-        return null;
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     protected Integer getRandomColor() {

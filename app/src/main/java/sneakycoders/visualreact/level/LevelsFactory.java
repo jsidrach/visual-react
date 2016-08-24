@@ -108,7 +108,7 @@ public class LevelsFactory {
     public static Level getLevel(String id) {
         // Use reflection to dynamically create the level object, returning a new LevelColor as the default
         try {
-            return (Level) Class.forName(MessageFormat.format(LEVEL_CLASS_FORMAT, capitalize(id))).newInstance();
+            return (Level) Class.forName(MessageFormat.format(LEVEL_CLASS_FORMAT, capitalize(id))).getConstructor().newInstance();
         } catch (Exception e) {
             return new LevelColor();
         }
