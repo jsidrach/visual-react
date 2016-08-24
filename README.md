@@ -1,19 +1,14 @@
 # Visual React
-[Screenshots](docs/screenshots/README.md) |
 [Levels](#levels) |
-[License](#license) |
-[Metadata](docs/metadata/README.md) |
 [Contributors](#contributors) |
-[Guidelines](#guidelines) |
+[License](#license) |
 [Contributing](#contributing) |
-[Assets](#assets) |
+[Documentation](#documentation) |
 [Roadmap](#roadmap)
 
 [TODO: Description]
 
-
 ## <a name="levels"></a> Levels
-
 | Name       | Description                                             |
 |:-----------|:--------------------------------------------------------|
 | Collision  | Tap when the shapes collide                             |
@@ -29,49 +24,38 @@
 | Singular   | Tap when there is a sad face                            |
 | Variety    | Tap when there are five different colors                |
 
-
-## <a name="license"></a> License
-
-[MIT](LICENSE) - Feel free to use and edit
-
-
 ## <a name="contributors"></a> Contributors
+### Core Team <a name="core-team"></a>
+* :rooster: [Lu Yu](https://github.com/yulu1701)
+* :see_no_evil: [J. Sid](https://github.com/jsidrach)
 
-* :rooster: [Lu Yu](https://github.com/yulu1701): design, game engine, levels, localization
-* :see_no_evil: [J. Sid](https://github.com/jsidrach): design, game engine, levels, localization
+### Quality Assurance Team <a name="quality-assurance"></a>
+* :goat: [Zhongrong Jian](https://github.com/miaolegewang): testing, localization
 * :hear_no_evil: [Chen Lai](https://github.com/claigit): testing, localization
 * :speak_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon): testing, localization
-* :goat: [Zhongrong Jian](https://github.com/miaolegewang): testing, localization
 
+## <a name="license"></a> License
+[Mozilla Public License Version 2.0](LICENSE)
 
-## <a name="guidelines"></a> Guidelines
-
-### <a name="design-guidelines"></a> Design
-
+## <a name="contributing"></a> Contributing
+### <a name="design-guidelines"></a> Design Guidelines
 * Follow the [Android Design Principles](https://developer.android.com/design/get-started/principles.html)
 * Design levels that do not require previous knowledge
 * Avoid using text whenever there is a cleaner alternative
-* Use vector graphics, instead of rasterized ones
-* Consistent look and feel
+* Use vector graphics (```.svg```), instead of rasterized ones
+* Adhere to the existing color palette
+* Use the existing design/graphics as a reference to maintain a consistent look and feel
 
-
-### <a name="development-guidelines"></a> Development
-
+### <a name="development-guidelines"></a> Development Guidelines
 * Use [Android Studio](https://developer.android.com/studio/index.html)
 * Follow the [Android Core App Quality Guidelines](https://developer.android.com/distribute/essentials/quality/core.html)
 * Do not hardcode strings and constants, include them as resources
-* Adhere to the existing color palette
-* Use vector graphics (```.svg```) for images and icons
 * Avoid using external libraries as much as possible, to ease the future implementation of the game in other platforms
 * Auto format the code, and fix all warnings and errors before committing
 * Use ```camelCase``` for code and ```snake_case``` for resources
 * Keep the code simple
 
-
-## <a name="contributing"></a> Contributing
-
 ### <a name="adding-a-level"></a> Adding a level
-
 1. Create a new branch, named using the level name in lowercase - only commit to this branch while developing the level
 2. If the level you are implementing not described in the [levels list](#levels), create an Issue first describing it (you don't want to code something that won't be incorporated into the game!), and ask for feedback
 3. Once the level has been approved, create a class with the level name in ```src/main/java/sneakycoders/visualreact/level/levels/``` that extends the ```Level``` class - all your code will reside in the newly created class
@@ -88,7 +72,6 @@
 14. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
 
 ### <a name="fixing-a-bug"></a> Fixing a bug
-
 1. Create a new branch, named using ```bugfix/<bug>```, where ```<bug>``` is a short description of the bug - only commit to this branch
 2. Implement the fix for the bug
 3. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
@@ -97,7 +80,6 @@
 6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
 
 ### <a name="refactoring"></a> Refactoring / Improving code quality
-
 1. Create a new branch, named using ```refactor/<description>```, where ```<description>``` is a short description of the improvements going to be made
 2. Implement the improvements, making sure the functionality does not change
 3. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
@@ -105,20 +87,15 @@
 5. Rebase interactively to squash all commits into a single one, and explain in the commit body what were the improvements made
 6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
 
-
-## <a name="assets"></a> Assets
-
-List of assets used:
-
-* [Play Icon](docs/assets/play_icon.svg): [Freepik](http://www.flaticon.com/authors/freepik) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Preferences Icon](docs/assets/preferences_icon.svg): [Egor Rumyantsev](http://www.flaticon.com/authors/egor-rumyantsev) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Rematch Icon](docs/assets/rematch_icon.svg): [Vaadin](http://www.flaticon.com/authors/vaadin) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-* [Bolt Icon](docs/assets/bolt_icon.svg): [Freepik](http://www.flaticon.com/authors/freepik) ([CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/))
-
+## <a name="documentation"></a> Documentation
+* [Designs](docs/designs/README.md)
+* [External Assets](docs/external-assets/README.md)
+* [Metadata](docs/metadata/README.md)
+* Screenshots
+  * [Phone](docs/phone/README.md) (Nexus 5X API 23)
+  * [Tablet](docs/tablet/README.md) (Nexus 9 API 23)
 
 ## <a name="roadmap"></a> Roadmap
-
-
 - [x] ~~Rethink design, winner/loser should be more clear~~
 - [x] ~~Write Design Goals~~
 - [x] ~~Write Development Goals~~
@@ -151,11 +128,11 @@ List of assets used:
   - [x] ~~Ingame (can be disabled)~~
   - [x] ~~Popup (rematch/leave)~~
 - [x] Design app icon
+- [ ] Write app description/metadata
 - [ ] Create app promotional graphics
 - [x] Translate strings to Spanish
 - [ ] Translate strings to French
 - [ ] Translate strings to Chinese (simplified)
-- [ ] Write app description/metadata
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish
   - [ ] French
