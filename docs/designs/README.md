@@ -5,7 +5,7 @@ Created with [Inkscape](http://www.inkscape.org/) - the final app icons are gene
 
 | Version 1 | Version 2 | Version 3 | Version 4 | Version 5 |
 |:---------:|:---------:|:---------:|:---------:|:---------:|
-| <img src="logo_1.png" width="256"> | <img src="logo_2.png" width="256"> | <img src="logo_3.png" width="256"> | <img src="logo_4.png" width="256"> | <img src="logo_5.png" width="256">
+| <img src="logo_v1.png" width="256"> | <img src="logo_v2.png" width="256"> | <img src="logo_v3.png" width="256"> | <img src="logo_v4.png" width="256"> | <img src="logo_v5.png" width="256">
 
 ## Mockups
 Created with [Draw.io](https://draw.io)

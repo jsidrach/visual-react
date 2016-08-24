@@ -8,6 +8,8 @@
 
 [TODO: Description]
 
+[TODO: Link to Google Play Listing]
+
 ## <a name="levels"></a> Levels
 | Name       | Description                                             |
 |:-----------|:--------------------------------------------------------|
@@ -30,9 +32,9 @@
 * :see_no_evil: [J. Sid](https://github.com/jsidrach)
 
 ### Quality Assurance Team <a name="quality-assurance"></a>
-* :goat: [Zhongrong Jian](https://github.com/miaolegewang): testing, localization
-* :hear_no_evil: [Chen Lai](https://github.com/claigit): testing, localization
-* :speak_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon): testing, localization
+* :goat: [Zhongrong Jian](https://github.com/miaolegewang)
+* :hear_no_evil: [Chen Lai](https://github.com/claigit)
+* :speak_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon)
 
 ## <a name="license"></a> License
 [Mozilla Public License Version 2.0](LICENSE)
@@ -121,18 +123,15 @@
   - [x] ~~[J] Labyrinth~~
   - [x] ~~[L] Singular~~
   - [ ] [L] Pair
-- [x] Create SneakyCoders account on Play Store
+- [x] ~~Create SneakyCoders account on Play Store~~
 - [x] ~~Integrate Firebase~~
 - [x] ~~Include ads in a non-intrusive way~~
   - [x] ~~Menus~~
   - [x] ~~Ingame (can be disabled)~~
   - [x] ~~Popup (rematch/leave)~~
-- [x] Design app icon
+- [x] ~~Design app icon~~
 - [ ] Write app description/metadata
 - [ ] Create app promotional graphics
-- [x] Translate strings to Spanish
-- [ ] Translate strings to French
-- [ ] Translate strings to Chinese (simplified)
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish
   - [ ] French
