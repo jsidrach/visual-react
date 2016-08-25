@@ -130,8 +130,8 @@
   - [x] ~~Ingame (can be disabled)~~
   - [x] ~~Popup (rematch/leave)~~
 - [x] ~~Design app icon~~
+- [x] ~~Upload privacy policy~~
 - [ ] Write app description/metadata
-- [ ] Create app promotional graphics
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish
   - [ ] French
@@ -142,6 +142,7 @@
   - [ ] Russian
   - [ ] Korean
   - [ ] Arabic
+- [ ] Create app promotional graphics
 - [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
 - [ ] Distribute app to the rest of sneaky coders, test & QA
