@@ -36,8 +36,5 @@ captures/
 *.iml
 .idea/
 
-# Keystore files
-*.jks
-
 # macOS
 .DS_Store
