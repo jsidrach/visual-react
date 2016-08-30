@@ -9,5 +9,5 @@
 
 # Add any project specific keep options here:
 
-# Do not obfuscate level class names
--keepnames class sneakycoders.visualreact.level.levels.*
+# Do not obfuscate the class name of the level classes, as they are instantiated dynamically
+-keep public class * extends sneakycoders.visualreact.level.Level
