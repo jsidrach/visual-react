@@ -131,6 +131,7 @@
   - [x] ~~Popup (rematch/leave)~~
 - [x] ~~Design app icon~~
 - [x] ~~Upload privacy policy~~
+- [x] ~~Check release/signed apk~~
 - [ ] Write app description/metadata
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish
@@ -145,7 +146,6 @@
 - [ ] Create app promotional graphics
 - [ ] Revisit all code to document it better
 - [ ] Run Lint, fix issues detected
-- [ ] Check release/signed apk
 - [ ] Distribute app to the rest of sneaky coders, test & QA
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
