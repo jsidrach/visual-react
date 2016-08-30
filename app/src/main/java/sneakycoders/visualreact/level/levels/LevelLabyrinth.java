@@ -415,30 +415,27 @@ public class LevelLabyrinth extends Level {
         // Set the update function
         final int delay = randomInt(R.integer.level_labyrinth_min_delay, R.integer.level_labyrinth_max_delay);
         final float pRandomCell = randomFloat(R.fraction.level_labyrinth_min_update_random, R.fraction.level_labyrinth_max_update_random);
-        updateCells = new Runnable() {
-            @Override
-            public void run() {
-                // Cell to be updated
-                PathCell cell;
+        updateCells = () -> {
+            // Cell to be updated
+            PathCell cell;
 
-                // Select a random cell
-                if ((Math.random() < pRandomCell) || (pathCells.size() == 0)) {
-                    cell = randomCells.get(randomInInterval(0, randomCells.size() - 1));
-                }
-                // Select and remove one of the remaining path cells
-                else {
-                    cell = pathCells.remove(randomInInterval(0, pathCells.size() - 1));
-                }
-
-                // Update cell type
-                cell.updatePathType();
-
-                // Redraw
-                rootView.invalidate();
-
-                // Update again after the delay
-                handler.postDelayed(updateCells, delay);
+            // Select a random cell
+            if ((Math.random() < pRandomCell) || (pathCells.size() == 0)) {
+                cell = randomCells.get(randomInInterval(0, randomCells.size() - 1));
             }
+            // Select and remove one of the remaining path cells
+            else {
+                cell = pathCells.remove(randomInInterval(0, pathCells.size() - 1));
+            }
+
+            // Update cell type
+            cell.updatePathType();
+
+            // Redraw
+            rootView.invalidate();
+
+            // Update again after the delay
+            handler.postDelayed(updateCells, delay);
         };
 
         // Set timer to call the update function

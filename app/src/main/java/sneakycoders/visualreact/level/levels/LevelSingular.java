@@ -195,36 +195,33 @@ public class LevelSingular extends Level {
 
         // Update cells
         final int delay = randomInInterval(getResources().getInteger(R.integer.level_singular_min_delay), getResources().getInteger(R.integer.level_singular_max_delay));
-        updateCells = new Runnable() {
-            @Override
-            public void run() {
-                // Determine whether to change one cell to sad face
-                if ((!result) && (Math.random() <= prob)) {
-                    // Substitute cell by a sad face
-                    cells[sadFaceX][sadFaceY] = sadFace;
+        updateCells = () -> {
+            // Determine whether to change one cell to sad face
+            if ((!result) && (Math.random() <= prob)) {
+                // Substitute cell by a sad face
+                cells[sadFaceX][sadFaceY] = sadFace;
 
-                    // Rotate the cell
-                    sadFace.setRandomOrientation();
+                // Rotate the cell
+                sadFace.setRandomOrientation();
 
-                    // Set result to success
-                    result = true;
-                }
-                // Choose a random cell and rotate it
-                else {
-                    // Select the cell
-                    int randomX = randomInInterval(0, cellsX - 1);
-                    int randomY = randomInInterval(0, cellsY - 1);
-
-                    // Rotate the cell
-                    cells[randomX][randomY].setRandomOrientation();
-                }
-
-                // Redraw
-                rootView.invalidate();
-
-                // Update again after the delay
-                handler.postDelayed(updateCells, delay);
+                // Set result to success
+                result = true;
             }
+            // Choose a random cell and rotate it
+            else {
+                // Select the cell
+                int randomX = randomInInterval(0, cellsX - 1);
+                int randomY = randomInInterval(0, cellsY - 1);
+
+                // Rotate the cell
+                cells[randomX][randomY].setRandomOrientation();
+            }
+
+            // Redraw
+            rootView.invalidate();
+
+            // Update again after the delay
+            handler.postDelayed(updateCells, delay);
         };
 
         // Set timer to call the update function

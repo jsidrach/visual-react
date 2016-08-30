@@ -90,15 +90,9 @@ public class LevelsFactory {
             }
         }
 
-        // If no level is selected, add all
+        // If no level is selected, return all
         // This occurs if the preferences screen has never been visited
-        if (selectedLevelIds.size() == 0) {
-            for (String level : levelIds) {
-                selectedLevelIds.add(level);
-            }
-        }
-
-        return selectedLevelIds;
+        return (selectedLevelIds.size() == 0) ? levelIds : selectedLevelIds;
     }
 
     public static List<String> getLevelIds(Context c) {

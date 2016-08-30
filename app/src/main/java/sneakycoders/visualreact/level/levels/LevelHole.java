@@ -127,36 +127,33 @@ public class LevelHole extends Level {
         final int delay = 1000 / getResources().getInteger(R.integer.level_hole_frames_per_second);
         final long resizeTime = randomInt(R.integer.level_hole_min_resize_time, R.integer.level_hole_max_resize_time);
         final long startTime = System.currentTimeMillis();
-        updateShapes = new Runnable() {
-            @Override
-            public void run() {
-                // Time since we started the animation, modulo two times resizeTime
-                // First we scale down then up
-                long totalResizeTime = 2 * resizeTime;
-                long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
+        updateShapes = () -> {
+            // Time since we started the animation, modulo two times resizeTime
+            // First we scale down then up
+            long totalResizeTime = 2 * resizeTime;
+            long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
 
-                // Calculate offset in percentage (from 0% to 100%)
-                float offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (float) resizeTime;
-                float circleDiameter = (1.0f - offset) * originalCircleDiameter + offset * resizedCircleDiameter;
+            // Calculate offset in percentage (from 0% to 100%)
+            float offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (float) resizeTime;
+            float circleDiameter = (1.0f - offset) * originalCircleDiameter + offset * resizedCircleDiameter;
 
-                // Resize and center shapes
-                leftCircle.set(
-                        centerLeftCircleX - (circleDiameter / 2.0f),
-                        halfHeight - (circleDiameter / 2.0f),
-                        centerLeftCircleX + (circleDiameter / 2.0f),
-                        halfHeight + (circleDiameter / 2.0f));
-                rightCircle.set(
-                        centerRightCircleX - (circleDiameter / 2.0f),
-                        halfHeight - (circleDiameter / 2.0f),
-                        centerRightCircleX + (circleDiameter / 2.0f),
-                        halfHeight + (circleDiameter / 2.0f));
+            // Resize and center shapes
+            leftCircle.set(
+                    centerLeftCircleX - (circleDiameter / 2.0f),
+                    halfHeight - (circleDiameter / 2.0f),
+                    centerLeftCircleX + (circleDiameter / 2.0f),
+                    halfHeight + (circleDiameter / 2.0f));
+            rightCircle.set(
+                    centerRightCircleX - (circleDiameter / 2.0f),
+                    halfHeight - (circleDiameter / 2.0f),
+                    centerRightCircleX + (circleDiameter / 2.0f),
+                    halfHeight + (circleDiameter / 2.0f));
 
-                // Redraw
-                rootView.invalidate();
+            // Redraw
+            rootView.invalidate();
 
-                // Update again after the delay
-                handler.postDelayed(updateShapes, delay);
-            }
+            // Update again after the delay
+            handler.postDelayed(updateShapes, delay);
         };
 
         // Set timer to call the movement function

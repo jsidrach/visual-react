@@ -64,22 +64,19 @@ public class LevelVariety extends Level {
 
         // Set the update function
         final int delay = randomInt(R.integer.level_variety_min_delay, R.integer.level_variety_max_delay);
-        updateCells = new Runnable() {
-            @Override
-            public void run() {
-                // Cell to be updated
-                int changeX = randomInInterval(0, cellsX - 1);
-                int changeY = randomInInterval(0, cellsY - 1);
+        updateCells = () -> {
+            // Cell to be updated
+            int changeX = randomInInterval(0, cellsX - 1);
+            int changeY = randomInInterval(0, cellsY - 1);
 
-                // Update color
-                paints[changeX][changeY].setColor(getRandomDistinctiveColor());
+            // Update color
+            paints[changeX][changeY].setColor(getRandomDistinctiveColor());
 
-                // Redraw
-                rootView.invalidate();
+            // Redraw
+            rootView.invalidate();
 
-                // Update again after the delay
-                handler.postDelayed(updateCells, delay);
-            }
+            // Update again after the delay
+            handler.postDelayed(updateCells, delay);
         };
 
         // Set timer to call the update function

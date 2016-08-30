@@ -37,12 +37,9 @@ public class LevelColor extends Level {
         int countdown = randomInt(R.integer.level_color_min_delay, R.integer.level_color_max_delay);
 
         // Set timer to change screen color
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                result = true;
-                rootView.setBackgroundColor(color);
-            }
+        handler.postDelayed(() -> {
+            result = true;
+            rootView.setBackgroundColor(color);
         }, countdown);
 
         return rootView;

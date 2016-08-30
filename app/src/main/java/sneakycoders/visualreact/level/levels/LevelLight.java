@@ -126,36 +126,33 @@ public class LevelLight extends Level {
 
         // Set the update function
         final int delay = randomInt(R.integer.level_light_min_delay, R.integer.level_light_max_delay);
-        updateCells = new Runnable() {
-            @Override
-            public void run() {
-                int i = randomInInterval(0, cellsX - 1);
-                int j = randomInInterval(0, cellsY - 1);
-                double r = Math.random();
-                // Light cell
-                if (lightCells[i][j]) {
-                    if (r <= lightToDark) {
-                        lightCells[i][j] = false;
-                        totalLightCells--;
+        updateCells = () -> {
+            int i = randomInInterval(0, cellsX - 1);
+            int j = randomInInterval(0, cellsY - 1);
+            double r = Math.random();
+            // Light cell
+            if (lightCells[i][j]) {
+                if (r <= lightToDark) {
+                    lightCells[i][j] = false;
+                    totalLightCells--;
 
-                        // Redraw
-                        rootView.invalidate();
-                    }
+                    // Redraw
+                    rootView.invalidate();
                 }
-                // Dark cell
-                else {
-                    if (r <= darkToLight) {
-                        lightCells[i][j] = true;
-                        totalLightCells++;
-
-                        // Redraw
-                        rootView.invalidate();
-                    }
-                }
-
-                // Update again after the delay
-                handler.postDelayed(updateCells, delay);
             }
+            // Dark cell
+            else {
+                if (r <= darkToLight) {
+                    lightCells[i][j] = true;
+                    totalLightCells++;
+
+                    // Redraw
+                    rootView.invalidate();
+                }
+            }
+
+            // Update again after the delay
+            handler.postDelayed(updateCells, delay);
         };
 
         // Set timer to call the update function

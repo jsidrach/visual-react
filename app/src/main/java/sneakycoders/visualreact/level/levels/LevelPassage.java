@@ -145,32 +145,29 @@ public class LevelPassage extends Level {
         }
 
         // Set the movement
-        updateShapes = new Runnable() {
-            @Override
-            public void run() {
-                // Move shapes
-                for (int i = 0; i < numPassages; ++i) {
-                    float dist = passagesDistEachUpdate[i];
-                    passages[i].offset(dist, 0);
+        updateShapes = () -> {
+            // Move shapes
+            for (int i = 0; i < numPassages; ++i) {
+                float dist = passagesDistEachUpdate[i];
+                passages[i].offset(dist, 0);
 
-                    // Turn back if needed
-                    if (passages[i].left < marginLeft) {
-                        passagesDistEachUpdate[i] = -dist;
-                        passages[i].offset(-dist, 0);
-                        passages[i].offset(passages[i].left - marginLeft, 0);
-                    } else if (passages[i].right > marginRight) {
-                        passagesDistEachUpdate[i] = -dist;
-                        passages[i].offset(-dist, 0);
-                        passages[i].offset(passages[i].right - marginRight, 0);
-                    }
+                // Turn back if needed
+                if (passages[i].left < marginLeft) {
+                    passagesDistEachUpdate[i] = -dist;
+                    passages[i].offset(-dist, 0);
+                    passages[i].offset(passages[i].left - marginLeft, 0);
+                } else if (passages[i].right > marginRight) {
+                    passagesDistEachUpdate[i] = -dist;
+                    passages[i].offset(-dist, 0);
+                    passages[i].offset(passages[i].right - marginRight, 0);
                 }
-
-                // Redraw
-                rootView.invalidate();
-
-                // Update again after the delay
-                handler.postDelayed(updateShapes, updateDelay);
             }
+
+            // Redraw
+            rootView.invalidate();
+
+            // Update again after the delay
+            handler.postDelayed(updateShapes, updateDelay);
         };
 
         // Set timer to call the movement function

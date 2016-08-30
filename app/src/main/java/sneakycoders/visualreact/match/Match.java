@@ -1,6 +1,5 @@
 package sneakycoders.visualreact.match;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -244,17 +243,14 @@ public class Match extends AppCompatActivity {
     }
 
     private void delayNextState() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .remove(currentLevel)
-                        .commit();
-                currentLevel = null;
-                state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
-                displayState();
-            }
+        handler.postDelayed(() -> {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .remove(currentLevel)
+                    .commit();
+            currentLevel = null;
+            state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
+            displayState();
         }, getResources().getInteger(R.integer.match_pause_between_levels));
     }
 
@@ -281,11 +277,7 @@ public class Match extends AppCompatActivity {
             new AlertDialog.Builder(this)
                     .setMessage(R.string.cancel_match_confirmation)
                     .setCancelable(false)
-                    .setPositiveButton(R.string.cancel_match_yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            leaveMatch();
-                        }
-                    })
+                    .setPositiveButton(R.string.cancel_match_yes, (dialog, id) -> leaveMatch())
                     .setNegativeButton(R.string.cancel_match_no, null)
                     .show();
         }

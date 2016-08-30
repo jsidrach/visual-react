@@ -256,38 +256,35 @@ public class LevelFit extends Level {
         final int delay = 1000 / getResources().getInteger(R.integer.level_fit_frames_per_second);
         final long resizeTime = randomInt(R.integer.level_fit_min_resize_time, R.integer.level_fit_max_resize_time);
         final long startTime = System.currentTimeMillis();
-        updateShapes = new Runnable() {
-            @Override
-            public void run() {
-                // Time since we started the animation, modulo two times resizeTime
-                long totalResizeTime = 2 * resizeTime;
-                long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
+        updateShapes = () -> {
+            // Time since we started the animation, modulo two times resizeTime
+            long totalResizeTime = 2 * resizeTime;
+            long elapsedTime = (System.currentTimeMillis() - startTime) % totalResizeTime;
 
-                // Calculate offset in percentage (from 0% to 100%)
-                float offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (float) resizeTime;
-                float leftShapeWidth = (1.0f - offset) * originalLeftShapeWidth + offset * resizedLeftShapeWidth;
-                float leftShapeHeight = (1.0f - offset) * originalLeftShapeHeight + offset * resizedLeftShapeHeight;
-                float rightShapeWidth = (1.0f - offset) * originalRightShapeWidth + offset * resizedRightShapeWidth;
-                float rightShapeHeight = (1.0f - offset) * originalRightShapeHeight + offset * resizedRightShapeHeight;
+            // Calculate offset in percentage (from 0% to 100%)
+            float offset = ((elapsedTime < resizeTime) ? elapsedTime : (totalResizeTime - elapsedTime)) / (float) resizeTime;
+            float leftShapeWidth = (1.0f - offset) * originalLeftShapeWidth + offset * resizedLeftShapeWidth;
+            float leftShapeHeight = (1.0f - offset) * originalLeftShapeHeight + offset * resizedLeftShapeHeight;
+            float rightShapeWidth = (1.0f - offset) * originalRightShapeWidth + offset * resizedRightShapeWidth;
+            float rightShapeHeight = (1.0f - offset) * originalRightShapeHeight + offset * resizedRightShapeHeight;
 
-                // Resize and center shapes
-                leftShape.set(
-                        (halfWidth - leftShapeWidth) / 2.0f,
-                        halfHeight - (leftShapeHeight / 2.0f),
-                        (halfWidth + leftShapeWidth) / 2.0f,
-                        halfHeight + (leftShapeHeight / 2.0f));
-                rightShape.set(
-                        ((3.0f * halfWidth) - rightShapeWidth) / 2.0f,
-                        halfHeight - (rightShapeHeight / 2.0f),
-                        ((3.0f * halfWidth) + rightShapeWidth) / 2.0f,
-                        halfHeight + (rightShapeHeight / 2.0f));
+            // Resize and center shapes
+            leftShape.set(
+                    (halfWidth - leftShapeWidth) / 2.0f,
+                    halfHeight - (leftShapeHeight / 2.0f),
+                    (halfWidth + leftShapeWidth) / 2.0f,
+                    halfHeight + (leftShapeHeight / 2.0f));
+            rightShape.set(
+                    ((3.0f * halfWidth) - rightShapeWidth) / 2.0f,
+                    halfHeight - (rightShapeHeight / 2.0f),
+                    ((3.0f * halfWidth) + rightShapeWidth) / 2.0f,
+                    halfHeight + (rightShapeHeight / 2.0f));
 
-                // Redraw
-                rootView.invalidate();
+            // Redraw
+            rootView.invalidate();
 
-                // Update again after the delay
-                handler.postDelayed(updateShapes, delay);
-            }
+            // Update again after the delay
+            handler.postDelayed(updateShapes, delay);
         };
 
         // Set timer to call the movement function

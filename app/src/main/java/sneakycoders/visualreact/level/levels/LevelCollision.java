@@ -202,27 +202,24 @@ public class LevelCollision extends Level {
         final int delay = 1000 / getResources().getInteger(R.integer.level_collision_frames_per_second);
         final long moveTime = randomInt(R.integer.level_collision_min_move_time, R.integer.level_collision_max_move_time);
         final long startTime = System.currentTimeMillis();
-        updateShapes = new Runnable() {
-            @Override
-            public void run() {
-                // Time since we started the animation, modulo two times moveTime
-                // First we go straight, then backwards
-                long roundTripTime = 2 * moveTime;
-                long elapsedTime = (System.currentTimeMillis() - startTime) % roundTripTime;
+        updateShapes = () -> {
+            // Time since we started the animation, modulo two times moveTime
+            // First we go straight, then backwards
+            long roundTripTime = 2 * moveTime;
+            long elapsedTime = (System.currentTimeMillis() - startTime) % roundTripTime;
 
-                // Calculate offset in percentage (from 0% to 100%)
-                float offset = ((elapsedTime < moveTime) ? elapsedTime : (roundTripTime - elapsedTime)) / (float) moveTime;
-                float leftNewTop = leftShapeStart + offset * leftTotalDistance;
-                leftShape.offsetTo(leftNewTop, leftShape.top);
-                float rightNewTop = rightShapeStart - offset * rightTotalDistance;
-                rightShape.offsetTo(rightNewTop, rightShape.top);
+            // Calculate offset in percentage (from 0% to 100%)
+            float offset = ((elapsedTime < moveTime) ? elapsedTime : (roundTripTime - elapsedTime)) / (float) moveTime;
+            float leftNewTop = leftShapeStart + offset * leftTotalDistance;
+            leftShape.offsetTo(leftNewTop, leftShape.top);
+            float rightNewTop = rightShapeStart - offset * rightTotalDistance;
+            rightShape.offsetTo(rightNewTop, rightShape.top);
 
-                // Redraw
-                rootView.invalidate();
+            // Redraw
+            rootView.invalidate();
 
-                // Update again after the delay
-                handler.postDelayed(updateShapes, delay);
-            }
+            // Update again after the delay
+            handler.postDelayed(updateShapes, delay);
         };
 
         // Choose which one is drawn first so that the small shape is always visible

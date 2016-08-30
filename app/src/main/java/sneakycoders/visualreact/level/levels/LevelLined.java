@@ -272,39 +272,36 @@ public class LevelLined extends Level {
 
         // Update cells
         final int delay = randomInt(R.integer.level_lined_min_delay, R.integer.level_lined_max_delay);
-        updateCells = new Runnable() {
-            @Override
-            public void run() {
-                // All cells are filled
-                if (notFilled.size() == 0) {
-                    // Swap filled and notFilled
-                    notFilled = filled;
-                    filled = new ArrayList<>();
-                }
-                // More cells need to be filled
-                else {
-                    // Cell to be filled
-                    int cellInd = randomInInterval(0, notFilled.size() - 1);
-                    int cellPos = notFilled.get(cellInd);
-                    filled.add(cellPos);
-                    notFilled.remove(cellInd);
-
-                    // Type of the cell
-                    boolean isCircle = randomBoolean();
-
-                    // Update the grid
-                    int row = cellPos / nCells;
-                    int col = cellPos % nCells;
-                    cellPaints[row][col] = isCircle ? circlePaint : crossPaint;
-                    cellTypes[row][col] = isCircle ? ShapeType.Circle : ShapeType.Cross;
-                }
-
-                // Redraw
-                rootView.invalidate();
-
-                // Update again after the delay
-                handler.postDelayed(updateCells, delay);
+        updateCells = () -> {
+            // All cells are filled
+            if (notFilled.size() == 0) {
+                // Swap filled and notFilled
+                notFilled = filled;
+                filled = new ArrayList<>();
             }
+            // More cells need to be filled
+            else {
+                // Cell to be filled
+                int cellInd = randomInInterval(0, notFilled.size() - 1);
+                int cellPos = notFilled.get(cellInd);
+                filled.add(cellPos);
+                notFilled.remove(cellInd);
+
+                // Type of the cell
+                boolean isCircle = randomBoolean();
+
+                // Update the grid
+                int row = cellPos / nCells;
+                int col = cellPos % nCells;
+                cellPaints[row][col] = isCircle ? circlePaint : crossPaint;
+                cellTypes[row][col] = isCircle ? ShapeType.Circle : ShapeType.Cross;
+            }
+
+            // Redraw
+            rootView.invalidate();
+
+            // Update again after the delay
+            handler.postDelayed(updateCells, delay);
         };
 
         // Set timer to call the update function
