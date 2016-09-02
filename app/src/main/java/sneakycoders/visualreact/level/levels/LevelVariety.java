@@ -135,7 +135,7 @@ public class LevelVariety extends Level {
         handler.removeCallbacksAndMessages(null);
     }
 
-    public class LevelVarietyView extends View {
+    private class LevelVarietyView extends View {
         public LevelVarietyView(Context c) {
             super(c);
         }

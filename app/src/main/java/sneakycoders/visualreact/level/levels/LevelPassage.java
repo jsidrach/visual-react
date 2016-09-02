@@ -185,7 +185,7 @@ public class LevelPassage extends Level {
         handler.removeCallbacksAndMessages(null);
     }
 
-    public class LevelPassageView extends View {
+    private class LevelPassageView extends View {
         public LevelPassageView(Context c) {
             super(c);
         }

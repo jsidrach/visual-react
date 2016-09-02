@@ -141,7 +141,7 @@ public class LevelLabyrinth extends Level {
         while (!endOfPath) {
             int xPrev = x;
             int yPrev = y;
-            PathType pathType = cells[x][y].pathType;
+            PathType pathType = cells[x][y].getPathType();
             // To the right cell
             if (direction == Direction.Right) {
                 if (pathType == PathType.Horizontal) {
@@ -467,12 +467,12 @@ public class LevelLabyrinth extends Level {
     private class PathCell {
         // Real and current path type (real is null if it is a random cell)
         private final PathType realPathType;
-        public PathType pathType;
+        private PathType pathType;
         // Underlying shapes to paint the path cell
-        public RectF left;
-        public RectF top;
-        public RectF right;
-        public RectF bottom;
+        private RectF left;
+        private RectF top;
+        private RectF right;
+        private RectF bottom;
 
         public PathCell(float left, float top, float width, float height, float pathWidth, PathType realPathType) {
             // Calculate inner extremes
@@ -495,11 +495,15 @@ public class LevelLabyrinth extends Level {
             this.realPathType = realPathType;
         }
 
-        public void updatePathType() {
+        public final void updatePathType() {
             // Switch to the real PathType (if exists) or generate a random one
             pathType = (realPathType == null) ?
                     PathType.values()[randomInInterval(0, PathType.values().length - 1)]
                     : realPathType;
+        }
+
+        public PathType getPathType() {
+            return pathType;
         }
 
         public void draw(Canvas canvas, Paint paint) {
@@ -536,7 +540,7 @@ public class LevelLabyrinth extends Level {
         }
     }
 
-    public class LevelLabyrinthView extends View {
+    private class LevelLabyrinthView extends View {
         public LevelLabyrinthView(Context c) {
             super(c);
         }

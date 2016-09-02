@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:padding="0dp">
+              xmlns:ads="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:padding="0dp">
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adIngame"
@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:rotation="180"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/ad_ingame_unit_id" />
+        ads:adUnitId="@string/ad_ingame_unit_id"/>
 
     <RelativeLayout
         android:id="@+id/area_player_2"
@@ -32,7 +32,7 @@
             android:layout_centerVertical="true"
             android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_huge"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tap_text_player_2"
@@ -44,7 +44,7 @@
             android:text="@string/start_level"
             android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_small"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
@@ -78,7 +78,7 @@
                     android:text="@string/level_color_name"
                     android:textColor="@color/neutral_light"
                     android:textSize="@dimen/text_SMALL"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/level_description_player_2"
@@ -93,7 +93,7 @@
                     android:text="@string/level_color_description"
                     android:textColor="@color/neutral_primary"
                     android:textSize="@dimen/text_TINY"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -111,7 +111,7 @@
                     android:text="@string/level_color_name"
                     android:textColor="@color/neutral_light"
                     android:textSize="@dimen/text_SMALL"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/level_description_player_1"
@@ -126,7 +126,7 @@
                     android:text="@string/level_color_description"
                     android:textColor="@color/neutral_primary"
                     android:textSize="@dimen/text_TINY"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </RelativeLayout>
         </LinearLayout>
 
@@ -134,7 +134,7 @@
             android:id="@+id/level_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:visibility="gone"/>
 
         <RelativeLayout
             android:id="@+id/final_standings"
@@ -155,17 +155,16 @@
                 android:text="@string/standing_loser"
                 android:textColor="@color/fail_primary"
                 android:textSize="@dimen/text_medium"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <ImageView
-                android:id="@+id/rematch_button"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:contentDescription="@string/rematch_icon"
                 android:onClick="startMatch"
-                android:src="@drawable/rematch_icon" />
+                android:src="@drawable/rematch_icon"/>
 
 
             <TextView
@@ -178,7 +177,7 @@
                 android:text="@string/standing_winner"
                 android:textColor="@color/success_primary"
                 android:textSize="@dimen/text_medium"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -198,7 +197,7 @@
             android:layout_centerVertical="true"
             android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_huge"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tap_text_player_1"
@@ -210,6 +209,6 @@
             android:text="@string/start_level"
             android:textColor="@color/neutral_light"
             android:textSize="@dimen/text_small"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </RelativeLayout>
 </LinearLayout>

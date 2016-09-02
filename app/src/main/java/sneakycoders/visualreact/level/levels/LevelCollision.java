@@ -253,7 +253,7 @@ public class LevelCollision extends Level {
         Circle, Rectangle
     }
 
-    public class LevelCollisionView extends View {
+    private class LevelCollisionView extends View {
         public LevelCollisionView(Context c) {
             super(c);
         }

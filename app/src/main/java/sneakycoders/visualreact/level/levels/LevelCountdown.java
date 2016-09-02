@@ -64,6 +64,7 @@ public class LevelCountdown extends Level {
         // Set countdown timer
         totalTime = start * step;
         countDownTimer = new CountDownTimer(totalTime, step) {
+            @Override
             public void onTick(long msUntilFinished) {
                 if (counter >= hide) {
                     // Visible countdown
@@ -77,6 +78,7 @@ public class LevelCountdown extends Level {
                 counter--;
             }
 
+            @Override
             public void onFinish() {
                 result = true;
             }

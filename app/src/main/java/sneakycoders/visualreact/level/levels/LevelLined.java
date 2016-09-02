@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
@@ -111,7 +111,7 @@ public class LevelLined extends Level {
         // Check horizontally from the first line to the last line
         for (int i = 0; i < nCells; i++) {
             // Create a set to store the types in the row
-            Set<ShapeType> types = new HashSet<>();
+            Set<ShapeType> types = EnumSet.noneOf(ShapeType.class);
             nFilledCells = 0;
 
             // Get the number of filled cells and types of cells in the row
@@ -133,7 +133,7 @@ public class LevelLined extends Level {
 
         // Check vertically from first column to last column
         for (int i = 0; i < nCells; i++) {
-            Set<ShapeType> types = new HashSet<>();
+            Set<ShapeType> types = EnumSet.noneOf(ShapeType.class);
             nFilledCells = 0;
 
             for (int j = 0; (j < nCells) && (filled.contains(nCells * j + i)); j++) {
@@ -149,7 +149,7 @@ public class LevelLined extends Level {
         }
 
         // Check diagonal from left to right
-        Set<ShapeType> typesLtoR = new HashSet<>();
+        Set<ShapeType> typesLtoR = EnumSet.noneOf(ShapeType.class);
         nFilledCells = 0;
         for (int i = 0; (i < nCells) && (filled.contains(nCells * i + i)); i++) {
             nFilledCells++;
@@ -163,7 +163,7 @@ public class LevelLined extends Level {
         }
 
         // Check diagonal from right to left
-        Set<ShapeType> typesRtoL = new HashSet<>();
+        Set<ShapeType> typesRtoL = EnumSet.noneOf(ShapeType.class);
         nFilledCells = 0;
         for (int i = 0; (i < nCells) && (filled.contains(i * nCells + nCells - 1 - i)); i++) {
             nFilledCells++;
@@ -316,7 +316,7 @@ public class LevelLined extends Level {
         Circle, Cross
     }
 
-    public class LevelLinedView extends View {
+    private class LevelLinedView extends View {
         public LevelLinedView(Context c) {
             super(c);
         }

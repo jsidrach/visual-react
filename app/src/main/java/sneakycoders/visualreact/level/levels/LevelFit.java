@@ -307,7 +307,7 @@ public class LevelFit extends Level {
         Circle, Rectangle
     }
 
-    public class LevelFitView extends View {
+    private class LevelFitView extends View {
         public LevelFitView(Context c) {
             super(c);
         }

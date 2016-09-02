@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +27,7 @@ public class LevelPair extends Level {
     // Number of shapes on the screen initially for each row (top and bottom)
     private int shapesPerRow;
     // Flag to add random shapes instead of unique ones
-    boolean uniqueShapes;
+    private boolean uniqueShapes;
     // Sequences of shapes
     private List<BaseShape> topShapes;
     private List<BaseShape> bottomShapes;
@@ -68,6 +68,7 @@ public class LevelPair extends Level {
         return rootView;
     }
 
+    @Override
     public boolean onPlayerTap() {
         // Cancel callback
         handler.removeCallbacksAndMessages(null);
@@ -76,7 +77,7 @@ public class LevelPair extends Level {
         int width = rootView.getMeasuredWidth();
 
         // Create a map to store the number of different shapes
-        Map<ShapeType, Integer> shapeTypes = new HashMap<>();
+        Map<ShapeType, Integer> shapeTypes = new EnumMap<>(ShapeType.class);
 
         // Concatenate top and bottom list
         List<BaseShape> shapes = new ArrayList<>(topShapes);
@@ -120,7 +121,7 @@ public class LevelPair extends Level {
 
         // Distance between upper and lower rectangles
         // Margin (top, middle, bottom)
-        float margin = (float) height * getResources().getFraction(R.fraction.level_pair_vertical_margin, 1, 1);
+        float margin = height * getResources().getFraction(R.fraction.level_pair_vertical_margin, 1, 1);
 
         // Rectangle to the right of screen where shapes are initialized
         final float cellWidth = width / ((float) shapesPerRow);
@@ -159,7 +160,7 @@ public class LevelPair extends Level {
         // Movement parameters
         final int delay = 1000 / getResources().getInteger(R.integer.level_pair_frames_per_second);
         final int travelTime = randomInt(R.integer.level_pair_minimum_travel_time, R.integer.level_pair_maximum_travel_time);
-        final float dx = width * delay / travelTime;
+        final float dx = width * delay / (float) travelTime;
 
         // Set movement
         updateShapes = () -> {
@@ -270,19 +271,19 @@ public class LevelPair extends Level {
         }
     }
 
-    public abstract class BaseShape {
+    private abstract class BaseShape {
         // Shape's paint
         protected Paint paint;
         // Shape's outside box - the real shape is centered its box
         protected RectF box;
 
-        public BaseShape(float cellWidth, float cellHeight, int color) {
+        protected BaseShape(float cellWidth, float cellHeight, int color) {
             this.box = new RectF(0, 0, cellWidth, cellHeight);
             paint = new Paint();
             paint.setColor(color);
         }
 
-        public abstract ShapeType getShapeType();
+        protected abstract ShapeType getShapeType();
 
         public abstract void draw(Canvas canvas);
 
@@ -311,7 +312,7 @@ public class LevelPair extends Level {
         public abstract boolean isOutOfScreen(int width);
     }
 
-    public class Rectangle extends BaseShape {
+    private class Rectangle extends BaseShape {
         // Rectangle
         protected RectF rectangle;
 
@@ -330,7 +331,7 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.Rectangle;
         }
 
@@ -351,7 +352,7 @@ public class LevelPair extends Level {
         }
     }
 
-    public class Square extends Rectangle {
+    private class Square extends Rectangle {
         public Square(float cellWidth, float cellHeight, float padding, int color) {
             super(
                     cellWidth, cellHeight, Math.min(cellWidth, cellHeight) - 2.0f * padding,
@@ -360,18 +361,18 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.Square;
         }
     }
 
-    public class Circle extends Square {
+    private class Circle extends Square {
         public Circle(float cellWidth, float cellHeight, float padding, int circleColor) {
             super(cellWidth, cellHeight, padding, circleColor);
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.Circle;
         }
 
@@ -381,13 +382,13 @@ public class LevelPair extends Level {
         }
     }
 
-    public class Oval extends Rectangle {
+    private class Oval extends Rectangle {
         public Oval(float cellWidth, float cellHeight, float padding, int ovalColor) {
             super(cellWidth, cellHeight, padding, ovalColor);
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.Oval;
         }
 
@@ -397,7 +398,7 @@ public class LevelPair extends Level {
         }
     }
 
-    public class Cross extends BaseShape {
+    private class Cross extends BaseShape {
         // Line that forms the cross
         private RectF line;
         // Number of lines
@@ -418,7 +419,7 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             if (numLines == 2) {
                 return ShapeType.CrossTwo;
             } else if (numLines == 3) {
@@ -432,6 +433,7 @@ public class LevelPair extends Level {
             }
         }
 
+        @Override
         public void draw(Canvas canvas) {
             // Draw the lines
             for (int i = 0; i < numLines; i++) {
@@ -454,7 +456,7 @@ public class LevelPair extends Level {
         }
     }
 
-    public abstract class Triangle extends BaseShape {
+    private abstract class Triangle extends BaseShape {
         // Path that forms the triangle
         protected Path path;
         // Vertices of the triangle
@@ -465,7 +467,7 @@ public class LevelPair extends Level {
         protected float topX;
         protected float topY;
 
-        public Triangle(float cellWidth, float cellHeight, int color) {
+        protected Triangle(float cellWidth, float cellHeight, int color) {
             super(cellWidth, cellHeight, color);
         }
 
@@ -500,7 +502,7 @@ public class LevelPair extends Level {
         }
     }
 
-    public class EquilateralTriangle extends Triangle {
+    private class EquilateralTriangle extends Triangle {
         public EquilateralTriangle(float cellWidth, float cellHeight, float padding, int color) {
             super(cellWidth, cellHeight, color);
 
@@ -525,12 +527,12 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.EquilateralTriangle;
         }
     }
 
-    public class RightTriangle extends Triangle {
+    private class RightTriangle extends Triangle {
         public RightTriangle(float cellWidth, float cellHeight, float padding, int color) {
             super(cellWidth, cellHeight, color);
 
@@ -549,12 +551,12 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.RightTriangle;
         }
     }
 
-    public class Arrow extends BaseShape {
+    private class Arrow extends BaseShape {
         // Head of the arrow
         private EquilateralTriangle head;
         // Tail of the arrow
@@ -575,7 +577,7 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.Arrow;
         }
 
@@ -598,7 +600,7 @@ public class LevelPair extends Level {
         }
     }
 
-    public class Moon extends BaseShape {
+    private class Moon extends BaseShape {
         // Outer arc rectangle
         private RectF outerRect;
         // Moon's path
@@ -625,7 +627,7 @@ public class LevelPair extends Level {
         }
 
         @Override
-        public ShapeType getShapeType() {
+        protected ShapeType getShapeType() {
             return ShapeType.Moon;
         }
 
@@ -647,7 +649,7 @@ public class LevelPair extends Level {
         }
     }
 
-    public class LevelPairView extends View {
+    private class LevelPairView extends View {
         public LevelPairView(Context c) {
             super(c);
         }

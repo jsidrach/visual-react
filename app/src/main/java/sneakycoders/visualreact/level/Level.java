@@ -28,6 +28,7 @@ abstract public class Level extends Fragment {
     // Callback when then player taps its area
     abstract public boolean onPlayerTap();
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Initialize the random number generator
         random = new Random();

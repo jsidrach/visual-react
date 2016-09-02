@@ -132,9 +132,9 @@
 - [x] ~~Design app icon~~
 - [x] ~~Upload privacy policy~~
 - [x] ~~Check release/signed apk~~
-- [ ] Run Lint, fix issues detected
+- [x] ~~Run Lint, fix issues detected~~
+- [x] ~~Revisit all code to document it better~~
 - [ ] Write app description/metadata
-- [ ] Revisit all code to document it better
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish
   - [ ] French

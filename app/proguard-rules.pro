@@ -7,7 +7,22 @@
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
-# Add any project specific keep options here:
+#
+# Visual React Specific options
+#
 
 # Do not obfuscate the class name of the level classes, as they are instantiated dynamically
 -keep public class * extends sneakycoders.visualreact.level.Level
+
+#
+# Useful rules for Android applications
+#
+
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+-dontobfuscate
+#-dontusemixedcaseclassnames
+#-dontshrink
+#-dontoptimize
+#-dontpreverify
+#-verbose

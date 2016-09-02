@@ -231,20 +231,20 @@ public class LevelSingular extends Level {
         rootView.invalidate();
     }
 
-    public class FaceCell {
+    private class FaceCell {
         // Rectangles that form the face
-        public RectF leftEye;
-        public RectF rightEye;
-        public RectF mouth;
+        protected RectF leftEye;
+        protected RectF rightEye;
+        protected RectF mouth;
         // Face paint
-        public Paint facePaint;
+        protected Paint facePaint;
         // Mouth paint
-        public Paint mouthPaint;
+        protected Paint mouthPaint;
         // Center of the cell
-        public float centerX;
-        public float centerY;
+        protected float centerX;
+        protected float centerY;
         // Orientation of the face
-        public int orientation;
+        protected int orientation;
 
         public FaceCell(Paint facePaint, Paint mouthPaint, float centerX, float centerY, RectF leftEye, RectF rightEye, RectF mouth) {
             // Set paints
@@ -288,9 +288,9 @@ public class LevelSingular extends Level {
         }
     }
 
-    public class SadFaceCell extends FaceCell {
+    private class SadFaceCell extends FaceCell {
         // Background rectangle
-        public RectF background;
+        private RectF background;
         // Background paint
         public Paint backgroundPaint;
         // Sad mouth
@@ -329,7 +329,7 @@ public class LevelSingular extends Level {
         }
     }
 
-    public class LevelSingularView extends View {
+    private class LevelSingularView extends View {
         public LevelSingularView(Context c) {
             super(c);
         }

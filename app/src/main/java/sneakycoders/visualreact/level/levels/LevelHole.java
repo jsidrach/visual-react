@@ -18,7 +18,7 @@ import sneakycoders.visualreact.level.Level;
 @SuppressWarnings("unused")
 public class LevelHole extends Level {
     // Result
-    boolean result;
+    private boolean result;
     // Shapes
     private RectF leftCircle;
     private RectF rightCircle;
@@ -171,7 +171,7 @@ public class LevelHole extends Level {
         handler.removeCallbacksAndMessages(null);
     }
 
-    public class LevelHoleView extends View {
+    private class LevelHoleView extends View {
         public LevelHoleView(Context c) {
             super(c);
         }

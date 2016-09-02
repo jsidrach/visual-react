@@ -178,7 +178,7 @@ public class LevelLight extends Level {
         Uninitialized, Playing, Result
     }
 
-    public class LevelLightView extends View {
+    private class LevelLightView extends View {
         public LevelLightView(Context c) {
             super(c);
         }
