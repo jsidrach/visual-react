@@ -122,7 +122,7 @@
   - [x] ~~[L] Variety~~
   - [x] ~~[J] Labyrinth~~
   - [x] ~~[L] Singular~~
-  - [ ] [L] Pair
+  - [x] ~~[L] Pair~~
 - [x] ~~Create SneakyCoders account on Play Store~~
 - [x] ~~Integrate Firebase~~
 - [x] ~~Include ads in a non-intrusive way~~
@@ -132,7 +132,9 @@
 - [x] ~~Design app icon~~
 - [x] ~~Upload privacy policy~~
 - [x] ~~Check release/signed apk~~
+- [ ] Run Lint, fix issues detected
 - [ ] Write app description/metadata
+- [ ] Revisit all code to document it better
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish
   - [ ] French
@@ -144,8 +146,6 @@
   - [ ] Korean
   - [ ] Arabic
 - [ ] Create app promotional graphics
-- [ ] Revisit all code to document it better
-- [ ] Run Lint, fix issues detected
 - [ ] Distribute app to the rest of sneaky coders, test & QA
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app

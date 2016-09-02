@@ -133,7 +133,30 @@
     <integer name="level_hole_frames_per_second">30</integer>
 
     <!-- LevelPair -->
-    <!-- TODO -->
+    <!-- Number of shapes on the screen per row (top/bottom) -->
+    <integer name="level_pair_shapes_per_row">4</integer>
+    <!-- Top, middle and  bottom margin (as a percentage of the screen height) -->
+    <fraction name="level_pair_vertical_margin">7.5%</fraction>
+    <!-- Padding of the shape inside the cell (as a percentage of the minimum between cell width and height) -->
+    <fraction name="level_pair_inside_padding">15%</fraction>
+    <!-- Width of the rectangle (as a percentage of the rectangle height) -->
+    <fraction name="level_pair_rectangle_width">75%</fraction>
+    <!-- Size of the cross lines (thickness, as a percentage of the minimum between cell width and height) -->
+    <fraction name="level_pair_cross_size">7.5%</fraction>
+    <!-- Height of the head of the arrow (as a percentage of the cell height) -->
+    <fraction name="level_pair_arrow_head_height">40%</fraction>
+    <!-- Size of the arrow tail (thickness, as a percentage of the cell width) -->
+    <fraction name="level_pair_arrow_tail_width">10%</fraction>
+    <!-- Inner width of the moon (as a percentage of the outer width) -->
+    <fraction name="level_pair_moon_inner_width">37.5%</fraction>
+    <!-- Frames per second -->
+    <integer name="level_pair_frames_per_second">30</integer>
+    <!-- Minimum and maximum milliseconds for a shape to travel through the screen -->
+    <integer name="level_pair_minimum_travel_time">5000</integer>
+    <integer name="level_pair_maximum_travel_time">15000</integer>
+    <!-- Minimum and maximum milliseconds before the new shapes that appear on the screen are random -->
+    <integer name="level_pair_minimum_time_before_random_shapes">4000</integer>
+    <integer name="level_pair_maximum_time_before_random_shapes">16000</integer>
 
     <!-- LevelPassage -->
     <!-- Minimum and maximum milliseconds delay before the common passage is available -->
