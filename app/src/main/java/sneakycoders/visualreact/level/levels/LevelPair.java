@@ -582,6 +582,12 @@ public class LevelPair extends Level {
         }
 
         @Override
+        public void setColor(int color) {
+            super.setColor(color);
+            head.setColor(color);
+        }
+
+        @Override
         public void draw(Canvas canvas) {
             canvas.drawRect(tail, paint);
             head.draw(canvas);
