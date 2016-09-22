@@ -230,8 +230,14 @@ public class Match extends AppCompatActivity {
     public void playerTap(View view) {
         // Switch to level
         if (state == State.LevelInfo) {
-            state = State.Level;
-            displayState();
+            Player player = (view.getId() == R.id.area_player_1) ? player1 : player2;
+            player.setReady(true);
+
+            // Actually switch only if both players are ready
+            if (player1.isReady() && player2.isReady()) {
+                state = State.Level;
+                displayState();
+            }
         }
         // Store the player who tapped, switch to level result
         else if (state == State.Level) {

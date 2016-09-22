@@ -36,6 +36,8 @@ class Player {
     final private int colorSuccessLight;
     final private int colorTiePrimary;
     final private int colorTieLight;
+    // Player is ready
+    private boolean ready;
     // Score
     private int score;
 
@@ -48,8 +50,9 @@ class Player {
         this.levelDescriptionText = (TextView) activity.findViewById(levelDescriptionText);
         this.standingText = (TextView) activity.findViewById(standingText);
 
-        // Set initial score
+        // Set initial state
         score = 0;
+        setReady(false);
 
         // Blink animation
         blink = new AlphaAnimation(
@@ -77,8 +80,9 @@ class Player {
     }
 
     public void reset() {
-        // Reset the score
+        // Reset the state
         setScoreOffset(-score);
+        setReady(false);
 
         // Cancel animation
         blink.cancel();
@@ -90,7 +94,19 @@ class Player {
         scoreText.setText(NumberFormat.getIntegerInstance().format(score));
     }
 
+    public void setReady(boolean ready) {
+        this.ready = ready;
+        tapText.setText(ready ? R.string.player_ready : R.string.player_not_ready);
+    }
+
+    public boolean isReady() {
+        return ready;
+    }
+
     public void setStateSelection() {
+        // Set player as not ready
+        setReady(false);
+
         // Set colors
         area.setBackgroundColor(colorNeutralPrimary);
         scoreText.setTextColor(colorNeutralSecondary);

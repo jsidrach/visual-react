@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:slider="http://schemas.android.com/apk/lib/sneakycoders.visualreact.utils">
+    xmlns:slider="http://schemas.android.com/apk/lib/sneakycoders.visualreact.utils">
     <PreferenceCategory
         android:key="general_preferences"
         android:selectable="false"
@@ -11,7 +11,7 @@
             android:persistent="true"
             android:summaryOff="@string/show_level_tips_off"
             android:summaryOn="@string/show_level_tips_on"
-            android:title="@string/show_level_tips"/>
+            android:title="@string/show_level_tips" />
         <sneakycoders.visualreact.preferences.SliderPreference
             android:defaultValue="5"
             android:dialogTitle="@string/levels_per_match"
@@ -20,7 +20,7 @@
             android:summary="@string/levels_per_match_summary"
             android:title="@string/levels_per_match"
             slider:maxValue="20"
-            slider:minValue="1"/>
+            slider:minValue="1" />
         <sneakycoders.visualreact.preferences.SliderPreference
             android:defaultValue="5"
             android:dialogTitle="@string/rounds_per_level"
@@ -29,7 +29,7 @@
             android:summary="@string/rounds_per_level_summary"
             android:title="@string/rounds_per_level"
             slider:maxValue="20"
-            slider:minValue="1"/>
+            slider:minValue="1" />
     </PreferenceCategory>
     <PreferenceCategory
         android:key="levels_selected_category"
@@ -46,6 +46,6 @@
             android:persistent="true"
             android:summaryOff="@string/show_ads_levels_off"
             android:summaryOn="@string/show_ads_levels_on"
-            android:title="@string/show_ads_levels"/>
+            android:title="@string/show_ads_levels" />
     </PreferenceCategory>
 </PreferenceScreen>

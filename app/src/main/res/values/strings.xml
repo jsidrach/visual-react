@@ -22,7 +22,8 @@
     <string name="show_ads_levels_on">Show advertisements while playing</string>
 
     <!-- Match -->
-    <string name="start_level">Tap to start</string>
+    <string name="player_not_ready">Tap to start</string>
+    <string name="player_ready">Waiting for the other player</string>
     <string name="rematch_icon">Rematch</string>
     <string name="standing_winner">Victory!</string>
     <string name="standing_loser">So sad…</string>

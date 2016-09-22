@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Text -->
-    <dimen name="text_tiny" tools:keep="@dimen/text_tiny">20sp</dimen>
-    <dimen name="text_TINY" tools:keep="@dimen/text_TINY">25sp</dimen>
-    <dimen name="text_small" tools:keep="@dimen/text_small">30sp</dimen>
-    <dimen name="text_SMALL" tools:keep="@dimen/text_SMALL">35sp</dimen>
-    <dimen name="text_medium" tools:keep="@dimen/text_medium">50sp</dimen>
-    <dimen name="text_MEDIUM" tools:keep="@dimen/text_MEDIUM">60sp</dimen>
-    <dimen name="text_large" tools:keep="@dimen/text_large">75sp</dimen>
-    <dimen name="text_LARGE" tools:keep="@dimen/text_LARGE">90sp</dimen>
-    <dimen name="text_huge" tools:keep="@dimen/text_huge">100sp</dimen>
-    <dimen name="text_HUGE" tools:keep="@dimen/text_HUGE">115sp</dimen>
+    <dimen name="text_tiny" tools:keep="@dimen/text_tiny">17sp</dimen>
+    <dimen name="text_TINY" tools:keep="@dimen/text_TINY">23sp</dimen>
+    <dimen name="text_small" tools:keep="@dimen/text_small">27sp</dimen>
+    <dimen name="text_SMALL" tools:keep="@dimen/text_SMALL">30sp</dimen>
+    <dimen name="text_medium" tools:keep="@dimen/text_medium">40sp</dimen>
+    <dimen name="text_MEDIUM" tools:keep="@dimen/text_MEDIUM">40sp</dimen>
+    <dimen name="text_large" tools:keep="@dimen/text_large">65sp</dimen>
+    <dimen name="text_LARGE" tools:keep="@dimen/text_LARGE">80sp</dimen>
+    <dimen name="text_huge" tools:keep="@dimen/text_huge">90sp</dimen>
+    <dimen name="text_HUGE" tools:keep="@dimen/text_HUGE">105sp</dimen>
 </resources>

@@ -22,7 +22,8 @@
     <string name="show_ads_levels_on">Mostrar anuncios durante las partidas</string>
 
     <!-- Match -->
-    <string name="start_level">Pulsa para empezar</string>
+    <string name="player_not_ready">Pulsa para empezar</string>
+    <string name="player_ready">Esperando al otro jugador</string>
     <string name="rematch_icon">Volver a jugar</string>
     <string name="standing_winner">¡Victoria!</string>
     <string name="standing_loser">Derrota…</string>
