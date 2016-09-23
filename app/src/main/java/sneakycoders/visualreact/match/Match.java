@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -62,6 +63,9 @@ public class Match extends AppCompatActivity {
 
         // Inflate layout
         setContentView(R.layout.match);
+
+        // Prevent screen from turning off
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         // Add banner ad if active
         AdView adView = (AdView) findViewById(R.id.adIngame);
