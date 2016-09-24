@@ -1,5 +1,9 @@
 # Designs
 
+## Feature graph
+Created with [Inkscape](http://www.inkscape.org/)
+![](feature_graph.png)
+
 ## Logos
 Created with [Inkscape](http://www.inkscape.org/) - the final app icons are generated using [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html)
 
