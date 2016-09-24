@@ -2,6 +2,7 @@
 
 ## Feature graph
 Created with [Inkscape](http://www.inkscape.org/)
+
 ![](feature_graph.png)
 
 ## Logos
