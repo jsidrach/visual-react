@@ -1,1 +1,7 @@
-TODO
+Visual React es un juego estimulante y divertido para dos jugadores en el mismo dispositivo.
+
+¡Se el más rápido en detectar pistas visuales, pulsa la pantalla lo antes posible y consigue un punto! Pero cuidado: ¡si pulsas demasiado pronto, perderas uno!
+
+¡Enfréntate a tu oponente en más de 10 mini-juegos emocionantes y fáciles de aprender! Ninguno de ellos requiere conocimiento previo—solo rápidos reflejos—así que puedes lanzarte directamente a una partida. Los gráficos son simples y minimalistas - sin distracciones innecesarias para que puedas centrarte en la acción y minimzar tu tiempo de reacción.
+
+Personaliza el juego como prefieras. ¡Selecciona cpn qué mini-juegos competir, cuántas rondas y mini-juegos incluir en una partida, e incluso deshabilita los anuncios mientras juegas!

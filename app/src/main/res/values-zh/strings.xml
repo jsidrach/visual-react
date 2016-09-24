@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="app_name" translatable="false">Visual React</string>
+    <string name="preferences_name">设置</string>
+    <string name="match_name">比赛</string>
+    <string name="play_icon">开始</string>
+    <string name="preferences_icon">设置</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">游戏设置</string>
+    <string name="show_level_tips">游戏说明</string>
+    <string name="show_level_tips_on">显示游戏说明</string>
+    <string name="show_level_tips_off">跳过游戏说明</string>
+    <string name="levels_per_match">小游戏数量</string>
+    <string name="levels_per_match_summary">每轮比赛的小游戏数量: %1$d</string>
+    <string name="rounds_per_level">小游戏重复次数</string>
+    <string name="rounds_per_level_summary">每个小游戏重复的次数: %1$d</string>
+    <string name="levels_selected_category">游戏种类</string>
+    <string name="ads_category">广告</string>
+    <string name="show_ads_levels">游戏中广告</string>
+    <string name="show_ads_levels_off">游戏中不显示广告</string>
+    <string name="show_ads_levels_on">游戏中显示广告</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">点击开始</string>
+    <string name="player_ready">等待对手就绪</string>
+    <string name="rematch_icon">重新开始</string>
+    <string name="standing_winner">赢了!</string>
+    <string name="standing_loser">心塞…</string>
+    <string name="standing_tied">平局</string>
+    <string name="cancel_match_confirmation">确定中止游戏?</string>
+    <string name="cancel_match_yes">中止游戏</string>
+    <string name="cancel_match_no">继续游戏</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">碰撞</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">当两个形状碰撞时点击屏幕</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">变色</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">当颜色改变时点击屏幕</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">过桥</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">两个端点连接时点击屏幕</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">倒数</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">当倒计时数到0时点击屏幕</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">容纳</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">当一个形状能容纳另一个时点击屏幕</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">黑洞</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">当圆比黑洞小时点击屏幕</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">点灯</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">当有颜色的格子比黑色格子多时点击屏幕</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">连线</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">当三个同样的形状在一条线上时点击屏幕</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">配对</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">当两个同样的形状出现时点击屏幕</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">通道</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">当从顶部到底部的垂直通道出现时点击屏幕</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">苦脸</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">当苦脸出现时点击屏幕</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">缤纷</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">当有五种不同的颜色时点击屏幕</string>
+</resources>
