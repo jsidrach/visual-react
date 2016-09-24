@@ -6,9 +6,15 @@
 [Documentation](#documentation) |
 [Roadmap](#roadmap)
 
-[TODO: Description]
-
 [TODO: Link to Google Play Listing]
+
+> Visual React is a challenging and fun game for two players on the same device.
+
+> Be the fastest one to detect visual clues, quickly tap the screen, and earn a point! But careful: if you touch too early, you will lose one!
+
+> Battle your opponent in more than 10 exciting and easy-to-learn mini-games! None of them require prior knowledge—just quick reflexes—so you can jump straight into the action. Graphics are simple and clean - no unnecessary distractions so you can focus on the action and minimize your reaction time.
+
+> Customize the game in any way you like. Select which mini-games to play, how many rounds and mini-games to include in a match, and even disable in-game advertisements!
 
 ## <a name="levels"></a> Levels
 | Name       | Description                                             |
@@ -98,18 +104,8 @@
   * [Tablet](docs/screenshots/tablet/README.md) (Nexus 9 API 23)
 
 ## <a name="roadmap"></a> Roadmap
-- [ ] Write app description/metadata
-- [ ] Translate strings and app metadata to additional languages, use paid service if needed:
-  - [ ] Spanish
-  - [ ] French
-  - [ ] Chinese (simplified)
-  - [ ] German
-  - [ ] Japanese
-  - [ ] Portuguese
-  - [ ] Russian
-  - [ ] Korean
-  - [ ] Arabic
+- [ ] Translate strings and app metadata to additional languages, use paid service if needed
 - [ ] Create app promotional graphics
-- [ ] Distribute app to the rest of sneaky coders, test & QA
+- [ ] Distribute beta app, test & QA
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
