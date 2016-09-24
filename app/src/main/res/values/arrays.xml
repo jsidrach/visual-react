@@ -4,12 +4,12 @@
     <string-array name="levels" translatable="false">
         <item>collision</item>
         <item>color</item>
+        <item>connection</item>
         <item>countdown</item>
         <item>fit</item>
         <item>hole</item>
-        <item>labyrinth</item>
         <item>light</item>
-        <item>lined</item>
+        <item>line</item>
         <item>pair</item>
         <item>passage</item>
         <item>singular</item>

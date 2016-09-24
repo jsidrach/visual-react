@@ -24,6 +24,10 @@ Taken with Android Studio Emulator, on a Nexus 5X API 23
 
 <img src="level_color_description.png" width="215"> <img src="level_color_playing.png" width="215"> <img src="level_color_fail.png" width="215"> <img src="level_color_success.png" width="215">
 
+#### Connection
+
+<img src="level_connection_description.png" width="215"> <img src="level_connection_playing.png" width="215"> <img src="level_connection_fail.png" width="215"> <img src="level_connection_success.png" width="215">
+
 #### Countdown
 
 <img src="level_countdown_description.png" width="215"> <img src="level_countdown_playing.png" width="215"> <img src="level_countdown_fail.png" width="215"> <img src="level_countdown_success.png" width="215">
@@ -36,17 +40,13 @@ Taken with Android Studio Emulator, on a Nexus 5X API 23
 
 <img src="level_hole_description.png" width="215"> <img src="level_hole_playing.png" width="215"> <img src="level_hole_fail.png" width="215"> <img src="level_hole_success.png" width="215">
 
-#### Labyrinth
-
-<img src="level_labyrinth_description.png" width="215"> <img src="level_labyrinth_playing.png" width="215"> <img src="level_labyrinth_fail.png" width="215"> <img src="level_labyrinth_success.png" width="215">
-
 #### Light
 
 <img src="level_light_description.png" width="215"> <img src="level_light_playing.png" width="215"> <img src="level_light_fail.png" width="215"> <img src="level_light_success.png" width="215">
 
-#### Lined
+#### Line
 
-<img src="level_lined_description.png" width="215"> <img src="level_lined_playing.png" width="215"> <img src="level_lined_fail.png" width="215"> <img src="level_lined_success.png" width="215">
+<img src="level_line_description.png" width="215"> <img src="level_line_playing.png" width="215"> <img src="level_line_fail.png" width="215"> <img src="level_line_success.png" width="215">
 
 #### Pair
 

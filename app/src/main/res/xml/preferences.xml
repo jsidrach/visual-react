@@ -13,7 +13,7 @@
             android:summaryOn="@string/show_level_tips_on"
             android:title="@string/show_level_tips" />
         <sneakycoders.visualreact.preferences.SliderPreference
-            android:defaultValue="5"
+            android:defaultValue="6"
             android:dialogTitle="@string/levels_per_match"
             android:key="levels_per_match"
             android:persistent="true"
@@ -22,7 +22,7 @@
             slider:maxValue="20"
             slider:minValue="1" />
         <sneakycoders.visualreact.preferences.SliderPreference
-            android:defaultValue="5"
+            android:defaultValue="3"
             android:dialogTitle="@string/rounds_per_level"
             android:key="rounds_per_level"
             android:persistent="true"

@@ -20,7 +20,7 @@ import sneakycoders.visualreact.R;
 import sneakycoders.visualreact.level.Level;
 
 @SuppressWarnings("unused")
-public class LevelLined extends Level {
+public class LevelLine extends Level {
     // Cells in the X axis and Y axis
     private int nCells;
     // Cells
@@ -46,7 +46,7 @@ public class LevelLined extends Level {
     // Update function
     private Runnable updateCells;
     // View
-    private LevelLinedView rootView;
+    private LevelLineView rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class LevelLined extends Level {
         handler = new Handler();
 
         // Number of cells in each axis
-        nCells = getResources().getInteger(R.integer.level_lined_cells);
+        nCells = getResources().getInteger(R.integer.level_line_cells);
 
         // Colors
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
@@ -92,7 +92,7 @@ public class LevelLined extends Level {
         lines = new RectF[2 * (nCells - 1)];
 
         // Create view
-        rootView = new LevelLinedView(getActivity());
+        rootView = new LevelLineView(getActivity());
 
         return rootView;
     }
@@ -202,14 +202,14 @@ public class LevelLined extends Level {
 
         // Size of the grid
         float squareWidth = Math.min(width, height);
-        float resizedSquareWidth = squareWidth * getResources().getFraction(R.fraction.level_lined_grid_size, 1, 1);
+        float resizedSquareWidth = squareWidth * getResources().getFraction(R.fraction.level_line_grid_size, 1, 1);
         float gridSize = resizedSquareWidth / nCells;
 
         // Width of separator
-        float halfSeparatorWidth = 0.5f * gridSize * getResources().getFraction(R.fraction.level_lined_separator_width, 1, 1);
+        float halfSeparatorWidth = 0.5f * gridSize * getResources().getFraction(R.fraction.level_line_separator_width, 1, 1);
 
         // Set stroke width of the circles
-        float strokeWidth = gridSize * getResources().getFraction(R.fraction.level_lined_stroke_width, 1, 1);
+        float strokeWidth = gridSize * getResources().getFraction(R.fraction.level_line_stroke_width, 1, 1);
         circlePaint.setStrokeWidth(strokeWidth);
         crossPaint.setStrokeWidth(strokeWidth);
         successPaint.setStrokeWidth(1.5f * strokeWidth);
@@ -239,14 +239,14 @@ public class LevelLined extends Level {
         }
 
         // Margin of the cell to the grid
-        float cellMargin = gridSize * getResources().getFraction(R.fraction.level_lined_cell_margin, 1, 1);
+        float cellMargin = gridSize * getResources().getFraction(R.fraction.level_line_cell_margin, 1, 1);
 
         // Size of actual cells
         float cellSize = gridSize - 2.0f * cellMargin;
 
         // Length and width of the rectangles that form the crosses
-        float crossLength = (float) Math.sqrt(2.0) * cellSize * getResources().getFraction(R.fraction.level_lined_cross_length, 1, 1);
-        float crossWidth = crossLength * getResources().getFraction(R.fraction.level_lined_cross_width, 1, 1);
+        float crossLength = (float) Math.sqrt(2.0) * cellSize * getResources().getFraction(R.fraction.level_line_cross_length, 1, 1);
+        float crossWidth = crossLength * getResources().getFraction(R.fraction.level_line_cross_width, 1, 1);
 
         // Distances of the edges of the cross to the edges of the cell
         float distHorizontal = (crossLength - cellSize) / 2.0f;
@@ -271,7 +271,7 @@ public class LevelLined extends Level {
         }
 
         // Update cells
-        final int delay = randomInt(R.integer.level_lined_min_delay, R.integer.level_lined_max_delay);
+        final int delay = randomInt(R.integer.level_line_min_delay, R.integer.level_line_max_delay);
         updateCells = () -> {
             // All cells are filled
             if (notFilled.size() == 0) {
@@ -316,8 +316,8 @@ public class LevelLined extends Level {
         Circle, Cross
     }
 
-    private class LevelLinedView extends View {
-        public LevelLinedView(Context c) {
+    private class LevelLineView extends View {
+        public LevelLineView(Context c) {
             super(c);
         }
 

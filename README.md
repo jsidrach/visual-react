@@ -15,12 +15,12 @@
 |:-----------|:--------------------------------------------------------|
 | Collision  | Tap when the shapes collide                             |
 | Color      | Tap after the color changes                             |
+| Connection | Tap when the two extremes are connected                 |
 | Countdown  | Tap after the countdown passes zero                     |
 | Fit        | Tap when one shape fits into the other one              |
 | Hole       | Tap when the circles are smaller than the hole          |
-| Labyrinth  | Tap when the two extremes are connected                 |
 | Light      | Tap after there are more colored cells than dark cells  |
-| Lined      | Tap when three cells of the same type form a line       |
+| Line       | Tap when three cells of the same type form a line       |
 | Pair       | Tap when there are two equal shapes                     |
 | Passage    | Tap when there is a straight passage from top to bottom |
 | Singular   | Tap when there is a sad face                            |
@@ -98,42 +98,6 @@
   * [Tablet](docs/screenshots/tablet/README.md) (Nexus 9 API 23)
 
 ## <a name="roadmap"></a> Roadmap
-- [x] ~~Rethink design, winner/loser should be more clear~~
-- [x] ~~Write Design Goals~~
-- [x] ~~Write Development Goals~~
-- [x] ~~Choose color palette~~
-- [x] ~~Implement main screen~~
-- [x] ~~Implement settings screen~~
-  - [x] ~~Make sure at least one game is selected in the settings screen~~
-- [x] ~~Improve translation of numbers~~
-- [x] ~~Add support for bidirectional strings~~
-- [x] ~~Dialog to confirm exit of match~~
-- [x] ~~Make the level selector autogenerate dynamically~~
-- [x] ~~Implement basic common class for games~~
-- [ ] Implement games
-  - [x] ~~[J] Color~~
-  - [x] ~~[J] Countdown~~
-  - [x] ~~[J] Light~~
-  - [x] ~~[J] Collision~~
-  - [x] ~~[J] Fit~~
-  - [x] ~~[J] Hole~~
-  - [x] ~~[J] Passage~~
-  - [x] ~~[L] Lined~~
-  - [x] ~~[L] Variety~~
-  - [x] ~~[J] Labyrinth~~
-  - [x] ~~[L] Singular~~
-  - [x] ~~[L] Pair~~
-- [x] ~~Create SneakyCoders account on Play Store~~
-- [x] ~~Integrate Firebase~~
-- [x] ~~Include ads in a non-intrusive way~~
-  - [x] ~~Menus~~
-  - [x] ~~Ingame (can be disabled)~~
-  - [x] ~~Popup (rematch/leave)~~
-- [x] ~~Design app icon~~
-- [x] ~~Upload privacy policy~~
-- [x] ~~Check release/signed apk~~
-- [x] ~~Run Lint, fix issues detected~~
-- [x] ~~Revisit all code to document it better~~
 - [ ] Write app description/metadata
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed:
   - [ ] Spanish

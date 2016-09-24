@@ -42,18 +42,18 @@
     <string name="level_collision_description" tools:keep="@string/level_collision_description">Tap when the shapes collide</string>
     <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
     <string name="level_color_description" tools:keep="@string/level_color_description">Tap after the color changes</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">Connection</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">Tap when the two extremes are connected</string>
     <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Countdown</string>
     <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tap after the countdown passes zero</string>
     <string name="level_fit_name" tools:keep="@string/level_fit_name">Fit</string>
     <string name="level_fit_description" tools:keep="@string/level_fit_description">Tap when one shape fits into the other one</string>
     <string name="level_hole_name" tools:keep="@string/level_hole_name">Hole</string>
     <string name="level_hole_description" tools:keep="@string/level_hole_description">Tap when the circles are smaller than the hole</string>
-    <string name="level_labyrinth_name" tools:keep="@string/level_labyrinth_name">Labyrinth</string>
-    <string name="level_labyrinth_description" tools:keep="@string/level_labyrinth_description">Tap when the two extremes are connected</string>
     <string name="level_light_name" tools:keep="@string/level_light_name">Light</string>
     <string name="level_light_description" tools:keep="@string/level_light_description">Tap when there are more colored cells than dark cells</string>
-    <string name="level_lined_name" tools:keep="@string/level_lined_name">Lined</string>
-    <string name="level_lined_description" tools:keep="@string/level_lined_description">Tap when three cells of the same type form a line</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">Line</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">Tap when three cells of the same type form a line</string>
     <string name="level_pair_name" tools:keep="@string/level_pair_name">Pair</string>
     <string name="level_pair_description" tools:keep="@string/level_pair_description">Tap when there are two equal shapes</string>
     <string name="level_passage_name" tools:keep="@string/level_passage_name">Passage</string>

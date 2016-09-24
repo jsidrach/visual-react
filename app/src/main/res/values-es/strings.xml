@@ -37,18 +37,18 @@
     <string name="level_collision_description" tools:keep="@string/level_collision_description">Pulsa cuando las figuras colisionen</string>
     <string name="level_color_name" tools:keep="@string/level_color_name">Color</string>
     <string name="level_color_description" tools:keep="@string/level_color_description">Pulsa después de que el color cambie</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">Conexión</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">Pulsa cuando los dos extremos estén conectados</string>
     <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Cuenta atrás</string>
     <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Pulsa después de que la cuenta atrás pase cero</string>
     <string name="level_fit_name" tools:keep="@string/level_fit_name">Encaje</string>
     <string name="level_fit_description" tools:keep="@string/level_fit_description">Pulsa cuando una figura encaje dentro de la otra</string>
     <string name="level_hole_name" tools:keep="@string/level_hole_name">Hueco</string>
     <string name="level_hole_description" tools:keep="@string/level_hole_description">Pulsa cuando los cículos quepan en el hueco</string>
-    <string name="level_labyrinth_name" tools:keep="@string/level_labyrinth_name">Laberinto</string>
-    <string name="level_labyrinth_description" tools:keep="@string/level_labyrinth_description">Pulsa cuando los dos extremos estén conectados</string>
     <string name="level_light_name" tools:keep="@string/level_light_name">Luz</string>
     <string name="level_light_description" tools:keep="@string/level_light_description">Pulsa cuando hayan más celdas coloreadas que oscuras</string>
-    <string name="level_lined_name" tools:keep="@string/level_lined_name">En línea</string>
-    <string name="level_lined_description" tools:keep="@string/level_lined_description">Pulsa cuando tres celdas del mismo tipo estén en línea</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">Línea</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">Pulsa cuando tres celdas del mismo tipo estén en línea</string>
     <string name="level_pair_name" tools:keep="@string/level_pair_name">Par</string>
     <string name="level_pair_description" tools:keep="@string/level_pair_description">Pulsa cuando hayan dos figuras iguales</string>
     <string name="level_passage_name" tools:keep="@string/level_passage_name">Pasadizo</string>

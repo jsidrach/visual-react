@@ -3,6 +3,8 @@
     <!--
         Match
     -->
+    <!-- Probability of showing popup on exit/rematch -->
+    <fraction name="match_popup_probability">30%</fraction>
     <!-- Milliseconds of pause between levels -->
     <integer name="match_pause_between_levels">3000</integer>
     <!-- Blink animation -->
@@ -40,6 +42,19 @@
     <integer name="level_color_min_delay">1000</integer>
     <integer name="level_color_max_delay">15000</integer>
 
+    <!-- LevelConnection -->
+    <!-- Cells grid -->
+    <integer name="level_connection_cells_x">15</integer>
+    <integer name="level_connection_cells_y">10</integer>
+    <!-- Minimum and maximum step in milliseconds between updates -->
+    <integer name="level_connection_min_delay">50</integer>
+    <integer name="level_connection_max_delay">100</integer>
+    <!-- Minimum and maximum probability of changing random cells instead of path cells -->
+    <fraction name="level_connection_min_update_random">80%</fraction>
+    <fraction name="level_connection_max_update_random">90%</fraction>
+    <!-- Path width (as a percentage of the cell width) -->
+    <fraction name="level_connection_path_width">25%</fraction>
+
     <!-- LevelCountdown -->
     <!-- Minimum and maximum starting numbers -->
     <integer name="level_countdown_min_start">6</integer>
@@ -67,19 +82,6 @@
     <!-- Frames per second -->
     <integer name="level_fit_frames_per_second">30</integer>
 
-    <!-- LevelLabyrinth -->
-    <!-- Cells grid -->
-    <integer name="level_labyrinth_cells_x">15</integer>
-    <integer name="level_labyrinth_cells_y">10</integer>
-    <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_labyrinth_min_delay">50</integer>
-    <integer name="level_labyrinth_max_delay">100</integer>
-    <!-- Minimum and maximum probability of changing random cells instead of path cells -->
-    <fraction name="level_labyrinth_min_update_random">80%</fraction>
-    <fraction name="level_labyrinth_max_update_random">90%</fraction>
-    <!-- Path width (as a percentage of the cell width) -->
-    <fraction name="level_labyrinth_path_width">25%</fraction>
-
     <!-- LevelLight -->
     <!-- Cells grid -->
     <integer name="level_light_cells_x">30</integer>
@@ -96,24 +98,24 @@
     <!-- Middle line width (as a percentage of the screen width) -->
     <fraction name="level_light_middle_line_width">1%</fraction>
 
-    <!-- LevelLined -->
+    <!-- LevelLine -->
     <!-- Cells grid -->
-    <integer name="level_lined_cells">3</integer>
+    <integer name="level_line_cells">3</integer>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_lined_min_delay">750</integer>
-    <integer name="level_lined_max_delay">1500</integer>
+    <integer name="level_line_min_delay">750</integer>
+    <integer name="level_line_max_delay">1500</integer>
     <!-- Width/height of the grid (as percentage of the minimum between screen width and screen height) -->
-    <fraction name="level_lined_grid_size">90%</fraction>
+    <fraction name="level_line_grid_size">90%</fraction>
     <!-- Width of the separator between cells (as percentage of the grid size) -->
-    <fraction name="level_lined_separator_width">5%</fraction>
+    <fraction name="level_line_separator_width">5%</fraction>
     <!-- Stroke width of the shapes (as percentage of the grid size) -->
-    <fraction name="level_lined_stroke_width">5%</fraction>
+    <fraction name="level_line_stroke_width">5%</fraction>
     <!-- Margin of the cell to the border of the grid (as percentage of the grid size) -->
-    <fraction name="level_lined_cell_margin">12.5%</fraction>
+    <fraction name="level_line_cell_margin">12.5%</fraction>
     <!-- Length of the cross (as a percentage of the length of the diagonal of the cell) -->
-    <fraction name="level_lined_cross_length">90%</fraction>
+    <fraction name="level_line_cross_length">90%</fraction>
     <!-- Cross width (as a percentage of the cross length) -->
-    <fraction name="level_lined_cross_width">1.75%</fraction>
+    <fraction name="level_line_cross_width">1.75%</fraction>
 
     <!-- LevelHole -->
     <!-- Minimum and maximum time in milliseconds it takes the circle to resize (from small to big or from big to small) -->

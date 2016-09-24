@@ -50,6 +50,8 @@ public class Match extends AppCompatActivity {
     private Handler handler;
     // Ad popup
     private InterstitialAd adPopup;
+    // Probability of popup on exit/rematch
+    private double probPopup;
     // Ad listeners
     private AdListener exitListener;
     private AdListener rematchListener;
@@ -83,6 +85,9 @@ public class Match extends AppCompatActivity {
             rootView.removeView(adView);
             adView.setVisibility(View.GONE);
         }
+
+        // Probability of popup on exit/rematch
+        probPopup = getResources().getFraction(R.fraction.match_popup_probability, 1, 1);
 
         // Add popup ad
         adPopup = new InterstitialAd(this);
@@ -137,7 +142,7 @@ public class Match extends AppCompatActivity {
         player2.reset();
 
         // Rematch
-        if ((view != null) && (adPopup.isLoaded())) {
+        if ((view != null) && (Math.random() < probPopup) && (adPopup.isLoaded())) {
             // Show add before continuing
             adPopup.setAdListener(rematchListener);
             adPopup.show();
@@ -312,7 +317,7 @@ public class Match extends AppCompatActivity {
 
     private void leaveMatch() {
         // Show ad before exiting
-        if (adPopup.isLoaded()) {
+        if ((Math.random() < probPopup) && (adPopup.isLoaded())) {
             adPopup.setAdListener(exitListener);
             adPopup.show();
         }

@@ -20,7 +20,7 @@ import sneakycoders.visualreact.level.Level;
 
 // Dynamically instantiated
 @SuppressWarnings("unused")
-public class LevelLabyrinth extends Level {
+public class LevelConnection extends Level {
     // Cells in the X axis
     private int cellsX;
     // Cells in the Y axis
@@ -48,7 +48,7 @@ public class LevelLabyrinth extends Level {
     // Update function (to update the path cells)
     private Runnable updateCells;
     // View
-    private LevelLabyrinthView rootView;
+    private LevelConnectionView rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,8 +65,8 @@ public class LevelLabyrinth extends Level {
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Number of cells in each axis
-        cellsX = getResources().getInteger(R.integer.level_labyrinth_cells_x);
-        cellsY = getResources().getInteger(R.integer.level_labyrinth_cells_y);
+        cellsX = getResources().getInteger(R.integer.level_connection_cells_x);
+        cellsY = getResources().getInteger(R.integer.level_connection_cells_y);
 
         // Y coordinate of the extremes
         leftExtremeY = randomInInterval(0, cellsY - 1);
@@ -90,7 +90,7 @@ public class LevelLabyrinth extends Level {
         handler = new Handler();
 
         // Create view
-        rootView = new LevelLabyrinthView(getActivity());
+        rootView = new LevelConnectionView(getActivity());
 
         return rootView;
     }
@@ -219,7 +219,7 @@ public class LevelLabyrinth extends Level {
         int height = rootView.getMeasuredHeight();
         float cellWidth = width / (float) cellsX;
         float cellHeight = height / (float) cellsY;
-        float pathWidth = cellWidth * getResources().getFraction(R.fraction.level_labyrinth_path_width, 1, 1);
+        float pathWidth = cellWidth * getResources().getFraction(R.fraction.level_connection_path_width, 1, 1);
 
         // Set extremes
         float extremesWidth = pathWidth * 2.0f;
@@ -413,8 +413,8 @@ public class LevelLabyrinth extends Level {
         }
 
         // Set the update function
-        final int delay = randomInt(R.integer.level_labyrinth_min_delay, R.integer.level_labyrinth_max_delay);
-        final float pRandomCell = randomFloat(R.fraction.level_labyrinth_min_update_random, R.fraction.level_labyrinth_max_update_random);
+        final int delay = randomInt(R.integer.level_connection_min_delay, R.integer.level_connection_max_delay);
+        final float pRandomCell = randomFloat(R.fraction.level_connection_min_update_random, R.fraction.level_connection_max_update_random);
         updateCells = () -> {
             // Cell to be updated
             PathCell cell;
@@ -540,8 +540,8 @@ public class LevelLabyrinth extends Level {
         }
     }
 
-    private class LevelLabyrinthView extends View {
-        public LevelLabyrinthView(Context c) {
+    private class LevelConnectionView extends View {
+        public LevelConnectionView(Context c) {
             super(c);
         }
 
