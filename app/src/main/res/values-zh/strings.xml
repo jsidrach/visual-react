@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Launcher -->
-    <string name="app_name" translatable="false">Visual React</string>
     <string name="preferences_name">设置</string>
     <string name="match_name">比赛</string>
     <string name="play_icon">开始</string>

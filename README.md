@@ -100,8 +100,10 @@
 * [External Assets](docs/external-assets/README.md)
 * [Metadata](docs/metadata/README.md)
 * Screenshots
-  * [Phone](docs/screenshots/phone/README.md) (Nexus 5X API 23)
-  * [Tablet](docs/screenshots/tablet/README.md) (Nexus 9 API 23)
+  * [Nexus 5X API 23](docs/screenshots/nexus-5x-api-23/README.md)
+  * [Nexus 7 API 23](docs/screenshots/nexus-7-api-23/README.md)
+  * [Nexus 9 API 23](docs/screenshots/nexus-9-api-23/README.md)
+  * [Nexus 10 API 23](docs/screenshots/nexus-10-api-23/README.md)
 
 ## <a name="roadmap"></a> Roadmap
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed
