@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.util.Pair;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,7 +103,9 @@ public class LevelConnection extends Level {
 
         // Find path
         List<Pair<Integer, Integer>> path = followPath(true);
-        boolean result = (path.size() != 0) && (path.get(path.size() - 1).second == rightExtremeY);
+        boolean result = (path.size() != 0)
+                && (path.get(path.size() - 1).first == (cellsX - 1))
+                && (path.get(path.size() - 1).second == rightExtremeY);
 
         // Start from the right extreme to identify what to paint with the color for fail
         if (!result) {
