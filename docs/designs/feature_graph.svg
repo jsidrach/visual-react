@@ -27,9 +27,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="414.21053"
-     inkscape:cy="122.51109"
+     inkscape:cy="162.51109"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      units="px"
      inkscape:window-width="1920"
@@ -53,7 +53,8 @@
      inkscape:label="Background"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-552.36216)">
+     transform="translate(0,-552.36216)"
+     sodipodi:insensitive="true">
     <rect
        style="fill:#616161;fill-opacity:1;stroke:none"
        id="rect8616"
@@ -170,16 +171,15 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="Title"
-     sodipodi:insensitive="true">
+     inkscape:label="Title">
     <g
        id="g8916"
        transform="matrix(0.98516873,0,0,1,314.96625,50)"
-       style="fill:#6a1b9a;fill-opacity:1;stroke:none;stroke-opacity:1">
+       style="fill:#6a1b9a;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-width:10.07499155;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round">
       <polygon
          id="polygon8918"
-         points="289.571,159.509 218.405,159.509 311.656,0 157.055,0 90.798,196.319 164.417,196.319 88.344,400 "
-         style="fill:#6a1b9a;fill-opacity:1;stroke:none;stroke-opacity:1" />
+         points="218.405,159.509 311.656,0 157.055,0 90.798,196.319 164.417,196.319 88.344,400 289.571,159.509 "
+         style="fill:#6a1b9a;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;stroke-width:10.07499155;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round" />
     </g>
   </g>
 </svg>
