@@ -1,4 +1,4 @@
-# Visual React
+# [:zap:](https://play.google.com/store/apps/details?id=sneakycoders.visualreact) Visual React
 [Levels](#levels) |
 [Contributors](#contributors) |
 [License](#license) |
@@ -6,7 +6,7 @@
 [Documentation](#documentation) |
 [Roadmap](#roadmap)
 
-[TODO: Link to Google Play Listing]
+
 
 > Visual React is a challenging and fun game for two players on the same device.
 
