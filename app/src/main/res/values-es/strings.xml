@@ -46,15 +46,15 @@
     <string name="level_hole_name" tools:keep="@string/level_hole_name">Hueco</string>
     <string name="level_hole_description" tools:keep="@string/level_hole_description">Pulsa cuando los cículos quepan en el hueco</string>
     <string name="level_light_name" tools:keep="@string/level_light_name">Luz</string>
-    <string name="level_light_description" tools:keep="@string/level_light_description">Pulsa cuando hayan más celdas coloreadas que oscuras</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Pulsa cuando haya más celdas coloreadas que oscuras</string>
     <string name="level_line_name" tools:keep="@string/level_line_name">Línea</string>
     <string name="level_line_description" tools:keep="@string/level_line_description">Pulsa cuando tres celdas del mismo tipo estén en línea</string>
     <string name="level_pair_name" tools:keep="@string/level_pair_name">Par</string>
-    <string name="level_pair_description" tools:keep="@string/level_pair_description">Pulsa cuando hayan dos figuras iguales</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Pulsa cuando haya dos figuras iguales</string>
     <string name="level_passage_name" tools:keep="@string/level_passage_name">Pasadizo</string>
     <string name="level_passage_description" tools:keep="@string/level_passage_description">Pulsa cuando exista un pasadizo recto de arriba a abajo</string>
     <string name="level_singular_name" tools:keep="@string/level_singular_name">Singular</string>
     <string name="level_singular_description" tools:keep="@string/level_singular_description">Pulsa cuando haya una cara triste</string>
     <string name="level_variety_name" tools:keep="@string/level_variety_name">Variedad</string>
-    <string name="level_variety_description" tools:keep="@string/level_variety_description">Pulsa cuando hayan cinco colores diferentes</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Pulsa cuando haya cinco colores diferentes</string>
 </resources>
