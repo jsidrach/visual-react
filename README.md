@@ -107,7 +107,6 @@
 
 ## <a name="roadmap"></a> Roadmap
 - [ ] Translate strings and app metadata to additional languages, use paid service if needed
-- [ ] Create app promotional graphics
 - [ ] Distribute beta app, test & QA
 - [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
 - [ ] Publish the app
