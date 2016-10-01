@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">Préférences</string>
+    <string name="match_name">Partie</string>
+    <string name="play_icon">Jouer</string>
+    <string name="preferences_icon">Préférences</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">Jouabilité</string>
+    <string name="show_level_tips">Description des niveaux</string>
+    <string name="show_level_tips_on">Montrer les descriptions des niveaux au début de chacun</string>
+    <string name="show_level_tips_off">Passer les descriptions des niveaux au début de chacun</string>
+    <string name="levels_per_match">Niveaux par partie</string>
+    <string name="levels_per_match_summary">Nombre de niveaux par partie: %1$d</string>
+    <string name="rounds_per_level">Tours par niveau</string>
+    <string name="rounds_per_level_summary">Nombre de tours par niveau: %1$d</string>
+    <string name="levels_selected_category">Niveaux</string>
+    <string name="ads_category">Publicité</string>
+    <string name="show_ads_levels">Publicité pendant les parties</string>
+    <string name="show_ads_levels_off">Ne pas montrer de la publicité pendant les parties</string>
+    <string name="show_ads_levels_on">Montrer de la publicité pendant les parties</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">Appuie pour commencer</string>
+    <string name="player_ready">Dans l\'attente de l\'autre joueur</string>
+    <string name="rematch_icon">Nouvelle partie</string>
+    <string name="standing_winner">Victoire!</string>
+    <string name="standing_loser">Défaite…</string>
+    <string name="standing_tied">Egalité</string>
+    <string name="cancel_match_confirmation">Tu es sûr de vouloir annuler la partie?</string>
+    <string name="cancel_match_yes">Annuler la partie</string>
+    <string name="cancel_match_no">Continuer à jouer</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">Collision</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Appuie quand les figures entrent en collision</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">Couleur</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">Appuie après que la couleur change</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">Connexion</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">Appuie quand les deux extrémités connectent</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Compte à rebours</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Appuie après que le compte à rebours dépasse zéro</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">Ajustement</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">Appuie quand une figure rentre dedans l\'autre</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">Cavité</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">Appuie quand les cercles rentrent dans la cavité</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">Lumière</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Appuie quand il y a plus de cellules colorées que sombres</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">Ligne</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">Appuie quand il y a trois cellules du même type en ligne</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">Paire</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Appuie quand il y a deux figures égales</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">Passage</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">Appuie quand il y a un passage droit du haut jusqu\'en bas</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">Singulier</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Appuie quand il y a un visage triste</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">Variété</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Appuie quand il y a cinq couleurs différentes</string>
+</resources>
