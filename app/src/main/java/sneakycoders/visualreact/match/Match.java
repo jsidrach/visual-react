@@ -331,6 +331,7 @@ public class Match extends AppCompatActivity {
         // Switch to Launcher screen
         Intent intent = new Intent(Match.this, Launcher.class);
         startActivity(intent);
+        finish();
     }
 
     private void loadPopup() {

@@ -46,5 +46,6 @@ public class Launcher extends AppCompatActivity {
         // Switch to Match screen
         Intent intent = new Intent(Launcher.this, Match.class);
         startActivity(intent);
+        finish();
     }
 }
