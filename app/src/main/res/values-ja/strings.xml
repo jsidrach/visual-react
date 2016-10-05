@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">環境設定</string>
+    <string name="match_name">対戦</string>
+    <string name="play_icon">遊ぶ</string>
+    <string name="preferences_icon">環境設定</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">ゲームプレイ</string>
+    <string name="show_level_tips">レベルのヒント</string>
+    <string name="show_level_tips_on">開始時にレベルの説明を表示する</string>
+    <string name="show_level_tips_off">開始時にレベルの説明をスキップする</string>
+    <string name="levels_per_match">対戦ごとのレベル</string>
+    <string name="levels_per_match_summary">対戦ごとのレベル数：%1$d</string>
+    <string name="rounds_per_level">レベルごとのラウンド</string>
+    <string name="rounds_per_level_summary">レベルごとのラウンド数：%1$d</string>
+    <string name="levels_selected_category">レベル</string>
+    <string name="ads_category">広告</string>
+    <string name="show_ads_levels">ゲーム内広告</string>
+    <string name="show_ads_levels_off">遊んでいる時に広告を表示しない</string>
+    <string name="show_ads_levels_on">遊んでいる時に広告を表示する</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">タップして開始する</string>
+    <string name="player_ready">他のプレイヤーを待っています</string>
+    <string name="rematch_icon">もう一度対戦する</string>
+    <string name="standing_winner">勝った！</string>
+    <string name="standing_loser">悲しいです...</string>
+    <string name="standing_tied">引き分け</string>
+    <string name="cancel_match_confirmation">本当に対戦をキャンセルしてもよろしいですか？</string>
+    <string name="cancel_match_yes">対戦をキャンセルする</string>
+    <string name="cancel_match_no">続けて遊ぶ</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">衝突</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">形同士が衝突した際にはタップしてください</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">色</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">色が変化した後にタップしてください</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">接続</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">両極が接続されているときにタップしてください</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">カウントダウン</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">カウントダウンがゼロを通過した後にタップしてください</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">フィット</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">1つの形が他の形と適合する際にタップしてください</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">ホール</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">円がホールよりも小さい時にタップしてください</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">光</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">明るいセルが、暗いセルより多い時にタップしてください</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">ライン</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">同じ形のセルが3つ、一列に並んだ時にタップしてください</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">ペア</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">同じ形が2つある時にタップしてください</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">通路</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">上から下に、まっすぐな通路がある時にタップしてください</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">仲間はずれ</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">悲しい顔がある時にタップしてください</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">多様性</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">5色ある時にタップしてください</string>
+</resources>

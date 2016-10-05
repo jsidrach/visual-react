@@ -5,13 +5,13 @@ Available [here](https://sneakycoders.github.io/privacy-policy/)
 ## Languages Supported
 | Language             | Language Code | Country Code | App | Google Play |
 |:---------------------|:-------------:|:------------:|:---:|:-----------:|
-| English              | en            | en-US        | ☑  | ☐
-| Chinese (simplified) | zh            | zh-CN        | ☐  | ☐
-| Spanish              | es            | es-ES        | ☑  | ☐
-| French               | fr            | fr-FR        | ☐  | ☐
+| English              | en            | en-US        | ☑  | ☑
+| Chinese (simplified) | zh            | zh-CN        | ☑  | ☑
+| Spanish              | es            | es-ES        | ☑  | ☑
+| French               | fr            | fr-FR        | ☑  | ☑
 | German               | de            | de-DE        | ☐  | ☐
 | Portuguese           | pt            | pt-BR        | ☐  | ☐
-| Japanese             | ja            | ja-JP        | ☐  | ☐
+| Japanese             | ja            | ja-JP        | ☑  | ☑
 | Korean               | ko            | ko-KR        | ☐  | ☐
 | Russian              | ru            | ru-RU        | ☐  | ☐
 | Arabic               | ar            | ar-MA        | ☐  | ☐
