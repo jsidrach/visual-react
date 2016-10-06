@@ -12,7 +12,7 @@ Available [here](https://sneakycoders.github.io/privacy-policy/)
 | German               | de            | de-DE        | ☐  | ☐
 | Portuguese           | pt            | pt-BR        | ☐  | ☐
 | Japanese             | ja            | ja-JP        | ☑  | ☑
-| Korean               | ko            | ko-KR        | ☐  | ☐
+| Korean               | ko            | ko-KR        | ☑  | ☑
 | Russian              | ru            | ru-RU        | ☐  | ☐
 | Arabic               | ar            | ar-MA        | ☑  | ☑
 

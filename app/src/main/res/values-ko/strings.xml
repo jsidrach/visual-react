@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">환경 설정</string>
+    <string name="match_name">경기</string>
+    <string name="play_icon">플레이</string>
+    <string name="preferences_icon">환경 설정</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">게임 플레이</string>
+    <string name="show_level_tips">레벨 팁</string>
+    <string name="show_level_tips_on">레벨 시작 시 레벨 설명 보기</string>
+    <string name="show_level_tips_off">각 레벨 시작 시 레벨 설명 건너뛰기</string>
+    <string name="levels_per_match">경기 당 레벨</string>
+    <string name="levels_per_match_summary">경기 당 레벨 수: %1$d</string>
+    <string name="rounds_per_level">레벨 당 라운드</string>
+    <string name="rounds_per_level_summary">레벨 당 라운드 수: %1$d</string>
+    <string name="levels_selected_category">레벨</string>
+    <string name="ads_category">광고</string>
+    <string name="show_ads_levels">게임 내 광고</string>
+    <string name="show_ads_levels_off">플레이하는 동안 광고를 표시하지 않음</string>
+    <string name="show_ads_levels_on">플레이하는 동안 광고 보기</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">탭하여 시작</string>
+    <string name="player_ready">다른 플레이어를 기다리는 중</string>
+    <string name="rematch_icon">재시합</string>
+    <string name="standing_winner">승리!</string>
+    <string name="standing_loser">안됐군요…</string>
+    <string name="standing_tied">무승부</string>
+    <string name="cancel_match_confirmation">경기를 취소하시겠습니까?</string>
+    <string name="cancel_match_yes">경기 취소</string>
+    <string name="cancel_match_no">계속 플레이</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">충돌</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">모양이 충돌할 때 탭합니다.</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">색상</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">색상 변경 후 탭합니다.</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">연결</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">두 극단이 연결되어 있을 때 탭합니다.</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">카운트 다운</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">카운트 다운이 제로를 통과한 후에 탭합니다.</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">맞음</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">하나의 모양이 다른 모양에 맞을 때 탭합니다.</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">구멍</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">원이 구멍보다 작을 때 탭합니다.</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">빛</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">어두운 셀보다 색상이 있는 셀이 더 많을 때 탭합니다.</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">선</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">라인에서 동일한 유형의 셀이 3개일 때 탭합니다.</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">한 쌍</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">2개의 동일한 모양이 있을 때 탭합니다.</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">통로</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">위에서 아래로 직선 통로가 있을 때 탭합니다.</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">단수</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">슬픈 얼굴이 있을 때 누릅니다.</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">다양성</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">5개의 서로 다른 색상이 있을 때 누릅니다.</string>
+</resources>

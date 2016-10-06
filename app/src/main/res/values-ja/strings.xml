@@ -25,7 +25,7 @@
     <string name="player_ready">他のプレイヤーを待っています</string>
     <string name="rematch_icon">もう一度対戦する</string>
     <string name="standing_winner">勝った！</string>
-    <string name="standing_loser">悲しいです...</string>
+    <string name="standing_loser">悲しいです…</string>
     <string name="standing_tied">引き分け</string>
     <string name="cancel_match_confirmation">本当に対戦をキャンセルしてもよろしいですか？</string>
     <string name="cancel_match_yes">対戦をキャンセルする</string>
