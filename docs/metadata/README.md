@@ -14,7 +14,7 @@ Available [here](https://sneakycoders.github.io/privacy-policy/)
 | Japanese             | ja            | ja-JP        | ☑  | ☑
 | Korean               | ko            | ko-KR        | ☐  | ☐
 | Russian              | ru            | ru-RU        | ☐  | ☐
-| Arabic               | ar            | ar-MA        | ☐  | ☐
+| Arabic               | ar            | ar-MA        | ☑  | ☑
 
 ## Texts
 | Name              | Category    | Location                                                 | Restrictions                                                                                     |

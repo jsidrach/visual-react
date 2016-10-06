@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">التفضيلات</string>
+    <string name="match_name">مباراة</string>
+    <string name="play_icon">لعب</string>
+    <string name="preferences_icon">التفضيلات</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">اللعب</string>
+    <string name="show_level_tips">نصائح المستوى</string>
+    <string name="show_level_tips_on">أظهر توصيف المستوى عند بداية كل مستوى</string>
+    <string name="show_level_tips_off">تخطي توصيف المستوى عند بداية كل مستوى</string>
+    <string name="levels_per_match">المستويات في المباراة الواحدة</string>
+    <string name="levels_per_match_summary">عدد المستويات في المباراة الواحدة: %1$d</string>
+    <string name="rounds_per_level">الجولات لكل مستوى</string>
+    <string name="rounds_per_level_summary">عدد الجولات لكل مستوى: %1$d</string>
+    <string name="levels_selected_category">المستويات</string>
+    <string name="ads_category">الإعلانات</string>
+    <string name="show_ads_levels">الإعلانات بداخل اللعبة</string>
+    <string name="show_ads_levels_off">لا تظهر الإعلانات أثناء اللعب</string>
+    <string name="show_ads_levels_on">أظهر الإعلانات أثناء اللعب</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">اضغط للبدء</string>
+    <string name="player_ready">في انتظار اللاعب الآخر</string>
+    <string name="rematch_icon">مبارة العودة</string>
+    <string name="standing_winner">فوز!</string>
+    <string name="standing_loser">حزين جدا…</string>
+    <string name="standing_tied">رسم</string>
+    <string name="cancel_match_confirmation">هل أنت متأكد أنك تريد إلغاء المباراة؟</string>
+    <string name="cancel_match_yes">إلغاء المباراة</string>
+    <string name="cancel_match_no">مواصلة اللعب</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">تصادم</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">اضغط عند تصادم الأشكال</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">اللون</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">اضغط بعد تغيير اللون</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">اتصال</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">اتصل عندما يتصل الطرفين</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">العد التنازلي</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">اضغط بعد أن يتخطى العد التنازلي الرقم صفر</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">الملاءمة</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">اضغط عندما يلائم أحد الأشكال الشكل الآخر</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">ثقب</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">اضغط عندما تكون الدوائر أصغر من الثقب</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">فاتح</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">اضغط عندما تكون الكرات الملونة أكثر من الكرات المعتمة</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">خط</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">اضغط عندما تشكل ثلاث خلايا من نفس النوع خطا</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">زوج</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">اضغط عندما يكون هناك شكلين متساويين</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">الطريق</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">اضغط عندما يكون هناك طريق مستقيم من القمة إلى القاع</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">مفرد</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">اضغط عندما يكون هناك وجه حزين</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">تشكيلة</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">اضغط عندما يكون هناك خمسة ألوان مختلفة</string>
+</resources>
