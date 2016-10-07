@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">Voreinstellungen</string>
+    <string name="match_name">Spiel</string>
+    <string name="play_icon">Spielen</string>
+    <string name="preferences_icon">Voreinstellungen</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">Spielverlauf</string>
+    <string name="show_level_tips">Level-Tipps</string>
+    <string name="show_level_tips_on">Level-Beschreibungen zu Beginn eines jeden Levels anzeigen</string>
+    <string name="show_level_tips_off">Level-Beschreibungen zu Beginn eines jeden Levels überspringen</string>
+    <string name="levels_per_match">Levels pro Spiel</string>
+    <string name="levels_per_match_summary">Levelanzahl pro Spiel: %1$d</string>
+    <string name="rounds_per_level">Runden pro Level</string>
+    <string name="rounds_per_level_summary">Anzahl der Runden pro Level: %1$d</string>
+    <string name="levels_selected_category">Levels</string>
+    <string name="ads_category">Werbung</string>
+    <string name="show_ads_levels">In-Game-Werbung</string>
+    <string name="show_ads_levels_off">Keine Werbung während des Spielens anzeigen</string>
+    <string name="show_ads_levels_on">Werbung während des Spielens anzeigen</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">Zum Starten tippen</string>
+    <string name="player_ready">Auf den anderen Spieler warten</string>
+    <string name="rematch_icon">Rückspiel</string>
+    <string name="standing_winner">Sieg!</string>
+    <string name="standing_loser">So traurig …</string>
+    <string name="standing_tied">Gleichstand</string>
+    <string name="cancel_match_confirmation">Bist du sicher, dass du das Spiel abbrechen willst?</string>
+    <string name="cancel_match_yes">Spiel abbrechen</string>
+    <string name="cancel_match_no">Spiel fortsetzen</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">Kollision</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Tippe, wenn die Formen zusammenstoßen</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">Farbe</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">Tippe nach dem Farbwechsel</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">Verbindung</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">Tippe, wenn die beiden gegensätzlichen Formen verbunden sind</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Countdown</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Tippe, wenn der Countdown bei null angelangt ist</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">Passend</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">Tippe, wenn eine Form in die andere passt</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">Loch</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">Tippe, wenn die Kreise kleiner als das Loch sind</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">Licht</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Tippe, wenn mehr farbige Zellen als dunkle Zellen vorhanden sind</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">Linie</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">Tippe, wenn drei Zellen der gleichen Art eine Linie bilden</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">Paar</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Tippe, wenn zwei gleiche Formen vorhanden sind</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">Durchgang</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">Tippe, wenn ein gerader Durchgang von oben nach unten vorhanden ist</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">Singularität</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Tippe, wenn ein trauriges Gesicht vorhanden ist</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">Vielfalt</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Tippe, wenn fünf verschiedene Farben vorhanden sind</string>
+</resources>
