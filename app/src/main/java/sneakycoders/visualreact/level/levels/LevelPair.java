@@ -114,6 +114,14 @@ public class LevelPair extends Level {
         return result;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        // Cancel timers
+        handler.removeCallbacksAndMessages(null);
+    }
+
     private void initializeShapes() {
         // Screen size
         final int width = rootView.getMeasuredWidth();
