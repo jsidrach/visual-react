@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Launcher -->
+    <string name="preferences_name">Preferências</string>
+    <string name="match_name">Partida</string>
+    <string name="play_icon">Jogar</string>
+    <string name="preferences_icon">Preferências</string>
+
+    <!-- Preferences -->
+    <string name="gameplay_category">Gameplay</string>
+    <string name="show_level_tips">Dicas do nível</string>
+    <string name="show_level_tips_on">Exibir descrições no início de cada nível</string>
+    <string name="show_level_tips_off">Omitir descrições no início de cada nível</string>
+    <string name="levels_per_match">Níveis por partida</string>
+    <string name="levels_per_match_summary">Número de níveis por partida: %1$d</string>
+    <string name="rounds_per_level">Rodadas por partida</string>
+    <string name="rounds_per_level_summary">Número de rodadas por partida: %1$d</string>
+    <string name="levels_selected_category">Níveis</string>
+    <string name="ads_category">Anúncios</string>
+    <string name="show_ads_levels">Anúncios no jogo</string>
+    <string name="show_ads_levels_off">Não exibir anúncios durante o jogo</string>
+    <string name="show_ads_levels_on">Exibir anúncios durante o jogo</string>
+
+    <!-- Match -->
+    <string name="player_not_ready">Toque para começar</string>
+    <string name="player_ready">Aguardando outro jogador</string>
+    <string name="rematch_icon">Rematach!</string>
+    <string name="standing_winner">Vitória!</string>
+    <string name="standing_loser">Que pena…</string>
+    <string name="standing_tied">Empate</string>
+    <string name="cancel_match_confirmation">Tem certeza de que deseja cancelar a partida?</string>
+    <string name="cancel_match_yes">Cancelar partida</string>
+    <string name="cancel_match_no">Continuar jogando</string>
+
+    <!-- Levels -->
+    <string name="level_collision_name" tools:keep="@string/level_collision_name">Colisão</string>
+    <string name="level_collision_description" tools:keep="@string/level_collision_description">Toque quando as formas colidirem</string>
+    <string name="level_color_name" tools:keep="@string/level_color_name">Cor</string>
+    <string name="level_color_description" tools:keep="@string/level_color_description">Toque depois que a cor se alterar</string>
+    <string name="level_connection_name" tools:keep="@string/level_connection_name">Conexão</string>
+    <string name="level_connection_description" tools:keep="@string/level_connection_description">Toque quando os dois extremos se conectarem</string>
+    <string name="level_countdown_name" tools:keep="@string/level_countdown_name">Contagem regressiva</string>
+    <string name="level_countdown_description" tools:keep="@string/level_countdown_description">Toque depois que a contagem regressiva passar de zero</string>
+    <string name="level_fit_name" tools:keep="@string/level_fit_name">Encaixar</string>
+    <string name="level_fit_description" tools:keep="@string/level_fit_description">Toque quando uma forma se encaixar na outra</string>
+    <string name="level_hole_name" tools:keep="@string/level_hole_name">Buraco</string>
+    <string name="level_hole_description" tools:keep="@string/level_hole_description">Toque quando os círculos estiverem menores que o buraco</string>
+    <string name="level_light_name" tools:keep="@string/level_light_name">Clara</string>
+    <string name="level_light_description" tools:keep="@string/level_light_description">Toque quando houver mais células coloridas do que escuras</string>
+    <string name="level_line_name" tools:keep="@string/level_line_name">Linha</string>
+    <string name="level_line_description" tools:keep="@string/level_line_description">Toque quando três células do mesmo tipo formarem uma linha</string>
+    <string name="level_pair_name" tools:keep="@string/level_pair_name">Par</string>
+    <string name="level_pair_description" tools:keep="@string/level_pair_description">Toque quando houver duas formas iguais</string>
+    <string name="level_passage_name" tools:keep="@string/level_passage_name">Passagem</string>
+    <string name="level_passage_description" tools:keep="@string/level_passage_description">Toque quando houver uma passagem direta do topo até o fundo</string>
+    <string name="level_singular_name" tools:keep="@string/level_singular_name">Singular</string>
+    <string name="level_singular_description" tools:keep="@string/level_singular_description">Toque quando aparecer uma carinha triste</string>
+    <string name="level_variety_name" tools:keep="@string/level_variety_name">Variedade</string>
+    <string name="level_variety_description" tools:keep="@string/level_variety_description">Toque quando houver cinco cores diferentes</string>
+</resources>

@@ -10,10 +10,10 @@ Available [here](https://sneakycoders.github.io/privacy-policy/)
 | Spanish              | e    | ☑   | ☑
 | French               | fr   | ☑   | ☑
 | German               | de   | ☑   | ☑
-| Portuguese           | pt   | ☐   | ☐
+| Portuguese           | pt   | ☑   | ☑
 | Japanese             | ja   | ☑   | ☑
 | Korean               | ko   | ☑   | ☑
-| Russian              | ru   | ☐   | ☐
+| Russian              | ru   | ☑   | ☑
 | Arabic               | ar   | ☑   | ☑
 
 ## Texts
