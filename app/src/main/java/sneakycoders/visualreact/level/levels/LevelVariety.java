@@ -11,7 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import sneakycoders.visualreact.R;
@@ -27,6 +30,10 @@ public class LevelVariety extends Level {
     private RectF[][] cellsPaints;
     // Colors of different cell
     private Paint[][] paints;
+    // Used colors
+    private List<Integer> usedColors;
+    // Unused colors
+    private List<Integer> unusedColors;
     //Colors
     private int backgroundColor;
     // Timer handler
@@ -51,6 +58,10 @@ public class LevelVariety extends Level {
         cellsPaints = new RectF[cellsX][cellsY];
         paints = new Paint[cellsX][cellsY];
 
+        // Set used colors and unused colors
+        usedColors = new ArrayList<>();
+        unusedColors = new ArrayList<>(Arrays.asList(getRandomDistinctiveColors(cellsX * cellsY - 1)));
+
         // Initialize cell's colors
         for (int i = 0; i < cellsX; i++) {
             for (int j = 0; j < cellsY; j++) {
@@ -64,13 +75,48 @@ public class LevelVariety extends Level {
 
         // Set the update function
         final int delay = randomInt(R.integer.level_variety_min_delay, R.integer.level_variety_max_delay);
+
+        // Probability to change one cell to a new color
+        final float prob = randomFloat(R.fraction.level_variety_min_change_color, R.fraction.level_variety_max_change_color);
+
         updateCells = () -> {
             // Cell to be updated
             int changeX = randomInInterval(0, cellsX - 1);
             int changeY = randomInInterval(0, cellsY - 1);
 
-            // Update color
-            paints[changeX][changeY].setColor(getRandomDistinctiveColor());
+            // Color to be filled
+            int color;
+
+            // Use a new color
+            if ((usedColors.size() == 0) || ((Math.random() < prob) && (unusedColors.size() > 0))) {
+                color = unusedColors.get(randomInInterval(0, unusedColors.size() - 1));
+            }
+            // Use a used color
+            else {
+                color = usedColors.get(randomInInterval(0, usedColors.size() - 1));
+            }
+
+            // Update the color of the cell
+            paints[changeX][changeY].setColor(color);
+
+            // Recreate the lists of used and unused colors
+            Set<Integer> usedColorSet = new HashSet<>();
+            Set<Integer> unusedColorSet = new HashSet<>(Arrays.asList(getRandomDistinctiveColors(cellsX * cellsY - 1)));
+            for (int i = 0; i < cellsX; i++) {
+                for (int j = 0; j < cellsY; j++) {
+                    Integer currentColor = paints[i][j].getColor();
+                    if (currentColor != backgroundColor) {
+                        unusedColorSet.remove(currentColor);
+                        usedColorSet.add(currentColor);
+                    }
+                }
+            }
+
+            // Update used and unused lists
+            unusedColors.clear();
+            usedColors.clear();
+            unusedColors.addAll(unusedColorSet);
+            usedColors.addAll(usedColorSet);
 
             // Redraw
             rootView.invalidate();
@@ -93,18 +139,8 @@ public class LevelVariety extends Level {
         // Cancel timers
         handler.removeCallbacksAndMessages(null);
 
-        // Store colors in a set to know the number of different colors
-        Set<Integer> colorSet = new HashSet<>();
-        for (int i = 0; i < cellsX; i++) {
-            for (int j = 0; j < cellsY; j++) {
-                if (paints[i][j].getColor() != backgroundColor) {
-                    colorSet.add(paints[i][j].getColor());
-                }
-            }
-        }
-
         // Success if there are at least 5 different colors
-        return (colorSet.size() >= 5);
+        return (unusedColors.size() == 0);
     }
 
     private void initializeCells() {
