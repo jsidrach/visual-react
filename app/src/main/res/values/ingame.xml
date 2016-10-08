@@ -208,8 +208,8 @@
     <integer name="level_variety_cells_y">2</integer>
     <!-- Minimum and maximum probability to change a cell to a new color -->
     <fraction name="level_variety_min_change_color">65%</fraction>
-    <fraction name="level_variety_max_change_color">85%</fraction>
+    <fraction name="level_variety_max_change_color">90%</fraction>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_variety_min_delay">500</integer>
-    <integer name="level_variety_max_delay">1000</integer>
+    <integer name="level_variety_min_delay">750</integer>
+    <integer name="level_variety_max_delay">1250</integer>
 </resources>
