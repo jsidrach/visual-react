@@ -61,8 +61,6 @@ public class LevelSingular extends Level {
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
         linesPaint = new Paint();
         linesPaint.setColor(ContextCompat.getColor(getActivity(), R.color.neutral_light));
-        successPaint = new Paint();
-        successPaint.setColor(ContextCompat.getColor(getActivity(), R.color.success_light));
 
         // Create View
         rootView = new LevelSingularView(getActivity());
@@ -77,8 +75,8 @@ public class LevelSingular extends Level {
 
         // Redraw if sad face is shown
         if (result) {
-            // Change to success color
-            sadFace.backgroundPaint = successPaint;
+            // Change sad face to selected
+            sadFace.setSelected();
 
             // Redraw
             rootView.invalidate();
@@ -326,6 +324,12 @@ public class LevelSingular extends Level {
 
             // Restore canvas
             canvas.restore();
+        }
+
+        public void setSelected() {
+            facePaint.setColor(backgroundColor);
+            mouthPaint.setColor(backgroundColor);
+            backgroundPaint.setColor(successLightColor);
         }
     }
 
