@@ -106,7 +106,8 @@
   * [Nexus 10 API 23](docs/screenshots/nexus-10-api-23/README.md)
 
 ## <a name="roadmap"></a> Roadmap
-- [ ] Translate strings and app metadata to additional languages, use paid service if needed
-- [ ] Distribute beta app, test & QA
-- [ ] Make sure all the items in [this checklist](https://developer.android.com/distribute/tools/launch-checklist.html) are completed
-- [ ] Publish the app
+- [ ] Remove ads
+- [ ] 3/4 Player mode
+- [ ] Update translations
+- [ ] Remove passwords from repository
+- [ ] Open source app
