@@ -10,7 +10,7 @@ android {
         }
     }
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "sneakycoders.visualreact"
         minSdkVersion 16
@@ -39,8 +39,8 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:support-v4:25.0.1'
-    compile 'com.google.firebase:firebase-ads:9.4.0'
-    compile 'com.google.firebase:firebase-crash:9.4.0'
+    compile 'com.google.firebase:firebase-ads:10.0.0'
+    compile 'com.google.firebase:firebase-crash:10.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
