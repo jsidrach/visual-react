@@ -16,6 +16,8 @@ public class LevelColor extends Level {
     private boolean result;
     // Timer handler
     private Handler handler;
+    // View
+    private View rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class LevelColor extends Level {
         final int color = getRandomColor();
 
         // Create view
-        final View rootView = inflater.inflate(R.layout.level_color, container, false);
+        rootView = inflater.inflate(R.layout.level_color, container, false);
 
         // Countdown in milliseconds before switching the color
         int countdown = randomInt(R.integer.level_color_min_delay, R.integer.level_color_max_delay);
@@ -47,6 +49,11 @@ public class LevelColor extends Level {
 
     @Override
     public boolean onPlayerTap() {
+        // Check initialization
+        if (rootView == null) {
+            return false;
+        }
+
         // Cancel callback
         handler.removeCallbacksAndMessages(null);
 

@@ -99,6 +99,11 @@ public class LevelLine extends Level {
 
     @Override
     public boolean onPlayerTap() {
+        // Check initialization
+        if (rootView == null) {
+            return false;
+        }
+
         // Stop animation
         handler.removeCallbacksAndMessages(null);
 

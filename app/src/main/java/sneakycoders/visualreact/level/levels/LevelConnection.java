@@ -97,6 +97,11 @@ public class LevelConnection extends Level {
 
     @Override
     public boolean onPlayerTap() {
+        // Check initialization
+        if (rootView == null) {
+            return false;
+        }
+
         // Cancel timers
         handler.removeCallbacksAndMessages(null);
 

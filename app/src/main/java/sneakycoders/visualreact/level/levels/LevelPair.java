@@ -70,6 +70,11 @@ public class LevelPair extends Level {
 
     @Override
     public boolean onPlayerTap() {
+        // Check initialization
+        if (rootView == null) {
+            return false;
+        }
+
         // Cancel callback
         handler.removeCallbacksAndMessages(null);
 

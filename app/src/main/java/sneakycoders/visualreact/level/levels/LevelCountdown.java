@@ -31,6 +31,8 @@ public class LevelCountdown extends Level {
     // Player countdowns
     private TextView player1Countdown;
     private TextView player2Countdown;
+    // View
+    private View rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class LevelCountdown extends Level {
         result = false;
 
         // Create view
-        final View rootView = inflater.inflate(R.layout.level_countdown, container, false);
+        rootView = inflater.inflate(R.layout.level_countdown, container, false);
 
         // Get countdowns views and set the color
         player1Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_1);
@@ -90,6 +92,11 @@ public class LevelCountdown extends Level {
 
     @Override
     public boolean onPlayerTap() {
+        // Check initialization
+        if (rootView == null) {
+            return false;
+        }
+
         // Calculate time offset
         float timeOffset = (totalTime - (SystemClock.elapsedRealtime() - elapsedTime)) / 1000.0f;
 
