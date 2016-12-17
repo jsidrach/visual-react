@@ -1,22 +1,27 @@
 apply plugin: 'com.android.application'
 
+// Load keystore
+def keystorePropertiesFile = rootProject.file('app/keystore.properties')
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     signingConfigs {
         config {
-            keyAlias 'Release'
-            keyPassword '***REMOVED***'
-            storeFile file('keystore.jks')
-            storePassword '***REMOVED***'
+          keyAlias keystoreProperties['keyAlias']
+          keyPassword keystoreProperties['keyPassword']
+          storeFile file(keystoreProperties['storeFile'])
+          storePassword keystoreProperties['storePassword']
         }
     }
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion '25.0.1'
     defaultConfig {
-        applicationId "sneakycoders.visualreact"
+        applicationId 'sneakycoders.visualreact'
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 8
-        versionName "2.0"
+        versionName '2.0'
         jackOptions {
             enabled true
             return true
