@@ -292,10 +292,10 @@ public class LevelSingular extends Level {
     }
 
     private class SadFaceCell extends FaceCell {
-        // Background rectangle
-        private RectF background;
         // Background paint
         public Paint backgroundPaint;
+        // Background rectangle
+        private RectF background;
         // Sad mouth
         private RectF sadMouth;
 

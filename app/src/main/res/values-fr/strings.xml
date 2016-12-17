@@ -16,10 +16,6 @@
     <string name="rounds_per_level">Tours par niveau</string>
     <string name="rounds_per_level_summary">Nombre de tours par niveau: %1$d</string>
     <string name="levels_selected_category">Niveaux</string>
-    <string name="ads_category">Publicité</string>
-    <string name="show_ads_levels">Publicité pendant les parties</string>
-    <string name="show_ads_levels_off">Ne pas montrer de la publicité pendant les parties</string>
-    <string name="show_ads_levels_on">Montrer de la publicité pendant les parties</string>
 
     <!-- Match -->
     <string name="player_not_ready">Appuie pour commencer</string>

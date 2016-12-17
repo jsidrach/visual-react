@@ -3,5 +3,3 @@ O Visual React é um jogo desafiador e divertido para dois jogadores no mesmo di
 Seja o mais rápido para detectar pistas visuais, rapidamente toque na tela, e ganhe um ponto! Mas cuidado: se você tocar muito cedo, você vai perder um ponto!
 
 Batalhe contra seu oponente em mais de 10 emocionantes minijogos, fáceis de aprender! Nenhum deles requer conhecimento - somente reflexos - e você pode ir direto para a ação. Os gráficos são simples e limpos - sem distrações desnecessárias para que você possa se concentrar na ação e minimizar o tempo de reação.
-
-Personalize o jogo como quiser. Selecione qual minijogo você quer, como muitas rodadas e minijogos para incluir em uma partida, e até mesmo desativar anúncios em videogames!

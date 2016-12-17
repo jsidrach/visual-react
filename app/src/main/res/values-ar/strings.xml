@@ -16,10 +16,6 @@
     <string name="rounds_per_level">الجولات لكل مستوى</string>
     <string name="rounds_per_level_summary">عدد الجولات لكل مستوى: %1$d</string>
     <string name="levels_selected_category">المستويات</string>
-    <string name="ads_category">الإعلانات</string>
-    <string name="show_ads_levels">الإعلانات بداخل اللعبة</string>
-    <string name="show_ads_levels_off">لا تظهر الإعلانات أثناء اللعب</string>
-    <string name="show_ads_levels_on">أظهر الإعلانات أثناء اللعب</string>
 
     <!-- Match -->
     <string name="player_not_ready">اضغط للبدء</string>

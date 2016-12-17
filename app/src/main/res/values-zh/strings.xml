@@ -16,10 +16,6 @@
     <string name="rounds_per_level">小游戏重复次数</string>
     <string name="rounds_per_level_summary">每个小游戏重复的次数: %1$d</string>
     <string name="levels_selected_category">游戏种类</string>
-    <string name="ads_category">广告</string>
-    <string name="show_ads_levels">游戏中广告</string>
-    <string name="show_ads_levels_off">游戏中不显示广告</string>
-    <string name="show_ads_levels_on">游戏中显示广告</string>
 
     <!-- Match -->
     <string name="player_not_ready">点击开始</string>

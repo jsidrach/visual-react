@@ -16,10 +16,6 @@
     <string name="rounds_per_level">Раундов в одном матче</string>
     <string name="rounds_per_level_summary">Количество раундов в одном уровне: %1$d</string>
     <string name="levels_selected_category">Уровни</string>
-    <string name="ads_category">Реклама</string>
-    <string name="show_ads_levels">Реклама в игре</string>
-    <string name="show_ads_levels_off">Не показывать рекламу во время игры</string>
-    <string name="show_ads_levels_on">Показывать рекламу во время игры</string>
 
     <!-- Match -->
     <string name="player_not_ready">Коснитесь, чтобы начать</string>

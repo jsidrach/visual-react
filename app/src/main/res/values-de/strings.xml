@@ -16,10 +16,6 @@
     <string name="rounds_per_level">Runden pro Level</string>
     <string name="rounds_per_level_summary">Anzahl der Runden pro Level: %1$d</string>
     <string name="levels_selected_category">Levels</string>
-    <string name="ads_category">Werbung</string>
-    <string name="show_ads_levels">In-Game-Werbung</string>
-    <string name="show_ads_levels_off">Keine Werbung während des Spielens anzeigen</string>
-    <string name="show_ads_levels_on">Werbung während des Spielens anzeigen</string>
 
     <!-- Match -->
     <string name="player_not_ready">Zum Starten tippen</string>

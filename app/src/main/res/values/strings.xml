@@ -16,10 +16,6 @@
     <string name="rounds_per_level">Rounds per level</string>
     <string name="rounds_per_level_summary">Number of rounds per level: %1$d</string>
     <string name="levels_selected_category">Levels</string>
-    <string name="ads_category">Advertisements</string>
-    <string name="show_ads_levels">In-Game advertisements</string>
-    <string name="show_ads_levels_off">Do not show advertisements while playing</string>
-    <string name="show_ads_levels_on">Show advertisements while playing</string>
 
     <!-- Match -->
     <string name="player_not_ready">Tap to start</string>

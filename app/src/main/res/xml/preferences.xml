@@ -37,15 +37,4 @@
         android:title="@string/levels_selected_category">
         <!-- Stub for selected levels -->
     </PreferenceCategory>
-    <PreferenceCategory
-        android:key="ads_category"
-        android:title="@string/ads_category">
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="show_ads_levels"
-            android:persistent="true"
-            android:summaryOff="@string/show_ads_levels_off"
-            android:summaryOn="@string/show_ads_levels_on"
-            android:title="@string/show_ads_levels" />
-    </PreferenceCategory>
 </PreferenceScreen>

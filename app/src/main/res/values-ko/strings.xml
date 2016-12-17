@@ -16,10 +16,6 @@
     <string name="rounds_per_level">레벨 당 라운드</string>
     <string name="rounds_per_level_summary">레벨 당 라운드 수: %1$d</string>
     <string name="levels_selected_category">레벨</string>
-    <string name="ads_category">광고</string>
-    <string name="show_ads_levels">게임 내 광고</string>
-    <string name="show_ads_levels_off">플레이하는 동안 광고를 표시하지 않음</string>
-    <string name="show_ads_levels_on">플레이하는 동안 광고 보기</string>
 
     <!-- Match -->
     <string name="player_not_ready">탭하여 시작</string>

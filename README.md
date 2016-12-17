@@ -14,8 +14,6 @@
 
 > Battle your opponent in more than 10 exciting and easy-to-learn mini-games! None of them require prior knowledge—just quick reflexes—so you can jump straight into the action. Graphics are simple and clean - no unnecessary distractions so you can focus on the action and minimize your reaction time.
 
-> Customize the game in any way you like. Select which mini-games to play, how many rounds and mini-games to include in a match, and even disable in-game advertisements!
-
 ## <a name="levels"></a> Levels
 | Name       | Description                                             |
 |:-----------|:--------------------------------------------------------|
@@ -106,8 +104,4 @@
   * [Nexus 10 API 23](docs/screenshots/nexus-10-api-23/README.md)
 
 ## <a name="roadmap"></a> Roadmap
-- [ ] Remove ads
 - [ ] 3/4 Player mode
-- [ ] Update translations
-- [ ] Remove passwords from repository
-- [ ] Open source app

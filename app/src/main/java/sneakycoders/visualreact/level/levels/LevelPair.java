@@ -249,11 +249,6 @@ public class LevelPair extends Level {
         rootView.invalidate();
     }
 
-    // Shape types
-    private enum ShapeType {
-        Rectangle, Square, Circle, Oval, CrossTwo, CrossThree, CrossFour, CrossFive, CrossSix, EquilateralTriangle, RightTriangle, Arrow, Moon
-    }
-
     public BaseShape createShape(ShapeType shapeType, float cellWidth, float cellHeight, float padding, int color) {
         if (shapeType == ShapeType.Rectangle) {
             return new Rectangle(cellWidth, cellHeight, padding, color);
@@ -282,6 +277,11 @@ public class LevelPair extends Level {
         } else {
             return new Moon(cellWidth, cellHeight, padding, color);
         }
+    }
+
+    // Shape types
+    private enum ShapeType {
+        Rectangle, Square, Circle, Oval, CrossTwo, CrossThree, CrossFour, CrossFive, CrossSix, EquilateralTriangle, RightTriangle, Arrow, Moon
     }
 
     private abstract class BaseShape {

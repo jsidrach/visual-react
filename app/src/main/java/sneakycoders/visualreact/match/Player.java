@@ -94,13 +94,13 @@ class Player {
         scoreText.setText(NumberFormat.getIntegerInstance().format(score));
     }
 
+    public boolean isReady() {
+        return ready;
+    }
+
     public void setReady(boolean ready) {
         this.ready = ready;
         tapText.setText(ready ? R.string.player_ready : R.string.player_not_ready);
-    }
-
-    public boolean isReady() {
-        return ready;
     }
 
     public void setStateSelection() {

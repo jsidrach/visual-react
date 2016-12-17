@@ -7,14 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
-
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.List;
 
@@ -48,13 +41,6 @@ public class Match extends AppCompatActivity {
     private View finalStandings;
     // Handler for callbacks
     private Handler handler;
-    // Ad popup
-    private InterstitialAd adPopup;
-    // Probability of popup on exit/rematch
-    private double probPopup;
-    // Ad listeners
-    private AdListener exitListener;
-    private AdListener rematchListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,47 +54,6 @@ public class Match extends AppCompatActivity {
 
         // Prevent screen from turning off
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        // Add banner ad if active
-        AdView adView = (AdView) findViewById(R.id.adIngame);
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("show_ads_levels", true)) {
-            MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.ad_app_id));
-            AdRequest adRequest = new AdRequest
-                    .Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
-            adView.loadAd(adRequest);
-        }
-        // Remove ad from layout otherwise
-        else {
-            ViewGroup rootView = (ViewGroup) findViewById(android.R.id.content);
-            rootView.removeView(adView);
-            adView.setVisibility(View.GONE);
-        }
-
-        // Probability of popup on exit/rematch
-        probPopup = getResources().getFraction(R.fraction.match_popup_probability, 1, 1);
-
-        // Add popup ad
-        adPopup = new InterstitialAd(this);
-        adPopup.setAdUnitId(getResources().getString(R.string.ad_postlevel_unit_id));
-        loadPopup();
-
-        // Set listeners for the popup
-        rematchListener = new AdListener() {
-            @Override
-            public void onAdClosed() {
-                state = State.LevelSelection;
-                displayState();
-                loadPopup();
-            }
-        };
-        exitListener = new AdListener() {
-            @Override
-            public void onAdClosed() {
-                switchToLauncher();
-            }
-        };
 
         // Set view bindings
         levelInfo = findViewById(R.id.level_info);
@@ -129,7 +74,7 @@ public class Match extends AppCompatActivity {
         startMatch(null);
     }
 
-    public void startMatch(View view) {
+    public void startMatch(@SuppressWarnings("UnusedParameters") View view) {
         // Levels sequence
         remainingLevels = LevelsFactory.getLevelsSequence(this);
 
@@ -141,18 +86,9 @@ public class Match extends AppCompatActivity {
         player1.reset();
         player2.reset();
 
-        // Rematch
-        if ((view != null) && (Math.random() < probPopup) && (adPopup.isLoaded())) {
-            // Show add before continuing
-            adPopup.setAdListener(rematchListener);
-            adPopup.show();
-        }
-        // First match
-        else {
-            // Set initial state
-            state = State.LevelSelection;
-            displayState();
-        }
+        // Set initial state
+        state = State.LevelSelection;
+        displayState();
     }
 
     private void displayState() {
@@ -292,13 +228,13 @@ public class Match extends AppCompatActivity {
             new AlertDialog.Builder(this)
                     .setMessage(R.string.cancel_match_confirmation)
                     .setCancelable(false)
-                    .setPositiveButton(R.string.cancel_match_yes, (dialog, id) -> leaveMatch())
+                    .setPositiveButton(R.string.cancel_match_yes, (dialog, id) -> switchToLauncher())
                     .setNegativeButton(R.string.cancel_match_no, null)
                     .show();
         }
         // No confirmation dialog
         else {
-            leaveMatch();
+            switchToLauncher();
         }
     }
 
@@ -310,23 +246,6 @@ public class Match extends AppCompatActivity {
         handler.removeCallbacksAndMessages(null);
     }
 
-    // States of the match
-    private enum State {
-        LevelSelection, LevelInfo, Level, LevelResult, Standings
-    }
-
-    private void leaveMatch() {
-        // Show ad before exiting
-        if ((Math.random() < probPopup) && (adPopup.isLoaded())) {
-            adPopup.setAdListener(exitListener);
-            adPopup.show();
-        }
-        // Exit directly
-        else {
-            switchToLauncher();
-        }
-    }
-
     private void switchToLauncher() {
         // Switch to Launcher screen
         Intent intent = new Intent(Match.this, Launcher.class);
@@ -334,12 +253,8 @@ public class Match extends AppCompatActivity {
         finish();
     }
 
-    private void loadPopup() {
-        // Load a new ad for the popup
-        AdRequest adRequest = new AdRequest
-                .Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-        adPopup.loadAd(adRequest);
+    // States of the match
+    private enum State {
+        LevelSelection, LevelInfo, Level, LevelResult, Standings
     }
 }

@@ -3,8 +3,6 @@
     <!--
         Match
     -->
-    <!-- Probability of showing popup on exit/rematch -->
-    <fraction name="match_popup_probability">30%</fraction>
     <!-- Milliseconds of pause between levels -->
     <integer name="match_pause_between_levels">3000</integer>
     <!-- Blink animation -->

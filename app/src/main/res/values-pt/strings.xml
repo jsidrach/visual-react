@@ -16,10 +16,6 @@
     <string name="rounds_per_level">Rodadas por partida</string>
     <string name="rounds_per_level_summary">Número de rodadas por partida: %1$d</string>
     <string name="levels_selected_category">Níveis</string>
-    <string name="ads_category">Anúncios</string>
-    <string name="show_ads_levels">Anúncios no jogo</string>
-    <string name="show_ads_levels_off">Não exibir anúncios durante o jogo</string>
-    <string name="show_ads_levels_on">Exibir anúncios durante o jogo</string>
 
     <!-- Match -->
     <string name="player_not_ready">Toque para começar</string>
