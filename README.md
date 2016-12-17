@@ -6,8 +6,6 @@
 [Documentation](#documentation) |
 [Roadmap](#roadmap)
 
-
-
 > Visual React is a challenging and fun game for two players on the same device.
 
 > Be the fastest one to detect visual clues, quickly tap the screen, and earn a point! But careful: if you touch too early, you will lose one!
@@ -41,7 +39,7 @@
 * :speak_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon)
 
 ## <a name="license"></a> License
-[Mozilla Public License Version 2.0](LICENSE)
+[GNU General Public License v2.0](LICENSE)
 
 ## <a name="contributing"></a> Contributing
 ### <a name="design-guidelines"></a> Design Guidelines
@@ -105,3 +103,4 @@
 
 ## <a name="roadmap"></a> Roadmap
 - [ ] 3/4 Player mode
+- [ ] Add additional translations
