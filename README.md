@@ -29,14 +29,15 @@
 | Variety    | Tap when there are five different colors                |
 
 ## <a name="contributors"></a> Contributors
-### Core Team <a name="core-team"></a>
+### <a name="devs"></a> Devs
 * :rooster: [Lu Yu](https://github.com/yulu1701)
-* :see_no_evil: [J. Sid](https://github.com/jsidrach)
+* :monkey: [J. Sid](https://github.com/jsidrach)
 
-### Quality Assurance Team <a name="quality-assurance"></a>
+### <a name="others"></a> Others
+* :see_no_evil: Rubén García-Varcárcel Sen
+* :hear_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon)
+* :speak_no_evil: [Chen Lai](https://github.com/claigit)
 * :goat: [Zhongrong Jian](https://github.com/miaolegewang)
-* :hear_no_evil: [Chen Lai](https://github.com/claigit)
-* :speak_no_evil: [Ricardo Rincón García](https://github.com/RichiRincon)
 
 ## <a name="license"></a> License
 [GNU General Public License v2.0](LICENSE)
@@ -73,7 +74,7 @@
 11. Make screenshots of your level (in progress, fail, success) and store them in [docs/screenshots](docs/screenshots), following the already existing format - edit the screenshots [README.md](docs/screenshots/README.md) to include them
 12. Save all assets used to ```docs/assets``` (in addition to the resources folder), and list them in [assets](#assets)
 13. Add yourself to the [contributors list](#contributors) - you earned it!
-14. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
+14. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged - thanks a lot!
 
 ### <a name="fixing-a-bug"></a> Fixing a bug
 1. Create a new branch, named using ```bugfix/<bug>```, where ```<bug>``` is a short description of the bug - only commit to this branch
@@ -81,7 +82,7 @@
 3. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
 4. Be sure the code follows the development guidelines mentioned before in the development parent section
 5. Rebase interactively to squash all commits into a single one, and explain in the commit body what was the bug and how it has been fixed
-6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
+6. Create a Pull Request to add the fix to the main branch - the new code will be reviewed, improved, and eventually merged - thanks a lot!
 
 ### <a name="refactoring"></a> Refactoring / Improving code quality
 1. Create a new branch, named using ```refactor/<description>```, where ```<description>``` is a short description of the improvements going to be made
@@ -89,7 +90,18 @@
 3. Run the Linter (in Android Studio: ```Analyze > Inspect Code```), and fix any issue detected
 4. Be sure the code follows the development guidelines mentioned before in the development parent section
 5. Rebase interactively to squash all commits into a single one, and explain in the commit body what were the improvements made
-6. Create a Pull Request to add the level to the main branch - the new code will be reviewed, improved, and eventually merged
+6. Create a Pull Request to add the changes to the main branch - the new code will be reviewed, improved, and eventually merged - thanks a lot!
+
+### <a name="translations"></a> Adding / Updating a translation
+1. Create a new branch, named using ```translation/<language>```, where ```<language>``` is [the two letter language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) of the translation you are adding / updating
+2. If the language is not present yet, add a new row into ```docs/metadata/README.md``` to track the progress of the translation
+3. Create / Edit the following files, taking any existing translation as a reference
+  * ```app/src/main/res/values-<language>/strings.xml```
+  * ```docs/metadata/title/<language>.txt```
+  * ```docs/metadata/long-description/<language>.txt```
+  * ```docs/metadata/short-description/<language>.txt```
+4. Rebase interactively to squash all commits into a single one, and explain in the commit body what translation is being added / updated
+5. Create a Pull Request to add the translation to the main branch - the new code will be reviewed, improved, and eventually merged - thanks a lot!
 
 ## <a name="documentation"></a> Documentation
 * [Designs](docs/designs/README.md)
