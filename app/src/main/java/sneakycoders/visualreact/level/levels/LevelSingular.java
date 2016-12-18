@@ -30,7 +30,6 @@ public class LevelSingular extends Level {
     // Paint and color
     private int backgroundColor;
     private Paint linesPaint;
-    private Paint successPaint;
     // Determine result is success or fail
     private boolean result;
     // Handler

@@ -28,16 +28,16 @@
     <fraction name="level_collision_max_radius">20%</fraction>
     <!-- Minimum and maximum side length (as percentage of the screen height) -->
     <fraction name="level_collision_min_side">10%</fraction>
-    <fraction name="level_collision_max_side">40%</fraction>
+    <fraction name="level_collision_max_side">35%</fraction>
     <!-- Minimum and maximum time in milliseconds it takes a shape to go extreme to extreme horizontally -->
-    <integer name="level_collision_min_move_time">1000</integer>
+    <integer name="level_collision_min_move_time">2500</integer>
     <integer name="level_collision_max_move_time">15000</integer>
     <!-- Frames per second -->
     <integer name="level_collision_frames_per_second">30</integer>
 
     <!-- LevelColor -->
     <!-- Minimum and maximum milliseconds delay before switching color -->
-    <integer name="level_color_min_delay">1000</integer>
+    <integer name="level_color_min_delay">2000</integer>
     <integer name="level_color_max_delay">15000</integer>
 
     <!-- LevelConnection -->
@@ -45,8 +45,8 @@
     <integer name="level_connection_cells_x">15</integer>
     <integer name="level_connection_cells_y">10</integer>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_connection_min_delay">50</integer>
-    <integer name="level_connection_max_delay">100</integer>
+    <integer name="level_connection_min_delay">75</integer>
+    <integer name="level_connection_max_delay">200</integer>
     <!-- Minimum and maximum probability of changing random cells instead of path cells -->
     <fraction name="level_connection_min_update_random">80%</fraction>
     <fraction name="level_connection_max_update_random">90%</fraction>
@@ -66,7 +66,7 @@
 
     <!-- LevelFit -->
     <!-- Minimum and maximum time in milliseconds it takes a shape to resize (from small to big or from big to small) -->
-    <integer name="level_fit_min_resize_time">1000</integer>
+    <integer name="level_fit_min_resize_time">2000</integer>
     <integer name="level_fit_max_resize_time">10000</integer>
     <!-- Minimum and maximum side length (as percentage of the screen height) -->
     <fraction name="level_fit_min_side">12.5%</fraction>
@@ -85,8 +85,8 @@
     <integer name="level_light_cells_x">30</integer>
     <integer name="level_light_cells_y">20</integer>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_light_min_delay">5</integer>
-    <integer name="level_light_max_delay">10</integer>
+    <integer name="level_light_min_delay">10</integer>
+    <integer name="level_light_max_delay">25</integer>
     <!-- Minimum and maximum probability of changing from dark to light -->
     <fraction name="level_light_min_dark_to_light">70%</fraction>
     <fraction name="level_light_max_dark_to_light">100%</fraction>
@@ -152,7 +152,7 @@
     <!-- Frames per second -->
     <integer name="level_pair_frames_per_second">30</integer>
     <!-- Minimum and maximum milliseconds for a shape to travel through the screen -->
-    <integer name="level_pair_minimum_travel_time">5000</integer>
+    <integer name="level_pair_minimum_travel_time">6000</integer>
     <integer name="level_pair_maximum_travel_time">15000</integer>
     <!-- Minimum and maximum milliseconds before the new shapes that appear on the screen are random -->
     <integer name="level_pair_minimum_time_before_random_shapes">4000</integer>
@@ -160,8 +160,8 @@
 
     <!-- LevelPassage -->
     <!-- Minimum and maximum milliseconds delay before the common passage is available -->
-    <integer name="level_passage_min_delay">3000</integer>
-    <integer name="level_passage_max_delay">12500</integer>
+    <integer name="level_passage_min_delay">7500</integer>
+    <integer name="level_passage_max_delay">15000</integer>
     <!-- Number of passages -->
     <integer name="level_passage_num_passages">5</integer>
     <!-- Minimum and maximum trips each passage does before the common passage is available -->
@@ -170,8 +170,8 @@
     <!-- Height of the liens (as a percentage of the screen height) -->
     <fraction name="level_passage_line_height">5%</fraction>
     <!-- Minimum and maximum passage widths (as a percentage of the screen height) -->
-    <fraction name="level_passage_min_passage_width">15%</fraction>
-    <fraction name="level_passage_max_passage_width">40%</fraction>
+    <fraction name="level_passage_min_passage_width">20%</fraction>
+    <fraction name="level_passage_max_passage_width">45%</fraction>
     <!-- Margin for the passages from the extremes (as a percentage of the screen height) -->
     <fraction name="level_passage_margin">7.5%</fraction>
     <!-- Frames per second -->
@@ -194,8 +194,8 @@
     <!-- Width of the stroke of the mouth's paint (as a percentage of the cell size) -->
     <fraction name="level_singular_stroke_width">7.5%</fraction>
     <!-- Minimum and maximum step in milliseconds between updates -->
-    <integer name="level_singular_min_delay">250</integer>
-    <integer name="level_singular_max_delay">750</integer>
+    <integer name="level_singular_min_delay">350</integer>
+    <integer name="level_singular_max_delay">1000</integer>
     <!-- Minimum and maximum probability of changing to sad face -->
     <fraction name="level_singular_min_change_face">2.5%</fraction>
     <fraction name="level_singular_max_change_face">5%</fraction>
@@ -209,5 +209,5 @@
     <fraction name="level_variety_max_change_color">90%</fraction>
     <!-- Minimum and maximum step in milliseconds between updates -->
     <integer name="level_variety_min_delay">750</integer>
-    <integer name="level_variety_max_delay">1250</integer>
+    <integer name="level_variety_max_delay">1500</integer>
 </resources>

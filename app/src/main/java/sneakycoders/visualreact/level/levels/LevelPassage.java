@@ -157,14 +157,12 @@ public class LevelPassage extends Level {
                 passages[i].offset(dist, 0);
 
                 // Turn back if needed
-                if (passages[i].left < marginLeft) {
+                if ((passages[i].left < marginLeft) && (dist < 0)) {
                     passagesDistEachUpdate[i] = -dist;
-                    passages[i].offset(-dist, 0);
-                    passages[i].offset(passages[i].left - marginLeft, 0);
-                } else if (passages[i].right > marginRight) {
+                    passages[i].offset(2.0f * (marginLeft - passages[i].left), 0);
+                } else if ((passages[i].right > marginRight) && (dist > 0)) {
                     passagesDistEachUpdate[i] = -dist;
-                    passages[i].offset(-dist, 0);
-                    passages[i].offset(passages[i].right - marginRight, 0);
+                    passages[i].offset(2.0f * (marginRight - passages[i].right), 0);
                 }
             }
 

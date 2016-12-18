@@ -11,8 +11,8 @@
 # Visual React Specific options
 #
 
-# Do not obfuscate the class name of the level classes, as they are instantiated dynamically
--keep public class * extends sneakycoders.visualreact.level.Level
+# Do not obfuscate the level classes, as they are instantiated dynamically
+-keep class * extends sneakycoders.visualreact.level.Level
 
 #
 # Useful rules for Android applications

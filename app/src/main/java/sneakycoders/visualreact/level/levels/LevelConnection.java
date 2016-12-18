@@ -40,8 +40,6 @@ public class LevelConnection extends Level {
     // Colors
     private Paint[][] cellsPaints;
     private Paint extremesPaint;
-    private Paint successPaint;
-    private Paint failPaint;
     private int backgroundColor;
     // Timer handler
     private Handler handler;
@@ -58,10 +56,6 @@ public class LevelConnection extends Level {
         int pathColor = getRandomColor();
         extremesPaint = new Paint();
         extremesPaint.setColor(failColor);
-        successPaint = new Paint();
-        successPaint.setColor(successColor);
-        failPaint = new Paint();
-        failPaint.setColor(failColor);
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Number of cells in each axis
@@ -117,13 +111,13 @@ public class LevelConnection extends Level {
         }
 
         // Color the path depending whether it connects both extremes or not
-        Paint pathPaint = result ? successPaint : failPaint;
+        int pathColor = result ? successColor : failColor;
         for (Pair<Integer, Integer> p : path) {
-            cellsPaints[p.first][p.second] = pathPaint;
+            cellsPaints[p.first][p.second].setColor(pathColor);
         }
 
         // Change extremes color
-        extremesPaint = pathPaint;
+        extremesPaint.setColor(pathColor);
 
         // Redraw
         rootView.invalidate();

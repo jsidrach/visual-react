@@ -31,8 +31,7 @@ public class LevelLight extends Level {
     private RectF middleLine;
     // Colors
     private Paint cellPaint;
-    private Paint successPaint;
-    private Paint failPaint;
+    private Paint verticalPaint;
     private int backgroundColor;
     // Flag to see the state of the level
     private State state;
@@ -58,10 +57,7 @@ public class LevelLight extends Level {
         // Set colors
         cellPaint = new Paint();
         cellPaint.setColor(getRandomColor());
-        successPaint = new Paint();
-        successPaint.setColor(successLightColor);
-        failPaint = new Paint();
-        failPaint.setColor(failLightColor);
+        verticalPaint = new Paint();
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
 
         // Number of cells in each axis
@@ -101,6 +97,10 @@ public class LevelLight extends Level {
 
         // Set state
         state = State.Result;
+
+        // Set color of the vertical line
+        int verticalColor = moreCellsLightThanDark() ? successLightColor : failLightColor;
+        verticalPaint.setColor(verticalColor);
 
         // Redraw
         rootView.invalidate();
@@ -223,8 +223,7 @@ public class LevelLight extends Level {
                 }
 
                 // Draw middle line
-                Paint paint = moreCellsLightThanDark() ? successPaint : failPaint;
-                canvas.drawRect(middleLine, paint);
+                canvas.drawRect(middleLine, verticalPaint);
             }
         }
     }

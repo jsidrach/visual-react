@@ -70,7 +70,7 @@ public class LevelLine extends Level {
         crossPaint.setColor(colors[1]);
         crossPaint.setStyle(Paint.Style.STROKE);
         successPaint = new Paint();
-        successPaint.setColor(ContextCompat.getColor(getActivity(), R.color.success_primary));
+        successPaint.setColor(successColor);
         successPaint.setStyle(Paint.Style.STROKE);
         linePaint = new Paint();
         linePaint.setColor(ContextCompat.getColor(getActivity(), R.color.neutral_light));
