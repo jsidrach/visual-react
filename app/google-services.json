@@ -1,0 +1,23 @@
+// This is a dummy google-services.json file to allow the Google Services Gradle plugin to run without errors
+// Developers are responsible for embedding a real google-services.json in their app
+{
+  "project_info": {
+    "project_number": ""
+  },
+  "client": [
+    {
+      "client_info": {
+        "android_client_info": {
+          "package_name": "sneakycoders.visualreact"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": ""
+        }
+      ]
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
