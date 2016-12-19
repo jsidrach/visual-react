@@ -21,8 +21,8 @@ android {
         applicationId 'sneakycoders.visualreact'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 9
-        versionName '2.1'
+        versionCode 10
+        versionName '2.2'
         jackOptions {
             enabled true
             return true

@@ -189,10 +189,7 @@
     <fraction name="level_singular_eye_width">20%</fraction>
     <!-- Length and width of the mouth (as a percentage of the cell length and width, respectively) -->
     <fraction name="level_singular_mouth_length">50%</fraction>
-    <!-- Width of the separator between cells (as a percentage of the cell size) -->
-    <fraction name="level_singular_line_width">2.5%</fraction>
-    <!-- Width of the stroke of the mouth's paint (as a percentage of the cell size) -->
-    <fraction name="level_singular_stroke_width">7.5%</fraction>
+    <fraction name="level_singular_mouth_width">7.5%</fraction>
     <!-- Minimum and maximum step in milliseconds between updates -->
     <integer name="level_singular_min_delay">350</integer>
     <integer name="level_singular_max_delay">1000</integer>

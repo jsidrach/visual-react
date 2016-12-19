@@ -23,13 +23,10 @@ public class LevelSingular extends Level {
     private int cellsY;
     // Cells
     private FaceCell[][] cells;
-    // Separators
-    private RectF[] lines;
     // Sad face cell
     private SadFaceCell sadFace;
     // Paint and color
     private int backgroundColor;
-    private Paint linesPaint;
     // Determine result is success or fail
     private boolean result;
     // Handler
@@ -53,13 +50,8 @@ public class LevelSingular extends Level {
         // Initialize cells
         cells = new FaceCell[cellsX][cellsY];
 
-        // Initialize separators
-        lines = new RectF[cellsX + cellsY + 2];
-
-        // Paints and colors
+        // Background color
         backgroundColor = ContextCompat.getColor(getActivity(), R.color.neutral_dark);
-        linesPaint = new Paint();
-        linesPaint.setColor(ContextCompat.getColor(getActivity(), R.color.neutral_light));
 
         // Create View
         rootView = new LevelSingularView(getActivity());
@@ -120,25 +112,8 @@ public class LevelSingular extends Level {
         final float eyeWidth = cellSize * getResources().getFraction(R.fraction.level_singular_eye_width, 1, 1);
         final float mouthLength = cellSize * getResources().getFraction(R.fraction.level_singular_mouth_length, 1, 1);
 
-        // Width of separators
-        final float lineWidth = cellSize * getResources().getFraction(R.fraction.level_singular_line_width, 1, 1);
-
         // Background color for cells
         final Integer[] colorCells = getRandomColors(cellsX * cellsY);
-
-        // Vertical separators
-        for (int i = 0; i < cellsX + 1; i++) {
-            float left = Math.max(0.0f, leftX + i * cellSize - lineWidth / 2.0f);
-            float right = left + lineWidth;
-            lines[i] = new RectF(left, topY, right, topY + cellSize * cellsY);
-        }
-
-        // Horizontal separators
-        for (int j = cellsX + 1; j < lines.length; j++) {
-            float top = Math.max(0.0f, topY + (j - cellsX - 1) * cellSize - lineWidth / 2.0f);
-            float bottom = top + lineWidth / 2.0f;
-            lines[j] = new RectF(leftX, top, leftX + cellsX * cellSize, bottom);
-        }
 
         // Choose a random cell to change to sad face
         final int sadFaceX = randomInInterval(0, cellsX - 1);
@@ -151,7 +126,7 @@ public class LevelSingular extends Level {
                 Paint facePaint = new Paint();
                 Paint mouthPaint = new Paint();
                 mouthPaint.setStyle(Paint.Style.STROKE);
-                mouthPaint.setStrokeWidth(cellSize * getResources().getFraction(R.fraction.level_singular_stroke_width, 1, 1));
+                mouthPaint.setStrokeWidth(cellSize * getResources().getFraction(R.fraction.level_singular_mouth_width, 1, 1));
 
                 // Assign color to paints
                 int color = colorCells[i * cellsY + j];
@@ -358,11 +333,6 @@ public class LevelSingular extends Level {
                     for (int j = 0; j < cellsY; j++) {
                         cells[i][j].draw(canvas);
                     }
-                }
-
-                // Draw separators
-                for (RectF line : lines) {
-                    canvas.drawRect(line, linesPaint);
                 }
             }
         }
