@@ -25,7 +25,6 @@ android {
         versionName '2.2'
         jackOptions {
             enabled true
-            return true
         }
     }
     buildTypes {
