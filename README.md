@@ -114,5 +114,4 @@
   * [Nexus 10 API 23](docs/screenshots/nexus-10-api-23/README.md)
 
 ## <a name="roadmap"></a> Roadmap
-- [ ] 3/4 Player mode
 - [ ] Add additional translations
