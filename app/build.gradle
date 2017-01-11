@@ -45,7 +45,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:support-v4:25.1.0'
 
-    releaseCompile 'com.google.firebase:firebase-crash:10.0.0'
+    releaseCompile 'com.google.firebase:firebase-crash:10.0.1'
 
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
