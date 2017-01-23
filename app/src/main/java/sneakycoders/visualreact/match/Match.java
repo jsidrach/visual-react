@@ -126,6 +126,7 @@ public class Match extends AppCompatActivity {
         else if (state == State.Level) {
             // Replace current level
             currentLevel = LevelsFactory.getLevel(currentLevelId);
+            getSupportFragmentManager().executePendingTransactions();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.level_container, currentLevel)
@@ -195,10 +196,11 @@ public class Match extends AppCompatActivity {
 
     private void delayNextState() {
         handler.postDelayed(() -> {
+            getSupportFragmentManager().executePendingTransactions();
             getSupportFragmentManager()
                     .beginTransaction()
                     .remove(currentLevel)
-                    .commit();
+                    .commitAllowingStateLoss();
             currentLevel = null;
             state = (remainingLevels.size() > 0) ? State.LevelSelection : State.Standings;
             displayState();
