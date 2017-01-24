@@ -100,7 +100,7 @@ public class LevelLine extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (circles == null) || (circles[0] == null) || (circles[0][0] == null)) {
             return false;
         }
 
@@ -329,7 +329,7 @@ public class LevelLine extends Level {
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if (circles[0][0] == null) {
+            if ((circles == null) || (circles[0] == null) || (circles[0][0] == null)) {
                 initializeCells();
             }
             // Playing

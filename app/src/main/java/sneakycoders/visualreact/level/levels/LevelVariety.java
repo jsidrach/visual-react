@@ -137,7 +137,7 @@ public class LevelVariety extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (cellsPaints == null) || (cellsPaints[0] == null) || (cellsPaints[0][0] == null)) {
             return false;
         }
 
@@ -184,7 +184,7 @@ public class LevelVariety extends Level {
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if (cellsPaints[0][0] == null) {
+            if ((cellsPaints == null) || (cellsPaints[0] == null) || (cellsPaints[0][0] == null)) {
                 initializeCells();
             }
             // Playing

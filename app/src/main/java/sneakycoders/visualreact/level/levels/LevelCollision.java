@@ -65,7 +65,7 @@ public class LevelCollision extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (firstShape == null) || (secondShape == null)) {
             return false;
         }
 

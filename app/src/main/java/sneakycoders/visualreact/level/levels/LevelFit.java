@@ -79,7 +79,7 @@ public class LevelFit extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (leftShape == null) || (rightShape == null)) {
             return false;
         }
 

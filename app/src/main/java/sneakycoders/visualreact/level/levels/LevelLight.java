@@ -88,7 +88,7 @@ public class LevelLight extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (state == State.Uninitialized)) {
             return false;
         }
 

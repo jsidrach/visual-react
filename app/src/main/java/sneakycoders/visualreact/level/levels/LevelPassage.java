@@ -74,7 +74,7 @@ public class LevelPassage extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (passages == null) || (passages[0] == null)) {
             return false;
         }
 
@@ -196,7 +196,7 @@ public class LevelPassage extends Level {
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if (passages[0] == null) {
+            if ((passages == null) || (passages[0] == null)) {
                 initializeShapes();
             }
             // Playing

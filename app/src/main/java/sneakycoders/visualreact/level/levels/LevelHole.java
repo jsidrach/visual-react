@@ -69,7 +69,7 @@ public class LevelHole extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (leftCircle == null) || (rightCircle == null)) {
             return false;
         }
 

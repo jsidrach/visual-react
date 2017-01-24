@@ -92,7 +92,7 @@ public class LevelConnection extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (cells == null) || (cells[0] == null) || (cells[0][0] == null)) {
             return false;
         }
 
@@ -549,7 +549,7 @@ public class LevelConnection extends Level {
         @Override
         protected void onDraw(Canvas canvas) {
             // Uninitialized
-            if (cells[0][0] == null) {
+            if ((cells == null) || (cells[0] == null) || (cells[0][0] == null)) {
                 initializeCells();
             }
             // Playing

@@ -71,7 +71,7 @@ public class LevelPair extends Level {
     @Override
     public boolean onPlayerTap() {
         // Check initialization
-        if (rootView == null) {
+        if ((rootView == null) || (topShapes.size() == 0)) {
             return false;
         }
 
