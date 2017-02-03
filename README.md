@@ -4,7 +4,6 @@
 [License](#license) |
 [Contributing](#contributing) |
 [Documentation](#documentation) |
-[Roadmap](#roadmap)
 
 > Visual React is a challenging and fun game for two players on the same device.
 
@@ -113,5 +112,3 @@
   * [Nexus 9 API 23](docs/screenshots/nexus-9-api-23/README.md)
   * [Nexus 10 API 23](docs/screenshots/nexus-10-api-23/README.md)
 
-## <a name="roadmap"></a> Roadmap
-- [ ] Add additional translations
