@@ -21,15 +21,13 @@ android {
         applicationId 'sneakycoders.visualreact'
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 12
-        versionName 'Final'
-        jackOptions {
-            enabled true
-        }
+        versionCode 13
+        versionName '3.0.0'
     }
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
