@@ -12,7 +12,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <meta-data
             android:name="android.max_aspect"
-            android:value="ratio_float" />
+            android:value="3.0" />
 
         <activity
             android:name=".launcher.Launcher"
