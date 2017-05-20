@@ -1,19 +1,18 @@
 # Designs
 
+Created with [Inkscape](http://www.inkscape.org/) and [Draw.io](https://draw.io)
+
 ## Feature graph
-Created with [Inkscape](http://www.inkscape.org/)
 
 ![](feature_graph.png)
 
 ## Logos
-Created with [Inkscape](http://www.inkscape.org/) - the final app icons are generated using [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html)
 
-| Version 1 | Version 2 | Version 3 | Version 4 | Version 5 |
-|:---------:|:---------:|:---------:|:---------:|:---------:|
-| <img src="logo_v1.png" width="256"> | <img src="logo_v2.png" width="256"> | <img src="logo_v3.png" width="256"> | <img src="logo_v4.png" width="256"> | <img src="logo_v5.png" width="256">
+| Version 1 | Version 2 | Version 3 | Version 4 | Version 5 | Version 6 |
+|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+| <img src="logo_v1.png" width="196"> | <img src="logo_v2.png" width="196"> | <img src="logo_v3.png" width="196"> | <img src="logo_v4.png" width="196"> | <img src="logo_v5.png" width="196"> | <img src="logo_v6.png" width="196">
 
 ## Mockups
-Created with [Draw.io](https://draw.io)
 
 * Version 1
 
