@@ -1,4 +1,4 @@
-# [<img src="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" width="32">](https://play.google.com/store/apps/details?id=sneakycoders.visualreact) Visual React
+# [<img src="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" width="28"> Visual React](https://play.google.com/store/apps/details?id=sneakycoders.visualreact)
 [Levels](#levels) |
 [Contributors](#contributors) |
 [License](#license) |
