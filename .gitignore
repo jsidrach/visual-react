@@ -35,6 +35,7 @@ captures/
 # Keystore files
 *.jks
 */keystore.properties
+*/upload-keystore.properties
 */google-services.json
 
 # Intellij
@@ -43,3 +44,6 @@ captures/
 
 # macOS
 .DS_Store
+
+# KDE
+.directory

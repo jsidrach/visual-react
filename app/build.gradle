@@ -4,7 +4,7 @@ android {
     signingConfigs {
         config {
             // Load keystore
-            def keystorePropertiesFile = rootProject.file('app/keystore.properties')
+            def keystorePropertiesFile = rootProject.file('app/upload-keystore.properties')
             if(keystorePropertiesFile.exists()) {
                 def keystoreProperties = new Properties()
                 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
@@ -15,12 +15,12 @@ android {
             }
         }
     }
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 'android-O'
+    buildToolsVersion '26.0.0-rc2'
     defaultConfig {
         applicationId 'sneakycoders.visualreact'
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 'O'
         versionCode 13
         versionName '3.0.0'
     }
@@ -40,6 +40,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:support-v4:26.0.0-alpha1'
 }
