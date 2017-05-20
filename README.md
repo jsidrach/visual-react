@@ -1,9 +1,12 @@
-# [:zap:](https://play.google.com/store/apps/details?id=sneakycoders.visualreact) Visual React
+# [<img src="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" width="64">](https://play.google.com/store/apps/details?id=sneakycoders.visualreact) Visual React
 [Levels](#levels) |
 [Contributors](#contributors) |
 [License](#license) |
 [Contributing](#contributing) |
-[Documentation](#documentation) |
+[Documentation](#documentation)
+
+![](docs/designs/feature_graph.png)
+
 
 > Visual React is a challenging and fun game for two players on the same device.
 
@@ -111,4 +114,3 @@
   * [Nexus 7 API 23](docs/screenshots/nexus-7-api-23/README.md)
   * [Nexus 9 API 23](docs/screenshots/nexus-9-api-23/README.md)
   * [Nexus 10 API 23](docs/screenshots/nexus-10-api-23/README.md)
-
