@@ -3,7 +3,7 @@
 [Contributors](#contributors) |
 [License](#license) |
 [Contributing](#contributing) |
-[Documentation](#documentation)
+[Assets](#assets)
 
 ![](docs/designs/feature_graph.png)
 
@@ -105,7 +105,7 @@
 4. Rebase interactively to squash all commits into a single one, and explain in the commit body what translation is being added / updated
 5. Create a Pull Request to add the translation to the main branch - the new code will be reviewed, improved, and eventually merged - thanks a lot!
 
-## <a name="documentation"></a> Documentation
+## <a name="assets"></a> Assets
 * [Designs](docs/designs/README.md)
 * [External Assets](docs/external-assets/README.md)
 * [Metadata](docs/metadata/README.md)

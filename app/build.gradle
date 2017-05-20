@@ -22,7 +22,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 'O'
         versionCode 13
-        versionName '3.0.0'
+        versionName 'Final'
     }
     buildTypes {
         release {
