@@ -1,4 +1,4 @@
-# [<img src="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" width="64">](https://play.google.com/store/apps/details?id=sneakycoders.visualreact) Visual React
+# [<img src="app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" width="32">](https://play.google.com/store/apps/details?id=sneakycoders.visualreact) Visual React
 [Levels](#levels) |
 [Contributors](#contributors) |
 [License](#license) |
@@ -9,9 +9,9 @@
 
 
 > Visual React is a challenging and fun game for two players on the same device.
-
+>
 > Be the fastest one to detect visual clues, quickly tap the screen, and earn a point! But careful: if you touch too early, you will lose one!
-
+>
 > Battle your opponent in more than 10 exciting and easy-to-learn mini-games! None of them require prior knowledge—just quick reflexes—so you can jump straight into the action. Graphics are simple and clean - no unnecessary distractions so you can focus on the action and minimize your reaction time.
 
 ## <a name="levels"></a> Levels
