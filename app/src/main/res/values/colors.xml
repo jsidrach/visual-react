@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Application launcher background color -->
+    <color name="ic_launcher_background">#3C3C3C</color>
+
     <!-- Basic colors for static elements -->
     <color name="neutral_primary">#424242</color>
     <color name="neutral_light">#757575</color>
