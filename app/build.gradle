@@ -15,12 +15,12 @@ android {
             }
         }
     }
-    compileSdkVersion 'android-O'
-    buildToolsVersion '26.0.0-rc2'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
     defaultConfig {
         applicationId 'sneakycoders.visualreact'
         minSdkVersion 16
-        targetSdkVersion 'O'
+        targetSdkVersion 26
         versionCode 13
         versionName 'Final'
     }
@@ -40,6 +40,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:26.0.0-beta1'
-    compile 'com.android.support:support-v4:26.0.0-beta1'
+    compile 'com.android.support:appcompat-v7:26.0.0-beta2'
+    compile 'com.android.support:support-v4:26.0.0-beta2'
 }
