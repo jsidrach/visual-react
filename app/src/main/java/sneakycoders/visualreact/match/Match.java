@@ -130,7 +130,7 @@ public class Match extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.level_container, currentLevel)
-                    .commit();
+                    .commitAllowingStateLoss();
 
             // Set players states
             player1.setStatePlaying();
