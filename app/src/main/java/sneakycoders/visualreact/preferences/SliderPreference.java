@@ -58,13 +58,13 @@ public class SliderPreference extends DialogPreference implements
         ((TextView) view.findViewById(R.id.max_value)).setText(intFormat.format(maxValue));
 
         // Setup SeekBar
-        SeekBar seekBar = (SeekBar) view.findViewById(R.id.seek_bar);
+        SeekBar seekBar = view.findViewById(R.id.seek_bar);
         seekBar.setMax(maxValue - minValue);
         seekBar.setProgress(currentValue - minValue);
         seekBar.setOnSeekBarChangeListener(this);
 
         // Put current value
-        valueText = (TextView) view.findViewById(R.id.current_value);
+        valueText = view.findViewById(R.id.current_value);
         valueText.setText(intFormat.format(currentValue));
 
         return view;

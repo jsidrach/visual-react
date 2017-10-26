@@ -44,11 +44,11 @@ class Player {
     public Player(Activity activity, int area, int scoreText, int tapText, int levelNameText, int levelDescriptionText, int standingText) {
         // Views
         this.area = activity.findViewById(area);
-        this.scoreText = (TextView) activity.findViewById(scoreText);
-        this.tapText = (TextView) activity.findViewById(tapText);
-        this.levelNameText = (TextView) activity.findViewById(levelNameText);
-        this.levelDescriptionText = (TextView) activity.findViewById(levelDescriptionText);
-        this.standingText = (TextView) activity.findViewById(standingText);
+        this.scoreText = activity.findViewById(scoreText);
+        this.tapText = activity.findViewById(tapText);
+        this.levelNameText = activity.findViewById(levelNameText);
+        this.levelDescriptionText = activity.findViewById(levelDescriptionText);
+        this.standingText = activity.findViewById(standingText);
 
         // Set initial state
         score = 0;

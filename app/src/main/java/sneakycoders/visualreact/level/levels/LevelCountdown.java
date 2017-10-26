@@ -45,8 +45,8 @@ public class LevelCountdown extends Level {
         rootView = inflater.inflate(R.layout.level_countdown, container, false);
 
         // Get countdowns views and set the color
-        player1Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_1);
-        player2Countdown = (TextView) rootView.findViewById(R.id.level_countdown_player_2);
+        player1Countdown = rootView.findViewById(R.id.level_countdown_player_1);
+        player2Countdown = rootView.findViewById(R.id.level_countdown_player_2);
         int color = getRandomColor();
         player1Countdown.setTextColor(color);
         player2Countdown.setTextColor(color);
